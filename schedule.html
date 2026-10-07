@@ -2,904 +2,730 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Schedule | JLSPT</title>
 
     <meta
         name="description"
-        content="JLSPT streaming sessions, regular activities, events, campaigns, and schedule."
+        content="JLSPT streaming schedules, upcoming activities, regular sessions, and campaign events."
     >
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 </head>
 
 <body>
 
-    <nav class="site-nav">
-        <div class="nav-inner">
-            <a class="nav-brand" href="index.html">JLSPT</a>
-            <div class="nav-links"></div>
-        </div>
-    </nav>
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
 
+    <header class="site-header">
+        <nav class="site-nav">
+
+            <div class="nav-inner">
+
+                <a
+                    href="index.html"
+                    class="brand"
+                    aria-label="JLSPT Home"
+                >
+                    JLSPT
+                </a>
+
+                <div class="nav-links"></div>
+
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
 
     <main>
 
-        <!-- PAGE HERO -->
+        <!-- =========================
+             PAGE HERO
+        ========================== -->
 
         <section class="page-hero">
+
             <div class="container">
 
                 <span class="eyebrow">
                     JLSPT ACTIVITIES
                 </span>
 
-                <h1>Schedule</h1>
+                <h1>
+                    Schedule
+                </h1>
 
-                <p class="page-intro">
+                <p>
                     Keep track of upcoming streaming sessions,
-                    regular activities, events, and campaign schedules.
+                    regular activities, campaign events, and
+                    important JLSPT dates.
                 </p>
 
             </div>
+
         </section>
 
 
-        <!-- NEXT ACTIVITY -->
+        <!-- =========================
+             NEXT ACTIVITY
+        ========================== -->
 
         <section class="section">
+
             <div class="container">
 
                 <div class="section-heading">
 
                     <div>
+
                         <span class="eyebrow">
                             UP NEXT
                         </span>
 
-                        <h2>Next Activity</h2>
+                        <h2>
+                            Next Activity
+                        </h2>
+
                     </div>
 
                 </div>
 
 
-                <div id="next-activity"></div>
+                <article class="schedule-card schedule-featured">
 
-            </div>
-        </section>
+                    <div class="schedule-card-main">
 
+                        <div class="schedule-date-box">
 
-        <!-- UPCOMING -->
+                            <span class="schedule-month">
+                                OCT
+                            </span>
 
-        <section class="section section-alt">
-            <div class="container">
+                            <strong class="schedule-day">
+                                08
+                            </strong>
 
-                <div class="section-heading">
-
-                    <div>
-                        <span class="eyebrow">
-                            COMING UP
-                        </span>
-
-                        <h2>Upcoming Activities</h2>
-                    </div>
-
-                    <span
-                        class="section-count"
-                        id="upcoming-count"
-                    ></span>
-
-                </div>
-
-
-                <div
-                    class="schedule-list"
-                    id="upcoming-schedule"
-                ></div>
-
-            </div>
-        </section>
-
-
-        <!-- REGULAR -->
-
-        <section class="section">
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div>
-                        <span class="eyebrow">
-                            ROUTINE
-                        </span>
-
-                        <h2>Regular Activities</h2>
-                    </div>
-
-                    <span
-                        class="section-count"
-                        id="regular-count"
-                    ></span>
-
-                </div>
-
-
-                <div
-                    class="schedule-list"
-                    id="regular-schedule"
-                ></div>
-
-            </div>
-        </section>
-
-
-        <!-- PAST -->
-
-        <section class="section section-alt">
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div>
-                        <span class="eyebrow">
-                            HISTORY
-                        </span>
-
-                        <h2>Past &amp; Completed</h2>
-                    </div>
-
-                    <span
-                        class="section-count"
-                        id="past-count"
-                    ></span>
-
-                </div>
-
-
-                <div
-                    class="schedule-list"
-                    id="past-schedule"
-                ></div>
-
-            </div>
-        </section>
-
-    </main>
-
-
-    <footer class="site-footer">
-        <div class="container">
-
-            <div class="footer-inner">
-
-                <div>
-                    <strong>JLSPT</strong>
-
-                    <p>
-                        JL Streaming Project Team
-                    </p>
-                </div>
-
-                <p class="footer-note">
-                    Supporting JL through organized streaming,
-                    resources, campaigns, and community projects.
-                </p>
-
-            </div>
-
-
-            <div class="footer-bottom">
-
-                <span>
-                    JLSPT
-                </span>
-
-                <span>
-                    Activity schedule
-                </span>
-
-            </div>
-
-        </div>
-    </footer>
-
-
-    <script src="data.js"></script>
-    <script src="menu.js"></script>
-
-
-    <script>
-        (function () {
-
-            "use strict";
-
-
-            const data =
-                window.JLSPT_DATA || {};
-
-
-            const schedule =
-                Array.isArray(data.schedule)
-                    ? data.schedule
-                    : [];
-
-
-            const nextContainer =
-                document.getElementById(
-                    "next-activity"
-                );
-
-
-            const upcomingContainer =
-                document.getElementById(
-                    "upcoming-schedule"
-                );
-
-
-            const regularContainer =
-                document.getElementById(
-                    "regular-schedule"
-                );
-
-
-            const pastContainer =
-                document.getElementById(
-                    "past-schedule"
-                );
-
-
-            const upcomingCount =
-                document.getElementById(
-                    "upcoming-count"
-                );
-
-
-            const regularCount =
-                document.getElementById(
-                    "regular-count"
-                );
-
-
-            const pastCount =
-                document.getElementById(
-                    "past-count"
-                );
-
-
-            function escapeHTML(value) {
-
-                return String(value ?? "")
-                    .replace(/&/g, "&amp;")
-                    .replace(/</g, "&lt;")
-                    .replace(/>/g, "&gt;")
-                    .replace(/"/g, "&quot;")
-                    .replace(/'/g, "&#039;");
-
-            }
-
-
-            function getDateValue(item) {
-
-                if (!item.date) {
-                    return Number.MAX_SAFE_INTEGER;
-                }
-
-
-                const value =
-                    new Date(
-                        item.date
-                    ).getTime();
-
-
-                return Number.isNaN(value)
-                    ? Number.MAX_SAFE_INTEGER
-                    : value;
-
-            }
-
-
-            function getTypeLabel(type) {
-
-                const normalized =
-                    String(type || "")
-                        .toLowerCase();
-
-
-                const labels = {
-                    session: "STREAMING SESSION",
-                    regular: "REGULAR",
-                    event: "EVENT",
-                    campaign: "CAMPAIGN"
-                };
-
-
-                return (
-                    labels[normalized] ||
-                    String(type || "ACTIVITY")
-                        .toUpperCase()
-                );
-
-            }
-
-
-            function getStatusClass(status) {
-
-                const normalized =
-                    String(status || "")
-                        .toLowerCase();
-
-
-                if (
-                    normalized === "active" ||
-                    normalized === "upcoming"
-                ) {
-                    return "status-active";
-                }
-
-
-                if (
-                    normalized === "completed" ||
-                    normalized === "past"
-                ) {
-                    return "status-completed";
-                }
-
-
-                return "status-paused";
-
-            }
-
-
-            function getActivityStatus(item) {
-
-                if (item.status) {
-                    return String(
-                        item.status
-                    );
-                }
-
-
-                if (item.date) {
-
-                    const date =
-                        new Date(
-                            item.date
-                        );
-
-
-                    if (
-                        !Number.isNaN(
-                            date.getTime()
-                        ) &&
-                        date.getTime() <
-                            Date.now()
-                    ) {
-                        return "Completed";
-                    }
-
-                }
-
-
-                return "Upcoming";
-
-            }
-
-
-            function formatDate(item) {
-
-                if (!item.date) {
-                    return "";
-                }
-
-
-                const date =
-                    new Date(
-                        item.date
-                    );
-
-
-                if (
-                    Number.isNaN(
-                        date.getTime()
-                    )
-                ) {
-                    return escapeHTML(
-                        item.date
-                    );
-                }
-
-
-                return date.toLocaleDateString(
-                    undefined,
-                    {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric"
-                    }
-                );
-
-            }
-
-
-            function createActivityCard(
-                item,
-                featured
-            ) {
-
-                const status =
-                    getActivityStatus(
-                        item
-                    );
-
-
-                const statusClass =
-                    getStatusClass(
-                        status
-                    );
-
-
-                return `
-                    <article
-                        class="schedule-card ${
-                            featured
-                                ? "schedule-card-featured"
-                                : ""
-                        }"
-                    >
-
-                        <div class="schedule-date">
-
-                            ${
-                                item.date
-                                    ? `
-                                        <strong>
-                                            ${escapeHTML(
-                                                formatDate(
-                                                    item
-                                                )
-                                            )}
-                                        </strong>
-                                    `
-                                    : `
-                                        <strong>
-                                            Schedule
-                                        </strong>
-                                    `
-                            }
-
-                            ${
-                                item.time
-                                    ? `
-                                        <span>
-                                            ${escapeHTML(
-                                                item.time
-                                            )}
-                                        </span>
-                                    `
-                                    : ""
-                            }
+                            <span class="schedule-weekday">
+                                THU
+                            </span>
 
                         </div>
 
 
-                        <div class="schedule-main">
+                        <div class="schedule-content">
 
-                            <div
-                                class="schedule-tags"
-                            >
+                            <div class="schedule-meta">
 
-                                <span class="tag">
-                                    ${escapeHTML(
-                                        getTypeLabel(
-                                            item.type
-                                        )
-                                    )}
+                                <span class="status-badge status-active">
+                                    UPCOMING
                                 </span>
 
-                                <span
-                                    class="status-badge ${statusClass}"
-                                >
-                                    ${escapeHTML(
-                                        status
-                                    ).toUpperCase()}
+                                <span class="schedule-type">
+                                    Streaming Session
                                 </span>
 
                             </div>
 
 
                             <h3>
-                                ${escapeHTML(
-                                    item.title ||
-                                    "JLSPT Activity"
-                                )}
+                                JLSPT Streaming Session
                             </h3>
 
 
-                            ${
-                                item.description
-                                    ? `
-                                        <p>
-                                            ${escapeHTML(
-                                                item.description
-                                            )}
-                                        </p>
-                                    `
-                                    : ""
-                            }
+                            <p>
+                                Join the JLSPT community for a
+                                focused streaming session and help
+                                support the current campaign goal.
+                            </p>
 
 
-                            <div class="schedule-meta">
+                            <div class="schedule-details">
 
-                                ${
-                                    item.platform
-                                        ? `
-                                            <span>
-                                                <strong>
-                                                    Platform
-                                                </strong>
+                                <div class="schedule-detail">
 
-                                                ${escapeHTML(
-                                                    item.platform
-                                                )}
-                                            </span>
-                                        `
-                                        : ""
-                                }
+                                    <span class="detail-icon">
+                                        ◷
+                                    </span>
 
+                                    <div>
 
-                                ${
-                                    item.host
-                                        ? `
-                                            <span>
-                                                <strong>
-                                                    Host
-                                                </strong>
+                                        <small>
+                                            TIME
+                                        </small>
 
-                                                ${escapeHTML(
-                                                    item.host
-                                                )}
-                                            </span>
-                                        `
-                                        : ""
-                                }
+                                        <strong>
+                                            To be announced
+                                        </strong>
+
+                                    </div>
+
+                                </div>
 
 
-                                ${
-                                    item.frequency
-                                        ? `
-                                            <span>
-                                                <strong>
-                                                    Frequency
-                                                </strong>
+                                <div class="schedule-detail">
 
-                                                ${escapeHTML(
-                                                    item.frequency
-                                                )}
-                                            </span>
-                                        `
-                                        : ""
-                                }
+                                    <span class="detail-icon">
+                                        ♪
+                                    </span>
+
+                                    <div>
+
+                                        <small>
+                                            ACTIVITY
+                                        </small>
+
+                                        <strong>
+                                            JLSPT Streaming
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="schedule-card-footer">
+
+                        <span class="schedule-note">
+                            Schedule details will be updated
+                            once confirmed.
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             UPCOMING
+        ========================== -->
+
+        <section class="section section-soft">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            COMING UP
+                        </span>
+
+                        <h2>
+                            Upcoming
+                        </h2>
+
+                        <p>
+                            Important activities and campaign
+                            events coming soon.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="schedule-grid">
+
+
+                    <!-- Upcoming Item -->
+
+                    <article class="schedule-card">
+
+                        <div class="schedule-card-main">
+
+                            <div class="schedule-date-box">
+
+                                <span class="schedule-month">
+                                    TBD
+                                </span>
+
+                                <strong class="schedule-day">
+                                    —
+                                </strong>
+
+                                <span class="schedule-weekday">
+                                    SOON
+                                </span>
 
                             </div>
 
 
-                            ${
-                                item.link
-                                    ? `
-                                        <div class="schedule-actions">
+                            <div class="schedule-content">
 
-                                            <a
-                                                class="button button-secondary"
-                                                href="${escapeHTML(
-                                                    item.link
-                                                )}"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                            >
-                                                Open Activity
-                                            </a>
+                                <div class="schedule-meta">
 
-                                        </div>
-                                    `
-                                    : ""
-                            }
+                                    <span class="status-badge status-planned">
+                                        UPCOMING
+                                    </span>
+
+                                    <span class="schedule-type">
+                                        Campaign
+                                    </span>
+
+                                </div>
+
+
+                                <h3>
+                                    Upcoming Streaming Campaign
+                                </h3>
+
+
+                                <p>
+                                    A new JLSPT streaming activity
+                                    will be announced here once
+                                    the campaign details are ready.
+                                </p>
+
+                            </div>
 
                         </div>
 
                     </article>
-                `;
-
-            }
 
 
-            function renderEmpty(
-                target,
-                title,
-                message
-            ) {
+                    <!-- Upcoming Item -->
 
-                if (!target) {
-                    return;
-                }
+                    <article class="schedule-card">
+
+                        <div class="schedule-card-main">
+
+                            <div class="schedule-date-box">
+
+                                <span class="schedule-month">
+                                    TBD
+                                </span>
+
+                                <strong class="schedule-day">
+                                    —
+                                </strong>
+
+                                <span class="schedule-weekday">
+                                    SOON
+                                </span>
+
+                            </div>
 
 
-                target.innerHTML = `
-                    <div class="empty-state">
+                            <div class="schedule-content">
 
-                        <strong>
-                            ${escapeHTML(
-                                title
-                            )}
-                        </strong>
+                                <div class="schedule-meta">
 
-                        <span>
-                            ${escapeHTML(
-                                message
-                            )}
+                                    <span class="status-badge status-planned">
+                                        UPCOMING
+                                    </span>
+
+                                    <span class="schedule-type">
+                                        Event
+                                    </span>
+
+                                </div>
+
+
+                                <h3>
+                                    JLSPT Community Activity
+                                </h3>
+
+
+                                <p>
+                                    Community activities, special
+                                    sessions, and other JLSPT events
+                                    will be listed here.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             REGULAR ACTIVITIES
+        ========================== -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            ROUTINE
                         </span>
 
+                        <h2>
+                            Regular Activities
+                        </h2>
+
+                        <p>
+                            Ongoing activities that the JLSPT
+                            community can participate in regularly.
+                        </p>
+
                     </div>
-                `;
 
-            }
+                </div>
 
 
-            const regular =
-                schedule.filter(
-                    function (item) {
+                <div class="schedule-grid">
 
-                        return String(
-                            item.type || ""
-                        ).toLowerCase() === "regular";
 
-                    }
-                );
+                    <!-- Regular Activity -->
 
+                    <article class="schedule-card">
 
-            const nonRegular =
-                schedule.filter(
-                    function (item) {
+                        <div class="schedule-content">
 
-                        return String(
-                            item.type || ""
-                        ).toLowerCase() !== "regular";
+                            <div class="schedule-meta">
 
-                    }
-                );
+                                <span class="status-badge status-active">
+                                    ACTIVE
+                                </span>
 
+                                <span class="schedule-type">
+                                    Regular
+                                </span>
 
-            const upcoming =
-                nonRegular
-                    .filter(
-                        function (item) {
+                            </div>
 
-                            const status =
-                                getActivityStatus(
-                                    item
-                                ).toLowerCase();
 
+                            <h3>
+                                JLSPT Stationhead
+                            </h3>
 
-                            return (
-                                status === "upcoming" ||
-                                status === "active" ||
-                                (
-                                    item.date &&
-                                    getDateValue(
-                                        item
-                                    ) >= Date.now()
-                                )
-                            );
 
-                        }
-                    )
-                    .sort(
-                        function (a, b) {
+                            <p>
+                                Join the JLSPT Stationhead for
+                                organized listening and streaming
+                                sessions.
+                            </p>
 
-                            return (
-                                getDateValue(a) -
-                                getDateValue(b)
-                            );
 
-                        }
-                    );
+                            <div class="schedule-details">
 
+                                <div class="schedule-detail">
 
-            const past =
-                nonRegular
-                    .filter(
-                        function (item) {
+                                    <span class="detail-icon">
+                                        ♪
+                                    </span>
 
-                            const status =
-                                getActivityStatus(
-                                    item
-                                ).toLowerCase();
+                                    <div>
 
+                                        <small>
+                                            PLATFORM
+                                        </small>
 
-                            return (
-                                status === "completed" ||
-                                status === "past" ||
-                                (
-                                    item.date &&
-                                    getDateValue(
-                                        item
-                                    ) < Date.now()
-                                )
-                            );
+                                        <strong>
+                                            Stationhead
+                                        </strong>
 
-                        }
-                    )
-                    .sort(
-                        function (a, b) {
+                                    </div>
 
-                            return (
-                                getDateValue(b) -
-                                getDateValue(a)
-                            );
+                                </div>
 
-                        }
-                    );
 
+                                <div class="schedule-detail">
 
-            const nextActivity =
-                upcoming.length
-                    ? upcoming[0]
-                    : null;
+                                    <span class="detail-icon">
+                                        ↻
+                                    </span>
 
+                                    <div>
 
-            if (nextContainer) {
+                                        <small>
+                                            FREQUENCY
+                                        </small>
 
-                if (nextActivity) {
+                                        <strong>
+                                            Regular / Ongoing
+                                        </strong>
 
-                    nextContainer.innerHTML =
-                        createActivityCard(
-                            nextActivity,
-                            true
-                        );
+                                    </div>
 
-                } else {
+                                </div>
 
-                    renderEmpty(
-                        nextContainer,
-                        "No upcoming activity.",
-                        "New JLSPT activities will appear here."
-                    );
+                            </div>
 
-                }
+                        </div>
 
-            }
+                    </article>
 
 
-            const upcomingWithoutNext =
-                upcoming.slice(1);
+                    <!-- Regular Activity -->
 
+                    <article class="schedule-card">
 
-            if (upcomingContainer) {
+                        <div class="schedule-content">
 
-                if (
-                    upcomingWithoutNext.length
-                ) {
+                            <div class="schedule-meta">
 
-                    upcomingContainer.innerHTML =
-                        upcomingWithoutNext
-                            .map(
-                                function (item) {
-                                    return createActivityCard(
-                                        item,
-                                        false
-                                    );
-                                }
-                            )
-                            .join("");
+                                <span class="status-badge status-active">
+                                    ACTIVE
+                                </span>
 
-                } else {
+                                <span class="schedule-type">
+                                    Regular
+                                </span>
 
-                    renderEmpty(
-                        upcomingContainer,
-                        "No additional upcoming activities.",
-                        "Check back for new JLSPT schedules."
-                    );
+                            </div>
 
-                }
 
-            }
+                            <h3>
+                                Streaming Campaign Support
+                            </h3>
 
 
-            if (regularContainer) {
+                            <p>
+                                Support currently active campaigns
+                                whenever you are available and
+                                follow the campaign specific guide.
+                            </p>
 
-                if (regular.length) {
 
-                    regularContainer.innerHTML =
-                        regular
-                            .map(
-                                function (item) {
-                                    return createActivityCard(
-                                        item,
-                                        false
-                                    );
-                                }
-                            )
-                            .join("");
+                            <div class="schedule-details">
 
-                } else {
+                                <div class="schedule-detail">
 
-                    renderEmpty(
-                        regularContainer,
-                        "No regular activities yet.",
-                        "Recurring JLSPT activities will appear here."
-                    );
+                                    <span class="detail-icon">
+                                        ♥
+                                    </span>
 
-                }
+                                    <div>
 
-            }
+                                        <small>
+                                            ACTIVITY
+                                        </small>
 
+                                        <strong>
+                                            Streaming Support
+                                        </strong>
 
-            if (pastContainer) {
+                                    </div>
 
-                if (past.length) {
+                                </div>
 
-                    pastContainer.innerHTML =
-                        past
-                            .map(
-                                function (item) {
-                                    return createActivityCard(
-                                        item,
-                                        false
-                                    );
-                                }
-                            )
-                            .join("");
 
-                } else {
+                                <div class="schedule-detail">
 
-                    renderEmpty(
-                        pastContainer,
-                        "No completed activities yet.",
-                        "Past JLSPT activities will appear here."
-                    );
+                                    <span class="detail-icon">
+                                        ↻
+                                    </span>
 
-                }
+                                    <div>
 
-            }
+                                        <small>
+                                            FREQUENCY
+                                        </small>
 
+                                        <strong>
+                                            Ongoing
+                                        </strong>
 
-            if (upcomingCount) {
+                                    </div>
 
-                upcomingCount.textContent =
-                    `${upcomingWithoutNext.length} ${
-                        upcomingWithoutNext.length === 1
-                            ? "activity"
-                            : "activities"
-                    }`;
+                                </div>
 
-            }
+                            </div>
 
+                        </div>
 
-            if (regularCount) {
+                    </article>
 
-                regularCount.textContent =
-                    `${regular.length} ${
-                        regular.length === 1
-                            ? "activity"
-                            : "activities"
-                    }`;
 
-            }
+                </div>
 
+            </div>
 
-            if (pastCount) {
+        </section>
 
-                pastCount.textContent =
-                    `${past.length} ${
-                        past.length === 1
-                            ? "activity"
-                            : "activities"
-                    }`;
 
-            }
+        <!-- =========================
+             PAST ACTIVITIES
+        ========================== -->
 
-        })();
-    </script>
+        <section class="section section-soft">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            HISTORY
+                        </span>
+
+                        <h2>
+                            Past Activities
+                        </h2>
+
+                        <p>
+                            Completed JLSPT activities and previous
+                            scheduled sessions.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="schedule-grid">
+
+
+                    <article class="schedule-card schedule-completed">
+
+                        <div class="schedule-content">
+
+                            <div class="schedule-meta">
+
+                                <span class="status-badge status-completed">
+                                    COMPLETED
+                                </span>
+
+                                <span class="schedule-type">
+                                    Campaign
+                                </span>
+
+                            </div>
+
+
+                            <h3>
+                                Previous JLSPT Campaign
+                            </h3>
+
+
+                            <p>
+                                Completed campaigns and activities
+                                will remain available here as part
+                                of the JLSPT activity history.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SCHEDULE NOTE
+        ========================== -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="info-card">
+
+                    <div class="info-card-icon">
+                        ◷
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Schedule Updates
+                        </h3>
+
+                        <p>
+                            Dates and times may change depending on
+                            official announcements and streaming
+                            project schedules. Check JLSPT updates
+                            for the latest confirmed information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-inner">
+
+                <div>
+
+                    <strong>
+                        JLSPT
+                    </strong>
+
+                    <p>
+                        JL Streaming Project Team
+                    </p>
+
+                </div>
+
+
+                <p>
+                    Supporting JL and AHOF through
+                    organized streaming projects.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         SCRIPTS
+    ========================== -->
+
+    <script src="data.js"></script>
+    <script src="menu.js"></script>
 
 </body>
 </html>

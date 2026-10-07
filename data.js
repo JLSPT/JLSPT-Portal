@@ -4,9 +4,9 @@
  *
  * MASTER DATA
  *
- * This file is the temporary content/data layer for the JLSPT Portal.
+ * Temporary content/data layer for the JLSPT Portal.
  *
- * The structure is designed to be Supabase-ready later.
+ * Designed to transition cleanly to Supabase later.
  *
  * Main areas:
  * Home
@@ -20,6 +20,7 @@
  * My JLSPT
  * Participation
  * Badges
+ * Notifications
  */
 
 const JLSPT_DATA = {
@@ -33,10 +34,13 @@ const JLSPT_DATA = {
     site: {
         name: "JLSPT",
         fullName: "JL Streaming Project Team",
+
         description:
             "The official JLSPT portal for JL and AHOF streaming resources, campaigns, schedules, guides, updates, and community.",
+
         tagline:
             "Stream. Support. Stay connected.",
+
         stationhead:
             "https://app.stationhead.com/jlspteam"
     },
@@ -46,15 +50,20 @@ const JLSPT_DATA = {
      * ============================================================
      * HOME
      *
-     * Home should only contain information that is useful RIGHT NOW.
-     * Detailed information belongs to its proper section.
+     * Home is a dashboard, not another copy of the other pages.
+     *
+     * It only identifies what should currently be featured.
+     * The actual content is read from the relevant data sections.
      * ============================================================
      */
 
     home: {
+
         hero: {
             eyebrow: "JL STREAMING PROJECT TEAM",
+
             title: "Support JL. Stream together.",
+
             description:
                 "Your central hub for JL and AHOF streaming activities, campaigns, guides, schedules, and community updates."
         },
@@ -156,30 +165,40 @@ const JLSPT_DATA = {
             ],
 
             missions: [
+
                 {
                     id: "alon-watch",
+
                     title: "Watch",
+
                     description:
                         "Watch the official ALON music video from beginning to end.",
-                    type: "video",
-                    points: 1
+
+                    type: "video"
                 },
+
                 {
                     id: "alon-engage",
+
                     title: "Engage",
+
                     description:
                         "Like the official video and leave a genuine, natural comment if you want to.",
-                    type: "engagement",
-                    points: 1
+
+                    type: "engagement"
                 },
+
                 {
                     id: "alon-share",
+
                     title: "Share",
+
                     description:
                         "Share the official video with other JL supporters whenever possible.",
-                    type: "share",
-                    points: 1
+
+                    type: "share"
                 }
+
             ]
         }
 
@@ -192,8 +211,8 @@ const JLSPT_DATA = {
      *
      * Music is organized by RELEASE.
      *
-     * Pinocchio is NOT a top-level release.
-     * It belongs under THE PASSAGE as a track.
+     * Pinocchio is nested under THE PASSAGE.
+     * It is NOT a top-level release.
      * ============================================================
      */
 
@@ -283,18 +302,24 @@ const JLSPT_DATA = {
                 "AHOF release featuring JL.",
 
             tracks: [
+
                 {
                     id: "pinocchio",
+
                     title: "Pinocchio",
+
                     artist: "AHOF × JL",
+
                     description:
                         "Track from THE PASSAGE.",
+
                     links: {
                         spotify: "",
                         appleMusic: "",
                         youtube: ""
                     }
                 }
+
             ],
 
             links: {
@@ -377,12 +402,10 @@ const JLSPT_DATA = {
      * ============================================================
      * VIDEOS
      *
-     * Video content is organized into COLLECTIONS.
+     * Video content is organized into collections.
      *
-     * ALON is ONE top-level entry.
-     * Its MV, lyric video, and other official videos belong inside it.
-     *
-     * Pinocchio belongs under THE PASSAGE.
+     * ALON = one top-level collection.
+     * THE PASSAGE contains Pinocchio.
      * ============================================================
      */
 
@@ -408,21 +431,32 @@ const JLSPT_DATA = {
                 "mission-stream-alon",
 
             items: [
+
                 {
                     id: "alon-mv",
+
                     title: "Official Music Video",
+
                     type: "official-mv",
+
                     platform: "YouTube",
+
                     url:
                         "https://www.youtube.com/watch?v=Dt8noBM9VTg"
                 },
+
                 {
                     id: "alon-lyric",
+
                     title: "Lyric Video",
+
                     type: "lyric-video",
+
                     platform: "YouTube",
+
                     url: ""
                 }
+
             ]
         },
 
@@ -446,13 +480,19 @@ const JLSPT_DATA = {
             campaignId: null,
 
             items: [
+
                 {
                     id: "who-we-are-mv",
+
                     title: "Official Music Video",
+
                     type: "music-video",
+
                     platform: "YouTube",
+
                     url: ""
                 }
+
             ]
         },
 
@@ -476,20 +516,31 @@ const JLSPT_DATA = {
             campaignId: null,
 
             items: [
+
                 {
                     id: "the-passage-mv",
+
                     title: "Official Music Video",
+
                     type: "music-video",
+
                     platform: "YouTube",
+
                     url: ""
                 },
+
                 {
                     id: "pinocchio-video",
+
                     title: "Pinocchio",
+
                     type: "track-video",
+
                     platform: "YouTube",
+
                     url: ""
                 }
+
             ]
         },
 
@@ -513,13 +564,19 @@ const JLSPT_DATA = {
             campaignId: null,
 
             items: [
+
                 {
                     id: "run-to-you-mv",
+
                     title: "Official Music Video",
+
                     type: "music-video",
+
                     platform: "YouTube",
+
                     url: ""
                 }
+
             ]
         },
 
@@ -543,13 +600,19 @@ const JLSPT_DATA = {
             campaignId: null,
 
             items: [
+
                 {
                     id: "focus-on-you-ost",
+
                     title: "Official OST Video",
+
                     type: "ost",
+
                     platform: "YouTube",
+
                     url: ""
                 }
+
             ]
         },
 
@@ -573,30 +636,49 @@ const JLSPT_DATA = {
             campaignId: null,
 
             items: [
+
                 {
                     id: "hello-muniverse",
+
                     title: "Hello?",
+
                     subtitle: "Muniverse",
+
                     type: "variety",
+
                     platform: "Muniverse",
+
                     url: ""
                 },
+
                 {
                     id: "jl-fancams",
+
                     title: "JL Fancams",
+
                     subtitle: "Performance Collection",
+
                     type: "fancam",
+
                     platform: "YouTube",
+
                     url: ""
                 },
+
                 {
                     id: "more-jl-content",
+
                     title: "More JL Content",
+
                     subtitle: "Appearances & Variety",
+
                     type: "collection",
+
                     platform: "Various",
+
                     url: ""
                 }
+
             ]
         }
 
@@ -607,7 +689,13 @@ const JLSPT_DATA = {
      * ============================================================
      * SCHEDULE
      *
-     * This is a REAL activity schedule.
+     * A real activity/event system.
+     *
+     * Types:
+     * session
+     * regular
+     * event
+     * campaign
      *
      * Status:
      * upcoming
@@ -615,8 +703,6 @@ const JLSPT_DATA = {
      * regular
      * completed
      * cancelled
-     *
-     * Dates/times can later be populated through Supabase.
      * ============================================================
      */
 
@@ -626,6 +712,8 @@ const JLSPT_DATA = {
             id: "regular-music",
 
             title: "Music Streaming",
+
+            type: "regular",
 
             category: "Regular Streaming",
 
@@ -655,6 +743,8 @@ const JLSPT_DATA = {
 
             title: "YouTube Streaming",
 
+            type: "regular",
+
             category: "Regular Streaming",
 
             status: "regular",
@@ -682,6 +772,8 @@ const JLSPT_DATA = {
             id: "regular-stationhead",
 
             title: "JLSPT Stationhead",
+
+            type: "regular",
 
             category: "Regular Streaming",
 
@@ -713,8 +805,8 @@ const JLSPT_DATA = {
      * ============================================================
      * GUIDES
      *
-     * Guides own instructions.
-     * Other pages should not duplicate guide content.
+     * "Start Here" is a FEATURED SECTION inside Guides.
+     * It is NOT a navigation tab.
      *
      * Categories:
      * getting-started
@@ -725,181 +817,183 @@ const JLSPT_DATA = {
      * ============================================================
      */
 
-    guides: [
+    guides: {
 
-        {
-            id: "getting-started",
+        startHere: [
 
-            title: "Getting Started",
+            {
+                id: "getting-started",
 
-            category: "Getting Started",
+                title: "Getting Started",
 
-            type: "getting-started",
+                type: "getting-started",
 
-            platform: "General",
+                platform: "General",
 
-            description:
-                "A simple introduction for supporters who are new to JLSPT streaming activities.",
+                description:
+                    "A simple introduction for supporters who are new to JLSPT streaming activities.",
 
-            content: [],
+                content: [],
 
-            campaignId: null
-        },
+                campaignId: null
+            },
 
 
-        {
-            id: "spotify-guide",
+            {
+                id: "streaming-basics",
 
-            title: "Spotify Streaming Guide",
+                title: "Streaming Basics",
 
-            category: "Platform Guides",
+                type: "getting-started",
 
-            type: "platform",
+                platform: "General",
 
-            platform: "Spotify",
+                description:
+                    "A practical introduction to responsible and genuine streaming participation.",
 
-            description:
-                "Learn the recommended basics for supporting JL through Spotify.",
+                content: [],
 
-            content: [],
+                campaignId: null
+            }
 
-            campaignId: null
-        },
+        ],
 
 
-        {
-            id: "youtube-guide",
+        platform: [
 
-            title: "YouTube Streaming Guide",
+            {
+                id: "spotify-guide",
 
-            category: "Platform Guides",
+                title: "Spotify Streaming Guide",
 
-            type: "platform",
+                type: "platform",
 
-            platform: "YouTube",
+                platform: "Spotify",
 
-            description:
-                "Learn how to support official YouTube content naturally and effectively.",
+                description:
+                    "Learn the recommended basics for supporting JL through Spotify.",
 
-            content: [],
+                content: [],
 
-            campaignId: null
-        },
+                campaignId: null
+            },
 
 
-        {
-            id: "stationhead-guide",
+            {
+                id: "youtube-guide",
 
-            title: "Stationhead Guide",
+                title: "YouTube Streaming Guide",
 
-            category: "Platform Guides",
+                type: "platform",
 
-            type: "platform",
+                platform: "YouTube",
 
-            platform: "Stationhead",
+                description:
+                    "Learn how to support official YouTube content naturally and effectively.",
 
-            description:
-                "Learn how to join JLSPT Stationhead listening activities.",
+                content: [],
 
-            content: [],
+                campaignId: null
+            },
 
-            campaignId: null,
 
-            url:
-                "https://app.stationhead.com/jlspteam"
-        },
+            {
+                id: "stationhead-guide",
 
+                title: "Stationhead Guide",
 
-        {
-            id: "alon-campaign-guide",
+                type: "platform",
 
-            title: "ALON Streaming Mission",
+                platform: "Stationhead",
 
-            category: "Campaign Guides",
+                description:
+                    "Learn how to join JLSPT Stationhead listening activities.",
 
-            type: "campaign",
+                content: [],
 
-            platform: "YouTube",
+                campaignId: null,
 
-            description:
-                "Instructions for participating in the MISSION: STREAM ALON campaign.",
+                url:
+                    "https://app.stationhead.com/jlspteam"
+            }
 
-            content: [],
+        ],
 
-            campaignId:
-                "mission-stream-alon"
-        },
 
+        campaigns: [
 
-        {
-            id: "streaming-basics",
+            {
+                id: "alon-campaign-guide",
 
-            title: "Streaming Basics",
+                title: "ALON Streaming Mission",
 
-            category: "Getting Started",
+                type: "campaign",
 
-            type: "getting-started",
+                platform: "YouTube",
 
-            platform: "General",
+                description:
+                    "Instructions for participating in the MISSION: STREAM ALON campaign.",
 
-            description:
-                "A practical introduction to responsible and genuine streaming participation.",
+                content: [],
 
-            content: [],
+                campaignId:
+                    "mission-stream-alon"
+            }
 
-            campaignId: null
-        },
+        ],
 
 
-        {
-            id: "troubleshooting",
+        troubleshooting: [
 
-            title: "Quick Troubleshooting",
+            {
+                id: "troubleshooting",
 
-            category: "Troubleshooting",
+                title: "Quick Troubleshooting",
 
-            type: "troubleshooting",
+                type: "troubleshooting",
 
-            platform: "General",
+                platform: "General",
 
-            description:
-                "Common streaming issues and simple troubleshooting steps.",
+                description:
+                    "Common streaming issues and simple troubleshooting steps.",
 
-            content: [],
+                content: [],
 
-            campaignId: null
-        },
+                campaignId: null
+            }
 
+        ],
 
-        {
-            id: "faq",
 
-            title: "JLSPT FAQ",
+        faq: [
 
-            category: "FAQ",
+            {
+                id: "faq",
 
-            type: "faq",
+                title: "JLSPT FAQ",
 
-            platform: "General",
+                type: "faq",
 
-            description:
-                "Frequently asked questions about JLSPT activities and participation.",
+                platform: "General",
 
-            content: [],
+                description:
+                    "Frequently asked questions about JLSPT activities and participation.",
 
-            campaignId: null
-        }
+                content: [],
 
-    ],
+                campaignId: null
+            }
+
+        ]
+
+    },
 
 
     /*
      * ============================================================
      * JLSPT CORNER
      *
-     * OFFICIAL POSTS ONLY.
-     *
-     * Only authorized JLSPT accounts can publish these posts.
+     * OFFICIAL JLSPT POSTS ONLY.
      *
      * Categories:
      * announcement
@@ -949,7 +1043,13 @@ const JLSPT_DATA = {
 
             contentId: "hello-muniverse",
 
-            link: ""
+            link: "",
+
+            engagement: {
+                reactions: 0,
+                comments: 0,
+                views: 0
+            }
         },
 
 
@@ -988,7 +1088,13 @@ const JLSPT_DATA = {
 
             contentId: "mission-stream-alon",
 
-            link: ""
+            link: "",
+
+            engagement: {
+                reactions: 0,
+                comments: 0,
+                views: 0
+            }
         },
 
 
@@ -1026,7 +1132,13 @@ const JLSPT_DATA = {
 
             contentId: "streaming-basics",
 
-            link: ""
+            link: "",
+
+            engagement: {
+                reactions: 0,
+                comments: 0,
+                views: 0
+            }
         }
 
     ],
@@ -1036,10 +1148,10 @@ const JLSPT_DATA = {
      * ============================================================
      * COMMUNITY
      *
-     * Separate data from JLSPT Corner even though both appear
-     * on the same public tab.
+     * COMMUNITY IS MEMBER-GENERATED.
      *
-     * Community content is MEMBER-GENERATED.
+     * It appears below JLSPT Corner on the SAME public tab/page,
+     * but remains separate in the data model.
      *
      * This will eventually be powered by Supabase.
      * ============================================================
@@ -1051,42 +1163,70 @@ const JLSPT_DATA = {
 
             {
                 id: "general",
+
                 title: "General Discussion",
+
                 description:
                     "Talk about JL, AHOF, and anything related to the community."
             },
 
+
             {
                 id: "streaming",
+
                 title: "Streaming Discussion",
+
                 description:
                     "Share streaming tips, experiences, and questions."
             },
 
+
             {
                 id: "campaigns",
+
                 title: "Campaign Discussion",
+
                 description:
                     "Discuss current and upcoming JLSPT streaming campaigns."
             },
 
+
             {
                 id: "help",
+
                 title: "Questions & Help",
+
                 description:
                     "Ask questions and help fellow supporters."
             },
 
+
             {
                 id: "achievements",
+
                 title: "Achievements & Milestones",
+
                 description:
                     "Celebrate streaming milestones and community achievements."
             }
 
         ],
 
-        posts: []
+        posts: [],
+
+        settings: {
+
+            allowMemberPosts: true,
+
+            allowReplies: true,
+
+            allowReactions: true,
+
+            requireLogin: true,
+
+            moderationEnabled: true
+        }
+
     },
 
 
@@ -1094,9 +1234,14 @@ const JLSPT_DATA = {
      * ============================================================
      * PARTICIPATION
      *
-     * This is the future member participation model.
+     * Participation records support recognition and badges.
      *
-     * Actual records will eventually live in Supabase.
+     * IMPORTANT:
+     * No points.
+     * No leaderboard.
+     * No competitive ranking.
+     *
+     * This is simply a record of community participation.
      * ============================================================
      */
 
@@ -1106,40 +1251,58 @@ const JLSPT_DATA = {
 
             {
                 id: "campaign-join",
+
                 title: "Campaign Participation",
+
                 description:
                     "Participation in an official JLSPT campaign."
             },
 
+
             {
                 id: "mission-complete",
+
                 title: "Mission Completed",
+
                 description:
                     "Completion of an official campaign mission."
             },
 
+
             {
                 id: "streaming-session",
+
                 title: "Streaming Session",
+
                 description:
                     "Participation in an organized JLSPT streaming session."
             },
 
+
             {
                 id: "milestone-support",
+
                 title: "Milestone Support",
+
                 description:
                     "Participation toward an official campaign milestone."
             },
 
+
             {
                 id: "community-post",
+
                 title: "Community Contribution",
+
                 description:
                     "Meaningful participation in the JLSPT community."
             }
 
-        ]
+        ],
+
+
+        history: []
+
     },
 
 
@@ -1147,10 +1310,9 @@ const JLSPT_DATA = {
      * ============================================================
      * BADGES
      *
-     * Badges are achievement markers, not a competition.
+     * Achievement markers.
      *
-     * Future badge progress will be calculated from participation
-     * records stored in Supabase.
+     * These are NOT competitive rankings.
      * ============================================================
      */
 
@@ -1169,6 +1331,10 @@ const JLSPT_DATA = {
             requirement:
                 "Complete your first verified streaming activity.",
 
+            requirementType: "activity-count",
+
+            requirementValue: 1,
+
             rarity: "common"
         },
 
@@ -1185,6 +1351,10 @@ const JLSPT_DATA = {
 
             requirement:
                 "Participate in multiple streaming activities.",
+
+            requirementType: "activity-count",
+
+            requirementValue: 5,
 
             rarity: "common"
         },
@@ -1203,6 +1373,10 @@ const JLSPT_DATA = {
             requirement:
                 "Complete a campaign video mission.",
 
+            requirementType: "mission-complete",
+
+            requirementValue: 1,
+
             rarity: "special"
         },
 
@@ -1219,6 +1393,10 @@ const JLSPT_DATA = {
 
             requirement:
                 "Participate in multiple official campaigns.",
+
+            requirementType: "campaign-count",
+
+            requirementValue: 3,
 
             rarity: "special"
         },
@@ -1237,6 +1415,10 @@ const JLSPT_DATA = {
             requirement:
                 "Reach the required long-term campaign participation milestone.",
 
+            requirementType: "campaign-count",
+
+            requirementValue: 10,
+
             rarity: "rare"
         },
 
@@ -1253,6 +1435,10 @@ const JLSPT_DATA = {
 
             requirement:
                 "Participate in the ALON 1M campaign milestone.",
+
+            requirementType: "campaign-milestone",
+
+            requirementValue: "mission-stream-alon:alon-1m",
 
             rarity: "campaign"
         },
@@ -1271,6 +1457,10 @@ const JLSPT_DATA = {
             requirement:
                 "Receive recognition for meaningful community participation.",
 
+            requirementType: "community-recognition",
+
+            requirementValue: 1,
+
             rarity: "special"
         }
 
@@ -1281,8 +1471,9 @@ const JLSPT_DATA = {
      * ============================================================
      * MEMBER PROFILE
      *
-     * Placeholder structure for Supabase authentication.
-     * No private information should be publicly exposed.
+     * Placeholder for Supabase authentication.
+     *
+     * Private account information must NOT be publicly exposed.
      * ============================================================
      */
 
@@ -1340,7 +1531,9 @@ const JLSPT_DATA = {
      * ============================================================
      * SEARCH
      *
-     * Defines which sections are searchable globally.
+     * Global search sections.
+     *
+     * Search is a function, NOT a navigation tab.
      * ============================================================
      */
 

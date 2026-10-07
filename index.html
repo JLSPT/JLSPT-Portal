@@ -7,11 +7,6 @@
 
     <title>JLSPT | JL Streaming Project Team</title>
 
-    <meta
-        name="description"
-        content="JLSPT official portal for JL streaming resources, goals, schedules, guides, milestones, missions, and updates."
-    >
-
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -21,11 +16,11 @@
          NAVIGATION
     ========================== -->
 
-    <header class="navbar">
+    <nav class="navbar">
 
         <div class="nav-inner">
 
-            <a href="#" class="brand">
+            <a href="index.html" class="brand">
 
                 <div class="brand-mark">
                     JL
@@ -38,41 +33,42 @@
 
             </a>
 
-            <nav class="nav-links">
+            <div class="nav-links">
 
-                <a href="#music">Music</a>
-                <a href="#video">Video</a>
-                <a href="#tracker">Tracker</a>
-                <a href="#schedule">Schedule</a>
-                <a href="#guides">Guides</a>
+                <a href="index.html">Home</a>
+                <a href="music.html">Music</a>
+                <a href="video.html">Video</a>
+                <a href="tracker.html">Tracker</a>
+                <a href="schedule.html">Schedule</a>
+                <a href="guides.html">Guides</a>
+                <a href="milestones.html">Milestones</a>
+                <a href="updates.html">Updates</a>
 
-            </nav>
+            </div>
 
         </div>
 
-    </header>
+    </nav>
 
 
     <!-- =========================
          HERO
     ========================== -->
 
-    <section class="hero">
+    <header class="hero">
 
         <div class="eyebrow">
-            JL Streaming Project Team
+            JLSPT
         </div>
 
         <h1>
-            Everything JL
-            <br>
-            <span>in one place.</span>
+            Stream with purpose.<br>
+            <span>Support JL.</span>
         </h1>
 
         <p>
-            Your central hub for JL streaming resources,
-            goals, schedules, guides, missions, milestones,
-            and updates.
+            Your central space for JL streaming resources,
+            goals, guides, schedules, missions, and updates.
         </p>
 
         <div class="search-box">
@@ -83,12 +79,13 @@
 
             <input
                 type="text"
-                placeholder="Search JL content or platform..."
+                placeholder="Search JLSPT..."
+                aria-label="Search JLSPT"
             >
 
         </div>
 
-    </section>
+    </header>
 
 
     <!-- =========================
@@ -98,47 +95,38 @@
     <main class="container">
 
 
-        <!-- =========================
-             CURRENT FOCUS
-        ========================== -->
+        <!-- CURRENT FOCUS -->
 
-        <section
-            class="section"
-            id="tracker"
-        >
+        <section class="section">
 
             <div class="section-heading">
 
-                <div>
+                <h2>
+                    Current Focus
+                </h2>
 
-                    <h2>
-                        Current Focus
-                    </h2>
-
-                    <p>
-                        What we're working toward right now
-                    </p>
-
-                </div>
+                <p>
+                    Our current streaming priority.
+                </p>
 
             </div>
 
 
             <div class="focus-card">
 
-                <div class="focus-content">
+                <div>
 
                     <div class="focus-label">
-                        Current Mission
+                        Current Campaign
                     </div>
 
                     <div class="focus-title">
                         ALON
                     </div>
 
-                    <div class="focus-subtitle">
+                    <p class="focus-subtitle">
                         JL Official Music Video
-                    </div>
+                    </p>
 
 
                     <div class="progress-info">
@@ -170,11 +158,8 @@
 
                 <div class="focus-action">
 
-                    <a
-                        href="#guides"
-                        class="primary-btn"
-                    >
-                        View Guide
+                    <a href="tracker.html" class="primary-btn">
+                        View Tracker
                     </a>
 
                 </div>
@@ -184,26 +169,19 @@
         </section>
 
 
-
-        <!-- =========================
-             QUICK ACCESS
-        ========================== -->
+        <!-- QUICK ACCESS -->
 
         <section class="section">
 
             <div class="section-heading">
 
-                <div>
+                <h2>
+                    Quick Access
+                </h2>
 
-                    <h2>
-                        Quick Access
-                    </h2>
-
-                    <p>
-                        Everything you need, just a click away
-                    </p>
-
-                </div>
+                <p>
+                    Everything you need, in one place.
+                </p>
 
             </div>
 
@@ -211,10 +189,7 @@
             <div class="quick-grid">
 
 
-                <a
-                    href="#music"
-                    class="quick-card"
-                >
+                <a href="music.html" class="quick-card">
 
                     <div class="quick-icon">
                         🎵
@@ -225,19 +200,16 @@
                     </h3>
 
                     <p>
-                        JL solo and AHOF music resources
+                        JL and AHOF music streaming resources.
                     </p>
 
                 </a>
 
 
-                <a
-                    href="#video"
-                    class="quick-card"
-                >
+                <a href="video.html" class="quick-card">
 
                     <div class="quick-icon">
-                        🎬
+                        ▶
                     </div>
 
                     <h3>
@@ -245,16 +217,30 @@
                     </h3>
 
                     <p>
-                        MVs, fancams and video content
+                        Music videos, fancams, and video content.
                     </p>
 
                 </a>
 
 
-                <a
-                    href="#schedule"
-                    class="quick-card"
-                >
+                <a href="tracker.html" class="quick-card">
+
+                    <div class="quick-icon">
+                        📊
+                    </div>
+
+                    <h3>
+                        Tracker
+                    </h3>
+
+                    <p>
+                        Follow our current goals and progress.
+                    </p>
+
+                </a>
+
+
+                <a href="schedule.html" class="quick-card">
 
                     <div class="quick-icon">
                         📅
@@ -265,59 +251,30 @@
                     </h3>
 
                     <p>
-                        Streaming activities and events
+                        Streaming activities and upcoming events.
                     </p>
 
                 </a>
 
-
-                <a
-                    href="#guides"
-                    class="quick-card"
-                >
-
-                    <div class="quick-icon">
-                        📚
-                    </div>
-
-                    <h3>
-                        Guides
-                    </h3>
-
-                    <p>
-                        Tutorials, FAQs and streaming basics
-                    </p>
-
-                </a>
 
             </div>
 
         </section>
 
 
+        <!-- MUSIC -->
 
-        <!-- =========================
-             MUSIC
-        ========================== -->
-
-        <section
-            class="section"
-            id="music"
-        >
+        <section class="section">
 
             <div class="section-heading">
 
-                <div>
+                <h2>
+                    Music
+                </h2>
 
-                    <h2>
-                        Music
-                    </h2>
-
-                    <p>
-                        JL-focused music streaming resources
-                    </p>
-
-                </div>
+                <p>
+                    Streaming resources for JL and AHOF.
+                </p>
 
             </div>
 
@@ -328,85 +285,26 @@
                 <div class="content-card">
 
                     <h3>
-                        ALON
+                        JL Solo
                     </h3>
 
                     <p>
-                        JL Solo
+                        Focus on JL's solo music.
                     </p>
 
                     <div class="link-list">
 
-                        <a href="#">
-                            Spotify
+                        <a href="music.html">
+                            ALON
                         </a>
 
-                        <a href="#">
-                            Stationhead
-                        </a>
-
-                        <a href="#">
-                            YouTube MV
-                        </a>
-
-                        <a href="#">
-                            YouTube Lyric Video
-                        </a>
-
-                        <a href="#">
-                            YouTube Audio
-                        </a>
-
-                        <a href="#">
-                            Apple Music
+                        <a href="music.html">
+                            Focus on You
                         </a>
 
                     </div>
 
                 </div>
-
-
-
-                <div class="content-card">
-
-                    <h3>
-                        Focus on You
-                    </h3>
-
-                    <p>
-                        JL Solo
-                    </p>
-
-                    <div class="link-list">
-
-                        <a href="#">
-                            Spotify
-                        </a>
-
-                        <a href="#">
-                            Stationhead
-                        </a>
-
-                        <a href="#">
-                            YouTube MV
-                        </a>
-
-                        <a href="#">
-                            YouTube Lyric Video
-                        </a>
-
-                        <a href="#">
-                            YouTube Audio
-                        </a>
-
-                        <a href="#">
-                            Apple Music
-                        </a>
-
-                    </div>
-
-                </div>
-
 
 
                 <div class="content-card">
@@ -416,68 +314,97 @@
                     </h3>
 
                     <p>
-                        Group music and covers
+                        Group music and JL's AHOF activities.
                     </p>
 
                     <div class="link-list">
 
-                        <a href="#">
+                        <a href="music.html">
                             AHOF Music
                         </a>
 
-                        <a href="#">
+                        <a href="music.html">
                             Group Covers
-                        </a>
-
-                        <a href="#">
-                            Spotify
-                        </a>
-
-                        <a href="#">
-                            Stationhead
-                        </a>
-
-                        <a href="#">
-                            YouTube
                         </a>
 
                     </div>
 
                 </div>
 
+
+                <div class="content-card">
+
+                    <h3>
+                        Streaming Resources
+                    </h3>
+
+                    <p>
+                        Find the guides and resources you need.
+                    </p>
+
+                    <div class="link-list">
+
+                        <a href="guides.html">
+                            Streaming Guides
+                        </a>
+
+                        <a href="music.html">
+                            View Music Hub
+                        </a>
+
+                    </div>
+
+                </div>
+
+
             </div>
 
         </section>
 
 
+        <!-- VIDEO -->
 
-        <!-- =========================
-             VIDEO
-        ========================== -->
-
-        <section
-            class="section"
-            id="video"
-        >
+        <section class="section">
 
             <div class="section-heading">
 
-                <div>
+                <h2>
+                    Video
+                </h2>
 
-                    <h2>
-                        Video
-                    </h2>
-
-                    <p>
-                        JL video content and streaming resources
-                    </p>
-
-                </div>
+                <p>
+                    Video content worth streaming and supporting.
+                </p>
 
             </div>
 
 
             <div class="content-grid">
+
+
+                <div class="content-card">
+
+                    <h3>
+                        Official MVs
+                    </h3>
+
+                    <p>
+                        JL's official music videos.
+                    </p>
+
+                    <div class="link-list">
+
+                        <a href="video.html">
+                            ALON
+                        </a>
+
+                        <a href="video.html">
+                            Focus on You
+                        </a>
+
+                    </div>
+
+                </div>
 
 
                 <div class="content-card">
@@ -487,147 +414,147 @@
                     </h3>
 
                     <p>
-                        Performance and event fancams featuring JL.
+                        Performance and event videos featuring JL.
                     </p>
 
                     <div class="link-list">
 
-                        <a href="#">
-                            YouTube Fancams
+                        <a href="video.html">
+                            View Fancams
                         </a>
 
                     </div>
 
                 </div>
-
 
 
                 <div class="content-card">
 
                     <h3>
-                        Hello on Muniverse
+                        Video Mission
                     </h3>
 
                     <p>
-                        JL's Hello on Muniverse content.
+                        Follow our recommended viewing routine.
                     </p>
 
                     <div class="link-list">
 
-                        <a href="#">
-                            Watch on YouTube
+                        <a href="video.html">
+                            View Mission
                         </a>
 
                     </div>
 
                 </div>
 
-
-
-                <div class="content-card">
-
-                    <h3>
-                        AHOF × JL
-                    </h3>
-
-                    <p>
-                        Group content featuring JL.
-                    </p>
-
-                    <div class="link-list">
-
-                        <a href="#">
-                            AHOF Videos
-                        </a>
-
-                        <a href="#">
-                            Group Covers
-                        </a>
-
-                    </div>
-
-                </div>
 
             </div>
 
         </section>
 
 
+        <!-- SCHEDULE -->
 
-        <!-- =========================
-             SCHEDULE
-        ========================== -->
-
-        <section
-            class="section"
-            id="schedule"
-        >
+        <section class="section">
 
             <div class="section-heading">
 
-                <div>
-
-                    <h2>
-                        Schedule
-                    </h2>
-
-                    <p>
-                        Upcoming streaming activities
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="content-card">
-
-                <h3>
-                    Upcoming Streaming Events
-                </h3>
+                <h2>
+                    Schedule
+                </h2>
 
                 <p>
-                    Streaming schedules, special events,
-                    collaborations, and important activities
-                    will appear here.
+                    Keep up with upcoming streaming activities.
                 </p>
 
-                <div class="link-list">
+            </div>
 
-                    <a href="#">
-                        📅 View Full Schedule
-                    </a>
+
+            <div class="content-grid">
+
+
+                <div class="content-card">
+
+                    <h3>
+                        Current Activities
+                    </h3>
+
+                    <p>
+                        Check the activities currently being prioritized.
+                    </p>
+
+                    <div class="link-list">
+
+                        <a href="schedule.html">
+                            View Schedule
+                        </a>
+
+                    </div>
 
                 </div>
+
+
+                <div class="content-card">
+
+                    <h3>
+                        Regular Activities
+                    </h3>
+
+                    <p>
+                        Recurring streaming and support activities.
+                    </p>
+
+                    <div class="link-list">
+
+                        <a href="schedule.html">
+                            View Activities
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="content-card">
+
+                    <h3>
+                        Collaborations
+                    </h3>
+
+                    <p>
+                        Special streaming projects and collaborations.
+                    </p>
+
+                    <div class="link-list">
+
+                        <a href="schedule.html">
+                            View Collaborations
+                        </a>
+
+                    </div>
+
+                </div>
+
 
             </div>
 
         </section>
 
 
+        <!-- STREAMING ACADEMY -->
 
-        <!-- =========================
-             STREAMING ACADEMY
-        ========================== -->
-
-        <section
-            class="section"
-            id="guides"
-        >
+        <section class="section">
 
             <div class="section-heading">
 
-                <div>
+                <h2>
+                    Streaming Academy
+                </h2>
 
-                    <h2>
-                        Streaming Academy
-                    </h2>
-
-                    <p>
-                        Learn how to properly support JL
-                    </p>
-
-                </div>
+                <p>
+                    Learn the basics and improve your streaming routine.
+                </p>
 
             </div>
 
@@ -638,150 +565,92 @@
                 <div class="content-card">
 
                     <h3>
-                        Spotify Guide
+                        Platform Guides
                     </h3>
 
                     <p>
-                        Learn the basics of proper Spotify
-                        streaming and playlisting.
+                        Step by step guides for supported platforms.
                     </p>
 
                     <div class="link-list">
 
-                        <a href="#">
-                            Open Guide
+                        <a href="guides.html">
+                            Spotify Guide
+                        </a>
+
+                        <a href="guides.html">
+                            YouTube Guide
+                        </a>
+
+                        <a href="guides.html">
+                            Stationhead Guide
                         </a>
 
                     </div>
 
                 </div>
-
 
 
                 <div class="content-card">
 
                     <h3>
-                        YouTube Guide
+                        Streaming Basics
                     </h3>
 
                     <p>
-                        Learn how to properly support JL's
-                        music videos and other content.
+                        Understand the basics before you start.
                     </p>
 
                     <div class="link-list">
 
-                        <a href="#">
-                            Open Guide
+                        <a href="guides.html">
+                            Learn the Basics
                         </a>
 
                     </div>
 
                 </div>
-
 
 
                 <div class="content-card">
 
                     <h3>
-                        Stationhead Guide
+                        Troubleshooting
                     </h3>
 
                     <p>
-                        Learn how to join JLSPT streaming
-                        sessions and listening events.
+                        Common problems and possible solutions.
                     </p>
 
                     <div class="link-list">
 
-                        <a href="#">
-                            Open Guide
+                        <a href="guides.html">
+                            View Troubleshooting
                         </a>
 
                     </div>
 
                 </div>
+
 
             </div>
 
         </section>
 
 
-
-        <!-- =========================
-             MILESTONES
-        ========================== -->
+        <!-- MILESTONES -->
 
         <section class="section">
 
             <div class="section-heading">
 
-                <div>
+                <h2>
+                    Milestones
+                </h2>
 
-                    <h2>
-                        Milestones
-                    </h2>
-
-                    <p>
-                        Every milestone is worth celebrating
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="content-card">
-
-                <h3>
-                    ALON
-                </h3>
-
-                <div class="link-list">
-
-                    <a href="#">
-                        ✓ 100K Views
-                    </a>
-
-                    <a href="#">
-                        ✓ 500K Views
-                    </a>
-
-                    <a href="#">
-                        ✓ 750K Views
-                    </a>
-
-                    <a href="#">
-                        🎯 1M Views
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             LATEST UPDATES
-        ========================== -->
-
-        <section class="section">
-
-            <div class="section-heading">
-
-                <div>
-
-                    <h2>
-                        Latest Updates
-                    </h2>
-
-                    <p>
-                        News and announcements from JLSPT
-                    </p>
-
-                </div>
+                <p>
+                    Every stream is part of the journey.
+                </p>
 
             </div>
 
@@ -792,18 +661,88 @@
                 <div class="content-card">
 
                     <h3>
-                        Streaming Updates
+                        100K
                     </h3>
 
                     <p>
-                        Check this section for the latest
-                        streaming goals, campaigns, and
-                        important reminders.
+                        First major milestone.
+                    </p>
+
+                </div>
+
+
+                <div class="content-card">
+
+                    <h3>
+                        500K
+                    </h3>
+
+                    <p>
+                        Halfway to one million.
+                    </p>
+
+                </div>
+
+
+                <div class="content-card">
+
+                    <h3>
+                        1M
+                    </h3>
+
+                    <p>
+                        Our next major goal.
                     </p>
 
                     <div class="link-list">
 
-                        <a href="#">
+                        <a href="milestones.html">
+                            View Milestones
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- LATEST UPDATES -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <h2>
+                    Latest Updates
+                </h2>
+
+                <p>
+                    Stay updated with JLSPT activities.
+                </p>
+
+            </div>
+
+
+            <div class="content-grid">
+
+
+                <div class="content-card">
+
+                    <h3>
+                        Campaign Updates
+                    </h3>
+
+                    <p>
+                        Important information about current streaming campaigns.
+                    </p>
+
+                    <div class="link-list">
+
+                        <a href="updates.html">
                             View Updates
                         </a>
 
@@ -812,22 +751,20 @@
                 </div>
 
 
-
                 <div class="content-card">
 
                     <h3>
-                        New Missions
+                        Project Updates
                     </h3>
 
                     <p>
-                        New streaming missions and fan
-                        activities will be posted here.
+                        New projects, activities, and announcements.
                     </p>
 
                     <div class="link-list">
 
-                        <a href="#">
-                            View Missions
+                        <a href="updates.html">
+                            Project Updates
                         </a>
 
                     </div>
@@ -835,82 +772,114 @@
                 </div>
 
 
-
                 <div class="content-card">
 
                     <h3>
-                        JLSPT Announcements
+                        Important Reminders
                     </h3>
 
                     <p>
-                        Important notices, collaborations,
-                        and project announcements.
+                        Don't miss important streaming reminders.
                     </p>
 
                     <div class="link-list">
 
-                        <a href="#">
-                            View Announcements
+                        <a href="updates.html">
+                            View Reminders
                         </a>
 
                     </div>
 
                 </div>
+
 
             </div>
 
         </section>
 
 
-
-        <!-- =========================
-             OFFICIAL LINKS
-        ========================== -->
+        <!-- OFFICIAL LINKS -->
 
         <section class="section">
 
             <div class="section-heading">
 
-                <div>
+                <h2>
+                    Official Links
+                </h2>
 
-                    <h2>
-                        Official Links
-                    </h2>
-
-                    <p>
-                        Find JLSPT and JL-related platforms
-                    </p>
-
-                </div>
+                <p>
+                    Follow JLSPT and join our streaming activities.
+                </p>
 
             </div>
 
 
-            <div class="content-card">
+            <div class="content-grid">
 
-                <div class="link-list">
 
-                    <a href="#">
-                        JLSPT Stationhead
-                    </a>
+                <div class="content-card">
 
-                    <a href="#">
-                        JL Official YouTube
-                    </a>
+                    <h3>
+                        Stationhead
+                    </h3>
 
-                    <a href="#">
-                        AHOF Official YouTube
-                    </a>
+                    <p>
+                        Join the JLSPT Stationhead for streaming activities.
+                    </p>
 
-                    <a href="#">
-                        JLSPT Updates
-                    </a>
+                    <div class="link-list">
 
-                    <a href="#">
-                        Contact JLSPT
-                    </a>
+                        <a href="https://app.stationhead.com/jlspteam" target="_blank">
+                            Open Stationhead
+                        </a>
+
+                    </div>
 
                 </div>
+
+
+                <div class="content-card">
+
+                    <h3>
+                        JLSPT
+                    </h3>
+
+                    <p>
+                        Official JL Streaming Project Team resources.
+                    </p>
+
+                    <div class="link-list">
+
+                        <a href="updates.html">
+                            Latest Updates
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="content-card">
+
+                    <h3>
+                        Get Started
+                    </h3>
+
+                    <p>
+                        New to streaming? Start with our beginner guides.
+                    </p>
+
+                    <div class="link-list">
+
+                        <a href="guides.html">
+                            Start Here
+                        </a>
+
+                    </div>
+
+                </div>
+
 
             </div>
 
@@ -918,7 +887,6 @@
 
 
     </main>
-
 
 
     <!-- =========================
@@ -931,14 +899,13 @@
             JLSPT
         </strong>
 
-        <br>
+        <p>
+            JL Streaming Project Team
+        </p>
 
-        JL Streaming Project Team
-
-        <br>
-        <br>
-
-        Made with love for JL and the Starflares. ❤️
+        <p>
+            Supporting JL, one stream at a time.
+        </p>
 
     </footer>
 

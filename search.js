@@ -200,19 +200,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
-
-Commit
-
-Use:
-
-"Add JLSPT search functionality"
-
-Then tap Commit changes.
-
-Don't connect it to the pages yet.
-
-Once you've committed "search.js", tell me:
-
-“search.js done”
-
-Then we'll connect it to Home and style the search results.

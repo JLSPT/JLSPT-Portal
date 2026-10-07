@@ -67,8 +67,8 @@
 
             <h2>Current Goal</h2>
 
-            <p>
-                The next milestone on our journey.
+            <p id="milestone-campaign-title">
+                Loading campaign...
             </p>
 
         </div>
@@ -78,42 +78,50 @@
 
             <div>
 
-                <div class="focus-label">
-                    JL · ALON
+                <div
+                    class="focus-label"
+                    id="milestone-release">
+                    Loading...
                 </div>
 
-                <div class="focus-title">
-                    Road to 1M
+                <div
+                    class="focus-title"
+                    id="milestone-goal">
+                    Loading...
                 </div>
 
                 <p class="focus-subtitle">
-                    Our current YouTube milestone goal for
-                    JL's ALON official music video.
+                    Our current JLSPT streaming milestone goal.
                 </p>
 
                 <div class="progress-info">
 
-                    <span>
-                        781,850 views
+                    <span id="milestone-current">
+                        Loading...
                     </span>
 
-                    <span>
-                        1,000,000
+                    <span id="milestone-target">
+                        Loading...
                     </span>
 
                 </div>
+
 
                 <div class="progress-bar">
 
                     <div
                         class="progress"
-                        style="width:78.2%;">
+                        id="milestone-progress"
+                        style="width:0%;">
                     </div>
 
                 </div>
 
-                <div class="goal-number">
-                    218,150 views to go
+
+                <div
+                    class="goal-number"
+                    id="milestone-remaining">
+                    Loading...
                 </div>
 
             </div>
@@ -122,6 +130,7 @@
             <div class="focus-action">
 
                 <a
+                    id="milestone-tracker"
                     href="tracker.html"
                     class="primary-btn">
                     View Tracker
@@ -149,96 +158,19 @@
         </div>
 
 
-        <div class="content-grid">
+        <div
+            class="content-grid"
+            id="milestone-grid">
 
             <div class="content-card">
 
-                <h3>100K</h3>
+                <h3>
+                    Loading...
+                </h3>
 
                 <p>
-                    The first major milestone of the campaign.
+                    Loading milestone information.
                 </p>
-
-                <div class="goal-number">
-                    ✓ Reached
-                </div>
-
-            </div>
-
-
-            <div class="content-card">
-
-                <h3>500K</h3>
-
-                <p>
-                    A major halfway point toward one million.
-                </p>
-
-                <div class="goal-number">
-                    ✓ Reached
-                </div>
-
-            </div>
-
-
-            <div class="content-card">
-
-                <h3>750K</h3>
-
-                <p>
-                    Another major milestone on the road to 1M.
-                </p>
-
-                <div class="goal-number">
-                    ✓ Reached
-                </div>
-
-            </div>
-
-
-            <div class="content-card">
-
-                <h3>1M</h3>
-
-                <p>
-                    The next major goal for ALON.
-                </p>
-
-                <div class="goal-number">
-                    In Progress
-                </div>
-
-            </div>
-
-
-            <div class="content-card">
-
-                <h3>2M</h3>
-
-                <p>
-                    A future milestone to work toward
-                    after reaching one million.
-                </p>
-
-                <div class="goal-number">
-                    Future Goal
-                </div>
-
-            </div>
-
-
-            <div class="content-card">
-
-                <h3>More to Come</h3>
-
-                <p>
-                    New milestones will be added as JLSPT
-                    campaigns and projects grow.
-                </p>
-
-                <div class="goal-number">
-                    Stay Tuned
-                </div>
 
             </div>
 
@@ -327,8 +259,10 @@
                     NEXT TARGET
                 </div>
 
-                <div class="focus-title">
-                    1,000,000
+                <div
+                    class="focus-title"
+                    id="next-milestone">
+                    Loading...
                 </div>
 
                 <p class="focus-subtitle">
@@ -361,11 +295,12 @@
             <div class="focus-action">
 
                 <a
-                    href="https://www.youtube.com/watch?v=Dt8noBM9VTg"
+                    id="milestone-watch"
+                    href="#"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="primary-btn">
-                    Watch ALON
+                    Watch
                 </a>
 
             </div>
@@ -401,11 +336,13 @@
                 </p>
 
                 <div class="goal-number">
+
                     <a
                         href="music.html"
                         style="color:inherit;text-decoration:none;">
                         View Music →
                     </a>
+
                 </div>
 
             </div>
@@ -420,11 +357,13 @@
                 </p>
 
                 <div class="goal-number">
+
                     <a
                         href="video.html"
                         style="color:inherit;text-decoration:none;">
                         View Videos →
                     </a>
+
                 </div>
 
             </div>
@@ -439,11 +378,13 @@
                 </p>
 
                 <div class="goal-number">
+
                     <a
                         href="updates.html"
                         style="color:inherit;text-decoration:none;">
                         View Updates →
                     </a>
+
                 </div>
 
             </div>
@@ -466,7 +407,170 @@
 </footer>
 
 
+<script src="data.js"></script>
 <script src="menu.js"></script>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const campaign = JLSPT_DATA.currentCampaign;
+
+    const current = campaign.current;
+    const goal = campaign.goal;
+
+    const percentage = Math.min(
+        (current / goal) * 100,
+        100
+    );
+
+    const remaining = Math.max(
+        goal - current,
+        0
+    );
+
+
+    function formatNumber(number) {
+        return number.toLocaleString("en-US");
+    }
+
+
+    /*
+     * CURRENT CAMPAIGN
+     */
+
+    document.getElementById(
+        "milestone-campaign-title"
+    ).textContent = campaign.title;
+
+
+    document.getElementById(
+        "milestone-release"
+    ).textContent =
+        campaign.artist + " · " + campaign.release;
+
+
+    document.getElementById(
+        "milestone-goal"
+    ).textContent =
+        formatNumber(goal) + " Views";
+
+
+    document.getElementById(
+        "milestone-current"
+    ).textContent =
+        formatNumber(current) + " views";
+
+
+    document.getElementById(
+        "milestone-target"
+    ).textContent =
+        formatNumber(goal);
+
+
+    document.getElementById(
+        "milestone-progress"
+    ).style.width =
+        percentage.toFixed(1) + "%";
+
+
+    document.getElementById(
+        "milestone-remaining"
+    ).textContent =
+        formatNumber(remaining) + " views to go";
+
+
+    document.getElementById(
+        "milestone-watch"
+    ).href =
+        campaign.videoUrl;
+
+
+    /*
+     * MILESTONE CARDS
+     */
+
+    const milestoneGrid =
+        document.getElementById("milestone-grid");
+
+    milestoneGrid.innerHTML = "";
+
+
+    let nextMilestone = null;
+
+
+    JLSPT_DATA.milestones.forEach(function (milestone) {
+
+        const card =
+            document.createElement("div");
+
+        card.className = "content-card";
+
+
+        let statusText = "Future Goal";
+
+
+        if (milestone.value <= current) {
+
+            statusText = "✓ Reached";
+
+        } else if (
+            nextMilestone === null
+        ) {
+
+            statusText = "In Progress";
+
+            nextMilestone = milestone;
+
+        }
+
+
+        card.innerHTML = `
+
+            <h3>
+                ${milestone.label}
+            </h3>
+
+            <p>
+                ${formatNumber(milestone.value)} views
+            </p>
+
+            <div class="goal-number">
+                ${statusText}
+            </div>
+
+        `;
+
+
+        milestoneGrid.appendChild(card);
+
+    });
+
+
+    /*
+     * NEXT MILESTONE
+     */
+
+    if (nextMilestone) {
+
+        document.getElementById(
+            "next-milestone"
+        ).textContent =
+            nextMilestone.label;
+
+    } else {
+
+        document.getElementById(
+            "next-milestone"
+        ).textContent =
+            "More Goals Coming Soon";
+
+    }
+
+});
+
+</script>
 
 </body>
 </html>

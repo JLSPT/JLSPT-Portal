@@ -1,44 +1,368 @@
 (function () {
     "use strict";
 
-    const data = window.JLSPT_DATA || {};
+    /*
+     * =========================================================
+     * JLSPT GLOBAL SEARCH
+     * =========================================================
+     *
+     * Searches across:
+     * HOME
+     * MUSIC
+     * VIDEO
+     * CAMPAIGNS
+     * SCHEDULE
+     * GUIDES
+     * JLSPT CORNER
+     * COMMUNITY
+     *
+     * This file is intentionally independent from the visual
+     * styling. style.css controls how search elements look.
+     * =========================================================
+     */
 
-    const SEARCH_SECTIONS = [
+    const SEARCH_SOURCES = [
         {
-            key: "music",
-            label: "Music",
-            page: "music.html"
+            title: "Home",
+            url: "index.html",
+            keywords: [
+                "home",
+                "jl",
+                "jlspt",
+                "jl streaming project team",
+                "current focus",
+                "streaming",
+                "alon"
+            ]
         },
+
         {
-            key: "videos",
-            label: "Video",
-            page: "video.html"
+            title: "Music",
+            url: "music.html",
+            keywords: [
+                "music",
+                "songs",
+                "jl solo",
+                "alon",
+                "ahof",
+                "who we are",
+                "the passage",
+                "run to you",
+                "pinocchio",
+                "focus on you",
+                "ost"
+            ]
         },
+
         {
-            key: "campaigns",
-            label: "Campaigns",
-            page: "campaigns.html"
+            title: "Video",
+            url: "video.html",
+            keywords: [
+                "video",
+                "videos",
+                "music video",
+                "alon",
+                "official mv",
+                "lyric video",
+                "ahof",
+                "who we are",
+                "the passage",
+                "run to you",
+                "pinocchio",
+                "hello",
+                "muniverse",
+                "fancam",
+                "interview",
+                "variety"
+            ]
         },
+
         {
-            key: "guides",
-            label: "Guides",
-            page: "guides.html"
+            title: "Campaigns",
+            url: "campaigns.html",
+            keywords: [
+                "campaign",
+                "campaigns",
+                "streaming campaign",
+                "mission",
+                "alon",
+                "1m",
+                "1000000",
+                "milestone",
+                "goal",
+                "progress"
+            ]
         },
+
         {
-            key: "corner",
-            label: "JLSPT Corner",
-            page: "corner.html"
+            title: "Schedule",
+            url: "schedule.html",
+            keywords: [
+                "schedule",
+                "schedules",
+                "activity",
+                "activities",
+                "streaming session",
+                "regular",
+                "event",
+                "campaign",
+                "upcoming",
+                "past"
+            ]
         },
+
         {
-            key: "community",
-            label: "Community",
-            page: "corner.html#community"
+            title: "Guides",
+            url: "guides.html",
+            keywords: [
+                "guide",
+                "guides",
+                "start here",
+                "getting started",
+                "streaming basics",
+                "spotify",
+                "youtube",
+                "stationhead",
+                "alon streaming mission",
+                "troubleshooting",
+                "faq",
+                "help"
+            ]
+        },
+
+        {
+            title: "JLSPT Corner",
+            url: "corner.html",
+            keywords: [
+                "corner",
+                "jlspt corner",
+                "announcement",
+                "streaming notice",
+                "campaign update",
+                "schedule",
+                "resource",
+                "milestone",
+                "reminder",
+                "community"
+            ]
+        },
+
+        {
+            title: "Community",
+            url: "corner.html",
+            keywords: [
+                "community",
+                "discussion",
+                "questions",
+                "help",
+                "achievements",
+                "milestones",
+                "general",
+                "streaming discussion",
+                "campaign discussion"
+            ]
+        },
+
+        {
+            title: "My JLSPT",
+            url: "my-jlspt.html",
+            keywords: [
+                "my jlspt",
+                "profile",
+                "participation",
+                "badges",
+                "campaigns",
+                "missions",
+                "activity history",
+                "member"
+            ]
         }
     ];
 
 
+    /*
+     * =========================================================
+     * NORMALIZE TEXT
+     * =========================================================
+     */
+
+    function normalize(value) {
+        return String(value || "")
+            .toLowerCase()
+            .trim()
+            .replace(/\s+/g, " ");
+    }
+
+
+    /*
+     * =========================================================
+     * SEARCH
+     * =========================================================
+     */
+
+    function search(query) {
+        const normalizedQuery = normalize(query);
+
+        if (!normalizedQuery) {
+            return [];
+        }
+
+        const words = normalizedQuery
+            .split(" ")
+            .filter(Boolean);
+
+        return SEARCH_SOURCES
+            .map(function (source) {
+
+                const searchableText = normalize(
+                    [
+                        source.title,
+                        source.keywords.join(" ")
+                    ].join(" ")
+                );
+
+                let score = 0;
+
+                if (
+                    searchableText.includes(
+                        normalizedQuery
+                    )
+                ) {
+                    score += 10;
+                }
+
+                if (
+                    normalize(source.title) ===
+                    normalizedQuery
+                ) {
+                    score += 20;
+                }
+
+                words.forEach(function (word) {
+
+                    if (
+                        normalize(source.title)
+                            .includes(word)
+                    ) {
+                        score += 5;
+                    }
+
+                    source.keywords.forEach(
+                        function (keyword) {
+
+                            if (
+                                normalize(keyword)
+                                    .includes(word)
+                            ) {
+                                score += 2;
+                            }
+                        }
+                    );
+                });
+
+                return {
+                    title: source.title,
+                    url: source.url,
+                    score: score
+                };
+            })
+            .filter(function (result) {
+                return result.score > 0;
+            })
+            .sort(function (a, b) {
+                return b.score - a.score;
+            });
+    }
+
+
+    /*
+     * =========================================================
+     * CREATE RESULT CARD
+     * =========================================================
+     */
+
+    function createResult(result) {
+
+        const item = document.createElement("a");
+
+        item.href = result.url;
+        item.className = "search-result";
+
+        item.innerHTML = `
+            <div class="search-result-content">
+                <span class="search-result-label">
+                    JLSPT
+                </span>
+
+                <strong class="search-result-title">
+                    ${escapeHTML(result.title)}
+                </strong>
+            </div>
+
+            <span class="search-result-arrow">
+                →
+            </span>
+        `;
+
+        return item;
+    }
+
+
+    /*
+     * =========================================================
+     * RENDER RESULTS
+     * =========================================================
+     */
+
+    function renderResults(results, container) {
+
+        if (!container) {
+            return;
+        }
+
+        container.innerHTML = "";
+
+        if (!results.length) {
+
+            const empty = document.createElement("div");
+
+            empty.className = "search-empty";
+
+            empty.innerHTML = `
+                <strong>
+                    No results found
+                </strong>
+
+                <p>
+                    Try another keyword such as
+                    ALON, streaming, guides, campaigns,
+                    schedule, or community.
+                </p>
+            `;
+
+            container.appendChild(empty);
+
+            return;
+        }
+
+        results.forEach(function (result) {
+
+            container.appendChild(
+                createResult(result)
+            );
+        });
+    }
+
+
+    /*
+     * =========================================================
+     * ESCAPE HTML
+     * =========================================================
+     */
+
     function escapeHTML(value) {
-        return String(value ?? "")
+
+        return String(value)
             .replace(/&/g, "&amp;")
             .replace(/</g, "&lt;")
             .replace(/>/g, "&gt;")
@@ -47,691 +371,108 @@
     }
 
 
-    function normalize(value) {
-        return String(value ?? "")
-            .toLowerCase()
-            .trim();
-    }
+    /*
+     * =========================================================
+     * SEARCH FORM
+     * =========================================================
+     */
 
+    function initializeSearchForm() {
 
-    function getSearchableText(item) {
-        if (!item || typeof item !== "object") {
-            return "";
-        }
-
-        return Object.values(item)
-            .map(function (value) {
-                if (Array.isArray(value)) {
-                    return value
-                        .map(function (entry) {
-                            return getSearchableText(entry);
-                        })
-                        .join(" ");
-                }
-
-                if (
-                    value &&
-                    typeof value === "object"
-                ) {
-                    return getSearchableText(value);
-                }
-
-                return String(value ?? "");
-            })
-            .join(" ");
-    }
-
-
-    function createResult(
-        item,
-        section,
-        index
-    ) {
-        const title =
-            item.title ||
-            item.name ||
-            item.label ||
-            "JLSPT Result";
-
-        const description =
-            item.description ||
-            item.excerpt ||
-            item.content ||
-            item.summary ||
-            "";
-
-        const category =
-            item.category ||
-            item.type ||
-            section.label;
-
-        const link =
-            item.link ||
-            item.url ||
-            section.page;
-
-        return {
-            id:
-                section.key +
-                "-" +
-                index,
-            title: title,
-            description: description,
-            category: category,
-            section: section.label,
-            link: link
-        };
-    }
-
-
-    function collectNestedItems(
-        value,
-        section,
-        results,
-        visited
-    ) {
-        if (!value) {
-            return;
-        }
-
-        if (Array.isArray(value)) {
-            value.forEach(function (item, index) {
-                if (
-                    item &&
-                    typeof item === "object"
-                ) {
-                    results.push(
-                        createResult(
-                            item,
-                            section,
-                            index
-                        )
-                    );
-
-                    collectNestedItems(
-                        item.releases,
-                        section,
-                        results,
-                        visited
-                    );
-
-                    collectNestedItems(
-                        item.videos,
-                        section,
-                        results,
-                        visited
-                    );
-
-                    collectNestedItems(
-                        item.items,
-                        section,
-                        results,
-                        visited
-                    );
-
-                    collectNestedItems(
-                        item.children,
-                        section,
-                        results,
-                        visited
-                    );
-                }
-            });
-
-            return;
-        }
-
-        if (
-            typeof value === "object" &&
-            !visited.has(value)
-        ) {
-            visited.add(value);
-
-            Object.keys(value).forEach(
-                function (key) {
-                    collectNestedItems(
-                        value[key],
-                        section,
-                        results,
-                        visited
-                    );
-                }
+        const forms =
+            document.querySelectorAll(
+                "[data-search-form]"
             );
-        }
-    }
 
+        forms.forEach(function (form) {
 
-    function getSectionItems(
-        section
-    ) {
-        const results = [];
-        const visited = new Set();
-
-        const possibleKeys = [
-            section.key,
-            section.key === "videos"
-                ? "video"
-                : null,
-            section.key === "corner"
-                ? "cornerPosts"
-                : null,
-            section.key === "community"
-                ? "communityPosts"
-                : null
-        ].filter(Boolean);
-
-
-        possibleKeys.forEach(
-            function (key) {
-                if (
-                    data[key] ===
-                    undefined
-                ) {
-                    return;
-                }
-
-                collectNestedItems(
-                    data[key],
-                    section,
-                    results,
-                    visited
+            const input =
+                form.querySelector(
+                    "[data-search-input]"
                 );
+
+            const resultsContainer =
+                form.querySelector(
+                    "[data-search-results]"
+                );
+
+            if (!input) {
+                return;
             }
-        );
 
+            form.addEventListener(
+                "submit",
+                function (event) {
 
-        return results;
-    }
+                    event.preventDefault();
 
+                    const query =
+                        input.value.trim();
 
-    function getAllResults() {
-        const results = [];
+                    const results =
+                        search(query);
 
-        SEARCH_SECTIONS.forEach(
-            function (section) {
-                results.push(
-                    ...getSectionItems(
-                        section
-                    )
-                );
-            }
-        );
-
-        return results;
-    }
-
-
-    function search(
-        query
-    ) {
-        const normalizedQuery =
-            normalize(query);
-
-        if (!normalizedQuery) {
-            return [];
-        }
-
-
-        const terms =
-            normalizedQuery
-                .split(/\s+/)
-                .filter(Boolean);
-
-
-        return getAllResults()
-            .filter(function (result) {
-
-                const searchable =
-                    normalize(
-                        [
-                            result.title,
-                            result.description,
-                            result.category,
-                            result.section
-                        ].join(" ")
+                    renderResults(
+                        results,
+                        resultsContainer
                     );
-
-
-                return terms.every(
-                    function (term) {
-                        return searchable.includes(
-                            term
-                        );
-                    }
-                );
-
-            })
-            .slice(0, 30);
-    }
-
-
-    function createSearchUI() {
-        let overlay =
-            document.getElementById(
-                "global-search"
-            );
-
-
-        if (overlay) {
-            return overlay;
-        }
-
-
-        overlay =
-            document.createElement(
-                "div"
-            );
-
-
-        overlay.id =
-            "global-search";
-
-        overlay.className =
-            "search-modal";
-
-        overlay.innerHTML = `
-            <div
-                class="search-modal-backdrop"
-                data-search-close
-            ></div>
-
-            <div
-                class="search-modal-panel"
-                role="dialog"
-                aria-modal="true"
-                aria-labelledby="search-title"
-            >
-
-                <div class="search-modal-header">
-
-                    <div>
-
-                        <span class="eyebrow">
-                            JLSPT
-                        </span>
-
-                        <h2 id="search-title">
-                            Search
-                        </h2>
-
-                    </div>
-
-                    <button
-                        class="search-close"
-                        type="button"
-                        aria-label="Close search"
-                        data-search-close
-                    >
-                        ×
-                    </button>
-
-                </div>
-
-
-                <div class="search-input-wrap">
-
-                    <span
-                        class="search-input-icon"
-                        aria-hidden="true"
-                    >
-                        ⌕
-                    </span>
-
-                    <input
-                        id="global-search-input"
-                        type="search"
-                        placeholder="Search JLSPT..."
-                        autocomplete="off"
-                    >
-
-                </div>
-
-
-                <div
-                    id="search-results"
-                    class="search-results"
-                >
-
-                    <div class="search-empty">
-
-                        <strong>
-                            Search JLSPT
-                        </strong>
-
-                        <span>
-                            Find music, videos, campaigns,
-                            guides, Corner posts, and community
-                            content.
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-        `;
-
-
-        document.body.appendChild(
-            overlay
-        );
-
-
-        return overlay;
-    }
-
-
-    function renderResults(
-        results,
-        query
-    ) {
-        const container =
-            document.getElementById(
-                "search-results"
-            );
-
-
-        if (!container) {
-            return;
-        }
-
-
-        if (!query) {
-
-            container.innerHTML = `
-                <div class="search-empty">
-
-                    <strong>
-                        Search JLSPT
-                    </strong>
-
-                    <span>
-                        Find music, videos, campaigns,
-                        guides, Corner posts, and
-                        community content.
-                    </span>
-
-                </div>
-            `;
-
-            return;
-        }
-
-
-        if (!results.length) {
-
-            container.innerHTML = `
-                <div class="search-empty">
-
-                    <strong>
-                        No results found.
-                    </strong>
-
-                    <span>
-                        Try a different keyword or search
-                        for a campaign, song, guide, or
-                        JLSPT update.
-                    </span>
-
-                </div>
-            `;
-
-            return;
-        }
-
-
-        container.innerHTML = `
-            <div class="search-result-count">
-                ${results.length}
-                ${
-                    results.length === 1
-                        ? "result"
-                        : "results"
                 }
-            </div>
-
-            <div class="search-result-list">
-
-                ${results
-                    .map(function (result) {
-
-                        return `
-                            <a
-                                class="search-result"
-                                href="${escapeHTML(
-                                    result.link
-                                )}"
-                            >
-
-                                <div
-                                    class="search-result-meta"
-                                >
-
-                                    <span class="tag">
-                                        ${escapeHTML(
-                                            result.section
-                                        )}
-                                    </span>
-
-                                    <span>
-                                        ${escapeHTML(
-                                            result.category
-                                        )}
-                                    </span>
-
-                                </div>
-
-
-                                <h3>
-                                    ${escapeHTML(
-                                        result.title
-                                    )}
-                                </h3>
-
-
-                                ${
-                                    result.description
-                                        ? `
-                                            <p>
-                                                ${escapeHTML(
-                                                    String(
-                                                        result.description
-                                                    ).slice(
-                                                        0,
-                                                        180
-                                                    )
-                                                )}
-                                            </p>
-                                        `
-                                        : ""
-                                }
-
-
-                                <span
-                                    class="search-result-arrow"
-                                    aria-hidden="true"
-                                >
-                                    →
-                                </span>
-
-                            </a>
-                        `;
-
-                    })
-                    .join("")}
-
-            </div>
-        `;
-    }
-
-
-    function openSearch() {
-        const overlay =
-            createSearchUI();
-
-
-        overlay.classList.add(
-            "is-open"
-        );
-
-
-        document.body.classList.add(
-            "search-open"
-        );
-
-
-        const input =
-            document.getElementById(
-                "global-search-input"
             );
 
-
-        if (input) {
-
-            window.setTimeout(
-                function () {
-                    input.focus();
-                },
-                50
-            );
-
-        }
-
-    }
-
-
-    function closeSearch() {
-        const overlay =
-            document.getElementById(
-                "global-search"
-            );
-
-
-        if (!overlay) {
-            return;
-        }
-
-
-        overlay.classList.remove(
-            "is-open"
-        );
-
-
-        document.body.classList.remove(
-            "search-open"
-        );
-
-    }
-
-
-    function setupSearch() {
-
-        createSearchUI();
-
-
-        const input =
-            document.getElementById(
-                "global-search-input"
-            );
-
-
-        if (input) {
 
             input.addEventListener(
                 "input",
                 function () {
 
                     const query =
-                        input.value;
+                        input.value.trim();
 
+                    if (!query) {
+
+                        if (resultsContainer) {
+                            resultsContainer.innerHTML = "";
+                        }
+
+                        return;
+                    }
+
+                    const results =
+                        search(query);
 
                     renderResults(
-                        search(query),
-                        query
+                        results,
+                        resultsContainer
                     );
-
                 }
             );
 
-        }
-
-
-        document.addEventListener(
-            "click",
-            function (event) {
-
-                const trigger =
-                    event.target.closest(
-                        "[data-search-open]"
-                    );
-
-
-                if (trigger) {
-
-                    event.preventDefault();
-
-                    openSearch();
-
-                    return;
-                }
-
-
-                const closeTrigger =
-                    event.target.closest(
-                        "[data-search-close]"
-                    );
-
-
-                if (closeTrigger) {
-
-                    event.preventDefault();
-
-                    closeSearch();
-
-                }
-
-            }
-        );
-
-
-        document.addEventListener(
-            "keydown",
-            function (event) {
-
-                if (
-                    event.key === "/" &&
-                    ![
-                        "INPUT",
-                        "TEXTAREA",
-                        "SELECT"
-                    ].includes(
-                        document.activeElement.tagName
-                    )
-                ) {
-
-                    event.preventDefault();
-
-                    openSearch();
-
-                }
-
-
-                if (
-                    event.key === "Escape"
-                ) {
-
-                    closeSearch();
-
-                }
-
-            }
-        );
-
+        });
     }
 
 
-    function init() {
-        setupSearch();
+    /*
+     * =========================================================
+     * GLOBAL SEARCH FUNCTION
+     * =========================================================
+     *
+     * Makes the search function available to other JLSPT
+     * scripts without exposing internal source data.
+     * =========================================================
+     */
+
+    window.JLSPTSearch = {
+        search: search
+    };
+
+
+    /*
+     * =========================================================
+     * INITIALIZE
+     * =========================================================
+     */
+
+    function initialize() {
+        initializeSearchForm();
     }
 
 
@@ -739,16 +480,12 @@
         document.readyState ===
         "loading"
     ) {
-
         document.addEventListener(
             "DOMContentLoaded",
-            init
+            initialize
         );
-
     } else {
-
-        init();
-
+        initialize();
     }
 
 })();

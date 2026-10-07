@@ -2,159 +2,179 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>My JLSPT | JLSPT</title>
-
     <meta
         name="description"
-        content="Your JLSPT member space for participation, badges, campaigns, missions, and activity history."
+        content="My JLSPT member dashboard for participation, badges, campaigns, missions, and activity history."
     >
 
-    <link rel="stylesheet" href="style.css">
+    <title>My JLSPT | JL Streaming Project Team</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 </head>
 
 <body>
 
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
     <nav class="site-nav">
         <div class="nav-inner">
-            <a class="nav-brand" href="index.html">
+
+            <a
+                href="index.html"
+                class="nav-brand"
+                aria-label="JLSPT Home"
+            >
+                <span aria-hidden="true">•</span>
                 JLSPT
             </a>
 
             <div class="nav-links"></div>
+
         </div>
     </nav>
 
 
-    <main>
+    <!-- =====================================================
+         PAGE HERO
+    ====================================================== -->
 
-        <!-- PAGE HERO -->
+    <header class="page-hero">
+        <div class="container">
 
-        <section class="page-hero">
+            <div class="page-hero-inner">
 
-            <div class="container">
+                <p class="page-eyebrow">
+                    MY JLSPT
+                </p>
 
-                <span class="eyebrow">
-                    MEMBER SPACE
-                </span>
-
-                <h1>
-                    My JLSPT
+                <h1 class="page-title">
+                    Your JLSPT space.
                 </h1>
 
-                <p class="page-intro">
-                    Keep track of your JLSPT participation,
-                    badges, campaigns, missions, and community
-                    activity.
+                <p class="page-description">
+                    Keep track of your participation, badges,
+                    campaign support, missions, and activity
+                    history in one place.
                 </p>
 
             </div>
 
-        </section>
+        </div>
+    </header>
 
 
-        <!-- MEMBER STATUS -->
+    <main>
 
-        <section class="section">
+        <div class="container">
 
-            <div class="container">
 
-                <div class="member-profile-card">
+            <!-- =================================================
+                 MEMBER PROFILE
+            ================================================== -->
 
-                    <div class="member-avatar">
-                        ✦
-                    </div>
+            <section>
 
-                    <div class="member-profile-info">
+                <div class="section-heading-row">
 
-                        <span class="eyebrow">
-                            JLSPT MEMBER
-                        </span>
+                    <div class="section-heading">
 
-                        <h2 id="member-name">
-                            JLSPT Supporter
+                        <h2>
+                            Member Profile
                         </h2>
-
-                        <p id="member-joined">
-                            Your member profile will appear here
-                            after signing in.
-                        </p>
-
-                    </div>
-
-
-                    <div class="member-profile-action">
-
-                        <button
-                            class="button button-primary"
-                            type="button"
-                            id="member-action"
-                        >
-                            Sign In
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- ACCOUNT NOTICE -->
-
-                <div class="privacy-notice">
-
-                    <div class="privacy-icon">
-                        🔒
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Member accounts are private
-                        </strong>
 
                         <p>
-                            Your participation history, badges,
-                            missions, and preferences are intended
-                            for your own JLSPT member space.
-                            Public visitors cannot view your private
-                            activity.
+                            Your JLSPT member information.
                         </p>
 
                     </div>
 
                 </div>
 
-            </div>
 
-        </section>
+                <div class="profile-card card">
+
+                    <div class="profile-avatar">
+                        JL
+                    </div>
+
+                    <div class="profile-info">
+
+                        <p class="badge">
+                            JLSPT MEMBER
+                        </p>
+
+                        <h3 class="profile-name">
+                            JL Supporter
+                        </h3>
+
+                        <p class="profile-handle">
+                            Sign in to connect your account
+                        </p>
+
+                        <div class="profile-meta">
+
+                            <span class="tag">
+                                Member
+                            </span>
+
+                            <span class="tag">
+                                Participation tracking
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
 
 
-        <!-- OVERVIEW -->
+            <!-- =================================================
+                 PRIVACY NOTICE
+            ================================================== -->
 
-        <section class="section section-alt">
+            <section>
 
-            <div class="container">
+                <div class="privacy-note">
 
-                <div class="section-heading">
+                    🔒
+                    Your My JLSPT information is intended
+                    for your account only. Public pages do not
+                    display your private participation history.
 
-                    <div>
+                </div>
 
-                        <span class="eyebrow">
-                            OVERVIEW
-                        </span>
+            </section>
+
+
+            <!-- =================================================
+                 OVERVIEW
+            ================================================== -->
+
+            <section>
+
+                <div class="section-heading-row">
+
+                    <div class="section-heading">
 
                         <h2>
-                            Your JLSPT Activity
+                            Overview
                         </h2>
 
-                        <p class="section-description">
-                            Participation is about supporting JL
-                            together, not competing for points or
-                            rankings.
+                        <p>
+                            A quick look at your JLSPT activity.
                         </p>
 
                     </div>
@@ -162,115 +182,108 @@
                 </div>
 
 
-                <div class="stats-grid">
+                <div class="dashboard-grid">
 
-                    <article class="stat-card">
+                    <article class="dashboard-card">
 
-                        <span class="stat-label">
-                            PARTICIPATION
-                        </span>
+                        <div class="dashboard-card-header">
 
-                        <strong
-                            class="stat-value"
-                            id="participation-count"
-                        >
+                            <div class="dashboard-card-icon">
+                                🎧
+                            </div>
+
+                            <span class="status status-active">
+                                SUPPORT
+                            </span>
+
+                        </div>
+
+                        <p class="dashboard-card-title">
+                            Participation
+                        </p>
+
+                        <div class="dashboard-card-value">
                             0
-                        </strong>
+                        </div>
 
-                        <span class="stat-note">
-                            recorded activities
-                        </span>
+                        <p class="dashboard-card-description">
+                            Recorded support activities
+                        </p>
 
                     </article>
 
 
-                    <article class="stat-card">
+                    <article class="dashboard-card">
 
-                        <span class="stat-label">
-                            BADGES
-                        </span>
+                        <div class="dashboard-card-header">
 
-                        <strong
-                            class="stat-value"
-                            id="badge-count"
-                        >
+                            <div class="dashboard-card-icon">
+                                🏅
+                            </div>
+
+                        </div>
+
+                        <p class="dashboard-card-title">
+                            Badges
+                        </p>
+
+                        <div class="dashboard-card-value">
                             0
-                        </strong>
+                        </div>
 
-                        <span class="stat-note">
-                            earned badges
-                        </span>
+                        <p class="dashboard-card-description">
+                            Earned JLSPT badges
+                        </p>
 
                     </article>
 
 
-                    <article class="stat-card">
+                    <article class="dashboard-card">
 
-                        <span class="stat-label">
-                            CAMPAIGNS
-                        </span>
+                        <div class="dashboard-card-header">
 
-                        <strong
-                            class="stat-value"
-                            id="campaign-count"
-                        >
+                            <div class="dashboard-card-icon">
+                                🔥
+                            </div>
+
+                        </div>
+
+                        <p class="dashboard-card-title">
+                            Campaigns
+                        </p>
+
+                        <div class="dashboard-card-value">
                             0
-                        </strong>
+                        </div>
 
-                        <span class="stat-note">
-                            supported campaigns
-                        </span>
-
-                    </article>
-
-
-                    <article class="stat-card">
-
-                        <span class="stat-label">
-                            MISSIONS
-                        </span>
-
-                        <strong
-                            class="stat-value"
-                            id="mission-count"
-                        >
-                            0
-                        </strong>
-
-                        <span class="stat-note">
-                            completed missions
-                        </span>
+                        <p class="dashboard-card-description">
+                            Campaigns supported
+                        </p>
 
                     </article>
 
                 </div>
 
-            </div>
-
-        </section>
+            </section>
 
 
-        <!-- PARTICIPATION -->
+            <!-- =================================================
+                 PARTICIPATION
+            ================================================== -->
 
-        <section class="section">
+            <section>
 
-            <div class="container">
+                <div class="section-heading-row">
 
-                <div class="section-heading">
-
-                    <div>
-
-                        <span class="eyebrow">
-                            PARTICIPATION
-                        </span>
+                    <div class="section-heading">
 
                         <h2>
-                            Your Support
+                            Participation
                         </h2>
 
-                        <p class="section-description">
-                            A personal record of the JLSPT activities
-                            you take part in.
+                        <p>
+                            Your recorded contributions to JLSPT
+                            activities.
                         </p>
 
                     </div>
@@ -278,113 +291,123 @@
                 </div>
 
 
-                <div
-                    class="activity-list"
-                    id="participation-list"
-                ></div>
+                <div class="grid-3">
 
-            </div>
+                    <article class="card">
 
-        </section>
-
-
-        <!-- BADGES -->
-
-        <section class="section section-alt">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div>
-
-                        <span class="eyebrow">
-                            BADGES
+                        <span class="card-label">
+                            Campaign Participation
                         </span>
 
-                        <h2>
-                            Your Badges
-                        </h2>
-
-                        <p class="section-description">
-                            Milestones that recognize meaningful
-                            participation and support.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div
-                    class="badge-grid"
-                    id="badge-list"
-                ></div>
-
-            </div>
-
-        </section>
-
-
-        <!-- CAMPAIGNS -->
-
-        <section class="section">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div>
-
-                        <span class="eyebrow">
-                            CAMPAIGNS
-                        </span>
-
-                        <h2>
+                        <h3>
                             Campaign Support
-                        </h2>
+                        </h3>
 
-                        <p class="section-description">
-                            Campaigns you have supported through
-                            JLSPT participation.
+                        <p class="muted">
+                            Campaigns you have participated in
+                            or supported.
                         </p>
 
-                    </div>
+                        <div class="empty-state">
+
+                            <h3>
+                                No activity yet
+                            </h3>
+
+                            <p>
+                                Your supported campaigns will
+                                appear here once participation
+                                tracking is connected.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="card">
+
+                        <span class="card-label">
+                            Streaming Sessions
+                        </span>
+
+                        <h3>
+                            Streaming Support
+                        </h3>
+
+                        <p class="muted">
+                            Streaming sessions and activities
+                            recorded for your account.
+                        </p>
+
+                        <div class="empty-state">
+
+                            <h3>
+                                No sessions yet
+                            </h3>
+
+                            <p>
+                                Your streaming activity will
+                                appear here in the future.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="card">
+
+                        <span class="card-label">
+                            Milestones
+                        </span>
+
+                        <h3>
+                            Milestone Support
+                        </h3>
+
+                        <p class="muted">
+                            Campaign milestones you helped
+                            support.
+                        </p>
+
+                        <div class="empty-state">
+
+                            <h3>
+                                No milestones yet
+                            </h3>
+
+                            <p>
+                                Supported milestones will be
+                                recorded here.
+                            </p>
+
+                        </div>
+
+                    </article>
 
                 </div>
 
-
-                <div
-                    class="campaign-grid"
-                    id="member-campaigns"
-                ></div>
-
-            </div>
-
-        </section>
+            </section>
 
 
-        <!-- MISSIONS -->
+            <!-- =================================================
+                 BADGES
+            ================================================== -->
 
-        <section class="section section-alt">
+            <section>
 
-            <div class="container">
+                <div class="section-heading-row">
 
-                <div class="section-heading">
-
-                    <div>
-
-                        <span class="eyebrow">
-                            MISSIONS
-                        </span>
+                    <div class="section-heading">
 
                         <h2>
-                            Your Missions
+                            Badges
                         </h2>
 
-                        <p class="section-description">
-                            Streaming and campaign tasks available
-                            through JLSPT.
+                        <p>
+                            Recognition for different kinds
+                            of JLSPT participation.
                         </p>
 
                     </div>
@@ -392,37 +415,319 @@
                 </div>
 
 
-                <div
-                    class="mission-grid"
-                    id="member-missions"
-                ></div>
+                <div class="badge-grid">
 
-            </div>
+                    <article class="badge-card">
 
-        </section>
+                        <div class="badge-icon">
+                            🏁
+                        </div>
+
+                        <h3 class="badge-name">
+                            First Stream
+                        </h3>
+
+                        <p class="badge-description">
+                            Complete your first recorded
+                            streaming participation.
+                        </p>
+
+                    </article>
 
 
-        <!-- ACTIVITY HISTORY -->
+                    <article class="badge-card">
 
-        <section class="section">
+                        <div class="badge-icon">
+                            🎧
+                        </div>
 
-            <div class="container">
+                        <h3 class="badge-name">
+                            Streaming Supporter
+                        </h3>
 
-                <div class="section-heading">
+                        <p class="badge-description">
+                            Support JLSPT streaming activities.
+                        </p>
 
-                    <div>
+                    </article>
 
-                        <span class="eyebrow">
-                            HISTORY
+
+                    <article class="badge-card">
+
+                        <div class="badge-icon">
+                            📺
+                        </div>
+
+                        <h3 class="badge-name">
+                            Video Mission
+                        </h3>
+
+                        <p class="badge-description">
+                            Complete a video streaming mission.
+                        </p>
+
+                    </article>
+
+
+                    <article class="badge-card">
+
+                        <div class="badge-icon">
+                            🔥
+                        </div>
+
+                        <h3 class="badge-name">
+                            Campaign Supporter
+                        </h3>
+
+                        <p class="badge-description">
+                            Participate in a JLSPT campaign.
+                        </p>
+
+                    </article>
+
+
+                    <article class="badge-card">
+
+                        <div class="badge-icon">
+                            🏆
+                        </div>
+
+                        <h3 class="badge-name">
+                            Campaign Veteran
+                        </h3>
+
+                        <p class="badge-description">
+                            Support multiple JLSPT campaigns.
+                        </p>
+
+                    </article>
+
+
+                    <article class="badge-card">
+
+                        <div class="badge-icon">
+                            ⭐
+                        </div>
+
+                        <h3 class="badge-name">
+                            ALON 1M Supporter
+                        </h3>
+
+                        <p class="badge-description">
+                            Support the ALON 1M milestone campaign.
+                        </p>
+
+                    </article>
+
+
+                    <article class="badge-card">
+
+                        <div class="badge-icon">
+                            💬
+                        </div>
+
+                        <h3 class="badge-name">
+                            Community Helper
+                        </h3>
+
+                        <p class="badge-description">
+                            Make helpful contributions to the
+                            JLSPT community.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 CAMPAIGNS
+            ================================================== -->
+
+            <section>
+
+                <div class="section-heading-row">
+
+                    <div class="section-heading">
+
+                        <h2>
+                            Campaigns
+                        </h2>
+
+                        <p>
+                            Campaigns connected to your
+                            participation history.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="campaigns.html"
+                        class="btn btn-secondary"
+                    >
+                        View Campaigns
+                    </a>
+
+                </div>
+
+
+                <div class="card-grid">
+
+                    <article class="card">
+
+                        <span class="status status-active">
+                            ACTIVE
                         </span>
+
+                        <h3>
+                            MISSION: STREAM ALON
+                        </h3>
+
+                        <p class="muted">
+                            Support JL's ALON official music
+                            video toward the 1M view milestone.
+                        </p>
+
+                        <div class="progress-meta">
+                            <span>
+                                Participation
+                            </span>
+
+                            <span>
+                                Not connected
+                            </span>
+                        </div>
+
+                        <div class="progress">
+                            <div
+                                class="progress-bar"
+                                style="width: 0%;"
+                            ></div>
+                        </div>
+
+                    </article>
+
+
+                    <article class="empty-state">
+
+                        <h3>
+                            More campaigns
+                        </h3>
+
+                        <p>
+                            Your campaign participation history
+                            will appear here as you support more
+                            JLSPT campaigns.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 MISSIONS
+            ================================================== -->
+
+            <section>
+
+                <div class="section-heading-row">
+
+                    <div class="section-heading">
+
+                        <h2>
+                            Missions
+                        </h2>
+
+                        <p>
+                            Campaign tasks and streaming missions
+                            associated with your account.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="mission-grid">
+
+                    <article class="mission-card">
+
+                        <div class="mission-icon">
+                            ▶
+                        </div>
+
+                        <div class="mission-content">
+
+                            <span class="tag">
+                                ALON
+                            </span>
+
+                            <h3>
+                                Stream the official music video
+                            </h3>
+
+                            <p class="muted">
+                                Complete the campaign's streaming
+                                mission according to the official
+                                JLSPT guide.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="mission-card">
+
+                        <div class="mission-icon">
+                            ❤️
+                        </div>
+
+                        <div class="mission-content">
+
+                            <span class="tag">
+                                SUPPORT
+                            </span>
+
+                            <h3>
+                                Support campaign milestones
+                            </h3>
+
+                            <p class="muted">
+                                Participate consistently as JLSPT
+                                campaigns work toward their goals.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 ACTIVITY HISTORY
+            ================================================== -->
+
+            <section>
+
+                <div class="section-heading-row">
+
+                    <div class="section-heading">
 
                         <h2>
                             Activity History
                         </h2>
 
-                        <p class="section-description">
-                            A chronological record of your JLSPT
-                            participation.
+                        <p>
+                            A record of your JLSPT participation.
                         </p>
 
                     </div>
@@ -430,54 +735,78 @@
                 </div>
 
 
-                <div
-                    class="activity-history"
-                    id="activity-history"
-                ></div>
+                <div class="activity-list">
 
-            </div>
+                    <div class="activity-item">
 
-        </section>
+                        <div class="activity-icon">
+                            📋
+                        </div>
+
+                        <div class="activity-content">
+
+                            <p class="activity-title">
+                                No activity recorded yet
+                            </p>
+
+                            <p class="activity-meta">
+                                Your participation history will
+                                appear here after account tracking
+                                is connected.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
 
 
-        <!-- SIGN IN CTA -->
+            <!-- =================================================
+                 SIGN IN CTA
+            ================================================== -->
 
-        <section class="section section-alt">
+            <section>
 
-            <div class="container">
+                <div class="login-card">
 
-                <div class="cta-card">
-
-                    <span class="eyebrow">
-                        MY JLSPT
-                    </span>
+                    <div class="login-card-icon">
+                        ✦
+                    </div>
 
                     <h2>
-                        Your member space is ready.
+                        Your JLSPT journey starts here.
                     </h2>
 
-                    <p>
-                        Sign in when JLSPT member authentication
-                        becomes available to save your participation,
-                        badges, missions, and activity history.
+                    <p class="muted">
+                        Sign in when member accounts are available
+                        to connect your participation, badges,
+                        missions, and activity history.
                     </p>
 
                     <button
-                        class="button button-primary"
                         type="button"
-                        id="cta-signin"
+                        class="btn btn-primary"
+                        disabled
                     >
-                        Sign In
+                        Sign In Coming Soon
                     </button>
 
                 </div>
 
-            </div>
+            </section>
 
-        </section>
+
+        </div>
 
     </main>
 
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
 
     <footer class="site-footer">
 
@@ -485,33 +814,12 @@
 
             <div class="footer-inner">
 
-                <div>
-
-                    <strong>
-                        JLSPT
-                    </strong>
-
-                    <p>
-                        JL Streaming Project Team
-                    </p>
-
-                </div>
-
-                <p class="footer-note">
-                    Your support helps keep JLSPT moving forward.
-                </p>
-
-            </div>
-
-
-            <div class="footer-bottom">
-
                 <span>
-                    JLSPT
+                    JLSPT · JL Streaming Project Team
                 </span>
 
                 <span>
-                    My JLSPT
+                    Supporting JL, one stream at a time.
                 </span>
 
             </div>
@@ -521,949 +829,11 @@
     </footer>
 
 
-    <script src="data.js"></script>
+    <!-- =====================================================
+         SCRIPTS
+    ====================================================== -->
+
     <script src="menu.js"></script>
-
-
-    <script>
-        (function () {
-
-            "use strict";
-
-
-            const data =
-                window.JLSPT_DATA || {};
-
-
-            const member =
-                data.member || {};
-
-
-            const participation =
-                Array.isArray(
-                    data.participation
-                )
-                    ? data.participation
-                    : [];
-
-
-            const badges =
-                Array.isArray(
-                    data.badges
-                )
-                    ? data.badges
-                    : [];
-
-
-            const campaigns =
-                Array.isArray(
-                    data.campaigns
-                )
-                    ? data.campaigns
-                    : [];
-
-
-            const missions =
-                Array.isArray(
-                    data.missions
-                )
-                    ? data.missions
-                    : [];
-
-
-            const activityHistory =
-                Array.isArray(
-                    data.activityHistory
-                )
-                    ? data.activityHistory
-                    : [];
-
-
-            function escapeHTML(value) {
-
-                return String(value ?? "")
-                    .replace(/&/g, "&amp;")
-                    .replace(/</g, "&lt;")
-                    .replace(/>/g, "&gt;")
-                    .replace(/"/g, "&quot;")
-                    .replace(/'/g, "&#039;");
-
-            }
-
-
-            function formatDate(value) {
-
-                if (!value) {
-                    return "";
-                }
-
-
-                const date =
-                    new Date(value);
-
-
-                if (
-                    Number.isNaN(
-                        date.getTime()
-                    )
-                ) {
-                    return String(value);
-                }
-
-
-                return date.toLocaleDateString(
-                    undefined,
-                    {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric"
-                    }
-                );
-
-            }
-
-
-            function getMemberValue(
-                object,
-                keys,
-                fallback
-            ) {
-
-                for (
-                    let index = 0;
-                    index < keys.length;
-                    index += 1
-                ) {
-
-                    const key =
-                        keys[index];
-
-
-                    if (
-                        object &&
-                        object[key] !==
-                        undefined &&
-                        object[key] !==
-                        null
-                    ) {
-                        return object[key];
-                    }
-
-                }
-
-
-                return fallback;
-
-            }
-
-
-            function renderProfile() {
-
-                const name =
-                    getMemberValue(
-                        member,
-                        [
-                            "displayName",
-                            "name",
-                            "username"
-                        ],
-                        "JLSPT Supporter"
-                    );
-
-
-                const joined =
-                    getMemberValue(
-                        member,
-                        [
-                            "joinedDate",
-                            "joined",
-                            "dateJoined"
-                        ],
-                        ""
-                    );
-
-
-                const nameElement =
-                    document.getElementById(
-                        "member-name"
-                    );
-
-
-                const joinedElement =
-                    document.getElementById(
-                        "member-joined"
-                    );
-
-
-                if (nameElement) {
-
-                    nameElement.textContent =
-                        name;
-
-                }
-
-
-                if (joinedElement) {
-
-                    joinedElement.textContent =
-                        joined
-                            ? `Member since ${formatDate(joined)}`
-                            : "Your member profile will appear here after signing in.";
-
-                }
-
-            }
-
-
-            function renderStats() {
-
-                const participationCount =
-                    document.getElementById(
-                        "participation-count"
-                    );
-
-
-                const badgeCount =
-                    document.getElementById(
-                        "badge-count"
-                    );
-
-
-                const campaignCount =
-                    document.getElementById(
-                        "campaign-count"
-                    );
-
-
-                const missionCount =
-                    document.getElementById(
-                        "mission-count"
-                    );
-
-
-                if (participationCount) {
-
-                    participationCount.textContent =
-                        participation.length;
-
-                }
-
-
-                if (badgeCount) {
-
-                    badgeCount.textContent =
-                        badges.length;
-
-                }
-
-
-                if (campaignCount) {
-
-                    campaignCount.textContent =
-                        campaigns.filter(
-                            function (campaign) {
-
-                                return (
-                                    campaign.current ===
-                                    true ||
-                                    campaign.status ===
-                                    "Active"
-                                );
-
-                            }
-                        ).length;
-
-                }
-
-
-                if (missionCount) {
-
-                    missionCount.textContent =
-                        missions.filter(
-                            function (mission) {
-
-                                return (
-                                    mission.completed ===
-                                    true ||
-                                    mission.status ===
-                                    "Completed"
-                                );
-
-                            }
-                        ).length;
-
-                }
-
-            }
-
-
-            function renderParticipation() {
-
-                const container =
-                    document.getElementById(
-                        "participation-list"
-                    );
-
-
-                if (!container) {
-                    return;
-                }
-
-
-                if (!participation.length) {
-
-                    container.innerHTML = `
-                        <div class="empty-state">
-
-                            <strong>
-                                No participation recorded yet.
-                            </strong>
-
-                            <span>
-                                Your JLSPT activities will appear here
-                                after member participation tracking is
-                                enabled.
-                            </span>
-
-                        </div>
-                    `;
-
-                    return;
-                }
-
-
-                container.innerHTML =
-                    participation
-                        .map(
-                            function (item) {
-
-                                const title =
-                                    item.title ||
-                                    item.name ||
-                                    "JLSPT Activity";
-
-
-                                const type =
-                                    item.type ||
-                                    "Participation";
-
-
-                                const date =
-                                    item.date ||
-                                    item.completedAt ||
-                                    "";
-
-
-                                return `
-                                    <article
-                                        class="activity-item"
-                                    >
-
-                                        <div
-                                            class="activity-icon"
-                                        >
-                                            ${escapeHTML(
-                                                item.icon ||
-                                                "✓"
-                                            )}
-                                        </div>
-
-
-                                        <div
-                                            class="activity-content"
-                                        >
-
-                                            <span
-                                                class="eyebrow"
-                                            >
-                                                ${escapeHTML(
-                                                    type
-                                                )}
-                                            </span>
-
-                                            <h3>
-                                                ${escapeHTML(
-                                                    title
-                                                )}
-                                            </h3>
-
-
-                                            ${
-                                                date
-                                                    ? `
-                                                        <time>
-                                                            ${escapeHTML(
-                                                                formatDate(
-                                                                    date
-                                                                )
-                                                            )}
-                                                        </time>
-                                                    `
-                                                    : ""
-                                            }
-
-                                        </div>
-
-                                    </article>
-                                `;
-
-                            }
-                        )
-                        .join("");
-
-            }
-
-
-            function renderBadges() {
-
-                const container =
-                    document.getElementById(
-                        "badge-list"
-                    );
-
-
-                if (!container) {
-                    return;
-                }
-
-
-                if (!badges.length) {
-
-                    container.innerHTML = `
-                        <div class="empty-state">
-
-                            <strong>
-                                Your badge collection is waiting.
-                            </strong>
-
-                            <span>
-                                Earned badges will appear here as
-                                participation features become active.
-                            </span>
-
-                        </div>
-                    `;
-
-                    return;
-                }
-
-
-                container.innerHTML =
-                    badges
-                        .map(
-                            function (badge) {
-
-                                const title =
-                                    badge.title ||
-                                    badge.name ||
-                                    "JLSPT Badge";
-
-
-                                const description =
-                                    badge.description ||
-                                    badge.criteria ||
-                                    "JLSPT participation badge.";
-
-
-                                const icon =
-                                    badge.icon ||
-                                    "⭐";
-
-
-                                const earned =
-                                    badge.earned ===
-                                    true ||
-                                    badge.unlocked ===
-                                    true;
-
-
-                                return `
-                                    <article
-                                        class="badge-card ${
-                                            earned
-                                                ? "earned"
-                                                : "locked"
-                                        }"
-                                    >
-
-                                        <div
-                                            class="badge-icon"
-                                        >
-                                            ${escapeHTML(
-                                                icon
-                                            )}
-                                        </div>
-
-
-                                        <div>
-
-                                            <h3>
-                                                ${escapeHTML(
-                                                    title
-                                                )}
-                                            </h3>
-
-                                            <p>
-                                                ${escapeHTML(
-                                                    description
-                                                )}
-                                            </p>
-
-
-                                            <span
-                                                class="badge-status"
-                                            >
-                                                ${
-                                                    earned
-                                                        ? "Earned"
-                                                        : "Not yet earned"
-                                                }
-                                            </span>
-
-                                        </div>
-
-                                    </article>
-                                `;
-
-                            }
-                        )
-                        .join("");
-
-            }
-
-
-            function renderCampaigns() {
-
-                const container =
-                    document.getElementById(
-                        "member-campaigns"
-                    );
-
-
-                if (!container) {
-                    return;
-                }
-
-
-                const activeCampaigns =
-                    campaigns.filter(
-                        function (campaign) {
-
-                            return (
-                                campaign.current ===
-                                true ||
-                                campaign.status ===
-                                "Active"
-                            );
-
-                        }
-                    );
-
-
-                if (!activeCampaigns.length) {
-
-                    container.innerHTML = `
-                        <div class="empty-state">
-
-                            <strong>
-                                No active campaign records yet.
-                            </strong>
-
-                            <span>
-                                Campaign participation will appear
-                                here after tracking is enabled.
-                            </span>
-
-                        </div>
-                    `;
-
-                    return;
-                }
-
-
-                container.innerHTML =
-                    activeCampaigns
-                        .map(
-                            function (campaign) {
-
-                                const title =
-                                    campaign.name ||
-                                    campaign.title ||
-                                    "JLSPT Campaign";
-
-
-                                const platform =
-                                    campaign.platform ||
-                                    "Streaming";
-
-
-                                const status =
-                                    campaign.status ||
-                                    "Active";
-
-
-                                return `
-                                    <article
-                                        class="campaign-card"
-                                    >
-
-                                        <div
-                                            class="campaign-card-top"
-                                        >
-
-                                            <span
-                                                class="tag"
-                                            >
-                                                ${escapeHTML(
-                                                    platform
-                                                )}
-                                            </span>
-
-
-                                            <span
-                                                class="status-badge status-active"
-                                            >
-                                                ${escapeHTML(
-                                                    status
-                                                )}
-                                            </span>
-
-                                        </div>
-
-
-                                        <h3>
-                                            ${escapeHTML(
-                                                title
-                                            )}
-                                        </h3>
-
-
-                                        ${
-                                            campaign.description
-                                                ? `
-                                                    <p>
-                                                        ${escapeHTML(
-                                                            campaign.description
-                                                        )}
-                                                    </p>
-                                                `
-                                                : ""
-                                        }
-
-
-                                        <div
-                                            class="card-actions"
-                                        >
-
-                                            <span
-                                                class="text-link"
-                                            >
-                                                Participation
-                                                tracking
-                                                available
-                                                after sign in
-                                            </span>
-
-                                        </div>
-
-                                    </article>
-                                `;
-
-                            }
-                        )
-                        .join("");
-
-            }
-
-
-            function renderMissions() {
-
-                const container =
-                    document.getElementById(
-                        "member-missions"
-                    );
-
-
-                if (!container) {
-                    return;
-                }
-
-
-                if (!missions.length) {
-
-                    container.innerHTML = `
-                        <div class="empty-state">
-
-                            <strong>
-                                No missions available yet.
-                            </strong>
-
-                            <span>
-                                Campaign missions will appear here
-                                when member tracking is enabled.
-                            </span>
-
-                        </div>
-                    `;
-
-                    return;
-                }
-
-
-                container.innerHTML =
-                    missions
-                        .map(
-                            function (mission) {
-
-                                const title =
-                                    mission.title ||
-                                    mission.name ||
-                                    "JLSPT Mission";
-
-
-                                const description =
-                                    mission.description ||
-                                    "";
-
-
-                                const completed =
-                                    mission.completed ===
-                                    true ||
-                                    mission.status ===
-                                    "Completed";
-
-
-                                return `
-                                    <article
-                                        class="mission-card"
-                                    >
-
-                                        <div
-                                            class="mission-card-top"
-                                        >
-
-                                            <span
-                                                class="mission-icon"
-                                            >
-                                                ${
-                                                    completed
-                                                        ? "✓"
-                                                        : "○"
-                                                }
-                                            </span>
-
-
-                                            <span
-                                                class="tag"
-                                            >
-                                                ${
-                                                    completed
-                                                        ? "Completed"
-                                                        : "Available"
-                                                }
-                                            </span>
-
-                                        </div>
-
-
-                                        <h3>
-                                            ${escapeHTML(
-                                                title
-                                            )}
-                                        </h3>
-
-
-                                        ${
-                                            description
-                                                ? `
-                                                    <p>
-                                                        ${escapeHTML(
-                                                            description
-                                                        )}
-                                                    </p>
-                                                `
-                                                : ""
-                                        }
-
-                                    </article>
-                                `;
-
-                            }
-                        )
-                        .join("");
-
-            }
-
-
-            function renderActivityHistory() {
-
-                const container =
-                    document.getElementById(
-                        "activity-history"
-                    );
-
-
-                if (!container) {
-                    return;
-                }
-
-
-                if (!activityHistory.length) {
-
-                    container.innerHTML = `
-                        <div class="empty-state">
-
-                            <strong>
-                                No activity history yet.
-                            </strong>
-
-                            <span>
-                                Your chronological JLSPT activity
-                                history will appear here after
-                                member tracking is available.
-                            </span>
-
-                        </div>
-                    `;
-
-                    return;
-                }
-
-
-                container.innerHTML =
-                    activityHistory
-                        .map(
-                            function (item) {
-
-                                const title =
-                                    item.title ||
-                                    item.name ||
-                                    "JLSPT Activity";
-
-
-                                const type =
-                                    item.type ||
-                                    "Activity";
-
-
-                                const date =
-                                    item.date ||
-                                    item.timestamp ||
-                                    "";
-
-
-                                return `
-                                    <div
-                                        class="history-item"
-                                    >
-
-                                        <div
-                                            class="history-marker"
-                                        ></div>
-
-
-                                        <div
-                                            class="history-content"
-                                        >
-
-                                            <span
-                                                class="eyebrow"
-                                            >
-                                                ${escapeHTML(
-                                                    type
-                                                )}
-                                            </span>
-
-
-                                            <strong>
-                                                ${escapeHTML(
-                                                    title
-                                                )}
-                                            </strong>
-
-
-                                            ${
-                                                date
-                                                    ? `
-                                                        <time>
-                                                            ${escapeHTML(
-                                                                formatDate(
-                                                                    date
-                                                                )
-                                                            )}
-                                                        </time>
-                                                    `
-                                                    : ""
-                                            }
-
-                                        </div>
-
-                                    </div>
-                                `;
-
-                            }
-                        )
-                        .join("");
-
-            }
-
-
-            function setupSignInButtons() {
-
-                const buttons =
-                    [
-                        document.getElementById(
-                            "member-action"
-                        ),
-                        document.getElementById(
-                            "cta-signin"
-                        )
-                    ];
-
-
-                buttons.forEach(
-                    function (button) {
-
-                        if (!button) {
-                            return;
-                        }
-
-
-                        button.addEventListener(
-                            "click",
-                            function () {
-
-                                alert(
-                                    "JLSPT member sign in will be available after Supabase authentication is connected."
-                                );
-
-                            }
-                        );
-
-                    }
-                );
-
-            }
-
-
-            renderProfile();
-
-            renderStats();
-
-            renderParticipation();
-
-            renderBadges();
-
-            renderCampaigns();
-
-            renderMissions();
-
-            renderActivityHistory();
-
-            setupSignInButtons();
-
-        })();
-    </script>
 
 </body>
 </html>

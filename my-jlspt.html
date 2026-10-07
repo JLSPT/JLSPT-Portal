@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -12,1373 +10,1414 @@
 
     <meta
         name="description"
-        content="Your JLSPT member profile, participation, badges, campaigns, missions, and activity history."
+        content="Your personal JLSPT participation dashboard, badges, missions, and activity history."
     >
 
     <title>My JLSPT | JLSPT</title>
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
+<header class="navbar">
 
-    <!-- =========================================================
-         NAVIGATION
-         ========================================================= -->
+    <div class="nav-inner">
 
-    <header class="navbar">
+        <a
+            href="index.html"
+            class="nav-brand"
+            aria-label="JLSPT Home"
+        >
+            <span class="nav-logo">
+                JLSPT
+            </span>
+        </a>
 
-        <div class="nav-inner">
+        <nav
+            class="nav-links"
+            aria-label="Main navigation"
+        ></nav>
 
-            <a
-                href="index.html"
-                class="brand"
-            >
+    </div>
 
-                <span class="brand-mark">
-                    JL
-                </span>
-
-                <span class="brand-text">
-
-                    <strong>
-                        JLSPT
-                    </strong>
-
-                    <small>
-                        JL Streaming Project Team
-                    </small>
-
-                </span>
-
-            </a>
+</header>
 
 
-            <nav
-                class="nav-links"
-                aria-label="Main navigation"
-            >
+<main>
 
-                <a href="index.html">
-                    Home
-                </a>
+    <!-- =================================================
+         HERO
+         ================================================= -->
 
-                <a href="music.html">
-                    Music
-                </a>
+    <section class="page-hero">
 
-                <a href="video.html">
-                    Video
-                </a>
+        <div class="container">
 
-                <a href="campaigns.html">
-                    Campaigns
-                </a>
-
-                <a href="schedule.html">
-                    Schedule
-                </a>
-
-                <a href="guides.html">
-                    Guides
-                </a>
-
-                <a href="corner.html">
-                    Corner
-                </a>
-
-                <a
-                    href="my-jlspt.html"
-                    class="active"
-                >
-                    My JLSPT
-                </a>
-
-            </nav>
-
-        </div>
-
-    </header>
-
-
-
-    <!-- =========================================================
-         MAIN
-         ========================================================= -->
-
-    <main>
-
-
-        <!-- =====================================================
-             HERO
-             ===================================================== -->
-
-        <section class="page-hero">
-
-            <div class="container">
+            <div class="page-hero-content">
 
                 <span class="eyebrow">
-                    MEMBER AREA
+                    YOUR JLSPT
                 </span>
-
 
                 <h1>
                     My JLSPT
                 </h1>
 
-
                 <p>
-                    Your personal space for participation,
-                    badges, campaigns, missions, and activity
-                    history.
+                    Keep track of your JLSPT participation,
+                    missions, badges, campaigns, and activity history.
                 </p>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             SIGN IN NOTICE
-             ===================================================== -->
-
-        <section class="section">
-
-            <div class="container">
-
-                <div
-                    class="member-login-card"
-                    id="member-login-card"
-                >
-
-                    <div class="member-login-icon">
-                        ✦
-                    </div>
-
-
-                    <div>
-
-                        <span class="section-label">
-                            MEMBER ACCESS
-                        </span>
-
-
-                        <h2>
-                            Your JLSPT profile is coming soon
-                        </h2>
-
-
-                        <p>
-                            Sign in will be connected through
-                            Supabase when the member system is
-                            activated.
-                        </p>
-
-                    </div>
-
-
-                    <button
-                        type="button"
-                        class="primary-button"
-                        id="login-button"
-                    >
-                        Sign in
-                    </button>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             PROFILE
-             ===================================================== -->
-
-        <section class="section">
-
-            <div class="container">
-
-                <div
-                    class="member-profile-card"
-                    id="member-profile"
-                >
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             PARTICIPATION
-             ===================================================== -->
-
-        <section class="section">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <span class="section-label">
-                        PARTICIPATION
-                    </span>
-
-                    <h2>
-                        Your Support
-                    </h2>
-
-                    <p>
-                        JLSPT records participation as a history
-                        of support, not as a competition.
-                    </p>
-
-                </div>
-
-
-                <div
-                    class="participation-grid"
-                    id="participation-grid"
-                >
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             BADGES
-             ===================================================== -->
-
-        <section class="section">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <span class="section-label">
-                        BADGES
-                    </span>
-
-                    <h2>
-                        Your Badges
-                    </h2>
-
-                    <p>
-                        Earn recognition for meaningful JLSPT
-                        participation and community support.
-                    </p>
-
-                </div>
-
-
-                <div
-                    class="badge-grid"
-                    id="badge-grid"
-                >
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             CAMPAIGNS & MISSIONS
-             ===================================================== -->
-
-        <section class="section">
-
-            <div class="container">
-
-                <div class="member-two-column">
-
-
-                    <div>
-
-                        <div class="section-heading">
-
-                            <span class="section-label">
-                                CAMPAIGNS
-                            </span>
-
-                            <h2>
-                                My Campaigns
-                            </h2>
-
-                        </div>
-
-
-                        <div
-                            class="member-list"
-                            id="member-campaigns"
-                        >
-                        </div>
-
-                    </div>
-
-
-                    <div>
-
-                        <div class="section-heading">
-
-                            <span class="section-label">
-                                MISSIONS
-                            </span>
-
-                            <h2>
-                                My Missions
-                            </h2>
-
-                        </div>
-
-
-                        <div
-                            class="member-list"
-                            id="member-missions"
-                        >
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             ACTIVITY HISTORY
-             ===================================================== -->
-
-        <section class="section">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <span class="section-label">
-                        ACTIVITY HISTORY
-                    </span>
-
-                    <h2>
-                        Recent Activity
-                    </h2>
-
-                    <p>
-                        Your JLSPT participation history will
-                        appear here after member tracking is
-                        activated.
-                    </p>
-
-                </div>
-
-
-                <div
-                    class="activity-history"
-                    id="activity-history"
-                >
-                </div>
-
-            </div>
-
-        </section>
-
-
-    </main>
-
-
-
-    <!-- =========================================================
-         FOOTER
-         ========================================================= -->
-
-    <footer class="site-footer">
-
-        <div class="container">
-
-            <div class="footer-inner">
-
-                <div>
-
-                    <strong>
-                        JLSPT
-                    </strong>
-
-                    <p>
-                        JL Streaming Project Team
-                    </p>
-
-                </div>
-
-
-                <div class="footer-links">
-
-                    <a href="index.html">
-                        Home
-                    </a>
-
-                    <a href="music.html">
-                        Music
-                    </a>
-
-                    <a href="video.html">
-                        Video
-                    </a>
-
-                    <a href="campaigns.html">
-                        Campaigns
-                    </a>
-
-                    <a href="schedule.html">
-                        Schedule
-                    </a>
-
-                    <a href="guides.html">
-                        Guides
-                    </a>
-
-                    <a href="corner.html">
-                        Corner
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div class="footer-bottom">
-
-                <span>
-                    JLSPT • JL Streaming Project Team
-                </span>
-
-                <span>
-                    Stream. Support. Stay connected.
-                </span>
 
             </div>
 
         </div>
 
-    </footer>
+    </section>
 
 
+    <!-- =================================================
+         MEMBER STATUS
+         ================================================= -->
 
-    <!-- =========================================================
-         DATA
-         ========================================================= -->
+    <section class="section">
 
-    <script src="data.js"></script>
+        <div class="container">
 
-    <script src="menu.js"></script>
+            <div
+                id="member-banner"
+                class="member-banner"
+            ></div>
 
+        </div>
 
-
-    <!-- =========================================================
-         MEMBER SCRIPT
-         ========================================================= -->
-
-    <script>
-
-        document.addEventListener(
-            "DOMContentLoaded",
-            function () {
-
-                if (
-                    typeof JLSPT_DATA === "undefined"
-                ) {
-                    return;
-                }
+    </section>
 
 
-                const profile =
-                    JLSPT_DATA.memberProfile || {};
+    <!-- =================================================
+         PROFILE + PARTICIPATION
+         ================================================= -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="my-dashboard-grid">
+
+                <div
+                    id="profile-card"
+                    class="card profile-card"
+                ></div>
 
 
-                const participation =
-                    JLSPT_DATA.participation || {
-                        history: []
-                    };
+                <div
+                    id="participation-card"
+                    class="card participation-card"
+                ></div>
+
+            </div>
+
+        </div>
+
+    </section>
 
 
-                const badges =
-                    JLSPT_DATA.badges || [];
+    <!-- =================================================
+         BADGES
+         ================================================= -->
+
+    <section class="section section-alt">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        YOUR COLLECTION
+                    </span>
+
+                    <h2>
+                        Badges
+                    </h2>
+
+                    <p>
+                        Badges recognize participation and
+                        meaningful support. They are not rankings.
+                    </p>
+
+                </div>
+
+            </div>
 
 
-                const campaigns =
-                    JLSPT_DATA.campaigns || [];
+            <div
+                id="badges-list"
+                class="badges-grid"
+            ></div>
+
+        </div>
+
+    </section>
 
 
-                const history =
-                    participation.history || [];
+    <!-- =================================================
+         CAMPAIGNS
+         ================================================= -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        SUPPORT
+                    </span>
+
+                    <h2>
+                        Campaigns
+                    </h2>
+
+                    <p>
+                        Your participation in official JLSPT
+                        streaming campaigns.
+                    </p>
+
+                </div>
+
+            </div>
 
 
+            <div
+                id="member-campaigns"
+                class="grid grid-2"
+            ></div>
 
-                /*
-                 * =================================================
-                 * PROFILE
-                 * =================================================
-                 */
+        </div>
 
-                renderProfile();
-
-
-                /*
-                 * =================================================
-                 * PARTICIPATION
-                 * =================================================
-                 */
-
-                renderParticipation();
+    </section>
 
 
-                /*
-                 * =================================================
-                 * BADGES
-                 * =================================================
-                 */
+    <!-- =================================================
+         MISSIONS
+         ================================================= -->
 
-                renderBadges();
+    <section class="section section-alt">
 
+        <div class="container">
 
-                /*
-                 * =================================================
-                 * CAMPAIGNS
-                 * =================================================
-                 */
+            <div class="section-heading">
 
-                renderCampaigns();
+                <div>
 
+                    <span class="eyebrow">
+                        CAMPAIGN MISSIONS
+                    </span>
 
-                /*
-                 * =================================================
-                 * MISSIONS
-                 * =================================================
-                 */
+                    <h2>
+                        Missions
+                    </h2>
 
-                renderMissions();
+                    <p>
+                        Official campaign actions you can complete
+                        as part of your support.
+                    </p>
 
+                </div>
 
-                /*
-                 * =================================================
-                 * HISTORY
-                 * =================================================
-                 */
-
-                renderHistory();
+            </div>
 
 
+            <div
+                id="member-missions"
+                class="mission-dashboard"
+            ></div>
 
-                /*
-                 * =================================================
-                 * PROFILE
-                 * =================================================
-                 */
+        </div>
 
-                function renderProfile() {
-
-                    const container =
-                        document.getElementById(
-                            "member-profile"
-                        );
+    </section>
 
 
-                    if (!container) {
-                        return;
+    <!-- =================================================
+         ACTIVITY HISTORY
+         ================================================= -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        YOUR RECORD
+                    </span>
+
+                    <h2>
+                        Activity History
+                    </h2>
+
+                    <p>
+                        A personal record of your JLSPT
+                        participation and contributions.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="activity-history"
+                class="activity-history"
+            ></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         PRIVACY NOTE
+         ================================================= -->
+
+    <section class="section section-alt">
+
+        <div class="container">
+
+            <div class="privacy-note">
+
+                <div class="privacy-note-icon">
+                    🔒
+                </div>
+
+                <div>
+
+                    <h3>
+                        Your participation belongs to you
+                    </h3>
+
+                    <p>
+                        JLSPT participation is designed as a
+                        personal record of support, not a public
+                        competition. Your private account data
+                        will only be connected once member
+                        authentication is implemented.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div>
+
+            <div class="footer-brand">
+                JLSPT
+            </div>
+
+            <div class="footer-text">
+                JL Streaming Project Team
+            </div>
+
+        </div>
+
+        <div class="footer-text">
+            Stream. Support. Stay connected.
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="data.js"></script>
+<script src="menu.js"></script>
+
+<script>
+(function () {
+
+    "use strict";
+
+
+    function escapeHTML(value) {
+
+        return String(value ?? "")
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+
+    }
+
+
+    function getMember() {
+
+        return JLSPT_DATA.memberProfile || {
+            id: null,
+            username: "",
+            displayName: "",
+            avatar: "",
+            joinedDate: null,
+            role: "member",
+            badges: [],
+            participation: {
+                campaignsJoined: 0,
+                missionsCompleted: 0,
+                streamingSessions: 0,
+                milestonesSupported: 0,
+                communityPosts: 0
+            },
+            preferences: {
+                notifications: true,
+                publicProfile: true
+            }
+        };
+
+    }
+
+
+    function getParticipation() {
+
+        const member =
+            getMember();
+
+
+        return member.participation || {
+            campaignsJoined: 0,
+            missionsCompleted: 0,
+            streamingSessions: 0,
+            milestonesSupported: 0,
+            communityPosts: 0
+        };
+
+    }
+
+
+    function renderMemberBanner() {
+
+        const container =
+            document.getElementById(
+                "member-banner"
+            );
+
+
+        const member =
+            getMember();
+
+
+        const loggedIn =
+            Boolean(
+                member.id
+            );
+
+
+        if (loggedIn) {
+
+            container.innerHTML = `
+
+                <div class="member-banner-content">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            MEMBER
+                        </span>
+
+                        <h2>
+                            Welcome back,
+                            ${escapeHTML(
+                                member.displayName ||
+                                member.username ||
+                                "JLSPT Member"
+                            )}
+                        </h2>
+
+                        <p>
+                            Your JLSPT participation dashboard
+                            is ready.
+                        </p>
+
+                    </div>
+
+                    <span class="status-badge status-active">
+                        MEMBER
+                    </span>
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        container.innerHTML = `
+
+            <div class="member-banner-content">
+
+                <div>
+
+                    <span class="eyebrow">
+                        MEMBER DASHBOARD
+                    </span>
+
+                    <h2>
+                        Your JLSPT space is ready.
+                    </h2>
+
+                    <p>
+                        Member login and account sync will be
+                        connected through Supabase.
+                    </p>
+
+                </div>
+
+                <span class="status-badge status-upcoming">
+                    LOGIN COMING SOON
+                </span>
+
+            </div>
+
+        `;
+
+    }
+
+
+    function renderProfile() {
+
+        const container =
+            document.getElementById(
+                "profile-card"
+            );
+
+
+        const member =
+            getMember();
+
+
+        const displayName =
+            member.displayName ||
+            member.username ||
+            "JLSPT Member";
+
+
+        const initial =
+            displayName
+                .charAt(0)
+                .toUpperCase();
+
+
+        const role =
+            member.role || "member";
+
+
+        const joinedDate =
+            member.joinedDate
+                ? member.joinedDate
+                : "Not yet connected";
+
+
+        container.innerHTML = `
+
+            <div class="profile-card-header">
+
+                <div class="profile-avatar">
+                    ${
+                        member.avatar
+                            ? `
+                                <img
+                                    src="${escapeHTML(
+                                        member.avatar
+                                    )}"
+                                    alt=""
+                                >
+                            `
+                            : escapeHTML(
+                                initial
+                            )
                     }
+                </div>
 
 
-                    const displayName =
-                        profile.displayName ||
-                        "JLSPT Member";
+                <div>
+
+                    <span class="eyebrow">
+                        PROFILE
+                    </span>
+
+                    <h2>
+                        ${escapeHTML(
+                            displayName
+                        )}
+                    </h2>
+
+                    <span class="profile-role">
+                        ${escapeHTML(
+                            role
+                        )}
+                    </span>
+
+                </div>
+
+            </div>
 
 
-                    const initial =
-                        displayName
-                            .charAt(0)
-                            .toUpperCase();
+            <div class="profile-details">
 
+                <div>
 
-                    container.innerHTML = `
+                    <span>
+                        Username
+                    </span>
 
-                        <div class="member-avatar">
-
-                            ${
-                                profile.avatar
-                                    ? `
-                                        <img
-                                            src="${escapeAttribute(
-                                                profile.avatar
-                                            )}"
-                                            alt="${escapeAttribute(
-                                                displayName
-                                            )}"
-                                        >
-                                    `
-                                    : `
-                                        <span>
-                                            ${escapeHTML(
-                                                initial
-                                            )}
-                                        </span>
-                                    `
-                            }
-
-                        </div>
-
-
-                        <div class="member-profile-info">
-
-                            <span class="section-label">
-                                MEMBER PROFILE
-                            </span>
-
-
-                            <h2>
-                                ${escapeHTML(
-                                    displayName
-                                )}
-                            </h2>
-
-
-                            <p>
-                                ${
-                                    profile.joinedDate
-                                        ? "Member since " +
-                                          escapeHTML(
-                                              formatDate(
-                                                  profile.joinedDate
-                                              )
-                                          )
-                                        : "JLSPT member"
-                                }
-                            </p>
-
-
-                            <span class="member-role">
-                                ${escapeHTML(
-                                    profile.role ||
-                                    "member"
-                                )}
-                            </span>
-
-                        </div>
-
-                    `;
-
-                }
-
-
-
-                /*
-                 * =================================================
-                 * PARTICIPATION
-                 * =================================================
-                 */
-
-                function renderParticipation() {
-
-                    const container =
-                        document.getElementById(
-                            "participation-grid"
-                        );
-
-
-                    if (!container) {
-                        return;
-                    }
-
-
-                    const values =
-                        profile.participation || {};
-
-
-                    const items = [
-
-                        {
-                            icon: "🔥",
-                            label: "Campaigns Joined",
-                            value:
-                                values.campaignsJoined ||
-                                0
-                        },
-
-                        {
-                            icon: "✓",
-                            label: "Missions Completed",
-                            value:
-                                values.missionsCompleted ||
-                                0
-                        },
-
-                        {
-                            icon: "🎧",
-                            label: "Streaming Sessions",
-                            value:
-                                values.streamingSessions ||
-                                0
-                        },
-
-                        {
-                            icon: "⭐",
-                            label: "Milestones Supported",
-                            value:
-                                values.milestonesSupported ||
-                                0
-                        },
-
-                        {
-                            icon: "💬",
-                            label: "Community Contributions",
-                            value:
-                                values.communityPosts ||
-                                0
+                    <strong>
+                        ${
+                            member.username
+                                ? escapeHTML(
+                                    member.username
+                                )
+                                : "Not connected"
                         }
+                    </strong>
 
-                    ];
-
-
-                    container.innerHTML =
-                        items
-                            .map(
-                                function (item) {
-
-                                    return `
-
-                                        <article
-                                            class="participation-card"
-                                        >
-
-                                            <div class="participation-icon">
-                                                ${item.icon}
-                                            </div>
+                </div>
 
 
-                                            <strong>
-                                                ${escapeHTML(
-                                                    item.value
-                                                )}
-                                            </strong>
+                <div>
+
+                    <span>
+                        Joined
+                    </span>
+
+                    <strong>
+                        ${escapeHTML(
+                            joinedDate
+                        )}
+                    </strong>
+
+                </div>
+
+            </div>
 
 
-                                            <span>
-                                                ${escapeHTML(
-                                                    item.label
-                                                )}
-                                            </span>
+            <button
+                type="button"
+                class="btn btn-secondary"
+                id="profile-action"
+            >
+                ${
+                    member.id
+                        ? "Manage Profile"
+                        : "Connect Account"
+                }
+            </button>
 
-                                        </article>
+        `;
 
-                                    `;
 
-                                }
-                            )
-                            .join("");
+        document
+            .getElementById(
+                "profile-action"
+            )
+            .addEventListener(
+                "click",
+                function () {
+
+                    alert(
+                        member.id
+                            ? "Profile settings will be connected to Supabase."
+                            : "Member authentication will be connected to Supabase."
+                    );
 
                 }
+            );
 
+    }
 
 
-                /*
-                 * =================================================
-                 * BADGES
-                 * =================================================
-                 */
+    function renderParticipation() {
 
-                function renderBadges() {
+        const container =
+            document.getElementById(
+                "participation-card"
+            );
 
-                    const container =
-                        document.getElementById(
-                            "badge-grid"
-                        );
 
+        const participation =
+            getParticipation();
 
-                    if (!container) {
-                        return;
-                    }
 
+        const stats = [
 
-                    const earned =
-                        profile.badges || [];
+            {
+                label: "Campaigns",
+                value:
+                    participation.campaignsJoined
+            },
 
+            {
+                label: "Missions",
+                value:
+                    participation.missionsCompleted
+            },
 
-                    container.innerHTML =
-                        badges
-                            .map(
-                                function (badge) {
+            {
+                label: "Sessions",
+                value:
+                    participation.streamingSessions
+            },
 
-                                    const isEarned =
-                                        earned.includes(
-                                            badge.id
-                                        );
+            {
+                label: "Milestones",
+                value:
+                    participation.milestonesSupported
+            },
 
+            {
+                label: "Community",
+                value:
+                    participation.communityPosts
+            }
 
-                                    return `
+        ];
 
-                                        <article
-                                            class="member-badge-card ${
-                                                isEarned
-                                                    ? "earned"
-                                                    : "locked"
-                                            }"
-                                        >
 
-                                            <div class="badge-icon">
-                                                ${escapeHTML(
-                                                    badge.icon ||
-                                                    "★"
-                                                )}
-                                            </div>
+        container.innerHTML = `
 
+            <div class="participation-header">
 
-                                            <div>
+                <span class="eyebrow">
+                    PARTICIPATION
+                </span>
 
-                                                <h3>
-                                                    ${escapeHTML(
-                                                        badge.title
-                                                    )}
-                                                </h3>
+                <h2>
+                    Your Support
+                </h2>
 
+                <p>
+                    Participation is recorded as a history
+                    of support. There are no points or rankings.
+                </p>
 
-                                                <p>
-                                                    ${escapeHTML(
-                                                        badge.description ||
-                                                        ""
-                                                    )}
-                                                </p>
+            </div>
 
 
-                                                ${
-                                                    isEarned
-                                                        ? `
-                                                            <span class="badge-status">
-                                                                ✓ Earned
-                                                            </span>
-                                                        `
-                                                        : `
-                                                            <span class="badge-status">
-                                                                Locked
-                                                            </span>
-                                                        `
-                                                }
+            <div class="stats-grid">
 
-                                            </div>
+                ${stats.map(
+                    function (stat) {
 
-                                        </article>
+                        return `
 
-                                    `;
+                            <div class="stat-card">
 
-                                }
-                            )
-                            .join("");
-
-                }
-
-
-
-                /*
-                 * =================================================
-                 * CAMPAIGNS
-                 * =================================================
-                 */
-
-                function renderCampaigns() {
-
-                    const container =
-                        document.getElementById(
-                            "member-campaigns"
-                        );
-
-
-                    if (!container) {
-                        return;
-                    }
-
-
-                    if (!campaigns.length) {
-
-                        container.innerHTML =
-                            createEmptyItem(
-                                "No campaigns available yet."
-                            );
-
-                        return;
-
-                    }
-
-
-                    container.innerHTML =
-                        campaigns
-                            .filter(
-                                function (campaign) {
-
-                                    return (
-                                        campaign.status !==
-                                        "archived"
-                                    );
-
-                                }
-                            )
-                            .map(
-                                function (campaign) {
-
-                                    const percent =
-                                        campaign.goal > 0
-                                            ? Math.min(
-                                                100,
-                                                Math.round(
-                                                    (
-                                                        campaign.current /
-                                                        campaign.goal
-                                                    ) * 100
-                                                )
-                                            )
-                                            : 0;
-
-
-                                    return `
-
-                                        <a
-                                            href="campaigns.html"
-                                            class="member-list-item"
-                                        >
-
-                                            <div>
-
-                                                <strong>
-                                                    ${escapeHTML(
-                                                        campaign.title
-                                                    )}
-                                                </strong>
-
-
-                                                <span>
-                                                    ${escapeHTML(
-                                                        campaign.platform ||
-                                                        "Streaming"
-                                                    )}
-                                                </span>
-
-                                            </div>
-
-
-                                            <div class="member-progress">
-
-                                                <div
-                                                    class="progress-track"
-                                                >
-
-                                                    <span
-                                                        style="width:${percent}%"
-                                                    ></span>
-
-                                                </div>
-
-
-                                                <small>
-                                                    ${percent}%
-                                                </small>
-
-                                            </div>
-
-                                        </a>
-
-                                    `;
-
-                                }
-                            )
-                            .join("");
-
-                }
-
-
-
-                /*
-                 * =================================================
-                 * MISSIONS
-                 * =================================================
-                 */
-
-                function renderMissions() {
-
-                    const container =
-                        document.getElementById(
-                            "member-missions"
-                        );
-
-
-                    if (!container) {
-                        return;
-                    }
-
-
-                    const missions =
-                        campaigns.flatMap(
-                            function (campaign) {
-
-                                return (
-                                    campaign.missions ||
-                                    []
-                                ).map(
-                                    function (mission) {
-
-                                        return {
-                                            ...mission,
-                                            campaignTitle:
-                                                campaign.title
-                                        };
-
-                                    }
-                                );
-
-                            }
-                        );
-
-
-                    if (!missions.length) {
-
-                        container.innerHTML =
-                            createEmptyItem(
-                                "Campaign missions will appear here."
-                            );
-
-                        return;
-
-                    }
-
-
-                    container.innerHTML =
-                        missions
-                            .map(
-                                function (mission) {
-
-                                    return `
-
-                                        <div
-                                            class="member-list-item"
-                                        >
-
-                                            <div>
-
-                                                <strong>
-                                                    ${escapeHTML(
-                                                        mission.title
-                                                    )}
-                                                </strong>
-
-
-                                                <span>
-                                                    ${escapeHTML(
-                                                        mission.campaignTitle
-                                                    )}
-                                                </span>
-
-                                            </div>
-
-
-                                            <span class="mission-status">
-                                                Not started
-                                            </span>
-
-                                        </div>
-
-                                    `;
-
-                                }
-                            )
-                            .join("");
-
-                }
-
-
-
-                /*
-                 * =================================================
-                 * HISTORY
-                 * =================================================
-                 */
-
-                function renderHistory() {
-
-                    const container =
-                        document.getElementById(
-                            "activity-history"
-                        );
-
-
-                    if (!container) {
-                        return;
-                    }
-
-
-                    if (!history.length) {
-
-                        container.innerHTML = `
-
-                            <div class="history-empty">
+                                <strong>
+                                    ${Number(
+                                        stat.value || 0
+                                    )}
+                                </strong>
 
                                 <span>
-                                    🕘
+                                    ${escapeHTML(
+                                        stat.label
+                                    )}
                                 </span>
-
-
-                                <div>
-
-                                    <h3>
-                                        No activity recorded yet
-                                    </h3>
-
-
-                                    <p>
-                                        Your verified JLSPT
-                                        participation history will
-                                        appear here once the member
-                                        system is connected.
-                                    </p>
-
-                                </div>
 
                             </div>
 
                         `;
 
-                        return;
-
                     }
+                ).join("")}
+
+            </div>
+
+        `;
+
+    }
 
 
-                    container.innerHTML =
-                        history
-                            .map(
-                                function (item) {
+    function renderBadges() {
 
-                                    return `
-
-                                        <article
-                                            class="history-item"
-                                        >
-
-                                            <div class="history-icon">
-                                                ✓
-                                            </div>
+        const container =
+            document.getElementById(
+                "badges-list"
+            );
 
 
-                                            <div>
-
-                                                <strong>
-                                                    ${escapeHTML(
-                                                        item.title ||
-                                                        "JLSPT Activity"
-                                                    )}
-                                                </strong>
+        const badges =
+            Array.isArray(
+                JLSPT_DATA.badges
+            )
+                ? JLSPT_DATA.badges
+                : [];
 
 
-                                                <p>
-                                                    ${escapeHTML(
-                                                        item.description ||
-                                                        ""
-                                                    )}
-                                                </p>
-
-                                            </div>
+        const member =
+            getMember();
 
 
-                                            <time>
-                                                ${escapeHTML(
-                                                    formatDate(
-                                                        item.date
-                                                    )
-                                                )}
-                                            </time>
-
-                                        </article>
-
-                                    `;
-
-                                }
-                            )
-                            .join("");
-
-                }
+        const earned =
+            Array.isArray(
+                member.badges
+            )
+                ? member.badges
+                : [];
 
 
+        if (!badges.length) {
 
-                /*
-                 * =================================================
-                 * EMPTY LIST ITEM
-                 * =================================================
-                 */
+            container.innerHTML = `
 
-                function createEmptyItem(
-                    message
-                ) {
+                <div class="empty-state">
 
-                    return `
+                    <div class="empty-state-icon">
+                        🏅
+                    </div>
 
-                        <div class="member-list-empty">
+                    <h3>
+                        Badges coming soon
+                    </h3>
 
-                            <span>
-                                ✦
-                            </span>
+                    <p>
+                        Participation badges will appear here.
+                    </p>
 
-                            <p>
-                                ${escapeHTML(
-                                    message
-                                )}
-                            </p>
+                </div>
 
-                        </div>
+            `;
 
-                    `;
+            return;
 
-                }
+        }
 
 
+        container.innerHTML =
+            badges
+                .map(
+                    function (badge) {
 
-                /*
-                 * =================================================
-                 * LOGIN BUTTON
-                 * =================================================
-                 */
-
-                const loginButton =
-                    document.getElementById(
-                        "login-button"
-                    );
-
-
-                if (loginButton) {
-
-                    loginButton.addEventListener(
-                        "click",
-                        function () {
-
-                            alert(
-                                "JLSPT member sign in will be connected through Supabase."
+                        const isEarned =
+                            earned.includes(
+                                badge.id
                             );
 
-                        }
-                    );
 
-                }
+                        return `
+
+                            <article
+                                class="
+                                    badge-card
+                                    ${
+                                        isEarned
+                                            ? "earned"
+                                            : "locked"
+                                    }
+                                "
+                            >
+
+                                <div class="badge-icon">
+
+                                    ${escapeHTML(
+                                        badge.icon ||
+                                        "🏅"
+                                    )}
+
+                                </div>
 
 
+                                <div class="badge-content">
 
-                /*
-                 * =================================================
-                 * DATE
-                 * =================================================
-                 */
+                                    <span
+                                        class="
+                                            badge-status
+                                        "
+                                    >
+                                        ${
+                                            isEarned
+                                                ? "EARNED"
+                                                : "NOT YET EARNED"
+                                        }
+                                    </span>
 
-                function formatDate(
-                    value
-                ) {
 
-                    if (!value) {
-                        return "Date TBA";
+                                    <h3>
+                                        ${escapeHTML(
+                                            badge.title
+                                        )}
+                                    </h3>
+
+
+                                    <p>
+                                        ${escapeHTML(
+                                            badge.description
+                                        )}
+                                    </p>
+
+
+                                    <div class="badge-requirement">
+
+                                        <span>
+                                            Requirement
+                                        </span>
+
+                                        <strong>
+                                            ${escapeHTML(
+                                                badge.requirement
+                                            )}
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+
+                        `;
+
                     }
+                )
+                .join("");
+
+    }
 
 
-                    const date =
-                        new Date(value);
+    function getCampaignProgress(
+        campaign
+    ) {
+
+        if (
+            !campaign.goal ||
+            campaign.goal <= 0
+        ) {
+            return 0;
+        }
 
 
-                    if (
-                        Number.isNaN(
-                            date.getTime()
-                        )
-                    ) {
-
-                        return String(
-                            value
-                        );
-
-                    }
-
-
-                    return date.toLocaleDateString(
-                        "en-US",
-                        {
-                            month: "short",
-                            day: "numeric",
-                            year: "numeric"
-                        }
-                    );
-
-                }
-
-
-
-                /*
-                 * =================================================
-                 * ESCAPE
-                 * =================================================
-                 */
-
-                function escapeHTML(
-                    value
-                ) {
-
-                    return String(
-                        value ?? ""
+        return Math.min(
+            100,
+            Math.max(
+                0,
+                (
+                    Number(
+                        campaign.current || 0
+                    ) /
+                    Number(
+                        campaign.goal
                     )
-                        .replace(
-                            /&/g,
-                            "&amp;"
-                        )
-                        .replace(
-                            /</g,
-                            "&lt;"
-                        )
-                        .replace(
-                            />/g,
-                            "&gt;"
-                        )
-                        .replace(
-                            /"/g,
-                            "&quot;"
-                        )
-                        .replace(
-                            /'/g,
-                            "&#039;"
-                        );
+                ) *
+                100
+            )
+        );
 
-                }
+    }
 
 
-                function escapeAttribute(
-                    value
+    function renderCampaigns() {
+
+        const container =
+            document.getElementById(
+                "member-campaigns"
+            );
+
+
+        const campaigns =
+            Array.isArray(
+                JLSPT_DATA.campaigns
+            )
+                ? JLSPT_DATA.campaigns
+                : [];
+
+
+        if (!campaigns.length) {
+
+            container.innerHTML = `
+
+                <div class="empty-state">
+
+                    <div class="empty-state-icon">
+                        🔥
+                    </div>
+
+                    <h3>
+                        No campaigns yet
+                    </h3>
+
+                    <p>
+                        Your campaign participation will appear here.
+                    </p>
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        container.innerHTML =
+            campaigns
+                .map(
+                    function (campaign) {
+
+                        const progress =
+                            getCampaignProgress(
+                                campaign
+                            );
+
+
+                        return `
+
+                            <article class="card member-campaign-card">
+
+                                <div class="campaign-header">
+
+                                    <div>
+
+                                        <span
+                                            class="
+                                                status-badge
+                                                ${
+                                                    campaign.status ===
+                                                    "active"
+                                                        ? "status-active"
+                                                        : "status-upcoming"
+                                                }
+                                            "
+                                        >
+                                            ${escapeHTML(
+                                                (
+                                                    campaign.status ||
+                                                    "upcoming"
+                                                )
+                                                    .replace(
+                                                        /-/g,
+                                                        " "
+                                                    )
+                                                    .toUpperCase()
+                                            )}
+                                        </span>
+
+                                        <h3>
+                                            ${escapeHTML(
+                                                campaign.title
+                                            )}
+                                        </h3>
+
+                                    </div>
+
+
+                                    ${
+                                        campaign.platform
+                                            ? `
+                                                <span class="category-badge">
+                                                    ${escapeHTML(
+                                                        campaign.platform
+                                                    )}
+                                                </span>
+                                            `
+                                            : ""
+                                    }
+
+                                </div>
+
+
+                                <p>
+                                    ${escapeHTML(
+                                        campaign.description ||
+                                        ""
+                                    )}
+                                </p>
+
+
+                                <div class="campaign-progress">
+
+                                    <div class="progress-label">
+
+                                        <span>
+                                            Campaign progress
+                                        </span>
+
+                                        <strong>
+                                            ${progress.toFixed(
+                                                1
+                                            )}%
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div class="progress-bar">
+
+                                        <div
+                                            class="progress-fill"
+                                            style="
+                                                width:${progress}%
+                                            "
+                                        ></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="hero-actions">
+
+                                    <a
+                                        href="campaigns.html"
+                                        class="btn btn-secondary"
+                                    >
+                                        View Campaign
+                                    </a>
+
+                                </div>
+
+                            </article>
+
+                        `;
+
+                    }
+                )
+                .join("");
+
+    }
+
+
+    function renderMissions() {
+
+        const container =
+            document.getElementById(
+                "member-missions"
+            );
+
+
+        const campaigns =
+            Array.isArray(
+                JLSPT_DATA.campaigns
+            )
+                ? JLSPT_DATA.campaigns
+                : [];
+
+
+        const missions = [];
+
+
+        campaigns.forEach(
+            function (campaign) {
+
+                if (
+                    !Array.isArray(
+                        campaign.missions
+                    )
                 ) {
-
-                    return escapeHTML(
-                        value
-                    );
-
+                    return;
                 }
+
+
+                campaign.missions.forEach(
+                    function (mission) {
+
+                        missions.push({
+                            campaign:
+                                campaign.title,
+                            campaignId:
+                                campaign.id,
+                            mission:
+                                mission
+                        });
+
+                    }
+                );
 
             }
         );
 
-    </script>
 
+        if (!missions.length) {
+
+            container.innerHTML = `
+
+                <div class="empty-state">
+
+                    <div class="empty-state-icon">
+                        🎯
+                    </div>
+
+                    <h3>
+                        No missions yet
+                    </h3>
+
+                    <p>
+                        Official campaign missions will appear here.
+                    </p>
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        container.innerHTML =
+            missions
+                .map(
+                    function (item) {
+
+                        return `
+
+                            <article
+                                class="
+                                    mission-dashboard-card
+                                "
+                            >
+
+                                <div
+                                    class="
+                                        mission-dashboard-icon
+                                    "
+                                >
+                                    ${
+                                        item.mission.type ===
+                                        "video"
+                                            ? "📺"
+                                            : (
+                                                item.mission.type ===
+                                                "share"
+                                                    ? "📣"
+                                                    : "✓"
+                                            )
+                                    }
+                                </div>
+
+
+                                <div
+                                    class="
+                                        mission-dashboard-content
+                                    "
+                                >
+
+                                    <span class="eyebrow">
+                                        ${escapeHTML(
+                                            item.campaign
+                                        )}
+                                    </span>
+
+                                    <h3>
+                                        ${escapeHTML(
+                                            item.mission.title
+                                        )}
+                                    </h3>
+
+                                    <p>
+                                        ${escapeHTML(
+                                            item.mission.description
+                                        )}
+                                    </p>
+
+                                </div>
+
+
+                                <span
+                                    class="
+                                        mission-status
+                                    "
+                                >
+                                    NOT STARTED
+                                </span>
+
+                            </article>
+
+                        `;
+
+                    }
+                )
+                .join("");
+
+    }
+
+
+    function renderHistory() {
+
+        const container =
+            document.getElementById(
+                "activity-history"
+            );
+
+
+        const history =
+            Array.isArray(
+                JLSPT_DATA.participation?.history
+            )
+                ? JLSPT_DATA.participation.history
+                : [];
+
+
+        if (!history.length) {
+
+            container.innerHTML = `
+
+                <div class="activity-empty">
+
+                    <div class="activity-empty-icon">
+                        📝
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            No activity recorded yet
+                        </h3>
+
+                        <p>
+                            Your verified JLSPT participation
+                            history will appear here once member
+                            tracking is connected.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        container.innerHTML =
+            history
+                .map(
+                    function (item) {
+
+                        return `
+
+                            <article
+                                class="
+                                    activity-item
+                                "
+                            >
+
+                                <div
+                                    class="
+                                        activity-icon
+                                    "
+                                >
+                                    ✓
+                                </div>
+
+
+                                <div
+                                    class="
+                                        activity-content
+                                    "
+                                >
+
+                                    <strong>
+                                        ${escapeHTML(
+                                            item.title ||
+                                            "JLSPT Activity"
+                                        )}
+                                    </strong>
+
+                                    <span>
+                                        ${escapeHTML(
+                                            item.date ||
+                                            ""
+                                        )}
+                                    </span>
+
+                                    ${
+                                        item.description
+                                            ? `
+                                                <p>
+                                                    ${escapeHTML(
+                                                        item.description
+                                                    )}
+                                                </p>
+                                            `
+                                            : ""
+                                    }
+
+                                </div>
+
+                            </article>
+
+                        `;
+
+                    }
+                )
+                .join("");
+
+    }
+
+
+    function initMyJLSPT() {
+
+        if (
+            typeof JLSPT_DATA ===
+            "undefined"
+        ) {
+
+            console.error(
+                "JLSPT_DATA is not available."
+            );
+
+            return;
+
+        }
+
+
+        renderMemberBanner();
+        renderProfile();
+        renderParticipation();
+        renderBadges();
+        renderCampaigns();
+        renderMissions();
+        renderHistory();
+
+    }
+
+
+    if (
+        document.readyState ===
+        "loading"
+    ) {
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            initMyJLSPT
+        );
+
+    } else {
+
+        initMyJLSPT();
+
+    }
+
+})();
+</script>
 
 </body>
-
 </html>

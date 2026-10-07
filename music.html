@@ -4,574 +4,514 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Music | JLSPT</title>
+
     <meta
         name="description"
-        content="JLSPT music hub for JL solo releases, AHOF releases featuring JL, and other releases."
+        content="Explore JL's music releases, AHOF collaborations, and other releases through JLSPT."
     >
-
-    <title>Music | JLSPT</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="navbar">
-    <div class="nav-inner">
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a class="nav-brand" href="index.html">JLSPT</a>
+            <div class="nav-links"></div>
+        </div>
+    </nav>
 
-        <a
-            href="index.html"
-            class="nav-brand"
-            aria-label="JLSPT Home"
-        >
-            <span class="nav-logo">JLSPT</span>
-        </a>
+    <main>
 
-        <nav
-            class="nav-links"
-            aria-label="Main navigation"
-        ></nav>
+        <section class="page-hero">
+            <div class="container">
+                <span class="eyebrow">JLSPT MUSIC ARCHIVE</span>
 
-    </div>
-</header>
+                <h1>Music</h1>
+
+                <p class="page-intro">
+                    Explore JL's releases, AHOF songs, collaborations,
+                    and other music projects in one organized archive.
+                </p>
+            </div>
+        </section>
 
 
-<main>
+        <!-- JL SOLO -->
 
-    <!-- =================================================
-         PAGE HERO
-         ================================================= -->
+        <section class="section">
+            <div class="container">
 
-    <section class="page-hero">
+                <div class="section-heading">
+                    <div>
+                        <span class="eyebrow">JL SOLO</span>
+                        <h2>JL</h2>
+                    </div>
+
+                    <span class="section-count" id="solo-count"></span>
+                </div>
+
+                <div
+                    class="content-grid"
+                    id="solo-music-grid"
+                ></div>
+
+            </div>
+        </section>
+
+
+        <!-- AHOF × JL -->
+
+        <section class="section section-alt">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div>
+                        <span class="eyebrow">AHOF × JL</span>
+                        <h2>AHOF Releases</h2>
+                    </div>
+
+                    <span class="section-count" id="ahof-count"></span>
+                </div>
+
+                <div
+                    class="content-grid"
+                    id="ahof-music-grid"
+                ></div>
+
+            </div>
+        </section>
+
+
+        <!-- OTHER RELEASES -->
+
+        <section class="section">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div>
+                        <span class="eyebrow">OTHER RELEASES</span>
+                        <h2>Other Music</h2>
+                    </div>
+
+                    <span class="section-count" id="other-count"></span>
+                </div>
+
+                <div
+                    class="content-grid"
+                    id="other-music-grid"
+                ></div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
         <div class="container">
 
-            <div class="page-hero-content">
+            <div class="footer-inner">
 
-                <span class="eyebrow">
-                    JLSPT MUSIC
-                </span>
+                <div>
+                    <strong>JLSPT</strong>
 
-                <h1>
-                    Music
-                </h1>
+                    <p>
+                        JL Streaming Project Team
+                    </p>
+                </div>
 
-                <p>
-                    Explore JL's solo music, AHOF releases featuring JL,
-                    and other official releases.
+                <p class="footer-note">
+                    Supporting JL through organized streaming,
+                    resources, campaigns, and community projects.
                 </p>
 
             </div>
 
-        </div>
-    </section>
+            <div class="footer-bottom">
+                <span>
+                    JLSPT
+                </span>
 
-
-    <!-- =================================================
-         JL SOLO
-         ================================================= -->
-
-    <section class="section">
-        <div class="container">
-
-            <div class="section-header">
-
-                <div>
-                    <span class="section-eyebrow">
-                        JL SOLO
-                    </span>
-
-                    <h2 class="section-title">
-                        Solo Releases
-                    </h2>
-
-                    <p class="section-description">
-                        JL's individual music releases and current streaming focus.
-                    </p>
-                </div>
-
+                <span>
+                    For JL and AHOF supporters
+                </span>
             </div>
 
-
-            <div
-                id="jl-solo-grid"
-                class="grid grid-2"
-            ></div>
-
         </div>
-    </section>
+    </footer>
 
 
-    <!-- =================================================
-         AHOF × JL
-         ================================================= -->
+    <script src="data.js"></script>
+    <script src="menu.js"></script>
 
-    <section class="section">
-        <div class="container">
+    <script>
+        (function () {
+            "use strict";
 
-            <div class="section-header">
+            const data = window.JLSPT_DATA || {};
+            const music = Array.isArray(data.music)
+                ? data.music
+                : [];
 
-                <div>
-                    <span class="section-eyebrow">
-                        AHOF × JL
-                    </span>
+            const soloGrid =
+                document.getElementById("solo-music-grid");
 
-                    <h2 class="section-title">
-                        AHOF Releases
-                    </h2>
+            const ahofGrid =
+                document.getElementById("ahof-music-grid");
 
-                    <p class="section-description">
-                        AHOF releases featuring JL, organized by release era.
-                    </p>
-                </div>
+            const otherGrid =
+                document.getElementById("other-music-grid");
 
-            </div>
+            const soloCount =
+                document.getElementById("solo-count");
 
+            const ahofCount =
+                document.getElementById("ahof-count");
 
-            <div
-                id="ahof-jl-grid"
-                class="grid grid-2"
-            ></div>
-
-        </div>
-    </section>
+            const otherCount =
+                document.getElementById("other-count");
 
 
-    <!-- =================================================
-         OTHER RELEASES
-         ================================================= -->
-
-    <section class="section">
-        <div class="container">
-
-            <div class="section-header">
-
-                <div>
-                    <span class="section-eyebrow">
-                        OTHER RELEASES
-                    </span>
-
-                    <h2 class="section-title">
-                        Other Official Releases
-                    </h2>
-
-                    <p class="section-description">
-                        OSTs and other official music featuring JL.
-                    </p>
-                </div>
-
-            </div>
+            function escapeHTML(value) {
+                return String(value ?? "")
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#039;");
+            }
 
 
-            <div
-                id="other-releases-grid"
-                class="grid grid-2"
-            ></div>
-
-        </div>
-    </section>
-
-</main>
-
-
-<footer>
-
-    <div class="footer-inner">
-
-        <div>
-            <div class="footer-brand">
-                JLSPT
-            </div>
-
-            <div class="footer-text">
-                JL Streaming Project Team
-            </div>
-        </div>
-
-        <div class="footer-text">
-            Stream. Support. Stay connected.
-        </div>
-
-    </div>
-
-</footer>
-
-
-<script src="data.js"></script>
-<script src="menu.js"></script>
-
-<script>
-(function () {
-
-    "use strict";
-
-
-    function escapeHTML(value) {
-        return String(value ?? "")
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
-    }
-
-
-    function createLink(url, label) {
-
-        if (!url) {
-            return "";
-        }
-
-        return `
-            <a
-                href="${escapeHTML(url)}"
-                class="btn btn-secondary"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                ${escapeHTML(label)}
-            </a>
-        `;
-    }
-
-
-    function createCampaignBadge(campaignId) {
-
-        if (!campaignId) {
-            return "";
-        }
-
-        const campaign =
-            (JLSPT_DATA.campaigns || []).find(
-                function (item) {
-                    return item.id === campaignId;
+            function createLink(label, url) {
+                if (!url) {
+                    return "";
                 }
-            );
 
-        if (!campaign) {
-            return "";
-        }
+                return `
+                    <a
+                        class="button button-secondary"
+                        href="${escapeHTML(url)}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        ${escapeHTML(label)}
+                    </a>
+                `;
+            }
 
-        return `
-            <span class="status-badge status-active">
-                STREAMING FOCUS
-            </span>
-        `;
-    }
+
+            function createNestedRelease(release) {
+                if (!release) {
+                    return "";
+                }
+
+                const links = release.links || {};
+
+                return `
+                    <div class="nested-release">
+
+                        <div class="nested-release-content">
+
+                            <span class="content-label">
+                                NESTED RELEASE
+                            </span>
+
+                            <h4>
+                                ${escapeHTML(release.title)}
+                            </h4>
+
+                            ${
+                                release.description
+                                    ? `
+                                        <p>
+                                            ${escapeHTML(
+                                                release.description
+                                            )}
+                                        </p>
+                                    `
+                                    : ""
+                            }
+
+                        </div>
+
+                        <div class="card-actions">
+                            ${createLink(
+                                "Spotify",
+                                links.spotify
+                            )}
+
+                            ${createLink(
+                                "Apple Music",
+                                links.appleMusic
+                            )}
+
+                            ${createLink(
+                                "YouTube",
+                                links.youtube
+                            )}
+
+                            ${createLink(
+                                "More",
+                                links.more
+                            )}
+                        </div>
+
+                    </div>
+                `;
+            }
 
 
-    function createTrackList(tracks) {
+            function createMusicCard(item) {
+                const links = item.links || {};
 
-        if (!Array.isArray(tracks) || !tracks.length) {
-            return "";
-        }
+                const nested =
+                    Array.isArray(item.nested)
+                        ? item.nested
+                        : [];
 
-        return `
-            <div class="track-list">
+                const activeCampaign =
+                    item.activeCampaign;
 
-                ${tracks.map(function (track) {
+                return `
+                    <article class="content-card music-card">
 
-                    const links = [];
+                        <div class="card-top">
 
-                    if (track.links) {
+                            <div class="card-category">
+                                ${escapeHTML(
+                                    item.category || "RELEASE"
+                                )}
+                            </div>
 
-                        if (track.links.spotify) {
-                            links.push(
-                                createLink(
-                                    track.links.spotify,
-                                    "Spotify"
-                                )
-                            );
-                        }
+                            ${
+                                activeCampaign
+                                    ? `
+                                        <span class="status-badge status-active">
+                                            ACTIVE CAMPAIGN
+                                        </span>
+                                    `
+                                    : ""
+                            }
 
-                        if (track.links.appleMusic) {
-                            links.push(
-                                createLink(
-                                    track.links.appleMusic,
-                                    "Apple Music"
-                                )
-                            );
-                        }
+                        </div>
 
-                        if (track.links.youtube) {
-                            links.push(
-                                createLink(
-                                    track.links.youtube,
-                                    "YouTube"
-                                )
-                            );
-                        }
-                    }
 
-                    return `
-                        <div class="track-item">
+                        <div class="card-body">
 
-                            <div class="track-info">
+                            <h3>
+                                ${escapeHTML(item.title)}
+                            </h3>
 
-                                <strong>
-                                    ${escapeHTML(track.title)}
-                                </strong>
+                            ${
+                                item.subtitle
+                                    ? `
+                                        <p class="card-subtitle">
+                                            ${escapeHTML(
+                                                item.subtitle
+                                            )}
+                                        </p>
+                                    `
+                                    : ""
+                            }
 
-                                <span>
-                                    ${escapeHTML(track.artist || "")}
-                                </span>
+                            ${
+                                item.description
+                                    ? `
+                                        <p>
+                                            ${escapeHTML(
+                                                item.description
+                                            )}
+                                        </p>
+                                    `
+                                    : ""
+                            }
+
+                            ${
+                                item.releaseDate
+                                    ? `
+                                        <div class="meta-row">
+                                            <span>
+                                                Release
+                                            </span>
+
+                                            <strong>
+                                                ${escapeHTML(
+                                                    item.releaseDate
+                                                )}
+                                            </strong>
+                                        </div>
+                                    `
+                                    : ""
+                            }
+
+
+                            <div class="card-actions">
+
+                                ${createLink(
+                                    "Spotify",
+                                    links.spotify
+                                )}
+
+                                ${createLink(
+                                    "Apple Music",
+                                    links.appleMusic
+                                )}
+
+                                ${createLink(
+                                    "YouTube",
+                                    links.youtube
+                                )}
+
+                                ${createLink(
+                                    "Lyric Video",
+                                    links.lyricVideo
+                                )}
+
+                                ${createLink(
+                                    "More",
+                                    links.more
+                                )}
 
                             </div>
 
-                            <div
-                                style="
-                                    display:flex;
-                                    flex-wrap:wrap;
-                                    gap:6px;
-                                    justify-content:flex-end;
-                                "
-                            >
-                                ${links.join("")}
-                            </div>
 
+                            ${
+                                activeCampaign
+                                    ? `
+                                        <div class="campaign-note">
+
+                                            <span>
+                                                STREAMING CAMPAIGN
+                                            </span>
+
+                                            <strong>
+                                                ${escapeHTML(
+                                                    activeCampaign
+                                                )}
+                                            </strong>
+
+                                        </div>
+                                    `
+                                    : ""
+                            }
+
+
+                            ${
+                                nested.length
+                                    ? `
+                                        <div class="nested-releases">
+
+                                            ${nested
+                                                .map(
+                                                    createNestedRelease
+                                                )
+                                                .join("")}
+
+                                        </div>
+                                    `
+                                    : ""
+                            }
+
+                        </div>
+
+                    </article>
+                `;
+            }
+
+
+            function renderSection(
+                items,
+                target,
+                countTarget
+            ) {
+                if (!target) {
+                    return;
+                }
+
+                if (!items.length) {
+
+                    target.innerHTML = `
+                        <div class="empty-state">
+                            <strong>
+                                No releases available yet.
+                            </strong>
+
+                            <span>
+                                Check back for updates.
+                            </span>
                         </div>
                     `;
 
-                }).join("")}
-
-            </div>
-        `;
-    }
-
-
-    function createMusicCard(item) {
-
-        const links = [];
-
-        if (item.links) {
-
-            if (item.links.spotify) {
-                links.push(
-                    createLink(
-                        item.links.spotify,
-                        "Spotify"
-                    )
-                );
-            }
-
-            if (item.links.appleMusic) {
-                links.push(
-                    createLink(
-                        item.links.appleMusic,
-                        "Apple Music"
-                    )
-                );
-            }
-
-            if (item.links.youtube) {
-                links.push(
-                    createLink(
-                        item.links.youtube,
-                        "YouTube"
-                    )
-                );
-            }
-
-            if (item.links.lyricVideo) {
-                links.push(
-                    createLink(
-                        item.links.lyricVideo,
-                        "Lyric Video"
-                    )
-                );
-            }
-        }
-
-
-        return `
-            <article class="card music-card">
-
-                <div class="music-card-header">
-
-                    <div>
-
-                        <span class="category-badge">
-                            ${escapeHTML(item.releaseType || "RELEASE")}
-                        </span>
-
-                        <h3 class="music-title">
-                            ${escapeHTML(item.title)}
-                        </h3>
-
-                        <div class="music-meta">
-                            ${escapeHTML(item.artist || "")}
-                        </div>
-
-                    </div>
-
-                    ${
-                        createCampaignBadge(
-                            item.campaignId
-                        )
+                    if (countTarget) {
+                        countTarget.textContent = "0 releases";
                     }
 
-                </div>
-
-
-                ${
-                    item.era
-                        ? `
-                            <span
-                                class="tag"
-                                style="margin-top:13px;"
-                            >
-                                ${escapeHTML(item.era)}
-                            </span>
-                        `
-                        : ""
+                    return;
                 }
 
 
-                <p class="music-description">
-                    ${escapeHTML(item.description || "")}
-                </p>
+                target.innerHTML =
+                    items
+                        .map(createMusicCard)
+                        .join("");
 
 
-                ${
-                    item.tracks && item.tracks.length
-                        ? `
-                            <div
-                                style="
-                                    margin-top:18px;
-                                    font-size:0.75rem;
-                                    font-weight:800;
-                                    color:var(--muted);
-                                    text-transform:uppercase;
-                                    letter-spacing:0.06em;
-                                "
-                            >
-                                Tracks
-                            </div>
+                if (countTarget) {
 
-                            ${createTrackList(item.tracks)}
-                        `
-                        : ""
+                    countTarget.textContent =
+                        `${items.length} ${
+                            items.length === 1
+                                ? "release"
+                                : "releases"
+                        }`;
+
                 }
+            }
 
 
-                ${
-                    links.length
-                        ? `
-                            <div class="music-actions">
-                                ${links.join("")}
-                            </div>
-                        `
-                        : ""
-                }
-
-            </article>
-        `;
-    }
+            const soloMusic =
+                music.filter(function (item) {
+                    return item.group === "solo";
+                });
 
 
-    function renderSection(
-        elementId,
-        filter
-    ) {
-
-        const container =
-            document.getElementById(elementId);
-
-        if (!container) {
-            return;
-        }
+            const ahofMusic =
+                music.filter(function (item) {
+                    return item.group === "ahof";
+                });
 
 
-        const items =
-            (JLSPT_DATA.music || []).filter(
-                function (item) {
-                    return filter(item);
-                }
+            const otherMusic =
+                music.filter(function (item) {
+                    return item.group === "other";
+                });
+
+
+            renderSection(
+                soloMusic,
+                soloGrid,
+                soloCount
             );
 
 
-        if (!items.length) {
-
-            container.innerHTML = `
-                <div class="empty-state">
-                    <div class="empty-state-icon">
-                        🎵
-                    </div>
-
-                    <h3>
-                        No releases available yet
-                    </h3>
-
-                    <p>
-                        More music information will be added here.
-                    </p>
-                </div>
-            `;
-
-            return;
-        }
-
-
-        container.innerHTML =
-            items.map(createMusicCard).join("");
-    }
-
-
-    function initMusic() {
-
-        if (
-            typeof JLSPT_DATA === "undefined"
-        ) {
-            console.error(
-                "JLSPT_DATA is not available."
+            renderSection(
+                ahofMusic,
+                ahofGrid,
+                ahofCount
             );
 
-            return;
-        }
 
+            renderSection(
+                otherMusic,
+                otherGrid,
+                otherCount
+            );
 
-        renderSection(
-            "jl-solo-grid",
-            function (item) {
-                return item.section === "JL Solo";
-            }
-        );
-
-
-        renderSection(
-            "ahof-jl-grid",
-            function (item) {
-                return item.section === "AHOF × JL";
-            }
-        );
-
-
-        renderSection(
-            "other-releases-grid",
-            function (item) {
-                return item.section === "Other Releases";
-            }
-        );
-
-    }
-
-
-    if (
-        document.readyState === "loading"
-    ) {
-
-        document.addEventListener(
-            "DOMContentLoaded",
-            initMusic
-        );
-
-    } else {
-
-        initMusic();
-
-    }
-
-})();
-</script>
+        })();
+    </script>
 
 </body>
 </html>

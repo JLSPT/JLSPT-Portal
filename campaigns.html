@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Campaigns | JLSPT</title>
+
+    <meta
+        name="description"
+        content="JLSPT campaigns, streaming goals, milestones, and missions for JL and AHOF."
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     NAVIGATION
+========================================= -->
+
+<nav class="navbar">
+
+    <div class="nav-inner">
+
+        <a href="index.html" class="brand">
+
+            <div class="brand-mark">
+                JL
+            </div>
+
+            <div class="brand-text">
+
+                JLSPT
+
+                <small>
+                    JL Streaming Project Team
+                </small>
+
+            </div>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="music.html">
+                Music
+            </a>
+
+            <a href="video.html">
+                Video
+            </a>
+
+            <a href="campaigns.html">
+                Campaigns
+            </a>
+
+            <a href="schedule.html">
+                Schedule
+            </a>
+
+            <a href="guides.html">
+                Guides
+            </a>
+
+            <a href="updates.html">
+                Updates
+            </a>
+
+        </nav>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================================
+     MAIN
+========================================= -->
+
+<main class="container">
+
+
+    <!-- HERO -->
+
+    <section
+        class="hero"
+        style="padding-bottom:40px;"
+    >
+
+        <span class="eyebrow">
+            JLSPT CAMPAIGNS
+        </span>
+
+
+        <h1>
+            Support <span>together.</span>
+        </h1>
+
+
+        <p>
+            Follow active JLSPT goals, campaign progress,
+            milestones, and missions in one place.
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================
+         FILTERS
+    ====================================== -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <h2>
+                Campaigns
+            </h2>
+
+            <p>
+                Explore JLSPT goals by campaign type.
+            </p>
+
+        </div>
+
+
+        <div
+            class="campaign-filters"
+            id="campaign-filters"
+        >
+
+            <button
+                class="campaign-filter active"
+                data-filter="all"
+            >
+                All
+            </button>
+
+            <button
+                class="campaign-filter"
+                data-filter="music"
+            >
+                Music
+            </button>
+
+            <button
+                class="campaign-filter"
+                data-filter="video"
+            >
+                Video
+            </button>
+
+            <button
+                class="campaign-filter"
+                data-filter="voting"
+            >
+                Voting
+            </button>
+
+            <button
+                class="campaign-filter"
+                data-filter="special"
+            >
+                Special
+            </button>
+
+        </div>
+
+
+        <div
+            class="campaign-grid"
+            id="campaign-grid"
+        >
+
+            <div class="content-card">
+
+                <h3>
+                    Loading campaigns...
+                </h3>
+
+                <p>
+                    Please wait.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         CAMPAIGN DETAIL
+    ====================================== -->
+
+    <section
+        class="section"
+        id="campaign-detail-section"
+    >
+
+        <div class="section-heading">
+
+            <h2>
+                Current Focus
+            </h2>
+
+            <p>
+                Details of the selected active campaign.
+            </p>
+
+        </div>
+
+
+        <div
+            class="focus-card campaign-detail-card"
+            id="campaign-detail"
+        >
+
+            <div>
+
+                <div
+                    class="focus-label"
+                    id="detail-type"
+                >
+                    Loading...
+                </div>
+
+
+                <div
+                    class="focus-title"
+                    id="detail-title"
+                >
+                    Loading...
+                </div>
+
+
+                <p
+                    class="focus-subtitle"
+                    id="detail-description"
+                >
+                    Loading campaign information...
+                </p>
+
+
+                <!-- PROGRESS -->
+
+                <div class="progress-info">
+
+                    <span id="detail-current">
+                        Loading...
+                    </span>
+
+                    <span id="detail-goal">
+                        Loading...
+                    </span>
+
+                </div>
+
+
+                <div class="progress-bar">
+
+                    <div
+                        class="progress"
+                        id="detail-progress"
+                        style="width:0%;"
+                    ></div>
+
+                </div>
+
+
+                <div
+                    class="goal-number"
+                    id="detail-remaining"
+                >
+                    Loading...
+                </div>
+
+            </div>
+
+
+            <div class="focus-action">
+
+                <a
+                    href="#"
+                    id="detail-action"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="primary-btn"
+                >
+                    Support
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         CAMPAIGN STATS
+    ====================================== -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <h2>
+                Progress Snapshot
+            </h2>
+
+            <p>
+                A quick look at the current campaign.
+            </p>
+
+        </div>
+
+
+        <div class="quick-grid">
+
+
+            <div class="quick-card">
+
+                <div class="quick-icon">
+                    ▶
+                </div>
+
+                <h3 id="stat-current">
+                    Loading...
+                </h3>
+
+                <p>
+                    Current
+                </p>
+
+            </div>
+
+
+            <div class="quick-card">
+
+                <div class="quick-icon">
+                    🎯
+                </div>
+
+                <h3 id="stat-goal">
+                    Loading...
+                </h3>
+
+                <p>
+                    Goal
+                </p>
+
+            </div>
+
+
+            <div class="quick-card">
+
+                <div class="quick-icon">
+                    ↗
+                </div>
+
+                <h3 id="stat-percent">
+                    Loading...
+                </h3>
+
+                <p>
+                    Completed
+                </p>
+
+            </div>
+
+
+            <div class="quick-card">
+
+                <div class="quick-icon">
+                    ★
+                </div>
+
+                <h3 id="stat-remaining">
+                    Loading...
+                </h3>
+
+                <p>
+                    Remaining
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         MILESTONES
+    ====================================== -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <h2>
+                Milestones
+            </h2>
+
+            <p>
+                Every milestone brings us closer to the goal.
+            </p>
+
+        </div>
+
+
+        <div
+            class="content-grid"
+            id="milestone-grid"
+        >
+
+            <div class="content-card">
+
+                <h3>
+                    Loading...
+                </h3>
+
+                <p>
+                    Loading milestones.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         MISSIONS
+    ====================================== -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <h2>
+                Campaign Missions
+            </h2>
+
+            <p>
+                Simple ways to support the current campaign.
+            </p>
+
+        </div>
+
+
+        <div
+            class="content-grid"
+            id="mission-grid"
+        >
+
+            <div class="content-card">
+
+                <h3>
+                    Loading...
+                </h3>
+
+                <p>
+                    Loading missions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         RESOURCES
+    ====================================== -->
+
+    <section class="section">
+
+        <div class="focus-card">
+
+            <div>
+
+                <div class="focus-label">
+                    JLSPT RESOURCES
+                </div>
+
+
+                <div class="focus-title">
+                    Need a guide?
+                </div>
+
+
+                <p class="focus-subtitle">
+                    Check the JLSPT guides, music resources,
+                    and schedule before joining an activity.
+                </p>
+
+
+                <div class="link-list">
+
+                    <a href="guides.html">
+                        Streaming Guides
+                        <span>→</span>
+                    </a>
+
+
+                    <a href="schedule.html">
+                        Schedule
+                        <span>→</span>
+                    </a>
+
+
+                    <a href="music.html">
+                        Music Resources
+                        <span>→</span>
+                    </a>
+
+
+                    <a href="video.html">
+                        Video Resources
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="focus-action">
+
+                <a
+                    href="guides.html"
+                    class="primary-btn"
+                >
+                    View Guides
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    <strong>
+        JLSPT
+    </strong>
+
+    <p>
+        JL Streaming Project Team
+    </p>
+
+</footer>
+
+
+
+<!-- =========================================
+     SCRIPTS
+========================================= -->
+
+<script src="data.js"></script>
+
+<script src="menu.js"></script>
+
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        /* =====================================
+           ELEMENTS
+        ====================================== */
+
+        const campaignGrid =
+            document.getElementById(
+                "campaign-grid"
+            );
+
+
+        const milestoneGrid =
+            document.getElementById(
+                "milestone-grid"
+            );
+
+
+        const missionGrid =
+            document.getElementById(
+                "mission-grid"
+            );
+
+
+        const detailType =
+            document.getElementById(
+                "detail-type"
+            );
+
+
+        const detailTitle =
+            document.getElementById(
+                "detail-title"
+            );
+
+
+        const detailDescription =
+            document.getElementById(
+                "detail-description"
+            );
+
+
+        const detailCurrent =
+            document.getElementById(
+                "detail-current"
+            );
+
+
+        const detailGoal =
+            document.getElementById(
+                "detail-goal"
+            );
+
+
+        const detailProgress =
+            document.getElementById(
+                "detail-progress"
+            );
+
+
+        const detailRemaining =
+            document.getElementById(
+                "detail-remaining"
+            );
+
+
+        const detailAction =
+            document.getElementById(
+                "detail-action"
+            );
+
+
+        const statCurrent =
+            document.getElementById(
+                "stat-current"
+            );
+
+
+        const statGoal =
+            document.getElementById(
+                "stat-goal"
+            );
+
+
+        const statPercent =
+            document.getElementById(
+                "stat-percent"
+            );
+
+
+        const statRemaining =
+            document.getElementById(
+                "stat-remaining"
+            );
+
+
+
+        /* =====================================
+           HELPERS
+        ====================================== */
+
+        function formatNumber(number) {
+
+            return Number(number).toLocaleString(
+                "en-US"
+            );
+
+        }
+
+
+        function calculateProgress(
+            current,
+            goal
+        ) {
+
+            if (!goal || goal <= 0) {
+                return 0;
+            }
+
+            return Math.min(
+                (current / goal) * 100,
+                100
+            );
+
+        }
+
+
+        function getTypeLabel(type) {
+
+            const labels = {
+
+                music: "Music Campaign",
+
+                video: "Video Campaign",
+
+                voting: "Voting Campaign",
+
+                special: "Special Campaign"
+
+            };
+
+            return labels[type] || "JLSPT Campaign";
+
+        }
+
+
+
+        /* =====================================
+           RENDER CAMPAIGN CARDS
+        ====================================== */
+
+        function renderCampaigns(
+            filter
+        ) {
+
+            campaignGrid.innerHTML = "";
+
+
+            const campaigns =
+                JLSPT_DATA.campaigns.filter(
+                    function (campaign) {
+
+                        if (filter === "all") {
+                            return true;
+                        }
+
+                        return campaign.type === filter;
+
+                    }
+                );
+
+
+            if (!campaigns.length) {
+
+                campaignGrid.innerHTML = `
+
+                    <div class="content-card">
+
+                        <h3>
+                            No campaigns yet
+                        </h3>
+
+                        <p>
+                            New JLSPT campaigns will appear here.
+                        </p>
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            campaigns.forEach(
+                function (campaign) {
+
+                    const card =
+                        document.createElement(
+                            "article"
+                        );
+
+
+                    card.className =
+                        "content-card campaign-card";
+
+
+                    const current =
+                        Number(
+                            campaign.current
+                        ) || 0;
+
+
+                    const goal =
+                        Number(
+                            campaign.goal
+                        ) || 0;
+
+
+                    const progress =
+                        calculateProgress(
+                            current,
+                            goal
+                        );
+
+
+                    const status =
+                        campaign.status === "active"
+                            ? "Active"
+                            : "Campaign";
+
+
+                    card.innerHTML = `
+
+                        <div class="focus-label">
+                            ${getTypeLabel(campaign.type)}
+                        </div>
+
+                        <h3>
+                            ${campaign.title}
+                        </h3>
+
+                        <p>
+                            ${campaign.description}
+                        </p>
+
+                        <div class="progress-info">
+
+                            <span>
+                                ${formatNumber(current)}
+                            </span>
+
+                            <span>
+                                ${formatNumber(goal)}
+                            </span>
+
+                        </div>
+
+                        <div class="progress-bar">
+
+                            <div
+                                class="progress"
+                                style="width:${progress.toFixed(1)}%;"
+                            ></div>
+
+                        </div>
+
+                        <div class="goal-number">
+                            ${progress.toFixed(1)}% · ${status}
+                        </div>
+
+                    `;
+
+
+                    card.addEventListener(
+                        "click",
+                        function () {
+
+                            displayCampaign(
+                                campaign
+                            );
+
+                            document
+                                .getElementById(
+                                    "campaign-detail-section"
+                                )
+                                .scrollIntoView({
+                                    behavior: "smooth"
+                                });
+
+                        }
+                    );
+
+
+                    campaignGrid.appendChild(
+                        card
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        /* =====================================
+           DISPLAY CAMPAIGN
+        ====================================== */
+
+        function displayCampaign(
+            campaign
+        ) {
+
+            const current =
+                Number(
+                    campaign.current
+                ) || 0;
+
+
+            const goal =
+                Number(
+                    campaign.goal
+                ) || 0;
+
+
+            const progress =
+                calculateProgress(
+                    current,
+                    goal
+                );
+
+
+            const remaining =
+                Math.max(
+                    goal - current,
+                    0
+                );
+
+
+            detailType.textContent =
+                getTypeLabel(
+                    campaign.type
+                );
+
+
+            detailTitle.textContent =
+                campaign.title;
+
+
+            detailDescription.textContent =
+                campaign.description;
+
+
+            detailCurrent.textContent =
+                formatNumber(current) +
+                " current";
+
+
+            detailGoal.textContent =
+                formatNumber(goal) +
+                " goal";
+
+
+            detailProgress.style.width =
+                progress.toFixed(1) +
+                "%";
+
+
+            detailRemaining.textContent =
+                formatNumber(remaining) +
+                " remaining";
+
+
+            statCurrent.textContent =
+                formatNumber(current);
+
+
+            statGoal.textContent =
+                formatNumber(goal);
+
+
+            statPercent.textContent =
+                progress.toFixed(1) +
+                "%";
+
+
+            statRemaining.textContent =
+                formatNumber(remaining);
+
+
+            if (campaign.videoUrl) {
+
+                detailAction.href =
+                    campaign.videoUrl;
+
+                detailAction.textContent =
+                    "Support";
+
+            } else {
+
+                detailAction.removeAttribute(
+                    "href"
+                );
+
+                detailAction.textContent =
+                    "View Campaign";
+
+            }
+
+
+            renderMilestones(
+                campaign
+            );
+
+
+            renderMissions(
+                campaign
+            );
+
+        }
+
+
+
+        /* =====================================
+           MILESTONES
+        ====================================== */
+
+        function renderMilestones(
+            campaign
+        ) {
+
+            milestoneGrid.innerHTML = "";
+
+
+            if (
+                !campaign.milestones ||
+                !campaign.milestones.length
+            ) {
+
+                milestoneGrid.innerHTML = `
+
+                    <div class="content-card">
+
+                        <h3>
+                            No milestones yet
+                        </h3>
+
+                        <p>
+                            Campaign milestones will appear here.
+                        </p>
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            const current =
+                Number(
+                    campaign.current
+                ) || 0;
+
+
+            campaign.milestones.forEach(
+                function (milestone) {
+
+                    const value =
+                        Number(
+                            milestone.value
+                        ) || 0;
+
+
+                    let status =
+                        "Future Goal";
+
+
+                    if (current >= value) {
+
+                        status =
+                            "✓ Reached";
+
+                    } else if (
+                        value ===
+                        Number(campaign.goal)
+                    ) {
+
+                        status =
+                            "Current Goal";
+
+                    }
+
+
+                    const card =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    card.className =
+                        "content-card";
+
+
+                    card.innerHTML = `
+
+                        <h3>
+                            ${milestone.label}
+                        </h3>
+
+                        <p>
+                            ${formatNumber(value)}
+                        </p>
+
+                        <div class="goal-number">
+                            ${status}
+                        </div>
+
+                    `;
+
+
+                    milestoneGrid.appendChild(
+                        card
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        /* =====================================
+           MISSIONS
+        ====================================== */
+
+        function renderMissions(
+            campaign
+        ) {
+
+            missionGrid.innerHTML = "";
+
+
+            if (
+                !campaign.missions ||
+                !campaign.missions.length
+            ) {
+
+                missionGrid.innerHTML = `
+
+                    <div class="content-card">
+
+                        <h3>
+                            No missions yet
+                        </h3>
+
+                        <p>
+                            Campaign missions will appear here.
+                        </p>
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            campaign.missions.forEach(
+                function (mission, index) {
+
+                    const card =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    card.className =
+                        "content-card";
+
+
+                    card.innerHTML = `
+
+                        <div class="focus-label">
+                            ${String(index + 1).padStart(2, "0")}
+                        </div>
+
+                        <h3>
+                            ${mission.title}
+                        </h3>
+
+                        <p>
+                            ${mission.description}
+                        </p>
+
+                    `;
+
+
+                    missionGrid.appendChild(
+                        card
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        /* =====================================
+           FILTERS
+        ====================================== */
+
+        const filters =
+            document.querySelectorAll(
+                ".campaign-filter"
+            );
+
+
+        filters.forEach(
+            function (button) {
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+                        filters.forEach(
+                            function (item) {
+
+                                item.classList.remove(
+                                    "active"
+                                );
+
+                            }
+                        );
+
+
+                        button.classList.add(
+                            "active"
+                        );
+
+
+                        renderCampaigns(
+                            button.dataset.filter
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+
+        /* =====================================
+           INITIALIZE
+        ====================================== */
+
+        if (
+            typeof JLSPT_DATA === "undefined" ||
+            !Array.isArray(
+                JLSPT_DATA.campaigns
+            )
+        ) {
+
+            campaignGrid.innerHTML = `
+
+                <div class="content-card">
+
+                    <h3>
+                        Campaign data unavailable
+                    </h3>
+
+                    <p>
+                        Please try again later.
+                    </p>
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        renderCampaigns(
+            "all"
+        );
+
+
+        const activeCampaign =
+            JLSPT_DATA.campaigns.find(
+                function (campaign) {
+
+                    return campaign.status === "active";
+
+                }
+            );
+
+
+        if (activeCampaign) {
+
+            displayCampaign(
+                activeCampaign
+            );
+
+        }
+
+    }
+
+);
+
+</script>
+
+
+</body>
+
+</html>

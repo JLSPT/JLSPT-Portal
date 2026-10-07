@@ -1,25 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>JLSPT | JL Streaming Project Team</title>
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
-        content="JLSPT official portal for JL streaming projects, campaigns, resources, schedules, and community updates."
+        content="JLSPT official portal for JL and AHOF streaming activities, campaigns, guides, schedules, and community."
     >
 
-    <link rel="stylesheet" href="style.css">
+    <title>JLSPT | JL Streaming Project Team</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
+
 
 <body>
 
+
+    <!-- =========================================================
+         NAVIGATION
+         ========================================================= -->
+
     <header class="navbar">
+
         <div class="nav-inner">
 
-            <a href="index.html" class="brand">
+            <a
+                href="index.html"
+                class="brand"
+            >
                 <span class="brand-mark">JL</span>
 
                 <span class="brand-text">
@@ -28,78 +48,104 @@
                 </span>
             </a>
 
-            <nav class="nav-links">
-                <a href="index.html" class="active">HOME</a>
-                <a href="music.html">MUSIC</a>
-                <a href="video.html">VIDEO</a>
-                <a href="campaigns.html">CAMPAIGNS</a>
-                <a href="schedule.html">SCHEDULE</a>
-                <a href="guides.html">GUIDES</a>
-                <a href="corner.html">JLSPT CORNER</a>
-                <a href="community.html">COMMUNITY</a>
+
+            <nav
+                class="nav-links"
+                aria-label="Main navigation"
+            >
+
+                <a
+                    href="index.html"
+                    class="active"
+                >
+                    Home
+                </a>
+
+                <a href="music.html">
+                    Music
+                </a>
+
+                <a href="video.html">
+                    Video
+                </a>
+
+                <a href="campaigns.html">
+                    Campaigns
+                </a>
+
+                <a href="schedule.html">
+                    Schedule
+                </a>
+
+                <a href="guides.html">
+                    Guides
+                </a>
+
+                <a href="corner.html">
+                    Corner
+                </a>
+
+                <a href="my-jlspt.html">
+                    My JLSPT
+                </a>
+
             </nav>
 
         </div>
+
     </header>
+
 
 
     <main>
 
-        <!-- HERO -->
+
+        <!-- =====================================================
+             HERO
+             ===================================================== -->
 
         <section class="hero home-hero">
 
-            <div class="container hero-inner">
+            <div class="container">
 
-                <div class="hero-content">
+                <span
+                    class="eyebrow"
+                    id="home-eyebrow"
+                >
+                    JL STREAMING PROJECT TEAM
+                </span>
 
-                    <span class="eyebrow">
-                        JL STREAMING PROJECT TEAM
-                    </span>
 
-                    <h1>
-                        SUPPORT<br>
-                        <span>JL.</span>
-                    </h1>
+                <h1 id="home-title">
+                    Support JL. Stream together.
+                </h1>
 
-                    <p class="hero-description">
-                        Your home for JLSPT streaming projects, resources,
-                        campaigns, schedules, and community updates.
-                    </p>
 
-                    <div class="hero-actions">
+                <p
+                    class="hero-description"
+                    id="home-description"
+                >
+                    Your central hub for JL and AHOF streaming
+                    activities, campaigns, guides, schedules,
+                    and community updates.
+                </p>
 
-                        <button
-                            type="button"
-                            class="btn btn-primary"
-                            id="start-here-button"
-                        >
-                            START HERE
-                        </button>
 
-                        <a
-                            href="campaigns.html"
-                            class="btn btn-secondary"
-                        >
-                            VIEW CAMPAIGNS
-                        </a>
+                <div class="hero-actions">
 
-                    </div>
+                    <a
+                        href="campaigns.html"
+                        class="button button-primary"
+                    >
+                        Current Campaign
+                    </a>
 
-                </div>
-
-                <div class="hero-side">
-
-                    <div class="hero-status">
-                        <span class="status-dot"></span>
-                        <span>JLSPT PORTAL</span>
-                    </div>
-
-                    <p>
-                        Organized support.<br>
-                        Genuine participation.<br>
-                        One community.
-                    </p>
+                    <a
+                        href="corner.html"
+                        class="button button-secondary"
+                    >
+                        JLSPT Corner
+                    </a>
 
                 </div>
 
@@ -108,91 +154,415 @@
         </section>
 
 
-        <!-- CURRENT FOCUS -->
 
-        <section class="section">
+        <!-- =====================================================
+             MAIN DASHBOARD
+             ===================================================== -->
+
+        <section class="section dashboard-section">
+
+            <div class="container">
+
+                <div class="dashboard-grid">
+
+
+                    <!-- =========================================
+                         CURRENT MISSION
+                         ========================================= -->
+
+                    <article
+                        class="dashboard-card dashboard-card-large"
+                        id="current-mission-card"
+                    >
+
+                        <div class="dashboard-card-header">
+
+                            <div>
+
+                                <span class="section-label">
+                                    CURRENT MISSION
+                                </span>
+
+                                <h2 id="mission-title">
+                                    Loading...
+                                </h2>
+
+                            </div>
+
+                            <span
+                                class="status-badge"
+                                id="mission-status"
+                            >
+                                Active
+                            </span>
+
+                        </div>
+
+
+                        <p
+                            class="dashboard-description"
+                            id="mission-description"
+                        >
+                            Loading current campaign...
+                        </p>
+
+
+                        <div class="campaign-progress-wrap">
+
+                            <div class="progress-meta">
+
+                                <span id="mission-current">
+                                    0
+                                </span>
+
+                                <span id="mission-goal">
+                                    0
+                                </span>
+
+                            </div>
+
+
+                            <div class="progress-track">
+
+                                <div
+                                    class="progress-fill"
+                                    id="mission-progress"
+                                    style="width: 0%;"
+                                ></div>
+
+                            </div>
+
+
+                            <div class="progress-bottom">
+
+                                <strong
+                                    id="mission-percentage"
+                                >
+                                    0%
+                                </strong>
+
+                                <span>
+                                    toward next milestone
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="milestone-strip"
+                            id="mission-milestones"
+                        >
+                        </div>
+
+
+                        <div class="dashboard-card-actions">
+
+                            <a
+                                href="campaigns.html"
+                                class="text-link"
+                            >
+                                View campaign
+                                <span>→</span>
+                            </a>
+
+                            <a
+                                href="guides.html"
+                                class="text-link"
+                            >
+                                View mission guide
+                                <span>→</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- =========================================
+                         JLSPT CORNER NOTICE
+                         ========================================= -->
+
+                    <article
+                        class="dashboard-card"
+                        id="corner-feature-card"
+                    >
+
+                        <div class="dashboard-card-header">
+
+                            <span class="section-label">
+                                JLSPT CORNER
+                            </span>
+
+                            <span
+                                class="corner-badge"
+                                id="corner-category"
+                            >
+                                UPDATE
+                            </span>
+
+                        </div>
+
+
+                        <h2 id="corner-title">
+                            Loading...
+                        </h2>
+
+
+                        <p
+                            class="dashboard-description"
+                            id="corner-content"
+                        >
+                            Loading latest JLSPT notice...
+                        </p>
+
+
+                        <div class="post-meta">
+
+                            <span id="corner-author">
+                                JLSPT
+                            </span>
+
+                            <span
+                                class="meta-separator"
+                            >
+                                •
+                            </span>
+
+                            <span id="corner-date">
+                                —
+                            </span>
+
+                        </div>
+
+
+                        <a
+                            href="corner.html"
+                            class="text-link"
+                        >
+                            Open JLSPT Corner
+                            <span>→</span>
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- =========================================
+                         NEXT ACTIVITY
+                         ========================================= -->
+
+                    <article
+                        class="dashboard-card"
+                        id="next-activity-card"
+                    >
+
+                        <div class="dashboard-card-header">
+
+                            <span class="section-label">
+                                NEXT ACTIVITY
+                            </span>
+
+                            <span
+                                class="activity-type-badge"
+                                id="activity-type"
+                            >
+                                —
+                            </span>
+
+                        </div>
+
+
+                        <h2 id="activity-title">
+                            No scheduled activity yet
+                        </h2>
+
+
+                        <p
+                            class="dashboard-description"
+                            id="activity-description"
+                        >
+                            Upcoming JLSPT activities will appear
+                            here once a date and time are announced.
+                        </p>
+
+
+                        <div
+                            class="activity-details"
+                            id="activity-details"
+                        >
+
+                            <div class="activity-detail">
+
+                                <span class="detail-label">
+                                    Date
+                                </span>
+
+                                <strong id="activity-date">
+                                    TBA
+                                </strong>
+
+                            </div>
+
+
+                            <div class="activity-detail">
+
+                                <span class="detail-label">
+                                    Time
+                                </span>
+
+                                <strong id="activity-time">
+                                    TBA
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <a
+                            href="schedule.html"
+                            class="text-link"
+                        >
+                            View schedule
+                            <span>→</span>
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- =========================================
+                         STATIONHEAD
+                         ========================================= -->
+
+                    <article
+                        class="dashboard-card station-card"
+                    >
+
+                        <div class="station-icon">
+                            ♪
+                        </div>
+
+
+                        <div class="station-content">
+
+                            <span class="section-label">
+                                JLSPT STATION
+                            </span>
+
+                            <h2>
+                                Listen with us
+                            </h2>
+
+                            <p>
+                                Join the JLSPT Stationhead for
+                                regular listening activities and
+                                focused streaming sessions.
+                            </p>
+
+
+                            <a
+                                href="https://app.stationhead.com/jlspteam"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="button button-primary button-small"
+                            >
+                                Open Stationhead
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             PORTAL STATUS
+             ===================================================== -->
+
+        <section class="section dashboard-status-section">
 
             <div class="container">
 
                 <div class="section-heading">
 
-                    <div>
-                        <span class="section-label">
-                            CURRENT FOCUS
-                        </span>
+                    <span class="section-label">
+                        JLSPT PORTAL
+                    </span>
 
-                        <h2>
-                            What we're working on
-                        </h2>
-                    </div>
+                    <h2>
+                        Everything in one place.
+                    </h2>
 
-                    <a href="campaigns.html" class="text-link">
-                        All campaigns →
-                    </a>
+                    <p>
+                        Use each section for its actual purpose,
+                        without repeating the same information
+                        across the site.
+                    </p>
 
                 </div>
 
-                <div id="current-campaign"></div>
 
-            </div>
-
-        </section>
+                <div class="portal-status-grid">
 
 
-        <!-- JLSPT CORNER + SCHEDULE -->
+                    <div class="portal-status-item">
 
-        <section class="section section-alt">
+                        <span class="portal-status-number">
+                            <span id="music-count">0</span>
+                        </span>
 
-            <div class="container">
-
-                <div class="home-grid">
-
-                    <div>
-
-                        <div class="section-heading compact">
-
-                            <div>
-                                <span class="section-label">
-                                    JLSPT CORNER
-                                </span>
-
-                                <h2>
-                                    Latest from JLSPT
-                                </h2>
-                            </div>
-
-                            <a href="corner.html" class="text-link">
-                                View all →
-                            </a>
-
-                        </div>
-
-                        <div id="latest-corner"></div>
+                        <span class="portal-status-label">
+                            Music releases
+                        </span>
 
                     </div>
 
 
-                    <div>
+                    <div class="portal-status-item">
 
-                        <div class="section-heading compact">
+                        <span class="portal-status-number">
+                            <span id="video-count">0</span>
+                        </span>
 
-                            <div>
-                                <span class="section-label">
-                                    SCHEDULE
-                                </span>
+                        <span class="portal-status-label">
+                            Video collections
+                        </span>
 
-                                <h2>
-                                    What's next
-                                </h2>
-                            </div>
+                    </div>
 
-                            <a href="schedule.html" class="text-link">
-                                Full schedule →
-                            </a>
 
-                        </div>
+                    <div class="portal-status-item">
 
-                        <div id="next-activity"></div>
+                        <span class="portal-status-number">
+                            <span id="campaign-count">0</span>
+                        </span>
+
+                        <span class="portal-status-label">
+                            Streaming campaigns
+                        </span>
+
+                    </div>
+
+
+                    <div class="portal-status-item">
+
+                        <span class="portal-status-number">
+                            <span id="guide-count">0</span>
+                        </span>
+
+                        <span class="portal-status-label">
+                            Guides & resources
+                        </span>
 
                     </div>
 
@@ -203,38 +573,41 @@
         </section>
 
 
-        <!-- STATIONHEAD -->
 
-        <section class="section">
+        <!-- =====================================================
+             STARTING POINT
+             ===================================================== -->
+
+        <section class="section home-start-section">
 
             <div class="container">
 
-                <div class="station-card">
+                <div class="start-panel">
 
-                    <div class="station-content">
+                    <div>
 
                         <span class="section-label">
-                            LISTEN WITH US
+                            NEW HERE?
                         </span>
 
                         <h2>
-                            JLSPT Stationhead
+                            Start with the basics.
                         </h2>
 
                         <p>
-                            Join the JLSPT Stationhead for listening activities
-                            and organized streaming sessions.
+                            If this is your first time joining JLSPT,
+                            our Guides section has a dedicated
+                            Start Here area to help you get oriented.
                         </p>
 
                     </div>
 
+
                     <a
-                        href="https://app.stationhead.com/jlspteam"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn btn-primary"
+                        href="guides.html"
+                        class="button button-secondary"
                     >
-                        OPEN STATIONHEAD
+                        Start Here
                     </a>
 
                 </div>
@@ -244,581 +617,690 @@
         </section>
 
 
-        <!-- SIMPLE FOOTER CTA -->
+    </main>
 
-        <section class="section home-bottom">
 
-            <div class="container">
 
-                <div class="bottom-message">
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
 
-                    <span class="section-label">
-                        NEW HERE?
-                    </span>
+    <footer class="site-footer">
 
-                    <h2>
-                        Start with the basics.
-                    </h2>
+        <div class="container">
+
+            <div class="footer-inner">
+
+                <div>
+
+                    <strong>
+                        JLSPT
+                    </strong>
 
                     <p>
-                        Learn what JLSPT is, how campaigns work,
-                        and how you can participate.
+                        JL Streaming Project Team
                     </p>
 
-                    <button
-                        type="button"
-                        class="text-link button-link"
-                        id="bottom-start-button"
-                    >
-                        Learn about JLSPT →
-                    </button>
+                </div>
+
+
+                <div class="footer-links">
+
+                    <a href="music.html">
+                        Music
+                    </a>
+
+                    <a href="video.html">
+                        Video
+                    </a>
+
+                    <a href="campaigns.html">
+                        Campaigns
+                    </a>
+
+                    <a href="schedule.html">
+                        Schedule
+                    </a>
+
+                    <a href="guides.html">
+                        Guides
+                    </a>
+
+                    <a href="corner.html">
+                        Corner
+                    </a>
 
                 </div>
 
             </div>
 
-        </section>
 
-    </main>
+            <div class="footer-bottom">
 
-
-    <!-- START HERE MODAL -->
-
-    <div
-        class="modal"
-        id="start-here-modal"
-        aria-hidden="true"
-    >
-
-        <div
-            class="modal-backdrop"
-            id="modal-backdrop"
-        ></div>
-
-        <div
-            class="modal-panel"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="start-here-title"
-        >
-
-            <button
-                type="button"
-                class="modal-close"
-                id="modal-close"
-                aria-label="Close"
-            >
-                ×
-            </button>
-
-            <div class="modal-header">
-
-                <span class="section-label">
-                    START HERE
-                </span>
-
-                <h2 id="start-here-title">
-                    Welcome to JLSPT
-                </h2>
-
-                <p id="start-here-intro"></p>
-
-            </div>
-
-            <div id="start-here-content"></div>
-
-        </div>
-
-    </div>
-
-
-    <footer class="site-footer">
-
-        <div class="container footer-inner">
-
-            <div>
-                <strong>JLSPT</strong>
                 <span>
-                    JL Streaming Project Team
+                    JLSPT • JL Streaming Project Team
                 </span>
-            </div>
 
-            <p>
-                Fan led streaming support for JL.
-            </p>
+                <span>
+                    Stream. Support. Stay connected.
+                </span>
+
+            </div>
 
         </div>
 
     </footer>
 
 
+
+    <!-- =========================================================
+         DATA
+         ========================================================= -->
+
     <script src="data.js"></script>
+
     <script src="menu.js"></script>
+
+
+    <!-- =========================================================
+         HOME SCRIPT
+         ========================================================= -->
 
     <script>
 
-        document.addEventListener("DOMContentLoaded", function () {
-
-            const data = window.JLSPT_DATA || JLSPT_DATA;
-
-
-            /* =========================
-               START HERE MODAL
-            ========================= */
-
-            const modal =
-                document.getElementById("start-here-modal");
-
-            const openButton =
-                document.getElementById("start-here-button");
-
-            const bottomButton =
-                document.getElementById("bottom-start-button");
-
-            const closeButton =
-                document.getElementById("modal-close");
-
-            const backdrop =
-                document.getElementById("modal-backdrop");
-
-            const intro =
-                document.getElementById("start-here-intro");
-
-            const content =
-                document.getElementById("start-here-content");
-
-
-            function renderStartHere() {
-
-                const startHere =
-                    data.startHere;
-
-                if (!startHere) return;
-
-                intro.textContent =
-                    startHere.intro || "";
-
-                content.innerHTML = "";
-
-
-                if (Array.isArray(startHere.sections)) {
-
-                    startHere.sections.forEach(function (section) {
-
-                        const item =
-                            document.createElement("div");
-
-                        item.className =
-                            "modal-section";
-
-                        item.innerHTML = `
-                            <h3>${section.title}</h3>
-                            <p>${section.description}</p>
-                        `;
-
-                        content.appendChild(item);
-
-                    });
-
-                }
-
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
 
                 if (
-                    Array.isArray(startHere.principles) &&
-                    startHere.principles.length
+                    typeof JLSPT_DATA === "undefined"
                 ) {
-
-                    const principles =
-                        document.createElement("div");
-
-                    principles.className =
-                        "modal-section modal-principles";
-
-                    principles.innerHTML = `
-                        <h3>Our approach</h3>
-                        <ul>
-                            ${startHere.principles
-                                .map(
-                                    item => `<li>${item}</li>`
-                                )
-                                .join("")}
-                        </ul>
-                    `;
-
-                    content.appendChild(principles);
-
+                    return;
                 }
 
-            }
+
+                /*
+                 * =================================================
+                 * HERO
+                 * =================================================
+                 */
+
+                const home =
+                    JLSPT_DATA.home || {};
+
+                const hero =
+                    home.hero || {};
+
+                const eyebrow =
+                    document.getElementById(
+                        "home-eyebrow"
+                    );
+
+                const title =
+                    document.getElementById(
+                        "home-title"
+                    );
+
+                const description =
+                    document.getElementById(
+                        "home-description"
+                    );
 
 
-            function openModal() {
+                if (eyebrow && hero.eyebrow) {
+                    eyebrow.textContent =
+                        hero.eyebrow;
+                }
 
-                renderStartHere();
+                if (title && hero.title) {
+                    title.textContent =
+                        hero.title;
+                }
 
-                modal.classList.add("is-open");
-                modal.setAttribute(
-                    "aria-hidden",
-                    "false"
-                );
-
-                document.body.classList.add(
-                    "modal-open"
-                );
-
-                closeButton.focus();
-
-            }
-
-
-            function closeModal() {
-
-                modal.classList.remove(
-                    "is-open"
-                );
-
-                modal.setAttribute(
-                    "aria-hidden",
-                    "true"
-                );
-
-                document.body.classList.remove(
-                    "modal-open"
-                );
-
-            }
+                if (
+                    description &&
+                    hero.description
+                ) {
+                    description.textContent =
+                        hero.description;
+                }
 
 
-            openButton.addEventListener(
-                "click",
-                openModal
-            );
 
-            bottomButton.addEventListener(
-                "click",
-                openModal
-            );
+                /*
+                 * =================================================
+                 * CURRENT CAMPAIGN
+                 * =================================================
+                 */
 
-            closeButton.addEventListener(
-                "click",
-                closeModal
-            );
+                const campaigns =
+                    JLSPT_DATA.campaigns || [];
 
-            backdrop.addEventListener(
-                "click",
-                closeModal
-            );
+                const campaign =
+                    campaigns.find(
+                        function (item) {
 
-            document.addEventListener(
-                "keydown",
-                function (event) {
+                            return item.id ===
+                                home.currentFocusCampaignId;
 
-                    if (
-                        event.key === "Escape" &&
-                        modal.classList.contains("is-open")
-                    ) {
-                        closeModal();
+                        }
+                    );
+
+
+                if (campaign) {
+
+                    const missionTitle =
+                        document.getElementById(
+                            "mission-title"
+                        );
+
+                    const missionDescription =
+                        document.getElementById(
+                            "mission-description"
+                        );
+
+                    const missionStatus =
+                        document.getElementById(
+                            "mission-status"
+                        );
+
+                    const missionCurrent =
+                        document.getElementById(
+                            "mission-current"
+                        );
+
+                    const missionGoal =
+                        document.getElementById(
+                            "mission-goal"
+                        );
+
+                    const missionProgress =
+                        document.getElementById(
+                            "mission-progress"
+                        );
+
+                    const missionPercentage =
+                        document.getElementById(
+                            "mission-percentage"
+                        );
+
+                    const missionMilestones =
+                        document.getElementById(
+                            "mission-milestones"
+                        );
+
+
+                    if (missionTitle) {
+                        missionTitle.textContent =
+                            campaign.title;
+                    }
+
+
+                    if (missionDescription) {
+                        missionDescription.textContent =
+                            campaign.description;
+                    }
+
+
+                    if (missionStatus) {
+                        missionStatus.textContent =
+                            campaign.status ===
+                            "active"
+                                ? "Active"
+                                : campaign.status;
+                    }
+
+
+                    const current =
+                        Number(
+                            campaign.current || 0
+                        );
+
+                    const goal =
+                        Number(
+                            campaign.goal || 0
+                        );
+
+
+                    const percentage =
+                        goal > 0
+                            ? Math.min(
+                                100,
+                                (current / goal) * 100
+                            )
+                            : 0;
+
+
+                    if (missionCurrent) {
+                        missionCurrent.textContent =
+                            formatNumber(current);
+                    }
+
+
+                    if (missionGoal) {
+                        missionGoal.textContent =
+                            formatNumber(goal);
+                    }
+
+
+                    if (missionProgress) {
+                        missionProgress.style.width =
+                            percentage.toFixed(1) + "%";
+                    }
+
+
+                    if (missionPercentage) {
+                        missionPercentage.textContent =
+                            percentage.toFixed(1) + "%";
+                    }
+
+
+                    if (missionMilestones) {
+
+                        missionMilestones.innerHTML =
+                            "";
+
+
+                        const milestones =
+                            campaign.milestones || [];
+
+
+                        milestones.forEach(
+                            function (milestone) {
+
+                                const item =
+                                    document.createElement(
+                                        "div"
+                                    );
+
+                                item.className =
+                                    "milestone-item " +
+                                    (
+                                        milestone.status ||
+                                        ""
+                                    );
+
+
+                                item.innerHTML = `
+
+                                    <span class="milestone-dot"></span>
+
+                                    <span class="milestone-label">
+                                        ${milestone.label}
+                                    </span>
+
+                                `;
+
+
+                                missionMilestones.appendChild(
+                                    item
+                                );
+
+                            }
+                        );
+
                     }
 
                 }
-            );
 
 
-            /* =========================
-               CURRENT CAMPAIGN
-            ========================= */
 
-            const campaignContainer =
-                document.getElementById("current-campaign");
+                /*
+                 * =================================================
+                 * JLSPT CORNER
+                 * =================================================
+                 */
 
-            const activeCampaign =
-                data.campaigns.find(
-                    campaign => campaign.status === "active"
-                );
+                const cornerPosts =
+                    JLSPT_DATA.cornerPosts || [];
 
-            if (
-                campaignContainer &&
-                activeCampaign
-            ) {
+                const cornerPost =
+                    cornerPosts.find(
+                        function (post) {
 
-                const percentage =
-                    Math.min(
-                        (
-                            activeCampaign.current /
-                            activeCampaign.goal
-                        ) * 100,
-                        100
+                            return post.id ===
+                                home.featuredCornerPostId;
+
+                        }
                     );
 
-                const remaining =
-                    Math.max(
-                        activeCampaign.goal -
-                        activeCampaign.current,
-                        0
+
+                if (cornerPost) {
+
+                    const category =
+                        document.getElementById(
+                            "corner-category"
+                        );
+
+                    const postTitle =
+                        document.getElementById(
+                            "corner-title"
+                        );
+
+                    const postContent =
+                        document.getElementById(
+                            "corner-content"
+                        );
+
+                    const author =
+                        document.getElementById(
+                            "corner-author"
+                        );
+
+                    const date =
+                        document.getElementById(
+                            "corner-date"
+                        );
+
+
+                    if (category) {
+                        category.textContent =
+                            cornerPost.categoryLabel ||
+                            cornerPost.category ||
+                            "UPDATE";
+                    }
+
+
+                    if (postTitle) {
+                        postTitle.textContent =
+                            cornerPost.title;
+                    }
+
+
+                    if (postContent) {
+                        postContent.textContent =
+                            cornerPost.content;
+                    }
+
+
+                    if (author) {
+                        author.textContent =
+                            cornerPost.author ||
+                            "JLSPT";
+                    }
+
+
+                    if (date) {
+                        date.textContent =
+                            formatDate(
+                                cornerPost.date
+                            );
+                    }
+
+                }
+
+
+
+                /*
+                 * =================================================
+                 * NEXT ACTIVITY
+                 * =================================================
+                 */
+
+                const schedule =
+                    JLSPT_DATA.schedule || [];
+
+
+                const upcoming =
+                    schedule
+                        .filter(
+                            function (item) {
+
+                                return (
+                                    item.status ===
+                                    "upcoming" &&
+                                    item.startDate
+                                );
+
+                            }
+                        )
+                        .sort(
+                            function (a, b) {
+
+                                return new Date(
+                                    a.startDate
+                                ) -
+                                new Date(
+                                    b.startDate
+                                );
+
+                            }
+                        );
+
+
+                const nextActivity =
+                    upcoming.length
+                        ? upcoming[0]
+                        : null;
+
+
+                if (nextActivity) {
+
+                    const activityTitle =
+                        document.getElementById(
+                            "activity-title"
+                        );
+
+                    const activityDescription =
+                        document.getElementById(
+                            "activity-description"
+                        );
+
+                    const activityType =
+                        document.getElementById(
+                            "activity-type"
+                        );
+
+                    const activityDate =
+                        document.getElementById(
+                            "activity-date"
+                        );
+
+                    const activityTime =
+                        document.getElementById(
+                            "activity-time"
+                        );
+
+
+                    if (activityTitle) {
+                        activityTitle.textContent =
+                            nextActivity.title;
+                    }
+
+
+                    if (activityDescription) {
+                        activityDescription.textContent =
+                            nextActivity.description;
+                    }
+
+
+                    if (activityType) {
+                        activityType.textContent =
+                            nextActivity.type ||
+                            "Activity";
+                    }
+
+
+                    if (activityDate) {
+                        activityDate.textContent =
+                            formatDate(
+                                nextActivity.startDate
+                            );
+                    }
+
+
+                    if (activityTime) {
+                        activityTime.textContent =
+                            nextActivity.time ||
+                            "TBA";
+                    }
+
+                }
+
+
+
+                /*
+                 * =================================================
+                 * PORTAL COUNTS
+                 * =================================================
+                 */
+
+                const music =
+                    JLSPT_DATA.music || [];
+
+                const videos =
+                    JLSPT_DATA.videos || [];
+
+                const campaignData =
+                    JLSPT_DATA.campaigns || [];
+
+
+                const guides =
+                    JLSPT_DATA.guides || {};
+
+
+                const guideCount =
+                    countGuideItems(
+                        guides
                     );
 
-                campaignContainer.innerHTML = `
 
-                    <article class="focus-card">
-
-                        <div class="focus-main">
-
-                            <div class="focus-meta">
-
-                                <span class="badge badge-active">
-                                    ACTIVE
-                                </span>
-
-                                <span>
-                                    ${activeCampaign.platform}
-                                </span>
-
-                            </div>
-
-                            <h3>
-                                ${activeCampaign.title}
-                            </h3>
-
-                            <p>
-                                ${activeCampaign.description}
-                            </p>
-
-                            <div class="focus-details">
-
-                                <div>
-                                    <span>ARTIST</span>
-                                    <strong>
-                                        ${activeCampaign.artist}
-                                    </strong>
-                                </div>
-
-                                <div>
-                                    <span>RELEASE</span>
-                                    <strong>
-                                        ${activeCampaign.release}
-                                    </strong>
-                                </div>
-
-                                <div>
-                                    <span>GOAL</span>
-                                    <strong>
-                                        ${activeCampaign.goal.toLocaleString()}
-                                    </strong>
-                                </div>
-
-                            </div>
-
-                            <a
-                                href="campaigns.html#${activeCampaign.id}"
-                                class="text-link"
-                            >
-                                View campaign details →
-                            </a>
-
-                        </div>
-
-
-                        <div class="focus-progress">
-
-                            <div class="progress-header">
-
-                                <strong>
-                                    ${activeCampaign.current.toLocaleString()}
-                                </strong>
-
-                                <span>
-                                    ${Math.round(percentage)}%
-                                </span>
-
-                            </div>
-
-                            <div class="progress-track">
-
-                                <div
-                                    class="progress-fill"
-                                    style="width:${percentage}%"
-                                ></div>
-
-                            </div>
-
-                            <p>
-                                ${remaining.toLocaleString()}
-                                views to the next goal
-                            </p>
-
-                        </div>
-
-                    </article>
-
-                `;
-
-            } else if (campaignContainer) {
-
-                campaignContainer.innerHTML = `
-
-                    <div class="empty-state">
-
-                        <strong>
-                            No active campaign right now.
-                        </strong>
-
-                        <p>
-                            Check back here for the next JLSPT streaming project.
-                        </p>
-
-                    </div>
-
-                `;
-
-            }
-
-
-            /* =========================
-               LATEST JLSPT CORNER
-            ========================= */
-
-            const cornerContainer =
-                document.getElementById("latest-corner");
-
-            const cornerPosts =
-                [...(data.jlspCorner || [])]
-                    .sort(
-                        (a, b) =>
-                            new Date(b.date) -
-                            new Date(a.date)
+                const musicCount =
+                    document.getElementById(
+                        "music-count"
                     );
 
-            const latestPost =
-                cornerPosts[0];
+                const videoCount =
+                    document.getElementById(
+                        "video-count"
+                    );
 
-            if (
-                cornerContainer &&
-                latestPost
-            ) {
+                const campaignCount =
+                    document.getElementById(
+                        "campaign-count"
+                    );
 
-                cornerContainer.innerHTML = `
+                const guideCountElement =
+                    document.getElementById(
+                        "guide-count"
+                    );
 
-                    <article class="corner-preview">
 
-                        <div class="corner-preview-top">
+                if (musicCount) {
+                    musicCount.textContent =
+                        music.length;
+                }
 
-                            <span class="badge">
-                                ${latestPost.category}
-                            </span>
 
-                            <span class="corner-date">
-                                ${latestPost.date}
-                            </span>
+                if (videoCount) {
+                    videoCount.textContent =
+                        videos.length;
+                }
 
-                        </div>
 
-                        <h3>
-                            ${latestPost.title}
-                        </h3>
+                if (campaignCount) {
+                    campaignCount.textContent =
+                        campaignData.length;
+                }
 
-                        <p>
-                            ${latestPost.description}
-                        </p>
 
-                        <a
-                            href="corner.html#${latestPost.id}"
-                            class="text-link"
-                        >
-                            Read announcement →
-                        </a>
+                if (guideCountElement) {
+                    guideCountElement.textContent =
+                        guideCount;
+                }
 
-                    </article>
 
-                `;
 
-            } else if (cornerContainer) {
+                /*
+                 * =================================================
+                 * HELPERS
+                 * =================================================
+                 */
 
-                cornerContainer.innerHTML = `
+                function formatNumber(
+                    value
+                ) {
 
-                    <div class="empty-state">
-                        <p>
-                            No JLSPT announcements yet.
-                        </p>
-                    </div>
+                    return Number(
+                        value
+                    ).toLocaleString(
+                        "en-US"
+                    );
 
-                `;
+                }
+
+
+                function formatDate(
+                    value
+                ) {
+
+                    if (!value) {
+                        return "—";
+                    }
+
+
+                    const date =
+                        new Date(value);
+
+
+                    if (
+                        Number.isNaN(
+                            date.getTime()
+                        )
+                    ) {
+                        return value;
+                    }
+
+
+                    return date.toLocaleDateString(
+                        "en-US",
+                        {
+                            year: "numeric",
+                            month: "short",
+                            day: "numeric"
+                        }
+                    );
+
+                }
+
+
+                function countGuideItems(
+                    guideGroups
+                ) {
+
+                    let count = 0;
+
+
+                    Object.keys(
+                        guideGroups
+                    ).forEach(
+                        function (key) {
+
+                            if (
+                                Array.isArray(
+                                    guideGroups[key]
+                                )
+                            ) {
+
+                                count +=
+                                    guideGroups[key].length;
+
+                            }
+
+                        }
+                    );
+
+
+                    return count;
+
+                }
 
             }
-
-
-            /* =========================
-               NEXT ACTIVITY
-            ========================= */
-
-            const activityContainer =
-                document.getElementById("next-activity");
-
-            const upcoming =
-                (data.schedule || []).find(
-                    item =>
-                        item.status ===
-                        "coming-soon"
-                );
-
-            if (
-                activityContainer &&
-                upcoming
-            ) {
-
-                activityContainer.innerHTML = `
-
-                    <article class="activity-preview">
-
-                        <div class="activity-icon">
-                            →
-                        </div>
-
-                        <div>
-
-                            <span class="section-label">
-                                ${upcoming.category}
-                            </span>
-
-                            <h3>
-                                ${upcoming.title}
-                            </h3>
-
-                            <p>
-                                ${upcoming.description}
-                            </p>
-
-                            <a
-                                href="schedule.html"
-                                class="text-link"
-                            >
-                                View schedule →
-                            </a>
-
-                        </div>
-
-                    </article>
-
-                `;
-
-            } else if (activityContainer) {
-
-                activityContainer.innerHTML = `
-
-                    <div class="empty-state">
-
-                        <p>
-                            No upcoming activity announced yet.
-                        </p>
-
-                    </div>
-
-                `;
-
-            }
-
-        });
+        );
 
     </script>
 
+
 </body>
+
 </html>

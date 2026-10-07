@@ -1,7 +1,3 @@
-/* =========================================
-   JLSPT — GLOBAL DESIGN SYSTEM
-   JL Streaming Project Team
-   ========================================= */
 :root {
     --bg: #0b0708;
     --bg-soft: #10090b;
@@ -705,4 +701,33 @@ footer strong {
         align-items: flex-start;
     }
 
-    .quick
+    .quick-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+    }
+
+    .quick-card {
+        padding: 18px;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 400px) {
+
+    .quick-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+}

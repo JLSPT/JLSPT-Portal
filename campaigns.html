@@ -4,768 +4,991 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Campaigns | JLSPT</title>
+
     <meta
         name="description"
-        content="JLSPT streaming campaigns, progress, milestones, and missions."
+        content="JLSPT streaming campaigns, missions, milestones, and progress."
     >
-
-    <title>Campaigns | JLSPT</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="navbar">
-    <div class="nav-inner">
-
-        <a
-            href="index.html"
-            class="nav-brand"
-            aria-label="JLSPT Home"
-        >
-            <span class="nav-logo">JLSPT</span>
-        </a>
-
-        <nav
-            class="nav-links"
-            aria-label="Main navigation"
-        ></nav>
-
-    </div>
-</header>
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a class="nav-brand" href="index.html">JLSPT</a>
+            <div class="nav-links"></div>
+        </div>
+    </nav>
 
 
-<main>
+    <main>
 
-    <!-- =================================================
-         HERO
-         ================================================= -->
+        <!-- PAGE HERO -->
 
-    <section class="page-hero">
-        <div class="container">
-
-            <div class="page-hero-content">
+        <section class="page-hero">
+            <div class="container">
 
                 <span class="eyebrow">
-                    JLSPT STREAMING
+                    JLSPT STREAMING PROJECTS
                 </span>
 
-                <h1>
-                    Campaigns
-                </h1>
+                <h1>Campaigns</h1>
 
-                <p>
-                    Follow official JLSPT streaming campaigns,
-                    track progress, support milestones, and complete missions.
+                <p class="page-intro">
+                    Follow JLSPT streaming campaigns, missions,
+                    milestones, and community progress.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- FILTERS -->
+
+        <section class="section compact-section">
+            <div class="container">
+
+                <div
+                    class="filter-bar"
+                    id="campaign-filters"
+                >
+
+                    <button
+                        class="filter-button active"
+                        type="button"
+                        data-filter="all"
+                    >
+                        All
+                    </button>
+
+                    <button
+                        class="filter-button"
+                        type="button"
+                        data-filter="music"
+                    >
+                        Music
+                    </button>
+
+                    <button
+                        class="filter-button"
+                        type="button"
+                        data-filter="video"
+                    >
+                        Video
+                    </button>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ACTIVE CAMPAIGNS -->
+
+        <section class="section">
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="eyebrow">
+                            CURRENT
+                        </span>
+
+                        <h2>Active Campaigns</h2>
+                    </div>
+
+                    <span
+                        class="section-count"
+                        id="active-count"
+                    ></span>
+
+                </div>
+
+
+                <div
+                    class="campaign-list"
+                    id="active-campaigns"
+                ></div>
+
+            </div>
+        </section>
+
+
+        <!-- OTHER CAMPAIGNS -->
+
+        <section class="section section-alt">
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="eyebrow">
+                            ARCHIVE
+                        </span>
+
+                        <h2>Other Campaigns</h2>
+                    </div>
+
+                    <span
+                        class="section-count"
+                        id="archive-count"
+                    ></span>
+
+                </div>
+
+
+                <div
+                    class="campaign-list"
+                    id="archive-campaigns"
+                ></div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="container">
+
+            <div class="footer-inner">
+
+                <div>
+                    <strong>JLSPT</strong>
+
+                    <p>
+                        JL Streaming Project Team
+                    </p>
+                </div>
+
+                <p class="footer-note">
+                    Supporting JL through organized streaming,
+                    resources, campaigns, and community projects.
                 </p>
 
             </div>
 
-        </div>
-    </section>
 
+            <div class="footer-bottom">
 
-    <!-- =================================================
-         FILTERS
-         ================================================= -->
+                <span>
+                    JLSPT
+                </span>
 
-    <section class="section">
-        <div class="container">
-
-            <div class="filters" aria-label="Campaign filters">
-
-                <button
-                    type="button"
-                    class="filter-btn active"
-                    data-filter="all"
-                >
-                    All
-                </button>
-
-                <button
-                    type="button"
-                    class="filter-btn"
-                    data-filter="music"
-                >
-                    Music
-                </button>
-
-                <button
-                    type="button"
-                    class="filter-btn"
-                    data-filter="video"
-                >
-                    Video
-                </button>
+                <span>
+                    Streaming campaigns only
+                </span>
 
             </div>
-
-
-            <!-- =========================================
-                 CAMPAIGNS
-                 ========================================= -->
-
-            <div
-                id="campaign-list"
-                class="grid grid-2"
-            ></div>
 
         </div>
-    </section>
+    </footer>
 
-</main>
 
+    <script src="data.js"></script>
+    <script src="menu.js"></script>
 
-<footer>
 
-    <div class="footer-inner">
+    <script>
+        (function () {
 
-        <div>
-            <div class="footer-brand">
-                JLSPT
-            </div>
+            "use strict";
 
-            <div class="footer-text">
-                JL Streaming Project Team
-            </div>
-        </div>
 
-        <div class="footer-text">
-            Stream. Support. Stay connected.
-        </div>
+            const data =
+                window.JLSPT_DATA || {};
 
-    </div>
 
-</footer>
+            const campaigns =
+                Array.isArray(data.campaigns)
+                    ? data.campaigns
+                    : [];
 
 
-<script src="data.js"></script>
-<script src="menu.js"></script>
-
-<script>
-(function () {
-
-    "use strict";
-
-
-    let currentFilter = "all";
-
-
-    function escapeHTML(value) {
-        return String(value ?? "")
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
-    }
-
-
-    function formatNumber(value) {
-        return Number(value || 0).toLocaleString();
-    }
-
-
-    function getProgress(current, goal) {
-
-        if (!goal || goal <= 0) {
-            return 0;
-        }
-
-        return Math.min(
-            100,
-            Math.max(
-                0,
-                (Number(current || 0) / Number(goal)) * 100
-            )
-        );
-    }
-
-
-    function formatDate(value) {
-
-        if (!value) {
-            return "";
-        }
-
-        const date =
-            new Date(value + "T00:00:00");
-
-        if (Number.isNaN(date.getTime())) {
-            return "";
-        }
-
-        return date.toLocaleDateString(
-            undefined,
-            {
-                year: "numeric",
-                month: "short",
-                day: "numeric"
-            }
-        );
-    }
-
-
-    function getStatusLabel(status) {
-
-        if (!status) {
-            return "ACTIVE";
-        }
-
-        return String(status)
-            .replace(/-/g, " ")
-            .toUpperCase();
-    }
-
-
-    function renderMilestones(milestones) {
-
-        if (
-            !Array.isArray(milestones) ||
-            !milestones.length
-        ) {
-            return "";
-        }
-
-
-        return `
-            <div
-                style="
-                    margin-top:24px;
-                    font-size:0.74rem;
-                    font-weight:900;
-                    color:var(--muted);
-                    letter-spacing:0.08em;
-                    text-transform:uppercase;
-                "
-            >
-                Milestones
-            </div>
-
-            <div class="milestones">
-
-                ${milestones.map(
-                    function (milestone) {
-
-                        const status =
-                            milestone.status || "upcoming";
-
-                        let statusText =
-                            "UPCOMING";
-
-                        if (status === "completed") {
-                            statusText = "REACHED";
-                        }
-
-                        if (status === "current") {
-                            statusText = "CURRENT";
-                        }
-
-                        return `
-                            <div
-                                class="
-                                    milestone
-                                    ${escapeHTML(status)}
-                                "
-                            >
-
-                                <span class="milestone-label">
-                                    ${escapeHTML(
-                                        milestone.label ||
-                                        formatNumber(
-                                            milestone.value
-                                        )
-                                    )}
-                                </span>
-
-                                <span class="milestone-status">
-                                    ${statusText}
-                                </span>
-
-                            </div>
-                        `;
-
-                    }
-                ).join("")}
-
-            </div>
-        `;
-    }
-
-
-    function renderMissions(missions) {
-
-        if (
-            !Array.isArray(missions) ||
-            !missions.length
-        ) {
-            return "";
-        }
-
-
-        return `
-            <div
-                style="
-                    margin-top:24px;
-                    font-size:0.74rem;
-                    font-weight:900;
-                    color:var(--muted);
-                    letter-spacing:0.08em;
-                    text-transform:uppercase;
-                "
-            >
-                Missions
-            </div>
-
-            <div class="mission-list">
-
-                ${missions.map(
-                    function (mission) {
-
-                        return `
-                            <div class="mission">
-
-                                <strong>
-                                    ${escapeHTML(
-                                        mission.title
-                                    )}
-                                </strong>
-
-                                <p>
-                                    ${escapeHTML(
-                                        mission.description || ""
-                                    )}
-                                </p>
-
-                            </div>
-                        `;
-
-                    }
-                ).join("")}
-
-            </div>
-        `;
-    }
-
-
-    function renderCampaign(campaign) {
-
-        const progress =
-            getProgress(
-                campaign.current,
-                campaign.goal
-            );
-
-
-        const status =
-            campaign.status || "active";
-
-
-        const statusClass =
-            status === "active"
-                ? "status-active"
-                : (
-                    status === "completed"
-                        ? "status-completed"
-                        : (
-                            status === "paused"
-                                ? "status-paused"
-                                : "status-upcoming"
-                        )
+            const activeContainer =
+                document.getElementById(
+                    "active-campaigns"
                 );
 
 
-        const dateParts = [];
+            const archiveContainer =
+                document.getElementById(
+                    "archive-campaigns"
+                );
 
 
-        if (campaign.startDate) {
-            dateParts.push(
-                "Start: " +
-                formatDate(campaign.startDate)
-            );
-        }
+            const activeCount =
+                document.getElementById(
+                    "active-count"
+                );
 
 
-        if (campaign.endDate) {
-            dateParts.push(
-                "End: " +
-                formatDate(campaign.endDate)
-            );
-        }
+            const archiveCount =
+                document.getElementById(
+                    "archive-count"
+                );
 
 
-        return `
-            <article
-                class="
-                    card
-                    campaign-card
-                    ${
-                        status === "active"
-                            ? "card-featured"
-                            : ""
-                    }
-                "
-                data-campaign-type="${escapeHTML(
-                    campaign.type || ""
-                )}"
-            >
-
-                <div class="campaign-header">
-
-                    <div>
-
-                        <span
-                            class="
-                                status-badge
-                                ${statusClass}
-                            "
-                        >
-                            ${getStatusLabel(status)}
-                        </span>
-
-                        <h2 class="campaign-title">
-                            ${escapeHTML(
-                                campaign.title
-                            )}
-                        </h2>
-
-                        <p class="campaign-description">
-                            ${escapeHTML(
-                                campaign.description || ""
-                            )}
-                        </p>
-
-                    </div>
-
-                    ${
-                        campaign.platform
-                            ? `
-                                <span class="category-badge">
-                                    ${escapeHTML(
-                                        campaign.platform
-                                    )}
-                                </span>
-                            `
-                            : ""
-                    }
-
-                </div>
+            const filterButtons =
+                document.querySelectorAll(
+                    ".filter-button"
+                );
 
 
-                <div class="campaign-meta">
-
-                    ${
-                        campaign.artist
-                            ? `
-                                <span class="tag">
-                                    ${escapeHTML(
-                                        campaign.artist
-                                    )}
-                                </span>
-                            `
-                            : ""
-                    }
-
-                    ${
-                        campaign.release
-                            ? `
-                                <span class="tag">
-                                    ${escapeHTML(
-                                        campaign.release
-                                    )}
-                                </span>
-                            `
-                            : ""
-                    }
-
-                    ${
-                        campaign.type
-                            ? `
-                                <span class="tag">
-                                    ${escapeHTML(
-                                        campaign.type
-                                    )}
-                                </span>
-                            `
-                            : ""
-                    }
-
-                </div>
+            let currentFilter = "all";
 
 
-                ${
-                    dateParts.length
-                        ? `
-                            <div
-                                style="
-                                    margin-top:14px;
-                                    color:var(--muted);
-                                    font-size:0.75rem;
-                                "
-                            >
-                                ${dateParts
-                                    .map(
-                                        escapeHTML
-                                    )
-                                    .join(" · ")}
-                            </div>
-                        `
-                        : ""
+            function escapeHTML(value) {
+
+                return String(value ?? "")
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#039;");
+
+            }
+
+
+            function formatNumber(value) {
+
+                const number =
+                    Number(value);
+
+                if (!Number.isFinite(number)) {
+                    return "0";
+                }
+
+                return number.toLocaleString();
+
+            }
+
+
+            function getPercentage(current, goal) {
+
+                const currentNumber =
+                    Number(current) || 0;
+
+                const goalNumber =
+                    Number(goal) || 0;
+
+
+                if (goalNumber <= 0) {
+                    return 0;
                 }
 
 
-                <div class="campaign-progress">
+                return Math.min(
+                    100,
+                    Math.max(
+                        0,
+                        (currentNumber / goalNumber) * 100
+                    )
+                );
 
-                    <div class="progress-label">
+            }
 
-                        <span>
-                            Progress
-                        </span>
 
-                        <strong>
-                            ${progress.toFixed(1)}%
-                        </strong>
+            function getStatusLabel(status) {
+
+                const normalized =
+                    String(status || "")
+                        .toLowerCase();
+
+
+                if (normalized === "active") {
+                    return "ACTIVE";
+                }
+
+
+                if (normalized === "paused") {
+                    return "PAUSED";
+                }
+
+
+                if (normalized === "completed") {
+                    return "COMPLETED";
+                }
+
+
+                if (normalized === "archived") {
+                    return "ARCHIVED";
+                }
+
+
+                return String(status || "UNKNOWN")
+                    .toUpperCase();
+
+            }
+
+
+            function getStatusClass(status) {
+
+                const normalized =
+                    String(status || "")
+                        .toLowerCase();
+
+
+                if (normalized === "active") {
+                    return "status-active";
+                }
+
+
+                if (normalized === "completed") {
+                    return "status-completed";
+                }
+
+
+                if (normalized === "paused") {
+                    return "status-paused";
+                }
+
+
+                return "status-archived";
+
+            }
+
+
+            function getTypeLabel(type) {
+
+                const normalized =
+                    String(type || "")
+                        .toLowerCase();
+
+
+                if (normalized === "video") {
+                    return "VIDEO";
+                }
+
+
+                if (normalized === "music") {
+                    return "MUSIC";
+                }
+
+
+                return String(type || "STREAMING")
+                    .toUpperCase();
+
+            }
+
+
+            function renderMilestones(milestones) {
+
+                if (
+                    !Array.isArray(milestones) ||
+                    !milestones.length
+                ) {
+                    return "";
+                }
+
+
+                return `
+                    <div class="campaign-block">
+
+                        <div class="campaign-block-heading">
+                            <span class="eyebrow">
+                                MILESTONES
+                            </span>
+                        </div>
+
+                        <div class="milestone-list">
+
+                            ${milestones
+                                .map(function (milestone) {
+
+                                    const target =
+                                        Number(
+                                            milestone.target
+                                        ) || 0;
+
+                                    const current =
+                                        Number(
+                                            milestone.current
+                                        ) || 0;
+
+                                    const reached =
+                                        current >= target;
+
+
+                                    return `
+                                        <div
+                                            class="milestone-item ${
+                                                reached
+                                                    ? "is-complete"
+                                                    : ""
+                                            }"
+                                        >
+
+                                            <div
+                                                class="milestone-info"
+                                            >
+
+                                                <strong>
+                                                    ${escapeHTML(
+                                                        milestone.label ||
+                                                        "Milestone"
+                                                    )}
+                                                </strong>
+
+                                                <span>
+                                                    ${formatNumber(
+                                                        target
+                                                    )}
+                                                </span>
+
+                                            </div>
+
+                                            <span
+                                                class="milestone-status"
+                                            >
+                                                ${
+                                                    reached
+                                                        ? "✓ REACHED"
+                                                        : formatNumber(
+                                                            target -
+                                                            current
+                                                        ) +
+                                                        " TO GO"
+                                                }
+                                            </span>
+
+                                        </div>
+                                    `;
+
+                                })
+                                .join("")}
+
+                        </div>
 
                     </div>
+                `;
+
+            }
 
 
-                    <div
-                        class="progress-bar"
-                        role="progressbar"
-                        aria-valuenow="${progress.toFixed(1)}"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
+            function renderMissions(missions) {
+
+                if (
+                    !Array.isArray(missions) ||
+                    !missions.length
+                ) {
+                    return "";
+                }
+
+
+                return `
+                    <div class="campaign-block">
+
+                        <div class="campaign-block-heading">
+                            <span class="eyebrow">
+                                MISSIONS
+                            </span>
+                        </div>
+
+                        <div class="mission-list">
+
+                            ${missions
+                                .map(function (mission) {
+
+                                    return `
+                                        <div class="mission-item">
+
+                                            <div
+                                                class="mission-icon"
+                                            >
+                                                ${
+                                                    mission.icon ||
+                                                    "✓"
+                                                }
+                                            </div>
+
+                                            <div
+                                                class="mission-content"
+                                            >
+
+                                                <strong>
+                                                    ${escapeHTML(
+                                                        mission.title ||
+                                                        "Mission"
+                                                    )}
+                                                </strong>
+
+                                                ${
+                                                    mission.description
+                                                        ? `
+                                                            <p>
+                                                                ${escapeHTML(
+                                                                    mission.description
+                                                                )}
+                                                            </p>
+                                                        `
+                                                        : ""
+                                                }
+
+                                            </div>
+
+                                        </div>
+                                    `;
+
+                                })
+                                .join("")}
+
+                        </div>
+
+                    </div>
+                `;
+
+            }
+
+
+            function renderCampaign(campaign) {
+
+                const current =
+                    Number(campaign.current) || 0;
+
+
+                const goal =
+                    Number(campaign.goal) || 0;
+
+
+                const percentage =
+                    getPercentage(
+                        current,
+                        goal
+                    );
+
+
+                const status =
+                    getStatusLabel(
+                        campaign.status
+                    );
+
+
+                const statusClass =
+                    getStatusClass(
+                        campaign.status
+                    );
+
+
+                const type =
+                    getTypeLabel(
+                        campaign.type
+                    );
+
+
+                const milestones =
+                    Array.isArray(
+                        campaign.milestones
+                    )
+                        ? campaign.milestones
+                        : [];
+
+
+                const missions =
+                    Array.isArray(
+                        campaign.missions
+                    )
+                        ? campaign.missions
+                        : [];
+
+
+                return `
+                    <article
+                        class="campaign-card"
+                        data-campaign-type="${escapeHTML(
+                            String(
+                                campaign.type ||
+                                "streaming"
+                            ).toLowerCase()
+                        )}"
                     >
 
-                        <div
-                            class="progress-fill"
-                            style="width:${progress}%"
-                        ></div>
+                        <div class="campaign-card-header">
 
-                    </div>
+                            <div>
 
-
-                    <div class="campaign-numbers">
-
-                        <span>
-                            <strong>
-                                ${formatNumber(
-                                    campaign.current
-                                )}
-                            </strong>
-                            current
-                        </span>
-
-                        <span>
-                            Goal:
-                            <strong>
-                                ${formatNumber(
-                                    campaign.goal
-                                )}
-                            </strong>
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                ${renderMilestones(
-                    campaign.milestones
-                )}
-
-
-                ${renderMissions(
-                    campaign.missions
-                )}
-
-
-                <div class="hero-actions">
-
-                    ${
-                        campaign.videoUrl
-                            ? `
-                                <a
-                                    href="${escapeHTML(
-                                        campaign.videoUrl
-                                    )}"
-                                    class="btn"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                <div
+                                    class="campaign-tags"
                                 >
-                                    Watch Official Video
-                                </a>
-                            `
-                            : ""
+
+                                    <span class="tag">
+                                        ${escapeHTML(
+                                            type
+                                        )}
+                                    </span>
+
+                                    <span
+                                        class="status-badge ${statusClass}"
+                                    >
+                                        ${escapeHTML(
+                                            status
+                                        )}
+                                    </span>
+
+                                </div>
+
+                                <h3>
+                                    ${escapeHTML(
+                                        campaign.name ||
+                                        "Streaming Campaign"
+                                    )}
+                                </h3>
+
+                            </div>
+
+                            ${
+                                campaign.platform
+                                    ? `
+                                        <span
+                                            class="campaign-platform"
+                                        >
+                                            ${escapeHTML(
+                                                campaign.platform
+                                            )}
+                                        </span>
+                                    `
+                                    : ""
+                            }
+
+                        </div>
+
+
+                        ${
+                            campaign.description
+                                ? `
+                                    <p class="campaign-description">
+                                        ${escapeHTML(
+                                            campaign.description
+                                        )}
+                                    </p>
+                                `
+                                : ""
+                        }
+
+
+                        <div class="campaign-progress-section">
+
+                            <div
+                                class="campaign-progress-heading"
+                            >
+
+                                <div>
+
+                                    <span>
+                                        CURRENT
+                                    </span>
+
+                                    <strong>
+                                        ${formatNumber(
+                                            current
+                                        )}
+                                    </strong>
+
+                                </div>
+
+
+                                <div>
+
+                                    <span>
+                                        GOAL
+                                    </span>
+
+                                    <strong>
+                                        ${formatNumber(
+                                            goal
+                                        )}
+                                    </strong>
+
+                                </div>
+
+
+                                <strong
+                                    class="campaign-percentage"
+                                >
+                                    ${percentage.toFixed(1)}%
+                                </strong>
+
+                            </div>
+
+
+                            <div class="progress-bar">
+
+                                <div
+                                    class="progress-fill"
+                                    style="width: ${percentage}%"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+
+                        ${
+                            campaign.startDate ||
+                            campaign.endDate
+                                ? `
+                                    <div
+                                        class="campaign-dates"
+                                    >
+
+                                        ${
+                                            campaign.startDate
+                                                ? `
+                                                    <div>
+                                                        <span>
+                                                            START
+                                                        </span>
+
+                                                        <strong>
+                                                            ${escapeHTML(
+                                                                campaign.startDate
+                                                            )}
+                                                        </strong>
+                                                    </div>
+                                                `
+                                                : ""
+                                        }
+
+                                        ${
+                                            campaign.endDate
+                                                ? `
+                                                    <div>
+                                                        <span>
+                                                            END
+                                                        </span>
+
+                                                        <strong>
+                                                            ${escapeHTML(
+                                                                campaign.endDate
+                                                            )}
+                                                        </strong>
+                                                    </div>
+                                                `
+                                                : ""
+                                        }
+
+                                    </div>
+                                `
+                                : ""
+                        }
+
+
+                        ${renderMilestones(
+                            milestones
+                        )}
+
+
+                        ${renderMissions(
+                            missions
+                        )}
+
+
+                        ${
+                            campaign.link
+                                ? `
+                                    <div
+                                        class="campaign-actions"
+                                    >
+
+                                        <a
+                                            class="button button-primary"
+                                            href="${escapeHTML(
+                                                campaign.link
+                                            )}"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            Open Campaign
+                                        </a>
+
+                                    </div>
+                                `
+                                : ""
+                        }
+
+                    </article>
+                `;
+
+            }
+
+
+            function matchesFilter(campaign) {
+
+                if (currentFilter === "all") {
+                    return true;
+                }
+
+
+                return String(
+                    campaign.type || ""
+                ).toLowerCase() === currentFilter;
+
+            }
+
+
+            function renderCampaigns() {
+
+                const filtered =
+                    campaigns.filter(
+                        matchesFilter
+                    );
+
+
+                const active =
+                    filtered.filter(
+                        function (campaign) {
+
+                            return String(
+                                campaign.status || ""
+                            ).toLowerCase() === "active";
+
+                        }
+                    );
+
+
+                const archive =
+                    filtered.filter(
+                        function (campaign) {
+
+                            return String(
+                                campaign.status || ""
+                            ).toLowerCase() !== "active";
+
+                        }
+                    );
+
+
+                if (activeContainer) {
+
+                    if (!active.length) {
+
+                        activeContainer.innerHTML = `
+                            <div class="empty-state">
+
+                                <strong>
+                                    No active campaigns.
+                                </strong>
+
+                                <span>
+                                    New JLSPT campaigns will appear here.
+                                </span>
+
+                            </div>
+                        `;
+
+                    } else {
+
+                        activeContainer.innerHTML =
+                            active
+                                .map(
+                                    renderCampaign
+                                )
+                                .join("");
+
                     }
 
+                }
 
-                    ${
-                        campaign.guideUrl
-                            ? `
-                                <a
-                                    href="${escapeHTML(
-                                        campaign.guideUrl
-                                    )}"
-                                    class="btn btn-secondary"
-                                >
-                                    Campaign Guide
-                                </a>
-                            `
-                            : `
-                                <a
-                                    href="guides.html"
-                                    class="btn btn-secondary"
-                                >
-                                    View Guides
-                                </a>
-                            `
+
+                if (archiveContainer) {
+
+                    if (!archive.length) {
+
+                        archiveContainer.innerHTML = `
+                            <div class="empty-state">
+
+                                <strong>
+                                    No archived campaigns.
+                                </strong>
+
+                                <span>
+                                    Completed campaigns will appear here.
+                                </span>
+
+                            </div>
+                        `;
+
+                    } else {
+
+                        archiveContainer.innerHTML =
+                            archive
+                                .map(
+                                    renderCampaign
+                                )
+                                .join("");
+
                     }
 
-                </div>
-
-            </article>
-        `;
-    }
+                }
 
 
-    function renderCampaigns() {
+                if (activeCount) {
 
-        const container =
-            document.getElementById(
-                "campaign-list"
-            );
+                    activeCount.textContent =
+                        `${active.length} ${
+                            active.length === 1
+                                ? "campaign"
+                                : "campaigns"
+                        }`;
 
-
-        if (!container) {
-            return;
-        }
-
-
-        const campaigns =
-            Array.isArray(JLSPT_DATA.campaigns)
-                ? JLSPT_DATA.campaigns
-                : [];
+                }
 
 
-        const filtered =
-            campaigns.filter(
-                function (campaign) {
+                if (archiveCount) {
 
-                    if (currentFilter === "all") {
-                        return true;
-                    }
+                    archiveCount.textContent =
+                        `${archive.length} ${
+                            archive.length === 1
+                                ? "campaign"
+                                : "campaigns"
+                        }`;
 
-                    return campaign.type === currentFilter;
+                }
+
+            }
+
+
+            filterButtons.forEach(
+                function (button) {
+
+                    button.addEventListener(
+                        "click",
+                        function () {
+
+                            currentFilter =
+                                button.dataset.filter ||
+                                "all";
+
+
+                            filterButtons.forEach(
+                                function (item) {
+
+                                    item.classList.toggle(
+                                        "active",
+                                        item === button
+                                    );
+
+                                }
+                            );
+
+
+                            renderCampaigns();
+
+                        }
+                    );
+
                 }
             );
 
 
-        if (!filtered.length) {
+            renderCampaigns();
 
-            container.innerHTML = `
-                <div class="empty-state">
-
-                    <div class="empty-state-icon">
-                        📭
-                    </div>
-
-                    <h3>
-                        No campaigns in this category
-                    </h3>
-
-                    <p>
-                        More JLSPT streaming campaigns will appear here.
-                    </p>
-
-                </div>
-            `;
-
-            return;
-        }
-
-
-        container.innerHTML =
-            filtered
-                .map(renderCampaign)
-                .join("");
-    }
-
-
-    function setupFilters() {
-
-        const buttons =
-            document.querySelectorAll(
-                "[data-filter]"
-            );
-
-
-        buttons.forEach(
-            function (button) {
-
-                button.addEventListener(
-                    "click",
-                    function () {
-
-                        currentFilter =
-                            button.dataset.filter;
-
-
-                        buttons.forEach(
-                            function (item) {
-                                item.classList.toggle(
-                                    "active",
-                                    item === button
-                                );
-                            }
-                        );
-
-
-                        renderCampaigns();
-                    }
-                );
-
-            }
-        );
-    }
-
-
-    function initCampaigns() {
-
-        if (
-            typeof JLSPT_DATA === "undefined"
-        ) {
-            console.error(
-                "JLSPT_DATA is not available."
-            );
-
-            return;
-        }
-
-
-        renderCampaigns();
-        setupFilters();
-    }
-
-
-    if (
-        document.readyState === "loading"
-    ) {
-
-        document.addEventListener(
-            "DOMContentLoaded",
-            initCampaigns
-        );
-
-    } else {
-
-        initCampaigns();
-
-    }
-
-})();
-</script>
+        })();
+    </script>
 
 </body>
 </html>

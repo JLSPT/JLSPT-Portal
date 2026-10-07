@@ -4,883 +4,902 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Schedule | JLSPT</title>
+
     <meta
         name="description"
-        content="JLSPT schedule for streaming sessions, campaigns, events, and regular activities."
+        content="JLSPT streaming sessions, regular activities, events, campaigns, and schedule."
     >
-
-    <title>Schedule | JLSPT</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="navbar">
-    <div class="nav-inner">
-
-        <a
-            href="index.html"
-            class="nav-brand"
-            aria-label="JLSPT Home"
-        >
-            <span class="nav-logo">JLSPT</span>
-        </a>
-
-        <nav
-            class="nav-links"
-            aria-label="Main navigation"
-        ></nav>
-
-    </div>
-</header>
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a class="nav-brand" href="index.html">JLSPT</a>
+            <div class="nav-links"></div>
+        </div>
+    </nav>
 
 
-<main>
+    <main>
 
-    <!-- =================================================
-         HERO
-         ================================================= -->
+        <!-- PAGE HERO -->
 
-    <section class="page-hero">
-        <div class="container">
-
-            <div class="page-hero-content">
+        <section class="page-hero">
+            <div class="container">
 
                 <span class="eyebrow">
-                    JLSPT SCHEDULE
+                    JLSPT ACTIVITIES
                 </span>
 
-                <h1>
-                    Schedule
-                </h1>
+                <h1>Schedule</h1>
 
-                <p>
-                    Keep track of upcoming streaming activities,
-                    organized sessions, campaigns, and regular JLSPT activities.
+                <p class="page-intro">
+                    Keep track of upcoming streaming sessions,
+                    regular activities, events, and campaign schedules.
                 </p>
 
             </div>
+        </section>
 
-        </div>
-    </section>
 
+        <!-- NEXT ACTIVITY -->
 
-    <!-- =================================================
-         NEXT ACTIVITY
-         ================================================= -->
+        <section class="section">
+            <div class="container">
 
-    <section class="section">
-        <div class="container">
-
-            <div class="section-heading">
-
-                <div>
-                    <span class="eyebrow">
-                        UP NEXT
-                    </span>
-
-                    <h2>
-                        Next Activity
-                    </h2>
-                </div>
-
-            </div>
-
-
-            <div id="next-activity"></div>
-
-        </div>
-    </section>
-
-
-    <!-- =================================================
-         UPCOMING
-         ================================================= -->
-
-    <section class="section section-alt">
-        <div class="container">
-
-            <div class="section-heading">
-
-                <div>
-                    <span class="eyebrow">
-                        COMING UP
-                    </span>
-
-                    <h2>
-                        Upcoming
-                    </h2>
-                </div>
-
-            </div>
-
-
-            <div
-                id="upcoming-list"
-                class="grid grid-2"
-            ></div>
-
-        </div>
-    </section>
-
-
-    <!-- =================================================
-         REGULAR ACTIVITIES
-         ================================================= -->
-
-    <section class="section">
-        <div class="container">
-
-            <div class="section-heading">
-
-                <div>
-                    <span class="eyebrow">
-                        ALWAYS AVAILABLE
-                    </span>
-
-                    <h2>
-                        Regular Activities
-                    </h2>
-                </div>
-
-            </div>
-
-
-            <div
-                id="regular-list"
-                class="grid grid-3"
-            ></div>
-
-        </div>
-    </section>
-
-
-    <!-- =================================================
-         PAST
-         ================================================= -->
-
-    <section class="section section-alt">
-        <div class="container">
-
-            <div class="section-heading">
-
-                <div>
-                    <span class="eyebrow">
-                        HISTORY
-                    </span>
-
-                    <h2>
-                        Past / Completed
-                    </h2>
-                </div>
-
-            </div>
-
-
-            <div
-                id="past-list"
-                class="grid grid-2"
-            ></div>
-
-        </div>
-    </section>
-
-</main>
-
-
-<footer>
-
-    <div class="footer-inner">
-
-        <div>
-            <div class="footer-brand">
-                JLSPT
-            </div>
-
-            <div class="footer-text">
-                JL Streaming Project Team
-            </div>
-        </div>
-
-        <div class="footer-text">
-            Stream. Support. Stay connected.
-        </div>
-
-    </div>
-
-</footer>
-
-
-<script src="data.js"></script>
-<script src="menu.js"></script>
-
-<script>
-(function () {
-
-    "use strict";
-
-
-    function escapeHTML(value) {
-
-        return String(value ?? "")
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
-
-    }
-
-
-    function formatDate(value) {
-
-        if (!value) {
-            return "";
-        }
-
-
-        const date =
-            new Date(value + "T00:00:00");
-
-
-        if (Number.isNaN(date.getTime())) {
-            return "";
-        }
-
-
-        return date.toLocaleDateString(
-            undefined,
-            {
-                year: "numeric",
-                month: "short",
-                day: "numeric"
-            }
-        );
-
-    }
-
-
-    function getDateTime(item) {
-
-        if (!item.startDate) {
-            return null;
-        }
-
-
-        const time =
-            item.time || "00:00";
-
-
-        const date =
-            new Date(
-                item.startDate +
-                "T" +
-                time
-            );
-
-
-        if (Number.isNaN(date.getTime())) {
-            return null;
-        }
-
-
-        return date;
-
-    }
-
-
-    function getStatusClass(status) {
-
-        if (status === "active") {
-            return "status-active";
-        }
-
-        if (status === "completed") {
-            return "status-completed";
-        }
-
-        if (status === "paused") {
-            return "status-paused";
-        }
-
-        return "status-upcoming";
-
-    }
-
-
-    function getStatusLabel(status) {
-
-        if (!status) {
-            return "UPCOMING";
-        }
-
-
-        return String(status)
-            .replace(/-/g, " ")
-            .toUpperCase();
-
-    }
-
-
-    function renderDate(item) {
-
-        const date =
-            formatDate(item.startDate);
-
-
-        const endDate =
-            formatDate(item.endDate);
-
-
-        if (!date && !endDate) {
-
-            return `
-                <span class="schedule-date">
-                    Date to be announced
-                </span>
-            `;
-
-        }
-
-
-        if (
-            date &&
-            endDate &&
-            date !== endDate
-        ) {
-
-            return `
-                <span class="schedule-date">
-                    ${escapeHTML(date)}
-                    – 
-                    ${escapeHTML(endDate)}
-                </span>
-            `;
-
-        }
-
-
-        return `
-            <span class="schedule-date">
-                ${escapeHTML(date)}
-            </span>
-        `;
-
-    }
-
-
-    function renderTime(item) {
-
-        if (!item.time) {
-            return "";
-        }
-
-
-        return `
-            <span class="schedule-time">
-                ${escapeHTML(item.time)}
-                ${
-                    item.timezone
-                        ? " · " +
-                          escapeHTML(
-                              item.timezone
-                          )
-                        : ""
-                }
-            </span>
-        `;
-
-    }
-
-
-    function renderScheduleCard(
-        item,
-        options
-    ) {
-
-        options =
-            options || {};
-
-
-        const status =
-            item.status || "upcoming";
-
-
-        const campaign =
-            item.campaignId &&
-            Array.isArray(
-                JLSPT_DATA.campaigns
-            )
-                ? JLSPT_DATA.campaigns.find(
-                    function (campaign) {
-                        return campaign.id ===
-                            item.campaignId;
-                    }
-                )
-                : null;
-
-
-        return `
-            <article
-                class="
-                    card
-                    schedule-card
-                    ${
-                        options.featured
-                            ? "card-featured"
-                            : ""
-                    }
-                "
-            >
-
-                <div class="schedule-card-top">
+                <div class="section-heading">
 
                     <div>
-
-                        <span
-                            class="
-                                status-badge
-                                ${getStatusClass(status)}
-                            "
-                        >
-                            ${getStatusLabel(status)}
+                        <span class="eyebrow">
+                            UP NEXT
                         </span>
 
-                        <h3>
-                            ${escapeHTML(
-                                item.title
-                            )}
-                        </h3>
-
+                        <h2>Next Activity</h2>
                     </div>
-
-                    ${
-                        item.platform
-                            ? `
-                                <span class="category-badge">
-                                    ${escapeHTML(
-                                        item.platform
-                                    )}
-                                </span>
-                            `
-                            : ""
-                    }
 
                 </div>
 
 
-                <div class="schedule-details">
+                <div id="next-activity"></div>
 
-                    <div class="schedule-detail">
+            </div>
+        </section>
 
-                        <span class="schedule-detail-label">
-                            Date
+
+        <!-- UPCOMING -->
+
+        <section class="section section-alt">
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="eyebrow">
+                            COMING UP
                         </span>
 
-                        ${renderDate(item)}
-
+                        <h2>Upcoming Activities</h2>
                     </div>
 
-
-                    <div class="schedule-detail">
-
-                        <span class="schedule-detail-label">
-                            Time
-                        </span>
-
-                        ${
-                            renderTime(item) ||
-                            `
-                                <span class="schedule-muted">
-                                    Time to be announced
-                                </span>
-                            `
-                        }
-
-                    </div>
-
-
-                    ${
-                        item.category
-                            ? `
-                                <div class="schedule-detail">
-
-                                    <span class="schedule-detail-label">
-                                        Type
-                                    </span>
-
-                                    <span>
-                                        ${escapeHTML(
-                                            item.category
-                                        )}
-                                    </span>
-
-                                </div>
-                            `
-                            : ""
-                    }
+                    <span
+                        class="section-count"
+                        id="upcoming-count"
+                    ></span>
 
                 </div>
 
 
-                ${
-                    item.description
-                        ? `
-                            <p class="schedule-description">
-                                ${escapeHTML(
-                                    item.description
-                                )}
-                            </p>
-                        `
-                        : ""
-                }
+                <div
+                    class="schedule-list"
+                    id="upcoming-schedule"
+                ></div>
+
+            </div>
+        </section>
 
 
-                ${
-                    campaign
-                        ? `
-                            <div class="schedule-linked">
+        <!-- REGULAR -->
 
-                                <span>
-                                    Campaign
-                                </span>
+        <section class="section">
+            <div class="container">
 
-                                <strong>
-                                    ${escapeHTML(
-                                        campaign.title
-                                    )}
-                                </strong>
+                <div class="section-heading">
 
-                            </div>
-                        `
-                        : ""
-                }
+                    <div>
+                        <span class="eyebrow">
+                            ROUTINE
+                        </span>
 
+                        <h2>Regular Activities</h2>
+                    </div>
 
-                ${
-                    item.url
-                        ? `
-                            <div class="hero-actions">
+                    <span
+                        class="section-count"
+                        id="regular-count"
+                    ></span>
 
-                                <a
-                                    href="${escapeHTML(
-                                        item.url
-                                    )}"
-                                    class="btn"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Open Activity
-                                </a>
-
-                            </div>
-                        `
-                        : ""
-                }
-
-            </article>
-        `;
-
-    }
-
-
-    function renderEmpty(
-        message
-    ) {
-
-        return `
-            <div class="empty-state">
-
-                <div class="empty-state-icon">
-                    📅
                 </div>
 
-                <h3>
-                    Nothing scheduled yet
-                </h3>
 
-                <p>
-                    ${escapeHTML(message)}
+                <div
+                    class="schedule-list"
+                    id="regular-schedule"
+                ></div>
+
+            </div>
+        </section>
+
+
+        <!-- PAST -->
+
+        <section class="section section-alt">
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="eyebrow">
+                            HISTORY
+                        </span>
+
+                        <h2>Past &amp; Completed</h2>
+                    </div>
+
+                    <span
+                        class="section-count"
+                        id="past-count"
+                    ></span>
+
+                </div>
+
+
+                <div
+                    class="schedule-list"
+                    id="past-schedule"
+                ></div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="container">
+
+            <div class="footer-inner">
+
+                <div>
+                    <strong>JLSPT</strong>
+
+                    <p>
+                        JL Streaming Project Team
+                    </p>
+                </div>
+
+                <p class="footer-note">
+                    Supporting JL through organized streaming,
+                    resources, campaigns, and community projects.
                 </p>
 
             </div>
-        `;
-
-    }
 
 
-    function getScheduleData() {
+            <div class="footer-bottom">
 
-        if (
-            !Array.isArray(
-                JLSPT_DATA.schedule
-            )
-        ) {
-            return [];
-        }
+                <span>
+                    JLSPT
+                </span>
 
+                <span>
+                    Activity schedule
+                </span>
 
-        return JLSPT_DATA.schedule
-            .slice()
-            .sort(
-                function (a, b) {
+            </div>
 
-                    const dateA =
-                        getDateTime(a);
-
-                    const dateB =
-                        getDateTime(b);
+        </div>
+    </footer>
 
 
-                    if (!dateA && !dateB) {
-                        return 0;
-                    }
-
-                    if (!dateA) {
-                        return 1;
-                    }
-
-                    if (!dateB) {
-                        return -1;
-                    }
+    <script src="data.js"></script>
+    <script src="menu.js"></script>
 
 
-                    return dateA - dateB;
+    <script>
+        (function () {
 
+            "use strict";
+
+
+            const data =
+                window.JLSPT_DATA || {};
+
+
+            const schedule =
+                Array.isArray(data.schedule)
+                    ? data.schedule
+                    : [];
+
+
+            const nextContainer =
+                document.getElementById(
+                    "next-activity"
+                );
+
+
+            const upcomingContainer =
+                document.getElementById(
+                    "upcoming-schedule"
+                );
+
+
+            const regularContainer =
+                document.getElementById(
+                    "regular-schedule"
+                );
+
+
+            const pastContainer =
+                document.getElementById(
+                    "past-schedule"
+                );
+
+
+            const upcomingCount =
+                document.getElementById(
+                    "upcoming-count"
+                );
+
+
+            const regularCount =
+                document.getElementById(
+                    "regular-count"
+                );
+
+
+            const pastCount =
+                document.getElementById(
+                    "past-count"
+                );
+
+
+            function escapeHTML(value) {
+
+                return String(value ?? "")
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#039;");
+
+            }
+
+
+            function getDateValue(item) {
+
+                if (!item.date) {
+                    return Number.MAX_SAFE_INTEGER;
                 }
-            );
-
-    }
 
 
-    function renderSchedule() {
-
-        const nextContainer =
-            document.getElementById(
-                "next-activity"
-            );
+                const value =
+                    new Date(
+                        item.date
+                    ).getTime();
 
 
-        const upcomingContainer =
-            document.getElementById(
-                "upcoming-list"
-            );
+                return Number.isNaN(value)
+                    ? Number.MAX_SAFE_INTEGER
+                    : value;
+
+            }
 
 
-        const regularContainer =
-            document.getElementById(
-                "regular-list"
-            );
+            function getTypeLabel(type) {
+
+                const normalized =
+                    String(type || "")
+                        .toLowerCase();
 
 
-        const pastContainer =
-            document.getElementById(
-                "past-list"
-            );
+                const labels = {
+                    session: "STREAMING SESSION",
+                    regular: "REGULAR",
+                    event: "EVENT",
+                    campaign: "CAMPAIGN"
+                };
 
 
-        const schedule =
-            getScheduleData();
+                return (
+                    labels[normalized] ||
+                    String(type || "ACTIVITY")
+                        .toUpperCase()
+                );
+
+            }
 
 
-        const regular =
-            schedule.filter(
-                function (item) {
-                    return item.type ===
-                        "regular";
+            function getStatusClass(status) {
+
+                const normalized =
+                    String(status || "")
+                        .toLowerCase();
+
+
+                if (
+                    normalized === "active" ||
+                    normalized === "upcoming"
+                ) {
+                    return "status-active";
                 }
-            );
 
 
-        const dated =
-            schedule.filter(
-                function (item) {
-                    return item.type !==
-                        "regular";
+                if (
+                    normalized === "completed" ||
+                    normalized === "past"
+                ) {
+                    return "status-completed";
                 }
-            );
 
 
-        const now =
-            new Date();
+                return "status-paused";
+
+            }
 
 
-        const upcoming =
-            dated.filter(
-                function (item) {
+            function getActivityStatus(item) {
+
+                if (item.status) {
+                    return String(
+                        item.status
+                    );
+                }
+
+
+                if (item.date) {
 
                     const date =
-                        getDateTime(item);
-
-                    return (
-                        item.status !==
-                            "completed" &&
-                        (
-                            !date ||
-                            date >= now
-                        )
-                    );
-
-                }
-            );
+                        new Date(
+                            item.date
+                        );
 
 
-        const past =
-            dated.filter(
-                function (item) {
-
-                    const date =
-                        getDateTime(item);
-
-                    return (
-                        item.status ===
-                            "completed" ||
-                        (
-                            date &&
-                            date < now
-                        )
-                    );
+                    if (
+                        !Number.isNaN(
+                            date.getTime()
+                        ) &&
+                        date.getTime() <
+                            Date.now()
+                    ) {
+                        return "Completed";
+                    }
 
                 }
-            );
 
 
-        if (upcoming.length) {
+                return "Upcoming";
 
-            nextContainer.innerHTML =
-                renderScheduleCard(
-                    upcoming[0],
+            }
+
+
+            function formatDate(item) {
+
+                if (!item.date) {
+                    return "";
+                }
+
+
+                const date =
+                    new Date(
+                        item.date
+                    );
+
+
+                if (
+                    Number.isNaN(
+                        date.getTime()
+                    )
+                ) {
+                    return escapeHTML(
+                        item.date
+                    );
+                }
+
+
+                return date.toLocaleDateString(
+                    undefined,
                     {
-                        featured: true
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric"
                     }
                 );
 
-        } else {
+            }
 
-            nextContainer.innerHTML =
-                renderEmpty(
-                    "The next JLSPT activity will appear here once it is scheduled."
+
+            function createActivityCard(
+                item,
+                featured
+            ) {
+
+                const status =
+                    getActivityStatus(
+                        item
+                    );
+
+
+                const statusClass =
+                    getStatusClass(
+                        status
+                    );
+
+
+                return `
+                    <article
+                        class="schedule-card ${
+                            featured
+                                ? "schedule-card-featured"
+                                : ""
+                        }"
+                    >
+
+                        <div class="schedule-date">
+
+                            ${
+                                item.date
+                                    ? `
+                                        <strong>
+                                            ${escapeHTML(
+                                                formatDate(
+                                                    item
+                                                )
+                                            )}
+                                        </strong>
+                                    `
+                                    : `
+                                        <strong>
+                                            Schedule
+                                        </strong>
+                                    `
+                            }
+
+                            ${
+                                item.time
+                                    ? `
+                                        <span>
+                                            ${escapeHTML(
+                                                item.time
+                                            )}
+                                        </span>
+                                    `
+                                    : ""
+                            }
+
+                        </div>
+
+
+                        <div class="schedule-main">
+
+                            <div
+                                class="schedule-tags"
+                            >
+
+                                <span class="tag">
+                                    ${escapeHTML(
+                                        getTypeLabel(
+                                            item.type
+                                        )
+                                    )}
+                                </span>
+
+                                <span
+                                    class="status-badge ${statusClass}"
+                                >
+                                    ${escapeHTML(
+                                        status
+                                    ).toUpperCase()}
+                                </span>
+
+                            </div>
+
+
+                            <h3>
+                                ${escapeHTML(
+                                    item.title ||
+                                    "JLSPT Activity"
+                                )}
+                            </h3>
+
+
+                            ${
+                                item.description
+                                    ? `
+                                        <p>
+                                            ${escapeHTML(
+                                                item.description
+                                            )}
+                                        </p>
+                                    `
+                                    : ""
+                            }
+
+
+                            <div class="schedule-meta">
+
+                                ${
+                                    item.platform
+                                        ? `
+                                            <span>
+                                                <strong>
+                                                    Platform
+                                                </strong>
+
+                                                ${escapeHTML(
+                                                    item.platform
+                                                )}
+                                            </span>
+                                        `
+                                        : ""
+                                }
+
+
+                                ${
+                                    item.host
+                                        ? `
+                                            <span>
+                                                <strong>
+                                                    Host
+                                                </strong>
+
+                                                ${escapeHTML(
+                                                    item.host
+                                                )}
+                                            </span>
+                                        `
+                                        : ""
+                                }
+
+
+                                ${
+                                    item.frequency
+                                        ? `
+                                            <span>
+                                                <strong>
+                                                    Frequency
+                                                </strong>
+
+                                                ${escapeHTML(
+                                                    item.frequency
+                                                )}
+                                            </span>
+                                        `
+                                        : ""
+                                }
+
+                            </div>
+
+
+                            ${
+                                item.link
+                                    ? `
+                                        <div class="schedule-actions">
+
+                                            <a
+                                                class="button button-secondary"
+                                                href="${escapeHTML(
+                                                    item.link
+                                                )}"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                Open Activity
+                                            </a>
+
+                                        </div>
+                                    `
+                                    : ""
+                            }
+
+                        </div>
+
+                    </article>
+                `;
+
+            }
+
+
+            function renderEmpty(
+                target,
+                title,
+                message
+            ) {
+
+                if (!target) {
+                    return;
+                }
+
+
+                target.innerHTML = `
+                    <div class="empty-state">
+
+                        <strong>
+                            ${escapeHTML(
+                                title
+                            )}
+                        </strong>
+
+                        <span>
+                            ${escapeHTML(
+                                message
+                            )}
+                        </span>
+
+                    </div>
+                `;
+
+            }
+
+
+            const regular =
+                schedule.filter(
+                    function (item) {
+
+                        return String(
+                            item.type || ""
+                        ).toLowerCase() === "regular";
+
+                    }
                 );
 
-        }
+
+            const nonRegular =
+                schedule.filter(
+                    function (item) {
+
+                        return String(
+                            item.type || ""
+                        ).toLowerCase() !== "regular";
+
+                    }
+                );
 
 
-        const remainingUpcoming =
-            upcoming.slice(1);
-
-
-        if (remainingUpcoming.length) {
-
-            upcomingContainer.innerHTML =
-                remainingUpcoming
-                    .map(
+            const upcoming =
+                nonRegular
+                    .filter(
                         function (item) {
-                            return renderScheduleCard(
-                                item
+
+                            const status =
+                                getActivityStatus(
+                                    item
+                                ).toLowerCase();
+
+
+                            return (
+                                status === "upcoming" ||
+                                status === "active" ||
+                                (
+                                    item.date &&
+                                    getDateValue(
+                                        item
+                                    ) >= Date.now()
+                                )
                             );
+
                         }
                     )
-                    .join("");
+                    .sort(
+                        function (a, b) {
 
-        } else {
-
-            upcomingContainer.innerHTML =
-                renderEmpty(
-                    "No additional upcoming activities are scheduled yet."
-                );
-
-        }
-
-
-        if (regular.length) {
-
-            regularContainer.innerHTML =
-                regular
-                    .map(
-                        function (item) {
-                            return renderScheduleCard(
-                                item
+                            return (
+                                getDateValue(a) -
+                                getDateValue(b)
                             );
+
+                        }
+                    );
+
+
+            const past =
+                nonRegular
+                    .filter(
+                        function (item) {
+
+                            const status =
+                                getActivityStatus(
+                                    item
+                                ).toLowerCase();
+
+
+                            return (
+                                status === "completed" ||
+                                status === "past" ||
+                                (
+                                    item.date &&
+                                    getDateValue(
+                                        item
+                                    ) < Date.now()
+                                )
+                            );
+
                         }
                     )
-                    .join("");
+                    .sort(
+                        function (a, b) {
 
-        } else {
-
-            regularContainer.innerHTML =
-                renderEmpty(
-                    "Regular JLSPT activities will appear here."
-                );
-
-        }
-
-
-        if (past.length) {
-
-            pastContainer.innerHTML =
-                past
-                    .reverse()
-                    .map(
-                        function (item) {
-                            return renderScheduleCard(
-                                item
+                            return (
+                                getDateValue(b) -
+                                getDateValue(a)
                             );
+
                         }
-                    )
-                    .join("");
-
-        } else {
-
-            pastContainer.innerHTML =
-                renderEmpty(
-                    "Completed activities will appear here."
-                );
-
-        }
-
-    }
+                    );
 
 
-    function initSchedule() {
-
-        if (
-            typeof JLSPT_DATA ===
-            "undefined"
-        ) {
-
-            console.error(
-                "JLSPT_DATA is not available."
-            );
-
-            return;
-
-        }
+            const nextActivity =
+                upcoming.length
+                    ? upcoming[0]
+                    : null;
 
 
-        renderSchedule();
+            if (nextContainer) {
 
-    }
+                if (nextActivity) {
+
+                    nextContainer.innerHTML =
+                        createActivityCard(
+                            nextActivity,
+                            true
+                        );
+
+                } else {
+
+                    renderEmpty(
+                        nextContainer,
+                        "No upcoming activity.",
+                        "New JLSPT activities will appear here."
+                    );
+
+                }
+
+            }
 
 
-    if (
-        document.readyState ===
-        "loading"
-    ) {
+            const upcomingWithoutNext =
+                upcoming.slice(1);
 
-        document.addEventListener(
-            "DOMContentLoaded",
-            initSchedule
-        );
 
-    } else {
+            if (upcomingContainer) {
 
-        initSchedule();
+                if (
+                    upcomingWithoutNext.length
+                ) {
 
-    }
+                    upcomingContainer.innerHTML =
+                        upcomingWithoutNext
+                            .map(
+                                function (item) {
+                                    return createActivityCard(
+                                        item,
+                                        false
+                                    );
+                                }
+                            )
+                            .join("");
 
-})();
-</script>
+                } else {
+
+                    renderEmpty(
+                        upcomingContainer,
+                        "No additional upcoming activities.",
+                        "Check back for new JLSPT schedules."
+                    );
+
+                }
+
+            }
+
+
+            if (regularContainer) {
+
+                if (regular.length) {
+
+                    regularContainer.innerHTML =
+                        regular
+                            .map(
+                                function (item) {
+                                    return createActivityCard(
+                                        item,
+                                        false
+                                    );
+                                }
+                            )
+                            .join("");
+
+                } else {
+
+                    renderEmpty(
+                        regularContainer,
+                        "No regular activities yet.",
+                        "Recurring JLSPT activities will appear here."
+                    );
+
+                }
+
+            }
+
+
+            if (pastContainer) {
+
+                if (past.length) {
+
+                    pastContainer.innerHTML =
+                        past
+                            .map(
+                                function (item) {
+                                    return createActivityCard(
+                                        item,
+                                        false
+                                    );
+                                }
+                            )
+                            .join("");
+
+                } else {
+
+                    renderEmpty(
+                        pastContainer,
+                        "No completed activities yet.",
+                        "Past JLSPT activities will appear here."
+                    );
+
+                }
+
+            }
+
+
+            if (upcomingCount) {
+
+                upcomingCount.textContent =
+                    `${upcomingWithoutNext.length} ${
+                        upcomingWithoutNext.length === 1
+                            ? "activity"
+                            : "activities"
+                    }`;
+
+            }
+
+
+            if (regularCount) {
+
+                regularCount.textContent =
+                    `${regular.length} ${
+                        regular.length === 1
+                            ? "activity"
+                            : "activities"
+                    }`;
+
+            }
+
+
+            if (pastCount) {
+
+                pastCount.textContent =
+                    `${past.length} ${
+                        past.length === 1
+                            ? "activity"
+                            : "activities"
+                    }`;
+
+            }
+
+        })();
+    </script>
 
 </body>
 </html>

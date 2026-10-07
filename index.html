@@ -5,90 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>JLSPT | JL Streaming Project Team</title>
+    <meta name="description" content="JLSPT official portal for JL and AHOF streaming resources, goals, guides, schedules, milestones, and updates.">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
+<nav class="navbar">
+    <div class="nav-inner">
 
-    <nav class="navbar">
+        <a href="index.html" class="brand">
+            <div class="brand-mark">JL</div>
 
-        <div class="nav-inner">
-
-            <a href="index.html" class="brand">
-
-                <div class="brand-mark">
-                    JL
-                </div>
-
-                <div class="brand-text">
-                    JLSPT
-                    <small>JL Streaming Project Team</small>
-                </div>
-
-            </a>
-
-
-            <div class="nav-links">
-
-                <a href="index.html">Home</a>
-                <a href="music.html">Music</a>
-                <a href="video.html">Video</a>
-                <a href="tracker.html">Tracker</a>
-                <a href="schedule.html">Schedule</a>
-                <a href="guides.html">Guides</a>
-                <a href="milestones.html">Milestones</a>
-                <a href="updates.html">Updates</a>
-
+            <div class="brand-text">
+                JLSPT
+                <small>JL Streaming Project Team</small>
             </div>
+        </a>
 
-        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="music.html">Music</a>
+            <a href="video.html">Video</a>
+            <a href="tracker.html">Tracker</a>
+            <a href="schedule.html">Schedule</a>
+            <a href="guides.html">Guides</a>
+            <a href="milestones.html">Milestones</a>
+            <a href="updates.html">Updates</a>
+        </nav>
 
-    </nav>
+    </div>
+</nav>
 
+
+<main>
 
     <!-- HERO -->
 
-    <header class="hero">
+    <section class="hero">
 
-        <div class="eyebrow">
-            JLSPT OFFICIAL PORTAL
-        </div>
+        <span class="eyebrow">
+            JL STREAMING PROJECT TEAM
+        </span>
 
         <h1>
-            Stream.<br>
-            Support.<br>
-            <span>Celebrate.</span>
+            Support <span>JL.</span>
         </h1>
 
         <p>
-            Your central hub for JL and AHOF streaming projects,
-            goals, schedules, guides, and achievements.
+            Your central hub for JL and AHOF streaming resources,
+            campaigns, schedules, guides, milestones, and updates.
         </p>
 
 
+        <!-- SEARCH -->
+
         <div class="search-box">
 
-            <span class="search-icon">
-                ⌕
-            </span>
+            <span class="search-icon">⌕</span>
 
             <input
                 type="text"
                 placeholder="Search JLSPT..."
-            >
+                aria-label="Search JLSPT">
 
         </div>
 
-    </header>
+    </section>
 
 
-    <!-- MAIN -->
-
-    <main class="container">
-
+    <div class="container">
 
         <!-- CURRENT FOCUS -->
 
@@ -98,8 +85,8 @@
 
                 <h2>Current Focus</h2>
 
-                <p>
-                    What we're working toward right now.
+                <p id="home-campaign-title">
+                    Loading campaign...
                 </p>
 
             </div>
@@ -109,28 +96,32 @@
 
                 <div>
 
-                    <div class="focus-label">
-                        ACTIVE CAMPAIGN
+                    <div
+                        class="focus-label"
+                        id="home-campaign-release">
+                        Loading...
                     </div>
 
-                    <div class="focus-title">
-                        ALON
+                    <div
+                        class="focus-title"
+                        id="home-campaign-goal">
+                        Loading...
                     </div>
 
                     <p class="focus-subtitle">
-                        Help us reach the next streaming milestone
-                        for JL's solo music.
+                        Follow the current JLSPT campaign and
+                        help us reach the next milestone.
                     </p>
 
 
                     <div class="progress-info">
 
-                        <span>
-                            781,850 views
+                        <span id="home-current">
+                            Loading...
                         </span>
 
-                        <span>
-                            1,000,000 goal
+                        <span id="home-goal">
+                            Loading...
                         </span>
 
                     </div>
@@ -138,13 +129,19 @@
 
                     <div class="progress-bar">
 
-                        <div class="progress"></div>
+                        <div
+                            class="progress"
+                            id="home-progress"
+                            style="width:0%;">
+                        </div>
 
                     </div>
 
 
-                    <div class="goal-number">
-                        218,150 views to go
+                    <div
+                        class="goal-number"
+                        id="home-remaining">
+                        Loading...
                     </div>
 
                 </div>
@@ -152,8 +149,13 @@
 
                 <div class="focus-action">
 
-                    <a href="tracker.html" class="primary-btn">
-                        View Tracker
+                    <a
+                        id="home-watch"
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="primary-btn">
+                        Watch
                     </a>
 
                 </div>
@@ -172,7 +174,7 @@
                 <h2>Quick Access</h2>
 
                 <p>
-                    Everything you need, one tap away.
+                    Everything you need, in one place.
                 </p>
 
             </div>
@@ -180,8 +182,9 @@
 
             <div class="quick-grid">
 
-
-                <a href="music.html" class="quick-card">
+                <a
+                    href="music.html"
+                    class="quick-card">
 
                     <div class="quick-icon">
                         🎵
@@ -198,7 +201,9 @@
                 </a>
 
 
-                <a href="video.html" class="quick-card">
+                <a
+                    href="video.html"
+                    class="quick-card">
 
                     <div class="quick-icon">
                         ▶
@@ -209,16 +214,18 @@
                     </h3>
 
                     <p>
-                        MVs, fancams, and video projects.
+                        MVs, fancams, and JL content.
                     </p>
 
                 </a>
 
 
-                <a href="tracker.html" class="quick-card">
+                <a
+                    href="tracker.html"
+                    class="quick-card">
 
                     <div class="quick-icon">
-                        ◴
+                        ↗
                     </div>
 
                     <h3>
@@ -226,16 +233,18 @@
                     </h3>
 
                     <p>
-                        Follow current streaming progress.
+                        Campaign progress and goals.
                     </p>
 
                 </a>
 
 
-                <a href="schedule.html" class="quick-card">
+                <a
+                    href="schedule.html"
+                    class="quick-card">
 
                     <div class="quick-icon">
-                        ▣
+                        📅
                     </div>
 
                     <h3>
@@ -243,7 +252,7 @@
                     </h3>
 
                     <p>
-                        See upcoming streaming activities.
+                        Streaming activities and events.
                     </p>
 
                 </a>
@@ -253,16 +262,16 @@
         </section>
 
 
-        <!-- THIS WEEK -->
+        <!-- STREAMING ACADEMY -->
 
         <section class="section">
 
             <div class="section-heading">
 
-                <h2>This Week</h2>
+                <h2>Streaming Academy</h2>
 
                 <p>
-                    Upcoming activities and things to watch for.
+                    Learn the basics before joining a campaign.
                 </p>
 
             </div>
@@ -270,117 +279,319 @@
 
             <div class="content-grid">
 
-
-                <article class="content-card">
+                <div class="content-card">
 
                     <h3>
-                        Streaming Activities
+                        🎵 Spotify
                     </h3>
 
                     <p>
-                        Check the latest organized streaming
-                        activities and listening events.
+                        Learn how to support JL and AHOF releases
+                        through Spotify.
                     </p>
 
-                    <div class="link-list">
-
-                        <a href="schedule.html">
-                            View Schedule
-                        </a>
-
+                    <div class="goal-number">
+                        Streaming Guide →
                     </div>
 
-                </article>
+                </div>
 
 
-                <article class="content-card">
+                <div class="content-card">
 
                     <h3>
-                        Streaming Guides
+                        ▶ YouTube
                     </h3>
 
                     <p>
-                        Need help with streaming? Start with
-                        the JLSPT platform guides.
+                        Learn the recommended way to support
+                        official JL video content.
                     </p>
 
-                    <div class="link-list">
-
-                        <a href="guides.html">
-                            Open Guides
-                        </a>
-
+                    <div class="goal-number">
+                        Streaming Guide →
                     </div>
 
-                </article>
+                </div>
 
 
-                <article class="content-card">
+                <div class="content-card">
 
                     <h3>
-                        Current Goals
+                        📻 Stationhead
                     </h3>
 
                     <p>
-                        Keep track of active goals and help
-                        move JLSPT projects forward.
+                        Learn how to join JLSPT listening sessions
+                        and collaborative streams.
                     </p>
 
-                    <div class="link-list">
-
-                        <a href="tracker.html">
-                            View Goals
-                        </a>
-
+                    <div class="goal-number">
+                        Streaming Guide →
                     </div>
 
-                </article>
+                </div>
+
+            </div>
+
+
+            <div style="margin-top:22px;">
+
+                <a
+                    href="guides.html"
+                    class="primary-btn">
+                    Explore All Guides
+                </a>
 
             </div>
 
         </section>
 
 
-        <!-- LATEST UPDATE -->
+        <!-- MILESTONES -->
 
         <section class="section">
 
             <div class="section-heading">
 
-                <h2>Latest Update</h2>
+                <h2>Milestones</h2>
 
                 <p>
-                    The latest news from JLSPT.
+                    Every step forward counts.
                 </p>
 
             </div>
 
+
+            <div class="content-grid">
+
+                <div class="content-card">
+
+                    <h3>
+                        100K
+                    </h3>
+
+                    <p>
+                        First major milestone.
+                    </p>
+
+                    <div class="goal-number">
+                        ✓ Reached
+                    </div>
+
+                </div>
+
+
+                <div class="content-card">
+
+                    <h3>
+                        500K
+                    </h3>
+
+                    <p>
+                        Major halfway point.
+                    </p>
+
+                    <div class="goal-number">
+                        ✓ Reached
+                    </div>
+
+                </div>
+
+
+                <div class="content-card">
+
+                    <h3>
+                        1M
+                    </h3>
+
+                    <p>
+                        Our current major target.
+                    </p>
+
+                    <div class="goal-number">
+                        In Progress
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div style="margin-top:22px;">
+
+                <a
+                    href="milestones.html"
+                    class="primary-btn">
+                    View Milestones
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- LATEST UPDATES -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <h2>Latest Updates</h2>
+
+                <p>
+                    Stay informed about JLSPT activities.
+                </p>
+
+            </div>
+
+
+            <div class="content-grid">
+
+                <div class="content-card">
+
+                    <div class="focus-label">
+                        CURRENT CAMPAIGN
+                    </div>
+
+                    <h3 style="margin-top:8px;">
+                        MISSION: STREAM ALON
+                    </h3>
+
+                    <p>
+                        Support JL's ALON official music video
+                        on the road to the next milestone.
+                    </p>
+
+                    <div class="goal-number">
+                        Current Focus
+                    </div>
+
+                </div>
+
+
+                <div class="content-card">
+
+                    <div class="focus-label">
+                        RESOURCES
+                    </div>
+
+                    <h3 style="margin-top:8px;">
+                        Streaming Guides
+                    </h3>
+
+                    <p>
+                        Check the latest guides before joining
+                        a focused streaming activity.
+                    </p>
+
+                    <div class="goal-number">
+                        Updated
+                    </div>
+
+                </div>
+
+
+                <div class="content-card">
+
+                    <div class="focus-label">
+                        MILESTONE
+                    </div>
+
+                    <h3 style="margin-top:8px;">
+                        Road to 1M
+                    </h3>
+
+                    <p>
+                        Continue supporting JL as we work toward
+                        the next major milestone.
+                    </p>
+
+                    <div class="goal-number">
+                        In Progress
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div style="margin-top:22px;">
+
+                <a
+                    href="updates.html"
+                    class="primary-btn">
+                    View All Updates
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- FINAL CTA -->
+
+        <section class="section">
 
             <div class="focus-card">
 
                 <div>
 
                     <div class="focus-label">
-                        JLSPT UPDATE
+                        JLSPT
                     </div>
 
                     <div class="focus-title">
-                        Stay Updated
+                        Every view counts.
                     </div>
 
                     <p class="focus-subtitle">
-                        Follow JLSPT for campaign announcements,
-                        schedule changes, streaming reminders,
-                        collaborations, and project updates.
+                        Check the latest campaign information,
+                        follow the guides, and support JL through
+                        official platforms.
                     </p>
+
+                    <div class="link-list">
+
+                        <a href="music.html">
+                            Music Resources
+                            <span>→</span>
+                        </a>
+
+                        <a href="video.html">
+                            Video Resources
+                            <span>→</span>
+                        </a>
+
+                        <a href="tracker.html">
+                            Campaign Tracker
+                            <span>→</span>
+                        </a>
+
+                        <a href="schedule.html">
+                            Streaming Schedule
+                            <span>→</span>
+                        </a>
+
+                        <a href="guides.html">
+                            Streaming Guides
+                            <span>→</span>
+                        </a>
+
+                    </div>
 
                 </div>
 
 
                 <div class="focus-action">
 
-                    <a href="updates.html" class="primary-btn">
-                        View Updates
+                    <a
+                        id="final-watch"
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="primary-btn">
+                        Watch ALON
                     </a>
 
                 </div>
@@ -389,193 +600,90 @@
 
         </section>
 
+    </div>
 
-        <!-- MILESTONE -->
+</main>
 
-        <section class="section">
 
-            <div class="section-heading">
+<footer>
 
-                <h2>Milestone</h2>
+    <strong>JLSPT</strong>
 
-                <p>
-                    Every view is part of the journey.
-                </p>
-
-            </div>
-
-
-            <div class="content-grid">
-
-
-                <article class="content-card">
-
-                    <h3>
-                        750K
-                    </h3>
-
-                    <p>
-                        A previous ALON milestone reached
-                        during the campaign journey.
-                    </p>
-
-                </article>
-
-
-                <article class="content-card">
-
-                    <h3>
-                        1M
-                    </h3>
-
-                    <p>
-                        The next major ALON streaming goal
-                        currently shown on the tracker.
-                    </p>
-
-                </article>
-
-
-                <article class="content-card">
-
-                    <h3>
-                        Together
-                    </h3>
-
-                    <p>
-                        Every stream, view, and participation
-                        helps bring the community closer to its goals.
-                    </p>
-
-                </article>
-
-            </div>
-
-
-            <div style="margin-top: 20px;">
-
-                <a href="milestones.html" class="primary-btn">
-                    View All Milestones
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- EXPLORE -->
-
-        <section class="section">
-
-            <div class="section-heading">
-
-                <h2>Explore JLSPT</h2>
-
-                <p>
-                    Learn, participate, and stay connected.
-                </p>
-
-            </div>
-
-
-            <div class="quick-grid">
-
-
-                <a href="guides.html" class="quick-card">
-
-                    <div class="quick-icon">
-                        📖
-                    </div>
-
-                    <h3>
-                        Guides
-                    </h3>
-
-                    <p>
-                        Learn streaming basics and platform guides.
-                    </p>
-
-                </a>
-
-
-                <a href="milestones.html" class="quick-card">
-
-                    <div class="quick-icon">
-                        ◆
-                    </div>
-
-                    <h3>
-                        Milestones
-                    </h3>
-
-                    <p>
-                        Celebrate achievements and goals.
-                    </p>
-
-                </a>
-
-
-                <a href="updates.html" class="quick-card">
-
-                    <div class="quick-icon">
-                        ✦
-                    </div>
-
-                    <h3>
-                        Updates
-                    </h3>
-
-                    <p>
-                        Read the latest JLSPT announcements.
-                    </p>
-
-                </a>
-
-
-                <a href="schedule.html" class="quick-card">
-
-                    <div class="quick-icon">
-                        +
-                    </div>
-
-                    <h3>
-                        Activities
-                    </h3>
-
-                    <p>
-                        Find upcoming community activities.
-                    </p>
-
-                </a>
-
-            </div>
-
-        </section>
-
-
-    </main>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <strong>
-            JLSPT
-        </strong>
-
-        <br><br>
-
+    <p>
         JL Streaming Project Team
+    </p>
 
-        <br>
+</footer>
 
-        Supporting JL and AHOF through organized streaming projects.
 
-    </footer>
+<script src="data.js"></script>
+<script src="menu.js"></script>
+<script src="search.js"></script>
 
-    <script src="menu.js"></script>
-    <script src="search.js"></script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const campaign = JLSPT_DATA.currentCampaign;
+
+    const current = campaign.current;
+    const goal = campaign.goal;
+
+    const percentage = Math.min(
+        (current / goal) * 100,
+        100
+    );
+
+    const remaining = Math.max(
+        goal - current,
+        0
+    );
+
+
+    function formatNumber(number) {
+        return number.toLocaleString("en-US");
+    }
+
+
+    document.getElementById("home-campaign-title").textContent =
+        campaign.title;
+
+
+    document.getElementById("home-campaign-release").textContent =
+        campaign.artist + " · " + campaign.release;
+
+
+    document.getElementById("home-campaign-goal").textContent =
+        formatNumber(goal) + " Views";
+
+
+    document.getElementById("home-current").textContent =
+        formatNumber(current) + " views";
+
+
+    document.getElementById("home-goal").textContent =
+        formatNumber(goal);
+
+
+    document.getElementById("home-progress").style.width =
+        percentage.toFixed(1) + "%";
+
+
+    document.getElementById("home-remaining").textContent =
+        formatNumber(remaining) + " views to go";
+
+
+    document.getElementById("home-watch").href =
+        campaign.videoUrl;
+
+
+    document.getElementById("final-watch").href =
+        campaign.videoUrl;
+
+});
+
+</script>
 
 </body>
 </html>

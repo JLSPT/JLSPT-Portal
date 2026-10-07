@@ -1,633 +1,520 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8"><meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
 
-<meta
-    name="description"
-    content="JLSPT official portal for JL and AHOF streaming activities, campaigns, guides, schedules, and community updates."
->
+    <meta charset="UTF-8">
 
-<title>JLSPT | JL Streaming Project Team</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<link
-    rel="stylesheet"
-    href="style.css"
->
+    <meta
+        name="description"
+        content="JLSPT official portal for JL and AHOF streaming activities, campaigns, guides, schedules, and community updates."
+    >
 
-</head><body><!-- =========================
-     NAVIGATION
-========================== -->
+    <title>JLSPT | JL Streaming Project Team</title>
 
-<nav class="site-nav">
-    <div class="nav-inner">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
-        <a
-            class="nav-brand"
-            href="index.html"
-            aria-label="JLSPT Home"
-        >
-            JLSPT
-        </a>
+    <style>
 
-        <div class="nav-links"></div>
+        /* ==================================================
+           HOME DASHBOARD
+           Home-specific card styling
+        ================================================== */
 
-    </div>
-</nav>
+        .home-section {
+            padding: 72px 0;
+        }
+
+        .home-section-header {
+            margin-bottom: 28px;
+        }
+
+        .home-section-header h2 {
+            margin: 0 0 8px;
+        }
+
+        .home-section-header p {
+            margin: 0;
+        }
+
+        .home-card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .home-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            padding: 28px;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255, 255, 255, 0.045),
+                    rgba(255, 255, 255, 0.018)
+                );
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+            box-shadow:
+                0 14px 35px rgba(0, 0, 0, 0.22),
+                inset 0 1px 0 rgba(255, 255, 255, 0.035);
+            overflow: hidden;
+        }
+
+        .home-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(
+                90deg,
+                #c1122f,
+                #e63950
+            );
+        }
+
+        .home-card:hover {
+            border-color: rgba(230, 57, 80, 0.42);
+            transform: translateY(-2px);
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .home-card-label {
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            margin-bottom: 12px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(193, 18, 47, 0.13);
+            border: 1px solid rgba(230, 57, 80, 0.25);
+            color: #ff8b9a;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .home-card h3 {
+            margin: 0 0 12px;
+            font-size: 1.35rem;
+            line-height: 1.25;
+        }
+
+        .home-card p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.68);
+            line-height: 1.65;
+        }
+
+        .campaign-card {
+            grid-column: span 2;
+        }
+
+        .campaign-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .campaign-tags {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .home-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(43, 194, 122, 0.10);
+            border: 1px solid rgba(43, 194, 122, 0.24);
+            color: #79e0ad;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+        }
+
+        .home-status::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #79e0ad;
+            box-shadow: 0 0 10px rgba(121, 224, 173, 0.65);
+        }
+
+        .home-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.055);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            color: rgba(255, 255, 255, 0.68);
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        .campaign-artist {
+            margin-bottom: 7px;
+            color: #ff8b9a;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .campaign-description {
+            max-width: 760px;
+        }
+
+        .home-progress {
+            margin-top: 26px;
+        }
+
+        .home-progress-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 9px;
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 0.9rem;
+        }
+
+        .home-progress-meta strong {
+            color: #ffffff;
+            font-size: 1rem;
+        }
+
+        .home-progress-track {
+            width: 100%;
+            height: 10px;
+            overflow: hidden;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.09);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .home-progress-bar {
+            height: 100%;
+            min-width: 3px;
+            border-radius: inherit;
+            background: linear-gradient(
+                90deg,
+                #c1122f,
+                #e63950,
+                #ff6b7d
+            );
+            box-shadow: 0 0 18px rgba(230, 57, 80, 0.28);
+        }
+
+        .home-goal {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 9px;
+            color: rgba(255, 255, 255, 0.48);
+            font-size: 0.78rem;
+        }
+
+        .home-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 24px;
+        }
+
+        .home-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 42px;
+            padding: 0 17px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 800;
+            transition:
+                transform 0.2s ease,
+                opacity 0.2s ease,
+                background 0.2s ease;
+        }
+
+        .home-btn:hover {
+            transform: translateY(-1px);
+            opacity: 0.92;
+        }
+
+        .home-btn-primary {
+            background: #c1122f;
+            color: #ffffff;
+        }
+
+        .home-btn-secondary {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.13);
+            color: #ffffff;
+        }
+
+        .corner-card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .pinned-badge {
+            flex-shrink: 0;
+            padding: 6px 9px;
+            border-radius: 999px;
+            background: rgba(230, 57, 80, 0.12);
+            border: 1px solid rgba(230, 57, 80, 0.25);
+            color: #ff8b9a;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.07em;
+        }
+
+        .corner-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 14px;
+            margin-top: 18px;
+            color: rgba(255, 255, 255, 0.42);
+            font-size: 0.78rem;
+        }
+
+        .corner-content {
+            margin-top: 18px;
+        }
+
+        .corner-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 24px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .station-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 28px;
+        }
+
+        .station-copy {
+            max-width: 720px;
+        }
+
+        .station-icon {
+            flex-shrink: 0;
+            width: 58px;
+            height: 58px;
+            display: grid;
+            place-items: center;
+            border-radius: 16px;
+            background: rgba(193, 18, 47, 0.14);
+            border: 1px solid rgba(230, 57, 80, 0.25);
+            font-size: 1.5rem;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .overview-card {
+            padding: 24px;
+        }
+
+        .overview-card h3 {
+            font-size: 1.1rem;
+        }
+
+        .overview-card p {
+            font-size: 0.92rem;
+        }
+
+        .empty-home-card {
+            grid-column: 1 / -1;
+        }
+
+        @media (max-width: 860px) {
+
+            .home-section {
+                padding: 52px 0;
+            }
+
+            .home-card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .campaign-card {
+                grid-column: span 1;
+            }
+
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .station-card {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .station-icon {
+                order: -1;
+            }
+
+        }
+
+        @media (max-width: 560px) {
+
+            .home-card {
+                padding: 22px;
+                border-radius: 15px;
+            }
+
+            .home-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .campaign-top {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .corner-card-header {
+                flex-direction: column;
+            }
+
+            .corner-footer {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .home-actions {
+                flex-direction: column;
+            }
+
+            .home-btn {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
 
 
-<!-- =========================
-     MAIN
-========================== -->
-
-<main>
-
-    <!-- HERO -->
-
-    <section class="hero">
-        <div class="container">
-
-            <div class="hero-content">
-
-                <p
-                    class="eyebrow"
-                    id="hero-eyebrow"
-                >
-                    JL STREAMING PROJECT TEAM
-                </p>
-
-                <h1 id="hero-title">
-                    Support JL. Stream together.
-                </h1>
-
-                <p id="hero-description">
-                    Your central hub for JL and AHOF streaming
-                    activities, campaigns, guides, schedules,
-                    and community updates.
-                </p>
-
-            </div>
-
-        </div>
-    </section>
+<body>
 
 
-    <!-- CURRENT FOCUS -->
+    <!-- ==================================================
+         NAVIGATION
+    ================================================== -->
 
-    <section>
-        <div class="container">
+    <nav class="site-nav">
 
-            <div class="section-header">
+        <div class="nav-inner">
 
-                <div>
-                    <h2>Current Focus</h2>
-
-                    <p>
-                        What JLSPT is supporting right now.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div
-                id="current-focus"
-                class="grid grid-2"
+            <a
+                class="nav-brand"
+                href="index.html"
+                aria-label="JLSPT Home"
             >
-            </div>
+                JLSPT
+            </a>
 
-        </div>
-    </section>
-
-
-    <!-- LATEST CORNER -->
-
-    <section>
-        <div class="container">
-
-            <div class="section-header">
-
-                <div>
-                    <h2>JLSPT Corner</h2>
-
-                    <p>
-                        Official updates and announcements
-                        from JLSPT.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div
-                id="featured-corner"
-                class="grid grid-2"
-            >
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- STATIONHEAD -->
-
-    <section>
-        <div class="container">
-
-            <div class="card">
-
-                <div class="section-header">
-
-                    <div>
-
-                        <span class="card-label">
-                            LISTEN TOGETHER
-                        </span>
-
-                        <h2>
-                            JLSPT Stationhead
-                        </h2>
-
-                        <p>
-                            Join the JLSPT Stationhead for
-                            listening activities and streaming
-                            sessions.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <a
-                    class="btn btn-primary"
-                    href="https://app.stationhead.com/jlspteam"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Join Stationhead
-                </a>
-
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- OVERVIEW -->
-
-    <section>
-        <div class="container">
-
-            <div class="section-header">
-
-                <div>
-                    <h2>JLSPT</h2>
-
-                    <p>
-                        Stream. Support. Stay connected.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="grid grid-3">
-
-                <div class="card">
-
-                    <span class="card-label">
-                        MUSIC
-                    </span>
-
-                    <h3>
-                        Support JL & AHOF
-                    </h3>
-
-                    <p class="muted">
-                        Find JL solo releases, AHOF releases
-                        featuring JL, and other music.
-                    </p>
-
-                </div>
-
-
-                <div class="card">
-
-                    <span class="card-label">
-                        GUIDES
-                    </span>
-
-                    <h3>
-                        Stream with confidence
-                    </h3>
-
-                    <p class="muted">
-                        Learn the basics before joining
-                        streaming activities.
-                    </p>
-
-                </div>
-
-
-                <div class="card">
-
-                    <span class="card-label">
-                        COMMUNITY
-                    </span>
-
-                    <h3>
-                        Stay connected
-                    </h3>
-
-                    <p class="muted">
-                        Keep up with official updates and
-                        connect with fellow supporters.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-</main>
-
-
-<!-- =========================
-     FOOTER
-========================== -->
-
-<footer class="site-footer">
-
-    <div class="container">
-
-        <div class="footer-inner">
-
-            <span>
-                JLSPT · JL Streaming Project Team
-            </span>
-
-            <span>
-                Stream. Support. Stay connected.
-            </span>
+            <div class="nav-links"></div>
 
         </div>
 
-    </div>
-
-</footer>
+    </nav>
 
 
-<!-- =========================
-     SCRIPTS
-========================== -->
+    <!-- ==================================================
+         MAIN
+    ================================================== -->
 
-<script src="data.js"></script>
-<script src="menu.js"></script>
+    <main>
 
-<script>
-    (function () {
-        "use strict";
 
-        function getCampaignById(id) {
-            return JLSPT_DATA.campaigns.find(
-                function (campaign) {
-                    return campaign.id === id;
-                }
-            );
-        }
+        <!-- ==================================================
+             HERO
+        ================================================== -->
 
-        function getCornerPostById(id) {
-            return JLSPT_DATA.cornerPosts.find(
-                function (post) {
-                    return post.id === id;
-                }
-            );
-        }
+        <section class="hero">
 
-        function formatNumber(value) {
-            return new Intl.NumberFormat(
-                "en-US"
-            ).format(value);
-        }
+            <div class="container">
 
-        function getPercentage(current, goal) {
-            if (!goal || goal <= 0) {
-                return 0;
-            }
+                <div class="hero-content">
 
-            return Math.min(
-                100,
-                Math.round(
-                    (current / goal) * 100
-                )
-            );
-        }
-
-        function renderHero() {
-            const hero =
-                JLSPT_DATA.home.hero;
-
-            const eyebrow =
-                document.getElementById(
-                    "hero-eyebrow"
-                );
-
-            const title =
-                document.getElementById(
-                    "hero-title"
-                );
-
-            const description =
-                document.getElementById(
-                    "hero-description"
-                );
-
-            if (eyebrow) {
-                eyebrow.textContent =
-                    hero.eyebrow;
-            }
-
-            if (title) {
-                title.textContent =
-                    hero.title;
-            }
-
-            if (description) {
-                description.textContent =
-                    hero.description;
-            }
-        }
-
-        function renderCurrentFocus() {
-            const container =
-                document.getElementById(
-                    "current-focus"
-                );
-
-            if (!container) {
-                return;
-            }
-
-            const campaign =
-                getCampaignById(
-                    JLSPT_DATA.home
-                        .currentFocusCampaignId
-                );
-
-            if (!campaign) {
-                container.innerHTML = `
-                    <div class="empty-state">
-                        <h3>No active focus</h3>
-                        <p>
-                            There is currently no featured
-                            JLSPT campaign.
-                        </p>
-                    </div>
-                `;
-
-                return;
-            }
-
-            const percentage =
-                getPercentage(
-                    campaign.current,
-                    campaign.goal
-                );
-
-            container.innerHTML = `
-                <article class="card campaign-card active">
-
-                    <div class="campaign-meta">
-
-                        <span class="status status-active">
-                            ACTIVE
-                        </span>
-
-                        <span class="tag">
-                            ${campaign.platform}
-                        </span>
-
-                        <span class="tag">
-                            ${campaign.type}
-                        </span>
-
-                    </div>
-
-                    <span class="card-label">
-                        ${campaign.artist}
-                    </span>
-
-                    <h3>
-                        ${campaign.title}
-                    </h3>
-
-                    <p class="muted">
-                        ${campaign.description}
-                    </p>
-
-                    <div class="campaign-progress">
-
-                        <div class="progress-meta">
-                            <span>
-                                ${formatNumber(
-                                    campaign.current
-                                )}
-                                views
-                            </span>
-
-                            <strong>
-                                ${percentage}%
-                            </strong>
-                        </div>
-
-                        <div class="progress">
-                            <div
-                                class="progress-bar"
-                                style="width: ${percentage}%"
-                            ></div>
-                        </div>
-
-                        <div
-                            class="progress-meta"
-                            style="margin-top: 7px;"
-                        >
-                            <span>
-                                Current
-                            </span>
-
-                            <span>
-                                Goal:
-                                ${formatNumber(
-                                    campaign.goal
-                                )}
-                            </span>
-                        </div>
-
-                    </div>
-
-                    <div
-                        style="
-                            display:flex;
-                            flex-wrap:wrap;
-                            gap:8px;
-                            margin-top:18px;
-                        "
+                    <p
+                        class="eyebrow"
+                        id="hero-eyebrow"
                     >
+                        JL STREAMING PROJECT TEAM
+                    </p>
 
-                        <a
-                            class="btn btn-primary"
-                            href="campaigns.html"
-                        >
-                            View Campaign
-                        </a>
+                    <h1 id="hero-title">
+                        Support JL. Stream together.
+                    </h1>
 
-                        <a
-                            class="btn btn-secondary"
-                            href="${campaign.videoUrl}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Watch on YouTube
-                        </a>
+                    <p id="hero-description">
+                        Your central hub for JL and AHOF
+                        streaming activities, campaigns,
+                        guides, schedules, and community
+                        updates.
+                    </p>
 
-                    </div>
+                </div>
 
-                </article>
-            `;
-        }
+            </div>
 
-        function renderFeaturedCorner() {
-            const container =
-                document.getElementById(
-                    "featured-corner"
-                );
+        </section>
 
-            if (!container) {
-                return;
-            }
 
-            const post =
-                getCornerPostById(
-                    JLSPT_DATA.home
-                        .featuredCornerPostId
-                );
+        <!-- ==================================================
+             CURRENT FOCUS
+        ================================================== -->
 
-            if (!post) {
-                container.innerHTML = `
-                    <div class="empty-state">
-                        <h3>
-                            No featured update
-                        </h3>
+        <section class="home-section">
 
-                        <p>
-                            Check JLSPT Corner for the
-                            latest official updates.
-                        </p>
-                    </div>
-                `;
+            <div class="container">
 
-                return;
-            }
+                <div class="home-section-header">
 
-            container.innerHTML = `
-                <article class="card corner-post">
+                    <h2>
+                        Current Focus
+                    </h2>
 
-                    <div class="corner-post-header">
-
-                        <div>
-
-                            <span class="card-label">
-                                ${post.categoryLabel}
-                            </span>
-
-                            <h3>
-                                ${post.title}
-                            </h3>
-
-                        </div>
-
-                        ${
-                            post.pinned
-                                ? `
-                                    <span class="badge">
-                                        PINNED
-                                    </span>
-                                  `
-                                : ""
-                        }
-
-                    </div>
-
-                    <div class="corner-post-meta">
-
-                        <span>
-                            ${post.author}
-                        </span>
-
-                        <span>
-                            ${post.date}
-                        </span>
-
-                    </div>
-
-                    <div class="corner-post-content">
-
-                        <p>
-                            ${post.content}
-                        </p>
-
-                    </div>
-
-                    <div class="corner-post-footer">
-
-                        <span class="muted">
-                            JLSPT Official
-                        </span>
-
-                        <a
-                            class="btn btn-secondary"
-                            href="corner.html"
-                        >
-                            View Corner
-                        </a>
-
-                    </div>
-
-                </article>
-            `;
-        }
-
-        function initHome() {
-            if (
-                typeof JLSPT_DATA ===
-                "undefined"
-            ) {
-                return;
-            }
-
-            renderHero();
-            renderCurrentFocus();
-            renderFeaturedCorner();
-        }
-
-        if (
-            document.readyState ===
-            "loading"
-        ) {
-            document.addEventListener(
-                "DOMContentLoaded",
-                initHome
-            );
-        } else {
-            initHome();
-        }
-    })();
-</script>
-
-</body>
-</html>
+                    <p>
+                        What JLSPT

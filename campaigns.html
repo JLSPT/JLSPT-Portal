@@ -2,31 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Campaigns | JLSPT</title>
 
     <meta
         name="description"
-        content="JLSPT streaming campaigns, missions, milestones, and progress."
+        content="JLSPT streaming campaigns, missions, goals, milestones, and progress."
     >
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 </head>
 
 <body>
 
-    <nav class="site-nav">
-        <div class="nav-inner">
-            <a class="nav-brand" href="index.html">JLSPT</a>
-            <div class="nav-links"></div>
-        </div>
-    </nav>
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
 
+    <header class="site-header">
+        <nav class="site-nav">
+            <div class="nav-inner">
+
+                <a
+                    href="index.html"
+                    class="brand"
+                    aria-label="JLSPT Home"
+                >
+                    JLSPT
+                </a>
+
+                <div class="nav-links"></div>
+
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- =========================
+         PAGE HERO
+    ========================== -->
 
     <main>
-
-        <!-- PAGE HERO -->
 
         <section class="page-hero">
             <div class="container">
@@ -35,58 +58,23 @@
                     JLSPT STREAMING PROJECTS
                 </span>
 
-                <h1>Campaigns</h1>
+                <h1>
+                    Campaigns
+                </h1>
 
-                <p class="page-intro">
-                    Follow JLSPT streaming campaigns, missions,
-                    milestones, and community progress.
+                <p>
+                    Follow our current streaming campaigns,
+                    track progress, and complete missions
+                    together for JL and AHOF.
                 </p>
 
             </div>
         </section>
 
 
-        <!-- FILTERS -->
-
-        <section class="section compact-section">
-            <div class="container">
-
-                <div
-                    class="filter-bar"
-                    id="campaign-filters"
-                >
-
-                    <button
-                        class="filter-button active"
-                        type="button"
-                        data-filter="all"
-                    >
-                        All
-                    </button>
-
-                    <button
-                        class="filter-button"
-                        type="button"
-                        data-filter="music"
-                    >
-                        Music
-                    </button>
-
-                    <button
-                        class="filter-button"
-                        type="button"
-                        data-filter="video"
-                    >
-                        Video
-                    </button>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- ACTIVE CAMPAIGNS -->
+        <!-- =========================
+             CAMPAIGN FILTERS
+        ========================== -->
 
         <section class="section">
             <div class="container">
@@ -95,900 +83,574 @@
 
                     <div>
                         <span class="eyebrow">
-                            CURRENT
+                            ACTIVE PROJECTS
                         </span>
 
-                        <h2>Active Campaigns</h2>
-                    </div>
+                        <h2>
+                            Streaming Campaigns
+                        </h2>
 
-                    <span
-                        class="section-count"
-                        id="active-count"
-                    ></span>
+                        <p>
+                            Every campaign has a clear goal,
+                            progress target, and set of missions.
+                        </p>
+                    </div>
 
                 </div>
 
 
                 <div
-                    class="campaign-list"
-                    id="active-campaigns"
-                ></div>
+                    class="filter-bar"
+                    role="group"
+                    aria-label="Campaign filters"
+                >
+
+                    <button
+                        type="button"
+                        class="filter-btn active"
+                        data-filter="all"
+                    >
+                        All
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-btn"
+                        data-filter="music"
+                    >
+                        Music
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-btn"
+                        data-filter="video"
+                    >
+                        Video
+                    </button>
+
+                </div>
+
+
+                <!-- =========================
+                     CAMPAIGN GRID
+                ========================== -->
+
+                <div
+                    class="campaign-grid"
+                    id="campaign-list"
+                >
+
+                    <!-- =====================
+                         ALON CAMPAIGN
+                    ====================== -->
+
+                    <article
+                        class="campaign-card featured-campaign"
+                        data-campaign-type="video"
+                    >
+
+                        <div class="campaign-card-header">
+
+                            <div class="campaign-title-group">
+
+                                <div class="campaign-status-row">
+
+                                    <span class="status-badge status-active">
+                                        ACTIVE
+                                    </span>
+
+                                    <span class="campaign-platform">
+                                        YouTube Streaming
+                                    </span>
+
+                                </div>
+
+                                <h3>
+                                    MISSION: STREAM ALON
+                                </h3>
+
+                                <p class="campaign-subtitle">
+                                    JL — ALON Official Music Video
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Progress -->
+
+                        <div class="campaign-progress">
+
+                            <div class="progress-header">
+
+                                <span>
+                                    Current Progress
+                                </span>
+
+                                <strong>
+                                    781,850 / 1,000,000
+                                </strong>
+
+                            </div>
+
+                            <div
+                                class="progress-track"
+                                aria-label="78.19 percent complete"
+                            >
+                                <div
+                                    class="progress-fill"
+                                    style="width: 78.19%;"
+                                ></div>
+                            </div>
+
+                            <div class="progress-meta">
+
+                                <span>
+                                    78.19% completed
+                                </span>
+
+                                <span>
+                                    218,150 views needed
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Campaign Info -->
+
+                        <div class="campaign-info-grid">
+
+                            <div class="campaign-info-item">
+
+                                <span class="info-label">
+                                    Goal
+                                </span>
+
+                                <strong>
+                                    1,000,000 views
+                                </strong>
+
+                            </div>
+
+
+                            <div class="campaign-info-item">
+
+                                <span class="info-label">
+                                    Platform
+                                </span>
+
+                                <strong>
+                                    YouTube
+                                </strong>
+
+                            </div>
+
+
+                            <div class="campaign-info-item">
+
+                                <span class="info-label">
+                                    Type
+                                </span>
+
+                                <strong>
+                                    Video Streaming
+                                </strong>
+
+                            </div>
+
+
+                            <div class="campaign-info-item">
+
+                                <span class="info-label">
+                                    Status
+                                </span>
+
+                                <strong>
+                                    Ongoing
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Campaign Description -->
+
+                        <div class="campaign-description">
+
+                            <h4>
+                                About This Campaign
+                            </h4>
+
+                            <p>
+                                Let's help JL reach 1 million views
+                                on the official ALON music video.
+                                Every genuine stream contributes
+                                toward the goal.
+                            </p>
+
+                        </div>
+
+
+                        <!-- Missions -->
+
+                        <div class="campaign-missions">
+
+                            <div class="campaign-section-heading">
+
+                                <h4>
+                                    Streaming Mission
+                                </h4>
+
+                                <span class="mission-count">
+                                    4 missions
+                                </span>
+
+                            </div>
+
+
+                            <div class="mission-list">
+
+                                <div class="mission-item">
+
+                                    <div class="mission-icon">
+                                        01
+                                    </div>
+
+                                    <div class="mission-content">
+
+                                        <strong>
+                                            Watch the full video
+                                        </strong>
+
+                                        <p>
+                                            Let the official MV play
+                                            completely.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="mission-item">
+
+                                    <div class="mission-icon">
+                                        02
+                                    </div>
+
+                                    <div class="mission-content">
+
+                                        <strong>
+                                            Like the video
+                                        </strong>
+
+                                        <p>
+                                            Support the official upload
+                                            with a genuine like.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="mission-item">
+
+                                    <div class="mission-icon">
+                                        03
+                                    </div>
+
+                                    <div class="mission-content">
+
+                                        <strong>
+                                            Leave a genuine comment
+                                        </strong>
+
+                                        <p>
+                                            Engage naturally with the
+                                            official video.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="mission-item">
+
+                                    <div class="mission-icon">
+                                        04
+                                    </div>
+
+                                    <div class="mission-content">
+
+                                        <strong>
+                                            Mix your viewing activity
+                                        </strong>
+
+                                        <p>
+                                            Watch other videos between
+                                            streams when possible.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Milestones -->
+
+                        <div class="campaign-milestones">
+
+                            <div class="campaign-section-heading">
+
+                                <h4>
+                                    Milestones
+                                </h4>
+
+                            </div>
+
+
+                            <div class="milestone-list">
+
+                                <div class="milestone-item completed">
+
+                                    <span class="milestone-check">
+                                        ✓
+                                    </span>
+
+                                    <div>
+                                        <strong>
+                                            500K Views
+                                        </strong>
+
+                                        <small>
+                                            Completed
+                                        </small>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="milestone-item completed">
+
+                                    <span class="milestone-check">
+                                        ✓
+                                    </span>
+
+                                    <div>
+                                        <strong>
+                                            750K Views
+                                        </strong>
+
+                                        <small>
+                                            Completed
+                                        </small>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="milestone-item current">
+
+                                    <span class="milestone-check">
+                                        →
+                                    </span>
+
+                                    <div>
+                                        <strong>
+                                            1M Views
+                                        </strong>
+
+                                        <small>
+                                            Current Goal
+                                        </small>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Campaign Footer -->
+
+                        <div class="campaign-card-footer">
+
+                            <div class="campaign-footer-note">
+
+                                <span class="status-dot"></span>
+
+                                <span>
+                                    Campaign is currently active
+                                </span>
+
+                            </div>
+
+                            <a
+                                href="guides.html"
+                                class="btn btn-primary"
+                            >
+                                View Streaming Guide
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =====================
+                         FUTURE CAMPAIGN
+                    ====================== -->
+
+                    <article
+                        class="campaign-card"
+                        data-campaign-type="music"
+                    >
+
+                        <div class="campaign-card-header">
+
+                            <div class="campaign-title-group">
+
+                                <div class="campaign-status-row">
+
+                                    <span class="status-badge status-planned">
+                                        UPCOMING
+                                    </span>
+
+                                    <span class="campaign-platform">
+                                        Music Streaming
+                                    </span>
+
+                                </div>
+
+                                <h3>
+                                    Upcoming Music Campaign
+                                </h3>
+
+                                <p class="campaign-subtitle">
+                                    New JLSPT streaming project
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="empty-state campaign-empty-state">
+
+                            <div class="empty-state-icon">
+                                ✦
+                            </div>
+
+                            <h4>
+                                Campaign details coming soon
+                            </h4>
+
+                            <p>
+                                Campaign information, goals,
+                                missions, and streaming instructions
+                                will be added once the project is
+                                officially announced.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
 
             </div>
         </section>
 
 
-        <!-- OTHER CAMPAIGNS -->
+        <!-- =========================
+             CAMPAIGN NOTE
+        ========================== -->
 
-        <section class="section section-alt">
+        <section class="section section-soft">
+
             <div class="container">
 
-                <div class="section-heading">
+                <div class="info-card">
 
-                    <div>
-                        <span class="eyebrow">
-                            ARCHIVE
-                        </span>
-
-                        <h2>Other Campaigns</h2>
+                    <div class="info-card-icon">
+                        ♥
                     </div>
 
-                    <span
-                        class="section-count"
-                        id="archive-count"
-                    ></span>
+                    <div>
+
+                        <h3>
+                            Every Stream Matters
+                        </h3>
+
+                        <p>
+                            JLSPT campaigns are built around
+                            consistent, genuine support. Follow
+                            the campaign guide, complete the missions
+                            you can, and help us move toward each goal
+                            together.
+                        </p>
+
+                    </div>
 
                 </div>
 
-
-                <div
-                    class="campaign-list"
-                    id="archive-campaigns"
-                ></div>
-
             </div>
+
         </section>
 
     </main>
 
 
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
     <footer class="site-footer">
+
         <div class="container">
 
             <div class="footer-inner">
 
                 <div>
-                    <strong>JLSPT</strong>
+                    <strong>
+                        JLSPT
+                    </strong>
 
                     <p>
                         JL Streaming Project Team
                     </p>
                 </div>
 
-                <p class="footer-note">
-                    Supporting JL through organized streaming,
-                    resources, campaigns, and community projects.
+                <p>
+                    Supporting JL and AHOF through
+                    organized streaming projects.
                 </p>
 
             </div>
 
-
-            <div class="footer-bottom">
-
-                <span>
-                    JLSPT
-                </span>
-
-                <span>
-                    Streaming campaigns only
-                </span>
-
-            </div>
-
         </div>
+
     </footer>
 
 
+    <!-- =========================
+         SCRIPTS
+    ========================== -->
+
     <script src="data.js"></script>
     <script src="menu.js"></script>
-
-
-    <script>
-        (function () {
-
-            "use strict";
-
-
-            const data =
-                window.JLSPT_DATA || {};
-
-
-            const campaigns =
-                Array.isArray(data.campaigns)
-                    ? data.campaigns
-                    : [];
-
-
-            const activeContainer =
-                document.getElementById(
-                    "active-campaigns"
-                );
-
-
-            const archiveContainer =
-                document.getElementById(
-                    "archive-campaigns"
-                );
-
-
-            const activeCount =
-                document.getElementById(
-                    "active-count"
-                );
-
-
-            const archiveCount =
-                document.getElementById(
-                    "archive-count"
-                );
-
-
-            const filterButtons =
-                document.querySelectorAll(
-                    ".filter-button"
-                );
-
-
-            let currentFilter = "all";
-
-
-            function escapeHTML(value) {
-
-                return String(value ?? "")
-                    .replace(/&/g, "&amp;")
-                    .replace(/</g, "&lt;")
-                    .replace(/>/g, "&gt;")
-                    .replace(/"/g, "&quot;")
-                    .replace(/'/g, "&#039;");
-
-            }
-
-
-            function formatNumber(value) {
-
-                const number =
-                    Number(value);
-
-                if (!Number.isFinite(number)) {
-                    return "0";
-                }
-
-                return number.toLocaleString();
-
-            }
-
-
-            function getPercentage(current, goal) {
-
-                const currentNumber =
-                    Number(current) || 0;
-
-                const goalNumber =
-                    Number(goal) || 0;
-
-
-                if (goalNumber <= 0) {
-                    return 0;
-                }
-
-
-                return Math.min(
-                    100,
-                    Math.max(
-                        0,
-                        (currentNumber / goalNumber) * 100
-                    )
-                );
-
-            }
-
-
-            function getStatusLabel(status) {
-
-                const normalized =
-                    String(status || "")
-                        .toLowerCase();
-
-
-                if (normalized === "active") {
-                    return "ACTIVE";
-                }
-
-
-                if (normalized === "paused") {
-                    return "PAUSED";
-                }
-
-
-                if (normalized === "completed") {
-                    return "COMPLETED";
-                }
-
-
-                if (normalized === "archived") {
-                    return "ARCHIVED";
-                }
-
-
-                return String(status || "UNKNOWN")
-                    .toUpperCase();
-
-            }
-
-
-            function getStatusClass(status) {
-
-                const normalized =
-                    String(status || "")
-                        .toLowerCase();
-
-
-                if (normalized === "active") {
-                    return "status-active";
-                }
-
-
-                if (normalized === "completed") {
-                    return "status-completed";
-                }
-
-
-                if (normalized === "paused") {
-                    return "status-paused";
-                }
-
-
-                return "status-archived";
-
-            }
-
-
-            function getTypeLabel(type) {
-
-                const normalized =
-                    String(type || "")
-                        .toLowerCase();
-
-
-                if (normalized === "video") {
-                    return "VIDEO";
-                }
-
-
-                if (normalized === "music") {
-                    return "MUSIC";
-                }
-
-
-                return String(type || "STREAMING")
-                    .toUpperCase();
-
-            }
-
-
-            function renderMilestones(milestones) {
-
-                if (
-                    !Array.isArray(milestones) ||
-                    !milestones.length
-                ) {
-                    return "";
-                }
-
-
-                return `
-                    <div class="campaign-block">
-
-                        <div class="campaign-block-heading">
-                            <span class="eyebrow">
-                                MILESTONES
-                            </span>
-                        </div>
-
-                        <div class="milestone-list">
-
-                            ${milestones
-                                .map(function (milestone) {
-
-                                    const target =
-                                        Number(
-                                            milestone.target
-                                        ) || 0;
-
-                                    const current =
-                                        Number(
-                                            milestone.current
-                                        ) || 0;
-
-                                    const reached =
-                                        current >= target;
-
-
-                                    return `
-                                        <div
-                                            class="milestone-item ${
-                                                reached
-                                                    ? "is-complete"
-                                                    : ""
-                                            }"
-                                        >
-
-                                            <div
-                                                class="milestone-info"
-                                            >
-
-                                                <strong>
-                                                    ${escapeHTML(
-                                                        milestone.label ||
-                                                        "Milestone"
-                                                    )}
-                                                </strong>
-
-                                                <span>
-                                                    ${formatNumber(
-                                                        target
-                                                    )}
-                                                </span>
-
-                                            </div>
-
-                                            <span
-                                                class="milestone-status"
-                                            >
-                                                ${
-                                                    reached
-                                                        ? "✓ REACHED"
-                                                        : formatNumber(
-                                                            target -
-                                                            current
-                                                        ) +
-                                                        " TO GO"
-                                                }
-                                            </span>
-
-                                        </div>
-                                    `;
-
-                                })
-                                .join("")}
-
-                        </div>
-
-                    </div>
-                `;
-
-            }
-
-
-            function renderMissions(missions) {
-
-                if (
-                    !Array.isArray(missions) ||
-                    !missions.length
-                ) {
-                    return "";
-                }
-
-
-                return `
-                    <div class="campaign-block">
-
-                        <div class="campaign-block-heading">
-                            <span class="eyebrow">
-                                MISSIONS
-                            </span>
-                        </div>
-
-                        <div class="mission-list">
-
-                            ${missions
-                                .map(function (mission) {
-
-                                    return `
-                                        <div class="mission-item">
-
-                                            <div
-                                                class="mission-icon"
-                                            >
-                                                ${
-                                                    mission.icon ||
-                                                    "✓"
-                                                }
-                                            </div>
-
-                                            <div
-                                                class="mission-content"
-                                            >
-
-                                                <strong>
-                                                    ${escapeHTML(
-                                                        mission.title ||
-                                                        "Mission"
-                                                    )}
-                                                </strong>
-
-                                                ${
-                                                    mission.description
-                                                        ? `
-                                                            <p>
-                                                                ${escapeHTML(
-                                                                    mission.description
-                                                                )}
-                                                            </p>
-                                                        `
-                                                        : ""
-                                                }
-
-                                            </div>
-
-                                        </div>
-                                    `;
-
-                                })
-                                .join("")}
-
-                        </div>
-
-                    </div>
-                `;
-
-            }
-
-
-            function renderCampaign(campaign) {
-
-                const current =
-                    Number(campaign.current) || 0;
-
-
-                const goal =
-                    Number(campaign.goal) || 0;
-
-
-                const percentage =
-                    getPercentage(
-                        current,
-                        goal
-                    );
-
-
-                const status =
-                    getStatusLabel(
-                        campaign.status
-                    );
-
-
-                const statusClass =
-                    getStatusClass(
-                        campaign.status
-                    );
-
-
-                const type =
-                    getTypeLabel(
-                        campaign.type
-                    );
-
-
-                const milestones =
-                    Array.isArray(
-                        campaign.milestones
-                    )
-                        ? campaign.milestones
-                        : [];
-
-
-                const missions =
-                    Array.isArray(
-                        campaign.missions
-                    )
-                        ? campaign.missions
-                        : [];
-
-
-                return `
-                    <article
-                        class="campaign-card"
-                        data-campaign-type="${escapeHTML(
-                            String(
-                                campaign.type ||
-                                "streaming"
-                            ).toLowerCase()
-                        )}"
-                    >
-
-                        <div class="campaign-card-header">
-
-                            <div>
-
-                                <div
-                                    class="campaign-tags"
-                                >
-
-                                    <span class="tag">
-                                        ${escapeHTML(
-                                            type
-                                        )}
-                                    </span>
-
-                                    <span
-                                        class="status-badge ${statusClass}"
-                                    >
-                                        ${escapeHTML(
-                                            status
-                                        )}
-                                    </span>
-
-                                </div>
-
-                                <h3>
-                                    ${escapeHTML(
-                                        campaign.name ||
-                                        "Streaming Campaign"
-                                    )}
-                                </h3>
-
-                            </div>
-
-                            ${
-                                campaign.platform
-                                    ? `
-                                        <span
-                                            class="campaign-platform"
-                                        >
-                                            ${escapeHTML(
-                                                campaign.platform
-                                            )}
-                                        </span>
-                                    `
-                                    : ""
-                            }
-
-                        </div>
-
-
-                        ${
-                            campaign.description
-                                ? `
-                                    <p class="campaign-description">
-                                        ${escapeHTML(
-                                            campaign.description
-                                        )}
-                                    </p>
-                                `
-                                : ""
-                        }
-
-
-                        <div class="campaign-progress-section">
-
-                            <div
-                                class="campaign-progress-heading"
-                            >
-
-                                <div>
-
-                                    <span>
-                                        CURRENT
-                                    </span>
-
-                                    <strong>
-                                        ${formatNumber(
-                                            current
-                                        )}
-                                    </strong>
-
-                                </div>
-
-
-                                <div>
-
-                                    <span>
-                                        GOAL
-                                    </span>
-
-                                    <strong>
-                                        ${formatNumber(
-                                            goal
-                                        )}
-                                    </strong>
-
-                                </div>
-
-
-                                <strong
-                                    class="campaign-percentage"
-                                >
-                                    ${percentage.toFixed(1)}%
-                                </strong>
-
-                            </div>
-
-
-                            <div class="progress-bar">
-
-                                <div
-                                    class="progress-fill"
-                                    style="width: ${percentage}%"
-                                ></div>
-
-                            </div>
-
-                        </div>
-
-
-                        ${
-                            campaign.startDate ||
-                            campaign.endDate
-                                ? `
-                                    <div
-                                        class="campaign-dates"
-                                    >
-
-                                        ${
-                                            campaign.startDate
-                                                ? `
-                                                    <div>
-                                                        <span>
-                                                            START
-                                                        </span>
-
-                                                        <strong>
-                                                            ${escapeHTML(
-                                                                campaign.startDate
-                                                            )}
-                                                        </strong>
-                                                    </div>
-                                                `
-                                                : ""
-                                        }
-
-                                        ${
-                                            campaign.endDate
-                                                ? `
-                                                    <div>
-                                                        <span>
-                                                            END
-                                                        </span>
-
-                                                        <strong>
-                                                            ${escapeHTML(
-                                                                campaign.endDate
-                                                            )}
-                                                        </strong>
-                                                    </div>
-                                                `
-                                                : ""
-                                        }
-
-                                    </div>
-                                `
-                                : ""
-                        }
-
-
-                        ${renderMilestones(
-                            milestones
-                        )}
-
-
-                        ${renderMissions(
-                            missions
-                        )}
-
-
-                        ${
-                            campaign.link
-                                ? `
-                                    <div
-                                        class="campaign-actions"
-                                    >
-
-                                        <a
-                                            class="button button-primary"
-                                            href="${escapeHTML(
-                                                campaign.link
-                                            )}"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            Open Campaign
-                                        </a>
-
-                                    </div>
-                                `
-                                : ""
-                        }
-
-                    </article>
-                `;
-
-            }
-
-
-            function matchesFilter(campaign) {
-
-                if (currentFilter === "all") {
-                    return true;
-                }
-
-
-                return String(
-                    campaign.type || ""
-                ).toLowerCase() === currentFilter;
-
-            }
-
-
-            function renderCampaigns() {
-
-                const filtered =
-                    campaigns.filter(
-                        matchesFilter
-                    );
-
-
-                const active =
-                    filtered.filter(
-                        function (campaign) {
-
-                            return String(
-                                campaign.status || ""
-                            ).toLowerCase() === "active";
-
-                        }
-                    );
-
-
-                const archive =
-                    filtered.filter(
-                        function (campaign) {
-
-                            return String(
-                                campaign.status || ""
-                            ).toLowerCase() !== "active";
-
-                        }
-                    );
-
-
-                if (activeContainer) {
-
-                    if (!active.length) {
-
-                        activeContainer.innerHTML = `
-                            <div class="empty-state">
-
-                                <strong>
-                                    No active campaigns.
-                                </strong>
-
-                                <span>
-                                    New JLSPT campaigns will appear here.
-                                </span>
-
-                            </div>
-                        `;
-
-                    } else {
-
-                        activeContainer.innerHTML =
-                            active
-                                .map(
-                                    renderCampaign
-                                )
-                                .join("");
-
-                    }
-
-                }
-
-
-                if (archiveContainer) {
-
-                    if (!archive.length) {
-
-                        archiveContainer.innerHTML = `
-                            <div class="empty-state">
-
-                                <strong>
-                                    No archived campaigns.
-                                </strong>
-
-                                <span>
-                                    Completed campaigns will appear here.
-                                </span>
-
-                            </div>
-                        `;
-
-                    } else {
-
-                        archiveContainer.innerHTML =
-                            archive
-                                .map(
-                                    renderCampaign
-                                )
-                                .join("");
-
-                    }
-
-                }
-
-
-                if (activeCount) {
-
-                    activeCount.textContent =
-                        `${active.length} ${
-                            active.length === 1
-                                ? "campaign"
-                                : "campaigns"
-                        }`;
-
-                }
-
-
-                if (archiveCount) {
-
-                    archiveCount.textContent =
-                        `${archive.length} ${
-                            archive.length === 1
-                                ? "campaign"
-                                : "campaigns"
-                        }`;
-
-                }
-
-            }
-
-
-            filterButtons.forEach(
-                function (button) {
-
-                    button.addEventListener(
-                        "click",
-                        function () {
-
-                            currentFilter =
-                                button.dataset.filter ||
-                                "all";
-
-
-                            filterButtons.forEach(
-                                function (item) {
-
-                                    item.classList.toggle(
-                                        "active",
-                                        item === button
-                                    );
-
-                                }
-                            );
-
-
-                            renderCampaigns();
-
-                        }
-                    );
-
-                }
-            );
-
-
-            renderCampaigns();
-
-        })();
-    </script>
 
 </body>
 </html>

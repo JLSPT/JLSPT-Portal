@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>JLSPT | JL Streaming Project Team</title>
@@ -11,491 +13,54 @@
         content="JL Streaming Project Team official portal for streaming resources, goals, guides, schedules, milestones, and updates."
     >
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --bg: #0d0809;
-            --bg-soft: #140b0d;
-            --surface: #1a0e10;
-            --surface-2: #211114;
-            --text: #f7eeee;
-            --text-muted: #bdaeb0;
-            --accent: #9f1d2e;
-            --accent-dark: #741522;
-            --accent-light: #c43a4d;
-            --border: #382024;
-            --border-light: #4a252c;
-            --shadow: rgba(0,0,0,0.35);
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background:
-                radial-gradient(circle at 80% 0%, rgba(53, 104, 255, 0.16), transparent 30%),
-                radial-gradient(circle at 10% 20%, rgba(50, 90, 180, 0.10), transparent 28%),
-                var(--bg);
-            color: var(--text);
-            min-height: 100vh;
-            line-height: 1.6;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        /* NAVIGATION */
-
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(7, 11, 22, 0.88);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--line);
-        }
-
-        .nav-inner {
-            max-width: 1200px;
-            margin: auto;
-            padding: 18px 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-        }
-
-        .brand-mark {
-            width: 38px;
-            height: 38px;
-            border-radius: 12px;
-            display: grid;
-            place-items: center;
-            background: linear-gradient(135deg, #4d8dff, #7b61ff);
-            color: white;
-            font-size: 14px;
-        }
-
-        .brand-text small {
-            display: block;
-            color: var(--muted);
-            font-size: 10px;
-            font-weight: 500;
-            margin-top: -2px;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 22px;
-        }
-
-        .nav-links a {
-            color: var(--muted);
-            font-size: 13px;
-            transition: 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            color: white;
-        }
-
-        /* HERO */
-
-        .hero {
-            max-width: 1200px;
-            margin: auto;
-            padding: 80px 24px 45px;
-        }
-
-        .eyebrow {
-            color: var(--blue-light);
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 {
-            max-width: 750px;
-            font-size: clamp(42px, 7vw, 78px);
-            line-height: 0.98;
-            letter-spacing: -3px;
-            margin-bottom: 22px;
-        }
-
-        .hero h1 span {
-            background: linear-gradient(90deg, #ffffff, #7daeff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            max-width: 650px;
-            color: var(--muted);
-            font-size: 16px;
-            margin-bottom: 30px;
-        }
-
-        /* SEARCH */
-
-        .search-box {
-            max-width: 650px;
-            position: relative;
-        }
-
-        .search-box input {
-            width: 100%;
-            padding: 17px 20px 17px 48px;
-            border: 1px solid var(--line);
-            border-radius: 14px;
-            outline: none;
-            background: rgba(255,255,255,0.04);
-            color: white;
-            font-size: 14px;
-        }
-
-        .search-box input::placeholder {
-            color: #737d96;
-        }
-
-        .search-icon {
-            position: absolute;
-            left: 18px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--muted);
-        }
-
-        /* MAIN */
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 24px 70px;
-        }
-
-        .section {
-            margin-top: 35px;
-        }
-
-        .section-heading {
-            display: flex;
-            justify-content: space-between;
-            align-items: end;
-            margin-bottom: 18px;
-            gap: 20px;
-        }
-
-        .section-heading h2 {
-            font-size: 24px;
-            letter-spacing: -0.5px;
-        }
-
-        .section-heading p {
-            color: var(--muted);
-            font-size: 13px;
-        }
-
-        /* FOCUS CARD */
-
-        .focus-card {
-            display: grid;
-            grid-template-columns: 1.25fr 0.75fr;
-            overflow: hidden;
-            border: 1px solid var(--line);
-            border-radius: 22px;
-            background:
-                radial-gradient(circle at 85% 20%, rgba(77,141,255,0.18), transparent 35%),
-                var(--card);
-        }
-
-        .focus-content {
-            padding: 34px;
-        }
-
-        .focus-label {
-            color: var(--blue-light);
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-
-        .focus-title {
-            font-size: 42px;
-            margin-bottom: 5px;
-        }
-
-        .focus-subtitle {
-            color: var(--muted);
-            margin-bottom: 25px;
-        }
-
-        .progress-info {
-            display: flex;
-            justify-content: space-between;
-            color: var(--muted);
-            font-size: 12px;
-            margin-bottom: 9px;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 10px;
-            background: #252e43;
-            border-radius: 100px;
-            overflow: hidden;
-        }
-
-        .progress {
-            width: 78.2%;
-            height: 100%;
-            background: linear-gradient(90deg, var(--blue), var(--blue-light));
-            border-radius: inherit;
-        }
-
-        .goal-number {
-            margin-top: 12px;
-            color: var(--muted);
-            font-size: 12px;
-        }
-
-        .focus-action {
-            padding: 34px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-left: 1px solid var(--line);
-        }
-
-        .primary-btn {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            padding: 14px 22px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, #4d8dff, #637cff);
-            color: white;
-            font-weight: 700;
-            font-size: 13px;
-            transition: transform 0.2s ease;
-        }
-
-        .primary-btn:hover {
-            transform: translateY(-2px);
-        }
-
-        /* QUICK ACCESS */
-
-        .quick-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 14px;
-        }
-
-        .quick-card {
-            padding: 22px;
-            border: 1px solid var(--line);
-            border-radius: 17px;
-            background: var(--card);
-            transition: 0.2s ease;
-        }
-
-        .quick-card:hover {
-            transform: translateY(-3px);
-            background: var(--card-hover);
-        }
-
-        .quick-icon {
-            font-size: 23px;
-            margin-bottom: 13px;
-        }
-
-        .quick-card h3 {
-            font-size: 15px;
-            margin-bottom: 5px;
-        }
-
-        .quick-card p {
-            color: var(--muted);
-            font-size: 12px;
-        }
-
-        /* CONTENT GRID */
-
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-        }
-
-        .content-card {
-            padding: 25px;
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            background: var(--card);
-        }
-
-        .content-card h3 {
-            font-size: 17px;
-            margin-bottom: 7px;
-        }
-
-        .content-card p {
-            color: var(--muted);
-            font-size: 13px;
-            margin-bottom: 18px;
-        }
-
-        .link-list {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .link-list a {
-            padding: 10px 12px;
-            border-radius: 9px;
-            background: rgba(255,255,255,0.04);
-            color: #c9d3ea;
-            font-size: 12px;
-            transition: 0.2s ease;
-        }
-
-        .link-list a:hover {
-            background: rgba(77,141,255,0.14);
-            color: white;
-        }
-
-        /* FOOTER */
-
-        footer {
-            border-top: 1px solid var(--line);
-            padding: 30px 24px;
-            text-align: center;
-            color: var(--muted);
-            font-size: 12px;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 850px) {
-            .nav-links {
-                display: none;
-            }
-
-            .focus-card {
-                grid-template-columns: 1fr;
-            }
-
-            .focus-action {
-                border-left: 0;
-                border-top: 1px solid var(--line);
-                justify-content: flex-start;
-            }
-
-            .quick-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .content-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                padding-top: 55px;
-            }
-
-            .hero h1 {
-                letter-spacing: -2px;
-            }
-        }
-
-        @media (max-width: 500px) {
-            .nav-inner {
-                padding: 14px 18px;
-            }
-
-            .hero,
-            .container {
-                padding-left: 18px;
-                padding-right: 18px;
-            }
-
-            .hero h1 {
-                font-size: 43px;
-            }
-
-            .focus-content,
-            .focus-action {
-                padding: 24px;
-            }
-
-            .focus-title {
-                font-size: 34px;
-            }
-
-            .quick-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 10px;
-            }
-
-            .quick-card {
-                padding: 17px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
 
     <header class="navbar">
+
         <div class="nav-inner">
 
             <a href="#" class="brand">
-                <div class="brand-mark">JL</div>
+
+                <div class="brand-mark">
+                    JL
+                </div>
 
                 <div class="brand-text">
                     JLSPT
                     <small>JL Streaming Project Team</small>
                 </div>
+
             </a>
 
             <nav class="nav-links">
+
                 <a href="#music">Music</a>
+
                 <a href="#video">Video</a>
+
                 <a href="#tracker">Tracker</a>
+
                 <a href="#schedule">Schedule</a>
+
                 <a href="#guides">Guides</a>
+
             </nav>
 
         </div>
+
     </header>
 
 
-    <!-- HERO -->
+    <!-- =========================
+         HERO
+    ========================== -->
 
     <section class="hero">
 
@@ -504,7 +69,8 @@
         </div>
 
         <h1>
-            Everything JL<br>
+            Everything JL
+            <br>
             <span>in one place.</span>
         </h1>
 
@@ -513,31 +79,54 @@
             schedules, guides, milestones, and updates.
         </p>
 
+
+        <!-- Search -->
+
         <div class="search-box">
-            <span class="search-icon">⌕</span>
+
+            <span class="search-icon">
+                ⌕
+            </span>
 
             <input
                 type="text"
                 placeholder="Search JL content or platform..."
             >
+
         </div>
 
     </section>
 
 
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
     <main class="container">
 
 
-        <!-- CURRENT FOCUS -->
+        <!-- =========================
+             CURRENT FOCUS
+        ========================== -->
 
         <section class="section" id="tracker">
 
             <div class="section-heading">
+
                 <div>
-                    <h2>Current Focus</h2>
-                    <p>Our current streaming goal</p>
+
+                    <h2>
+                        Current Focus
+                    </h2>
+
+                    <p>
+                        Our current streaming goal
+                    </p>
+
                 </div>
+
             </div>
+
 
             <div class="focus-card">
 
@@ -555,14 +144,26 @@
                         JL Official Music Video
                     </div>
 
+
                     <div class="progress-info">
-                        <span>781,850 views</span>
-                        <span>1,000,000</span>
+
+                        <span>
+                            781,850 views
+                        </span>
+
+                        <span>
+                            1,000,000
+                        </span>
+
                     </div>
 
+
                     <div class="progress-bar">
+
                         <div class="progress"></div>
+
                     </div>
+
 
                     <div class="goal-number">
                         218,150 views to go
@@ -570,9 +171,13 @@
 
                 </div>
 
+
                 <div class="focus-action">
 
-                    <a href="#" class="primary-btn">
+                    <a
+                        href="#guides"
+                        class="primary-btn"
+                    >
                         View Streaming Guide
                     </a>
 
@@ -583,41 +188,110 @@
         </section>
 
 
-        <!-- QUICK ACCESS -->
+
+        <!-- =========================
+             QUICK ACCESS
+        ========================== -->
 
         <section class="section">
 
             <div class="section-heading">
+
                 <div>
-                    <h2>Quick Access</h2>
-                    <p>Find what you need faster</p>
+
+                    <h2>
+                        Quick Access
+                    </h2>
+
+                    <p>
+                        Find what you need faster
+                    </p>
+
                 </div>
+
             </div>
+
 
             <div class="quick-grid">
 
-                <a href="#music" class="quick-card">
-                    <div class="quick-icon">🎵</div>
-                    <h3>Music</h3>
-                    <p>JL and AHOF music resources</p>
+
+                <a
+                    href="#music"
+                    class="quick-card"
+                >
+
+                    <div class="quick-icon">
+                        🎵
+                    </div>
+
+                    <h3>
+                        Music
+                    </h3>
+
+                    <p>
+                        JL and AHOF music resources
+                    </p>
+
                 </a>
 
-                <a href="#video" class="quick-card">
-                    <div class="quick-icon">🎬</div>
-                    <h3>Video</h3>
-                    <p>MV, fancams and video content</p>
+
+                <a
+                    href="#video"
+                    class="quick-card"
+                >
+
+                    <div class="quick-icon">
+                        🎬
+                    </div>
+
+                    <h3>
+                        Video
+                    </h3>
+
+                    <p>
+                        MV, fancams and video content
+                    </p>
+
                 </a>
 
-                <a href="#schedule" class="quick-card">
-                    <div class="quick-icon">📅</div>
-                    <h3>Schedule</h3>
-                    <p>Streaming activities and events</p>
+
+                <a
+                    href="#schedule"
+                    class="quick-card"
+                >
+
+                    <div class="quick-icon">
+                        📅
+                    </div>
+
+                    <h3>
+                        Schedule
+                    </h3>
+
+                    <p>
+                        Streaming activities and events
+                    </p>
+
                 </a>
 
-                <a href="#guides" class="quick-card">
-                    <div class="quick-icon">📚</div>
-                    <h3>Guides</h3>
-                    <p>Streaming tutorials and FAQs</p>
+
+                <a
+                    href="#guides"
+                    class="quick-card"
+                >
+
+                    <div class="quick-icon">
+                        📚
+                    </div>
+
+                    <h3>
+                        Guides
+                    </h3>
+
+                    <p>
+                        Streaming tutorials and FAQs
+                    </p>
+
                 </a>
 
             </div>
@@ -625,67 +299,161 @@
         </section>
 
 
-        <!-- MUSIC -->
 
-        <section class="section" id="music">
+        <!-- =========================
+             MUSIC
+        ========================== -->
+
+        <section
+            class="section"
+            id="music"
+        >
 
             <div class="section-heading">
+
                 <div>
-                    <h2>Music</h2>
-                    <p>JL-focused music streaming resources</p>
+
+                    <h2>
+                        Music
+                    </h2>
+
+                    <p>
+                        JL-focused music streaming resources
+                    </p>
+
                 </div>
+
             </div>
+
 
             <div class="content-grid">
 
+
+                <!-- ALON -->
+
                 <div class="content-card">
 
-                    <h3>ALON</h3>
+                    <h3>
+                        ALON
+                    </h3>
 
-                    <p>JL Solo</p>
+                    <p>
+                        JL Solo
+                    </p>
+
 
                     <div class="link-list">
-                        <a href="#">Spotify</a>
-                        <a href="#">Stationhead</a>
-                        <a href="#">YouTube MV</a>
-                        <a href="#">YouTube Lyric Video</a>
-                        <a href="#">YouTube Audio</a>
-                        <a href="#">Apple Music</a>
+
+                        <a href="#">
+                            Spotify
+                        </a>
+
+                        <a href="#">
+                            Stationhead
+                        </a>
+
+                        <a href="#">
+                            YouTube MV
+                        </a>
+
+                        <a href="#">
+                            YouTube Lyric Video
+                        </a>
+
+                        <a href="#">
+                            YouTube Audio
+                        </a>
+
+                        <a href="#">
+                            Apple Music
+                        </a>
+
                     </div>
 
                 </div>
 
 
+
+                <!-- FOCUS ON YOU -->
+
                 <div class="content-card">
 
-                    <h3>Focus on You</h3>
+                    <h3>
+                        Focus on You
+                    </h3>
 
-                    <p>JL Solo</p>
+                    <p>
+                        JL Solo
+                    </p>
+
 
                     <div class="link-list">
-                        <a href="#">Spotify</a>
-                        <a href="#">Stationhead</a>
-                        <a href="#">YouTube MV</a>
-                        <a href="#">YouTube Lyric Video</a>
-                        <a href="#">YouTube Audio</a>
-                        <a href="#">Apple Music</a>
+
+                        <a href="#">
+                            Spotify
+                        </a>
+
+                        <a href="#">
+                            Stationhead
+                        </a>
+
+                        <a href="#">
+                            YouTube MV
+                        </a>
+
+                        <a href="#">
+                            YouTube Lyric Video
+                        </a>
+
+                        <a href="#">
+                            YouTube Audio
+                        </a>
+
+                        <a href="#">
+                            Apple Music
+                        </a>
+
                     </div>
 
                 </div>
 
 
+
+                <!-- AHOF -->
+
                 <div class="content-card">
 
-                    <h3>AHOF × JL</h3>
+                    <h3>
+                        AHOF × JL
+                    </h3>
 
-                    <p>Group music and covers</p>
+                    <p>
+                        Group music and covers
+                    </p>
+
 
                     <div class="link-list">
-                        <a href="#">AHOF Music</a>
-                        <a href="#">Group Covers</a>
-                        <a href="#">Spotify</a>
-                        <a href="#">Stationhead</a>
-                        <a href="#">YouTube</a>
+
+                        <a href="#">
+                            AHOF Music
+                        </a>
+
+                        <a href="#">
+                            Group Covers
+                        </a>
+
+                        <a href="#">
+                            Spotify
+                        </a>
+
+                        <a href="#">
+                            Stationhead
+                        </a>
+
+                        <a href="#">
+                            YouTube
+                        </a>
+
                     </div>
 
                 </div>
@@ -695,60 +463,109 @@
         </section>
 
 
-        <!-- VIDEO -->
 
-        <section class="section" id="video">
+        <!-- =========================
+             VIDEO
+        ========================== -->
+
+        <section
+            class="section"
+            id="video"
+        >
 
             <div class="section-heading">
+
                 <div>
-                    <h2>Video</h2>
-                    <p>JL video content and streaming resources</p>
+
+                    <h2>
+                        Video
+                    </h2>
+
+                    <p>
+                        JL video content and streaming resources
+                    </p>
+
                 </div>
+
             </div>
+
 
             <div class="content-grid">
 
+
+                <!-- FANCAMS -->
+
                 <div class="content-card">
 
-                    <h3>JL Fancams</h3>
+                    <h3>
+                        JL Fancams
+                    </h3>
 
                     <p>
                         Performance and event fancams featuring JL.
                     </p>
 
+
                     <div class="link-list">
-                        <a href="#">YouTube Fancams</a>
+
+                        <a href="#">
+                            YouTube Fancams
+                        </a>
+
                     </div>
 
                 </div>
 
 
+
+                <!-- HELLO ON MUNIVERSE -->
+
                 <div class="content-card">
 
-                    <h3>Hello on Muniverse</h3>
+                    <h3>
+                        Hello on Muniverse
+                    </h3>
 
                     <p>
                         JL's Hello on Muniverse content.
                     </p>
 
+
                     <div class="link-list">
-                        <a href="#">Watch on YouTube</a>
+
+                        <a href="#">
+                            Watch on YouTube
+                        </a>
+
                     </div>
 
                 </div>
 
 
+
+                <!-- AHOF × JL -->
+
                 <div class="content-card">
 
-                    <h3>AHOF × JL</h3>
+                    <h3>
+                        AHOF × JL
+                    </h3>
 
                     <p>
                         Group content featuring JL.
                     </p>
 
+
                     <div class="link-list">
-                        <a href="#">AHOF Videos</a>
-                        <a href="#">Group Covers</a>
+
+                        <a href="#">
+                            AHOF Videos
+                        </a>
+
+                        <a href="#">
+                            Group Covers
+                        </a>
+
                     </div>
 
                 </div>
@@ -758,28 +575,51 @@
         </section>
 
 
-        <!-- SCHEDULE -->
 
-        <section class="section" id="schedule">
+        <!-- =========================
+             SCHEDULE
+        ========================== -->
+
+        <section
+            class="section"
+            id="schedule"
+        >
 
             <div class="section-heading">
+
                 <div>
-                    <h2>Schedule</h2>
-                    <p>Upcoming streaming activities</p>
+
+                    <h2>
+                        Schedule
+                    </h2>
+
+                    <p>
+                        Upcoming streaming activities
+                    </p>
+
                 </div>
+
             </div>
+
 
             <div class="content-card">
 
-                <h3>Upcoming Streaming Events</h3>
+                <h3>
+                    Upcoming Streaming Events
+                </h3>
 
                 <p>
                     Streaming schedules and special activities
                     will appear here.
                 </p>
 
+
                 <div class="link-list">
-                    <a href="#">📅 View Full Schedule</a>
+
+                    <a href="#">
+                        📅 View Full Schedule
+                    </a>
+
                 </div>
 
             </div>
@@ -787,47 +627,107 @@
         </section>
 
 
-        <!-- GUIDES -->
 
-        <section class="section" id="guides">
+        <!-- =========================
+             STREAMING ACADEMY
+        ========================== -->
+
+        <section
+            class="section"
+            id="guides"
+        >
 
             <div class="section-heading">
+
                 <div>
-                    <h2>Streaming Academy</h2>
-                    <p>Learn how to stream and support JL</p>
+
+                    <h2>
+                        Streaming Academy
+                    </h2>
+
+                    <p>
+                        Learn how to stream and support JL
+                    </p>
+
                 </div>
+
             </div>
+
 
             <div class="content-grid">
 
+
+                <!-- SPOTIFY -->
+
                 <div class="content-card">
-                    <h3>Spotify Guide</h3>
+
+                    <h3>
+                        Spotify Guide
+                    </h3>
+
                     <p>
                         Learn the basics of proper Spotify streaming.
                     </p>
+
+
                     <div class="link-list">
-                        <a href="#">Open Guide</a>
+
+                        <a href="#">
+                            Open Guide
+                        </a>
+
                     </div>
+
                 </div>
 
+
+
+                <!-- YOUTUBE -->
+
                 <div class="content-card">
-                    <h3>YouTube Guide</h3>
+
+                    <h3>
+                        YouTube Guide
+                    </h3>
+
                     <p>
                         Learn how to support JL's YouTube content.
                     </p>
+
+
                     <div class="link-list">
-                        <a href="#">Open Guide</a>
+
+                        <a href="#">
+                            Open Guide
+                        </a>
+
                     </div>
+
                 </div>
 
+
+
+                <!-- STATIONHEAD -->
+
                 <div class="content-card">
-                    <h3>Stationhead Guide</h3>
+
+                    <h3>
+                        Stationhead Guide
+                    </h3>
+
                     <p>
                         Learn how to join JLSPT streaming sessions.
                     </p>
+
+
                     <div class="link-list">
-                        <a href="#">Open Guide</a>
+
+                        <a href="#">
+                            Open Guide
+                        </a>
+
                     </div>
+
                 </div>
 
             </div>
@@ -835,49 +735,87 @@
         </section>
 
 
-        <!-- MILESTONES -->
+
+        <!-- =========================
+             MILESTONES
+        ========================== -->
 
         <section class="section">
 
             <div class="section-heading">
+
                 <div>
-                    <h2>Milestones</h2>
-                    <p>Celebrate every achievement</p>
+
+                    <h2>
+                        Milestones
+                    </h2>
+
+                    <p>
+                        Celebrate every achievement
+                    </p>
+
                 </div>
+
             </div>
+
 
             <div class="content-card">
 
-                <h3>ALON</h3>
+                <h3>
+                    ALON
+                </h3>
+
 
                 <div class="link-list">
-                    <a href="#">✓ 100K Views</a>
-                    <a href="#">✓ 500K Views</a>
-                    <a href="#">✓ 750K Views</a>
-                    <a href="#">🎯 1M Views</a>
+
+                    <a href="#">
+                        ✓ 100K Views
+                    </a>
+
+                    <a href="#">
+                        ✓ 500K Views
+                    </a>
+
+                    <a href="#">
+                        ✓ 750K Views
+                    </a>
+
+                    <a href="#">
+                        🎯 1M Views
+                    </a>
+
                 </div>
 
             </div>
 
         </section>
 
-
     </main>
 
 
-    <!-- FOOTER -->
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer>
 
-        <strong>JLSPT</strong><br>
+        <strong>
+            JLSPT
+        </strong>
+
+        <br>
 
         JL Streaming Project Team
 
-        <br><br>
+        <br>
+        <br>
 
         Made with love for JL and the Starflares. 💙
 
     </footer>
 
+
 </body>
+
 </html>

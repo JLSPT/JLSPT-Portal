@@ -30,7 +30,6 @@
 
             <nav class="nav-links">
                 <a href="index.html" class="active">HOME</a>
-                <a href="start.html">START HERE</a>
                 <a href="music.html">MUSIC</a>
                 <a href="video.html">VIDEO</a>
                 <a href="campaigns.html">CAMPAIGNS</a>
@@ -70,11 +69,18 @@
 
                     <div class="hero-actions">
 
-                        <a href="start.html" class="btn btn-primary">
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="start-here-button"
+                        >
                             START HERE
-                        </a>
+                        </button>
 
-                        <a href="campaigns.html" class="btn btn-secondary">
+                        <a
+                            href="campaigns.html"
+                            class="btn btn-secondary"
+                        >
                             VIEW CAMPAIGNS
                         </a>
 
@@ -126,7 +132,6 @@
 
                 </div>
 
-
                 <div id="current-campaign"></div>
 
             </div>
@@ -141,8 +146,6 @@
             <div class="container">
 
                 <div class="home-grid">
-
-                    <!-- LATEST CORNER -->
 
                     <div>
 
@@ -168,8 +171,6 @@
 
                     </div>
 
-
-                    <!-- NEXT ACTIVITY -->
 
                     <div>
 
@@ -264,9 +265,13 @@
                         and how you can participate.
                     </p>
 
-                    <a href="start.html" class="text-link">
+                    <button
+                        type="button"
+                        class="text-link button-link"
+                        id="bottom-start-button"
+                    >
                         Learn about JLSPT →
-                    </a>
+                    </button>
 
                 </div>
 
@@ -275,6 +280,56 @@
         </section>
 
     </main>
+
+
+    <!-- START HERE MODAL -->
+
+    <div
+        class="modal"
+        id="start-here-modal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-backdrop"
+            id="modal-backdrop"
+        ></div>
+
+        <div
+            class="modal-panel"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="start-here-title"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                id="modal-close"
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+            <div class="modal-header">
+
+                <span class="section-label">
+                    START HERE
+                </span>
+
+                <h2 id="start-here-title">
+                    Welcome to JLSPT
+                </h2>
+
+                <p id="start-here-intro"></p>
+
+            </div>
+
+            <div id="start-here-content"></div>
+
+        </div>
+
+    </div>
 
 
     <footer class="site-footer">
@@ -306,6 +361,169 @@
 
             const data = window.JLSPT_DATA || JLSPT_DATA;
 
+
+            /* =========================
+               START HERE MODAL
+            ========================= */
+
+            const modal =
+                document.getElementById("start-here-modal");
+
+            const openButton =
+                document.getElementById("start-here-button");
+
+            const bottomButton =
+                document.getElementById("bottom-start-button");
+
+            const closeButton =
+                document.getElementById("modal-close");
+
+            const backdrop =
+                document.getElementById("modal-backdrop");
+
+            const intro =
+                document.getElementById("start-here-intro");
+
+            const content =
+                document.getElementById("start-here-content");
+
+
+            function renderStartHere() {
+
+                const startHere =
+                    data.startHere;
+
+                if (!startHere) return;
+
+                intro.textContent =
+                    startHere.intro || "";
+
+                content.innerHTML = "";
+
+
+                if (Array.isArray(startHere.sections)) {
+
+                    startHere.sections.forEach(function (section) {
+
+                        const item =
+                            document.createElement("div");
+
+                        item.className =
+                            "modal-section";
+
+                        item.innerHTML = `
+                            <h3>${section.title}</h3>
+                            <p>${section.description}</p>
+                        `;
+
+                        content.appendChild(item);
+
+                    });
+
+                }
+
+
+                if (
+                    Array.isArray(startHere.principles) &&
+                    startHere.principles.length
+                ) {
+
+                    const principles =
+                        document.createElement("div");
+
+                    principles.className =
+                        "modal-section modal-principles";
+
+                    principles.innerHTML = `
+                        <h3>Our approach</h3>
+                        <ul>
+                            ${startHere.principles
+                                .map(
+                                    item => `<li>${item}</li>`
+                                )
+                                .join("")}
+                        </ul>
+                    `;
+
+                    content.appendChild(principles);
+
+                }
+
+            }
+
+
+            function openModal() {
+
+                renderStartHere();
+
+                modal.classList.add("is-open");
+                modal.setAttribute(
+                    "aria-hidden",
+                    "false"
+                );
+
+                document.body.classList.add(
+                    "modal-open"
+                );
+
+                closeButton.focus();
+
+            }
+
+
+            function closeModal() {
+
+                modal.classList.remove(
+                    "is-open"
+                );
+
+                modal.setAttribute(
+                    "aria-hidden",
+                    "true"
+                );
+
+                document.body.classList.remove(
+                    "modal-open"
+                );
+
+            }
+
+
+            openButton.addEventListener(
+                "click",
+                openModal
+            );
+
+            bottomButton.addEventListener(
+                "click",
+                openModal
+            );
+
+            closeButton.addEventListener(
+                "click",
+                closeModal
+            );
+
+            backdrop.addEventListener(
+                "click",
+                closeModal
+            );
+
+            document.addEventListener(
+                "keydown",
+                function (event) {
+
+                    if (
+                        event.key === "Escape" &&
+                        modal.classList.contains("is-open")
+                    ) {
+                        closeModal();
+                    }
+
+                }
+            );
+
+
             /* =========================
                CURRENT CAMPAIGN
             ========================= */
@@ -318,26 +536,35 @@
                     campaign => campaign.status === "active"
                 );
 
-            if (campaignContainer && activeCampaign) {
+            if (
+                campaignContainer &&
+                activeCampaign
+            ) {
 
                 const percentage =
                     Math.min(
-                        (activeCampaign.current / activeCampaign.goal) * 100,
+                        (
+                            activeCampaign.current /
+                            activeCampaign.goal
+                        ) * 100,
                         100
                     );
 
                 const remaining =
                     Math.max(
-                        activeCampaign.goal - activeCampaign.current,
+                        activeCampaign.goal -
+                        activeCampaign.current,
                         0
                     );
 
                 campaignContainer.innerHTML = `
+
                     <article class="focus-card">
 
                         <div class="focus-main">
 
                             <div class="focus-meta">
+
                                 <span class="badge badge-active">
                                     ACTIVE
                                 </span>
@@ -345,6 +572,7 @@
                                 <span>
                                     ${activeCampaign.platform}
                                 </span>
+
                             </div>
 
                             <h3>
@@ -421,17 +649,25 @@
                         </div>
 
                     </article>
+
                 `;
 
             } else if (campaignContainer) {
 
                 campaignContainer.innerHTML = `
+
                     <div class="empty-state">
-                        <strong>No active campaign right now.</strong>
+
+                        <strong>
+                            No active campaign right now.
+                        </strong>
+
                         <p>
                             Check back here for the next JLSPT streaming project.
                         </p>
+
                     </div>
+
                 `;
 
             }
@@ -448,15 +684,20 @@
                 [...(data.jlspCorner || [])]
                     .sort(
                         (a, b) =>
-                            new Date(b.date) - new Date(a.date)
+                            new Date(b.date) -
+                            new Date(a.date)
                     );
 
             const latestPost =
                 cornerPosts[0];
 
-            if (cornerContainer && latestPost) {
+            if (
+                cornerContainer &&
+                latestPost
+            ) {
 
                 cornerContainer.innerHTML = `
+
                     <article class="corner-preview">
 
                         <div class="corner-preview-top">
@@ -487,14 +728,19 @@
                         </a>
 
                     </article>
+
                 `;
 
             } else if (cornerContainer) {
 
                 cornerContainer.innerHTML = `
+
                     <div class="empty-state">
-                        <p>No JLSPT announcements yet.</p>
+                        <p>
+                            No JLSPT announcements yet.
+                        </p>
                     </div>
+
                 `;
 
             }
@@ -509,12 +755,18 @@
 
             const upcoming =
                 (data.schedule || []).find(
-                    item => item.status === "coming-soon"
+                    item =>
+                        item.status ===
+                        "coming-soon"
                 );
 
-            if (activityContainer && upcoming) {
+            if (
+                activityContainer &&
+                upcoming
+            ) {
 
                 activityContainer.innerHTML = `
+
                     <article class="activity-preview">
 
                         <div class="activity-icon">
@@ -545,14 +797,21 @@
                         </div>
 
                     </article>
+
                 `;
 
             } else if (activityContainer) {
 
                 activityContainer.innerHTML = `
+
                     <div class="empty-state">
-                        <p>No upcoming activity announced yet.</p>
+
+                        <p>
+                            No upcoming activity announced yet.
+                        </p>
+
                     </div>
+
                 `;
 
             }

@@ -2,1191 +2,1067 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Corner | JLSPT</title>
 
     <meta
         name="description"
-        content="JLSPT Corner and community discussion space for JL and AHOF supporters."
+        content="JLSPT Corner for official updates, announcements, streaming notices, campaign news, and community discussions."
     >
-
-    <title>Corner | JLSPT</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="navbar">
-    <div class="nav-inner">
-
-        <a
-            href="index.html"
-            class="nav-brand"
-            aria-label="JLSPT Home"
-        >
-            <span class="nav-logo">JLSPT</span>
-        </a>
-
-        <nav
-            class="nav-links"
-            aria-label="Main navigation"
-        ></nav>
-
-    </div>
-</header>
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a class="nav-brand" href="index.html">JLSPT</a>
+            <div class="nav-links"></div>
+        </div>
+    </nav>
 
 
-<main>
+    <main>
 
-    <!-- =================================================
-         HERO
-         ================================================= -->
+        <!-- PAGE HERO -->
 
-    <section class="page-hero">
-
-        <div class="container">
-
-            <div class="page-hero-content">
+        <section class="page-hero">
+            <div class="container">
 
                 <span class="eyebrow">
-                    JLSPT COMMUNITY
+                    JLSPT COMMUNITY HUB
                 </span>
 
-                <h1>
-                    Corner
-                </h1>
+                <h1>Corner</h1>
 
-                <p>
-                    Official JLSPT updates, streaming notices,
-                    campaign news, and a space for supporters
-                    to connect and discuss.
+                <p class="page-intro">
+                    Official JLSPT updates and a shared space for
+                    JL supporters to connect, discuss, and celebrate.
                 </p>
 
             </div>
-
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- =================================================
-         JLSPT CORNER
-         ================================================= -->
+        <!-- JLSPT CORNER -->
 
-    <section class="section">
+        <section class="section">
+            <div class="container">
 
-        <div class="container">
+                <div class="section-heading">
 
-            <div class="section-heading">
+                    <div>
+                        <span class="eyebrow">
+                            OFFICIAL
+                        </span>
 
-                <div>
+                        <h2>JLSPT Corner</h2>
 
-                    <span class="eyebrow">
-                        OFFICIAL
-                    </span>
+                        <p class="section-description">
+                            Official announcements, streaming notices,
+                            campaign updates, resources, and important
+                            JLSPT information.
+                        </p>
+                    </div>
 
-                    <h2>
-                        JLSPT Corner
-                    </h2>
-
-                    <p>
-                        Announcements, streaming notices,
-                        campaign updates, resources, and
-                        important JLSPT information.
-                    </p>
+                    <span
+                        class="section-count"
+                        id="corner-count"
+                    ></span>
 
                 </div>
 
-            </div>
 
+                <div class="corner-toolbar">
 
-            <div class="corner-toolbar">
+                    <div
+                        class="filter-bar"
+                        id="corner-filters"
+                    >
+
+                        <button
+                            class="filter-button active"
+                            type="button"
+                            data-category="all"
+                        >
+                            All
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            type="button"
+                            data-category="announcement"
+                        >
+                            Announcements
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            type="button"
+                            data-category="streaming"
+                        >
+                            Streaming
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            type="button"
+                            data-category="campaign"
+                        >
+                            Campaigns
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            type="button"
+                            data-category="schedule"
+                        >
+                            Schedule
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            type="button"
+                            data-category="resource"
+                        >
+                            Resources
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            type="button"
+                            data-category="milestone"
+                        >
+                            Milestones
+                        </button>
+
+                    </div>
+
+                </div>
+
 
                 <div
-                    id="corner-filters"
-                    class="filters"
-                    aria-label="JLSPT Corner categories"
-                >
-
-                    <button
-                        type="button"
-                        class="filter-btn active"
-                        data-corner-filter="all"
-                    >
-                        All
-                    </button>
-
-                    <button
-                        type="button"
-                        class="filter-btn"
-                        data-corner-filter="announcement"
-                    >
-                        Announcements
-                    </button>
-
-                    <button
-                        type="button"
-                        class="filter-btn"
-                        data-corner-filter="campaign-update"
-                    >
-                        Campaigns
-                    </button>
-
-                    <button
-                        type="button"
-                        class="filter-btn"
-                        data-corner-filter="resource"
-                    >
-                        Resources
-                    </button>
-
-                    <button
-                        type="button"
-                        class="filter-btn"
-                        data-corner-filter="schedule"
-                    >
-                        Schedule
-                    </button>
-
-                    <button
-                        type="button"
-                        class="filter-btn"
-                        data-corner-filter="milestone"
-                    >
-                        Milestones
-                    </button>
-
-                </div>
+                    class="corner-post-list"
+                    id="corner-posts"
+                ></div>
 
             </div>
+        </section>
 
 
-            <div
-                id="corner-posts"
-                class="corner-post-list"
-            ></div>
+        <!-- COMMUNITY -->
 
-        </div>
+        <section
+            class="section section-alt"
+            id="community"
+        >
 
-    </section>
+            <div class="container">
 
+                <div class="section-heading">
 
-    <!-- =================================================
-         COMMUNITY
-         ================================================= -->
-
-    <section class="section section-alt">
-
-        <div class="container">
-
-            <div class="section-heading">
-
-                <div>
-
-                    <span class="eyebrow">
-                        FOR SUPPORTERS
-                    </span>
-
-                    <h2>
-                        Community
-                    </h2>
-
-                    <p>
-                        Discuss streaming, campaigns, questions,
-                        achievements, and everything JL related.
-                    </p>
-
-                </div>
-
-
-                <div class="community-status">
-
-                    <span class="community-status-dot"></span>
-
-                    <span>
-                        Member discussion
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div
-                id="community-categories"
-                class="grid grid-2"
-            ></div>
-
-
-            <div class="community-login-note">
-
-                <div class="community-login-icon">
-                    💬
-                </div>
-
-                <div>
-
-                    <strong>
-                        Community posting
-                    </strong>
-
-                    <p>
-                        Posting, replying, and reactions will
-                        require a JLSPT member account.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div
-                id="community-posts"
-                class="community-posts"
-            ></div>
-
-        </div>
-
-    </section>
-
-</main>
-
-
-<footer>
-
-    <div class="footer-inner">
-
-        <div>
-
-            <div class="footer-brand">
-                JLSPT
-            </div>
-
-            <div class="footer-text">
-                JL Streaming Project Team
-            </div>
-
-        </div>
-
-        <div class="footer-text">
-            Stream. Support. Stay connected.
-        </div>
-
-    </div>
-
-</footer>
-
-
-<script src="data.js"></script>
-<script src="menu.js"></script>
-
-<script>
-(function () {
-
-    "use strict";
-
-
-    let currentCornerFilter = "all";
-
-
-    function escapeHTML(value) {
-
-        return String(value ?? "")
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
-
-    }
-
-
-    function formatDate(value) {
-
-        if (!value) {
-            return "";
-        }
-
-
-        const date =
-            new Date(
-                value + "T00:00:00"
-            );
-
-
-        if (
-            Number.isNaN(
-                date.getTime()
-            )
-        ) {
-            return "";
-        }
-
-
-        return date.toLocaleDateString(
-            undefined,
-            {
-                year: "numeric",
-                month: "short",
-                day: "numeric"
-            }
-        );
-
-    }
-
-
-    function getCategoryLabel(post) {
-
-        return (
-            post.categoryLabel ||
-            post.category ||
-            "UPDATE"
-        ).toUpperCase();
-
-    }
-
-
-    function getCampaign(post) {
-
-        if (
-            !post.campaignId ||
-            !Array.isArray(
-                JLSPT_DATA.campaigns
-            )
-        ) {
-            return null;
-        }
-
-
-        return JLSPT_DATA.campaigns.find(
-            function (campaign) {
-                return campaign.id ===
-                    post.campaignId;
-            }
-        ) || null;
-
-    }
-
-
-    function getSchedule(post) {
-
-        if (
-            !post.scheduleId ||
-            !Array.isArray(
-                JLSPT_DATA.schedule
-            )
-        ) {
-            return null;
-        }
-
-
-        return JLSPT_DATA.schedule.find(
-            function (item) {
-                return item.id ===
-                    post.scheduleId;
-            }
-        ) || null;
-
-    }
-
-
-    function renderPost(post) {
-
-        const campaign =
-            getCampaign(post);
-
-
-        const schedule =
-            getSchedule(post);
-
-
-        const date =
-            formatDate(post.date);
-
-
-        return `
-
-            <article
-                class="
-                    corner-post
-                    ${
-                        post.pinned
-                            ? "corner-post-pinned"
-                            : ""
-                    }
-                "
-            >
-
-                ${
-                    post.image
-                        ? `
-                            <div class="corner-post-image">
-
-                                <img
-                                    src="${escapeHTML(
-                                        post.image
-                                    )}"
-                                    alt=""
-                                    loading="lazy"
-                                >
-
-                            </div>
-                        `
-                        : ""
-                }
-
-
-                <div class="corner-post-body">
-
-                    <div class="corner-post-top">
-
-                        <span class="category-badge">
-                            ${escapeHTML(
-                                getCategoryLabel(
-                                    post
-                                )
-                            )}
+                    <div>
+                        <span class="eyebrow">
+                            COMMUNITY
                         </span>
 
+                        <h2>Community</h2>
 
-                        ${
-                            post.pinned
-                                ? `
-                                    <span class="pinned-badge">
-                                        📌 PINNED
-                                    </span>
-                                `
-                                : ""
-                        }
-
+                        <p class="section-description">
+                            A space for JL supporters to share,
+                            discuss, ask questions, and celebrate
+                            together.
+                        </p>
                     </div>
 
-
-                    <h3 class="corner-post-title">
-                        ${escapeHTML(
-                            post.title
-                        )}
-                    </h3>
-
-
-                    <p class="corner-post-content">
-                        ${escapeHTML(
-                            post.content
-                        )}
-                    </p>
-
-
-                    ${
-                        campaign
-                            ? `
-                                <div class="corner-linked-item">
-
-                                    <span>
-                                        Campaign
-                                    </span>
-
-                                    <strong>
-                                        ${escapeHTML(
-                                            campaign.title
-                                        )}
-                                    </strong>
-
-                                </div>
-                            `
-                            : ""
-                    }
-
-
-                    ${
-                        schedule
-                            ? `
-                                <div class="corner-linked-item">
-
-                                    <span>
-                                        Schedule
-                                    </span>
-
-                                    <strong>
-                                        ${escapeHTML(
-                                            schedule.title
-                                        )}
-                                    </strong>
-
-                                </div>
-                            `
-                            : ""
-                    }
-
-
-                    <div class="corner-post-footer">
-
-                        <div class="corner-author">
-
-                            <span class="author-avatar">
-                                J
-                            </span>
-
-                            <div>
-
-                                <strong>
-                                    ${escapeHTML(
-                                        post.author ||
-                                        "JLSPT"
-                                    )}
-                                </strong>
-
-                                <span>
-                                    ${
-                                        escapeHTML(
-                                            post.authorRole ||
-                                            "JLSPT Official"
-                                        )
-                                    }
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="corner-post-date">
-
-                            ${
-                                date
-                                    ? escapeHTML(
-                                        date
-                                    )
-                                    : "Recently"
-                            }
-
-                            ${
-                                post.time
-                                    ? `
-                                        ·
-                                        ${escapeHTML(
-                                            post.time
-                                        )}
-                                    `
-                                    : ""
-                            }
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="corner-engagement">
-
-                        <span>
-                            ♡
-                            ${
-                                Number(
-                                    post.engagement?.reactions ||
-                                    0
-                                )
-                            }
-                        </span>
-
-                        <span>
-                            💬
-                            ${
-                                Number(
-                                    post.engagement?.comments ||
-                                    0
-                                )
-                            }
-                        </span>
-
-                        <span>
-                            👁
-                            ${
-                                Number(
-                                    post.engagement?.views ||
-                                    0
-                                )
-                            }
-                        </span>
-
-                    </div>
-
-
-                    ${
-                        post.link
-                            ? `
-                                <div class="hero-actions">
-
-                                    <a
-                                        href="${escapeHTML(
-                                            post.link
-                                        )}"
-                                        class="btn btn-secondary"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        Open Related Link
-                                    </a>
-
-                                </div>
-                            `
-                            : ""
-                    }
+                    <span
+                        class="section-count"
+                        id="community-count"
+                    ></span>
 
                 </div>
 
-            </article>
 
-        `;
+                <!-- COMMUNITY CATEGORIES -->
 
-    }
+                <div
+                    class="community-category-grid"
+                    id="community-categories"
+                ></div>
 
 
-    function renderCornerPosts() {
+                <!-- COMMUNITY NOTICE -->
 
-        const container =
-            document.getElementById(
-                "corner-posts"
-            );
+                <div class="community-notice">
 
-
-        if (!container) {
-            return;
-        }
-
-
-        const posts =
-            Array.isArray(
-                JLSPT_DATA.cornerPosts
-            )
-                ? JLSPT_DATA.cornerPosts
-                    .filter(
-                        function (post) {
-                            return post.status !==
-                                "archived";
-                        }
-                    )
-                    .sort(
-                        function (a, b) {
-
-                            if (
-                                a.pinned &&
-                                !b.pinned
-                            ) {
-                                return -1;
-                            }
-
-                            if (
-                                !a.pinned &&
-                                b.pinned
-                            ) {
-                                return 1;
-                            }
-
-                            return String(
-                                b.date || ""
-                            ).localeCompare(
-                                String(
-                                    a.date || ""
-                                )
-                            );
-
-                        }
-                    )
-                : [];
-
-
-        const filtered =
-            posts.filter(
-                function (post) {
-
-                    if (
-                        currentCornerFilter ===
-                        "all"
-                    ) {
-                        return true;
-                    }
-
-
-                    return post.category ===
-                        currentCornerFilter;
-
-                }
-            );
-
-
-        if (!filtered.length) {
-
-            container.innerHTML = `
-
-                <div class="empty-state">
-
-                    <div class="empty-state-icon">
-                        📰
-                    </div>
-
-                    <h3>
-                        No posts in this category
-                    </h3>
-
-                    <p>
-                        Official JLSPT updates will appear here.
-                    </p>
-
-                </div>
-
-            `;
-
-            return;
-
-        }
-
-
-        container.innerHTML =
-            filtered
-                .map(
-                    renderPost
-                )
-                .join("");
-
-    }
-
-
-    function setupCornerFilters() {
-
-        const buttons =
-            document.querySelectorAll(
-                "[data-corner-filter]"
-            );
-
-
-        buttons.forEach(
-            function (button) {
-
-                button.addEventListener(
-                    "click",
-                    function () {
-
-                        currentCornerFilter =
-                            button.dataset.cornerFilter;
-
-
-                        buttons.forEach(
-                            function (item) {
-
-                                item.classList.toggle(
-                                    "active",
-                                    item === button
-                                );
-
-                            }
-                        );
-
-
-                        renderCornerPosts();
-
-                    }
-                );
-
-            }
-        );
-
-    }
-
-
-    function renderCommunityCategories() {
-
-        const container =
-            document.getElementById(
-                "community-categories"
-            );
-
-
-        if (!container) {
-            return;
-        }
-
-
-        const categories =
-            JLSPT_DATA.community &&
-            Array.isArray(
-                JLSPT_DATA.community.categories
-            )
-                ? JLSPT_DATA.community.categories
-                : [];
-
-
-        if (!categories.length) {
-
-            container.innerHTML = `
-
-                <div class="empty-state">
-
-                    <div class="empty-state-icon">
-                        💬
-                    </div>
-
-                    <h3>
-                        Community categories coming soon
-                    </h3>
-
-                    <p>
-                        Discussion areas will appear here.
-                    </p>
-
-                </div>
-
-            `;
-
-            return;
-
-        }
-
-
-        const icons = {
-            general: "💭",
-            streaming: "🎧",
-            campaigns: "🔥",
-            help: "❓",
-            achievements: "🏆"
-        };
-
-
-        container.innerHTML =
-            categories
-                .map(
-                    function (category) {
-
-                        const icon =
-                            icons[
-                                category.id
-                            ] ||
-                            "💬";
-
-
-                        return `
-
-                            <article
-                                class="
-                                    card
-                                    community-category
-                                "
-                            >
-
-                                <div
-                                    class="
-                                        community-category-icon
-                                    "
-                                >
-                                    ${icon}
-                                </div>
-
-
-                                <div>
-
-                                    <h3>
-                                        ${escapeHTML(
-                                            category.title
-                                        )}
-                                    </h3>
-
-                                    <p>
-                                        ${escapeHTML(
-                                            category.description
-                                        )}
-                                    </p>
-
-                                </div>
-
-
-                                <button
-                                    type="button"
-                                    class="btn btn-secondary community-category-btn"
-                                    data-category-id="${escapeHTML(
-                                        category.id
-                                    )}"
-                                >
-                                    Browse
-                                </button>
-
-                            </article>
-
-                        `;
-
-                    }
-                )
-                .join("");
-
-    }
-
-
-    function renderCommunityPosts() {
-
-        const container =
-            document.getElementById(
-                "community-posts"
-            );
-
-
-        if (!container) {
-            return;
-        }
-
-
-        const posts =
-            JLSPT_DATA.community &&
-            Array.isArray(
-                JLSPT_DATA.community.posts
-            )
-                ? JLSPT_DATA.community.posts
-                : [];
-
-
-        if (!posts.length) {
-
-            container.innerHTML = `
-
-                <div class="community-empty">
-
-                    <div class="community-empty-icon">
+                    <div class="community-notice-icon">
                         💬
                     </div>
 
                     <div>
 
-                        <h3>
-                            The community is getting ready
-                        </h3>
+                        <strong>
+                            Community posting
+                        </strong>
 
                         <p>
-                            Member discussions will appear here
-                            once the community is active.
+                            Community posting and replies will require
+                            a JLSPT member account. Official JLSPT posts
+                            remain separate from member discussions.
                         </p>
 
                     </div>
 
                 </div>
 
-            `;
 
-            return;
+                <!-- COMMUNITY POSTS -->
 
-        }
+                <div class="section-heading community-post-heading">
 
+                    <div>
+                        <span class="eyebrow">
+                            DISCUSSIONS
+                        </span>
 
-        container.innerHTML =
-            posts
-                .map(
-                    function (post) {
+                        <h3>Recent Community Activity</h3>
+                    </div>
 
-                        return `
-
-                            <article
-                                class="
-                                    community-post
-                                "
-                            >
-
-                                <div
-                                    class="
-                                        community-post-avatar
-                                    "
-                                >
-                                    ${escapeHTML(
-                                        (
-                                            post.author ||
-                                            "M"
-                                        ).charAt(0)
-                                            .toUpperCase()
-                                    )}
-                                </div>
+                </div>
 
 
-                                <div
-                                    class="
-                                        community-post-body
-                                    "
-                                >
+                <div
+                    class="community-post-list"
+                    id="community-posts"
+                ></div>
 
-                                    <div
-                                        class="
-                                            community-post-meta
-                                        "
-                                    >
+            </div>
 
-                                        <strong>
-                                            ${escapeHTML(
-                                                post.author ||
-                                                "Member"
-                                            )}
-                                        </strong>
+        </section>
 
-                                        <span>
-                                            ${escapeHTML(
-                                                post.date ||
-                                                ""
-                                            )}
-                                        </span>
-
-                                    </div>
+    </main>
 
 
-                                    <h3>
-                                        ${escapeHTML(
-                                            post.title ||
-                                            "Community Post"
-                                        )}
-                                    </h3>
+    <footer class="site-footer">
+        <div class="container">
+
+            <div class="footer-inner">
+
+                <div>
+                    <strong>JLSPT</strong>
+
+                    <p>
+                        JL Streaming Project Team
+                    </p>
+                </div>
+
+                <p class="footer-note">
+                    Official updates and community discussions
+                    for JL supporters.
+                </p>
+
+            </div>
 
 
-                                    <p>
-                                        ${escapeHTML(
-                                            post.content ||
-                                            ""
-                                        )}
-                                    </p>
+            <div class="footer-bottom">
+
+                <span>
+                    JLSPT
+                </span>
+
+                <span>
+                    Corner &amp; Community
+                </span>
+
+            </div>
+
+        </div>
+    </footer>
 
 
-                                    <div
-                                        class="
-                                            community-post-actions
-                                        "
-                                    >
+    <script src="data.js"></script>
+    <script src="menu.js"></script>
 
-                                        <span>
-                                            ♡
-                                            ${
-                                                Number(
-                                                    post.reactions ||
-                                                    0
-                                                )
-                                            }
-                                        </span>
 
-                                        <span>
-                                            💬
-                                            ${
-                                                Number(
-                                                    post.replies ||
-                                                    0
-                                                )
-                                            }
-                                        </span>
+    <script>
+        (function () {
 
-                                    </div>
+            "use strict";
 
-                                </div>
 
-                            </article>
+            const data =
+                window.JLSPT_DATA || {};
 
-                        `;
 
-                    }
+            const corner =
+                Array.isArray(data.corner)
+                    ? data.corner
+                    : [];
+
+
+            const community =
+                data.community || {};
+
+
+            const communityCategories =
+                Array.isArray(
+                    community.categories
                 )
-                .join("");
-
-    }
-
-
-    function setupCommunityButtons() {
-
-        document.addEventListener(
-            "click",
-            function (event) {
-
-                const button =
-                    event.target.closest(
-                        ".community-category-btn"
-                    );
+                    ? community.categories
+                    : [];
 
 
-                if (!button) {
-                    return;
+            const communityPosts =
+                Array.isArray(
+                    community.posts
+                )
+                    ? community.posts
+                    : [];
+
+
+            const cornerContainer =
+                document.getElementById(
+                    "corner-posts"
+                );
+
+
+            const cornerCount =
+                document.getElementById(
+                    "corner-count"
+                );
+
+
+            const cornerFilters =
+                document.querySelectorAll(
+                    "#corner-filters .filter-button"
+                );
+
+
+            const communityCategoriesContainer =
+                document.getElementById(
+                    "community-categories"
+                );
+
+
+            const communityPostsContainer =
+                document.getElementById(
+                    "community-posts"
+                );
+
+
+            const communityCount =
+                document.getElementById(
+                    "community-count"
+                );
+
+
+            let currentCategory = "all";
+
+
+            function escapeHTML(value) {
+
+                return String(value ?? "")
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#039;");
+
+            }
+
+
+            function normalizeCategory(value) {
+
+                return String(value || "")
+                    .trim()
+                    .toLowerCase()
+                    .replace(/\s+/g, "-");
+
+            }
+
+
+            function formatDate(value) {
+
+                if (!value) {
+                    return "";
                 }
 
 
-                const categoryId =
-                    button.dataset.categoryId;
+                const date =
+                    new Date(value);
 
 
-                const category =
-                    (
-                        JLSPT_DATA.community &&
-                        Array.isArray(
-                            JLSPT_DATA.community.categories
-                        )
+                if (
+                    Number.isNaN(
+                        date.getTime()
                     )
-                        ? JLSPT_DATA.community.categories.find(
-                            function (item) {
-                                return item.id ===
-                                    categoryId;
-                            }
-                        )
-                        : null;
-
-
-                if (!category) {
-                    return;
+                ) {
+                    return String(value);
                 }
 
 
-                alert(
-                    category.title +
-                    " will become available when community access is connected."
+                return date.toLocaleDateString(
+                    undefined,
+                    {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric"
+                    }
                 );
 
             }
-        );
-
-    }
 
 
-    function initCorner() {
+            function createLink(
+                label,
+                url
+            ) {
 
-        if (
-            typeof JLSPT_DATA ===
-            "undefined"
-        ) {
+                if (!url) {
+                    return "";
+                }
 
-            console.error(
-                "JLSPT_DATA is not available."
+
+                return `
+                    <a
+                        class="button button-secondary"
+                        href="${escapeHTML(url)}"
+                        ${
+                            String(url)
+                                .startsWith("http")
+                                ? `
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                `
+                                : ""
+                        }
+                    >
+                        ${escapeHTML(label)}
+                    </a>
+                `;
+
+            }
+
+
+            function createCornerPost(
+                post
+            ) {
+
+                const category =
+                    post.category ||
+                    "General";
+
+
+                const categoryClass =
+                    normalizeCategory(
+                        category
+                    );
+
+
+                return `
+                    <article
+                        class="corner-post-card ${
+                            post.pinned
+                                ? "is-pinned"
+                                : ""
+                        }"
+                    >
+
+                        <div class="corner-post-top">
+
+                            <div
+                                class="corner-post-tags"
+                            >
+
+                                <span class="tag">
+                                    ${escapeHTML(
+                                        category
+                                    )}
+                                </span>
+
+                                ${
+                                    post.pinned
+                                        ? `
+                                            <span
+                                                class="status-badge status-active"
+                                            >
+                                                PINNED
+                                            </span>
+                                        `
+                                        : ""
+                                }
+
+                            </div>
+
+
+                            ${
+                                post.date
+                                    ? `
+                                        <time>
+                                            ${escapeHTML(
+                                                formatDate(
+                                                    post.date
+                                                )
+                                            )}
+                                        </time>
+                                    `
+                                    : ""
+                            }
+
+                        </div>
+
+
+                        <div class="corner-post-body">
+
+                            <h3>
+                                ${escapeHTML(
+                                    post.title ||
+                                    "JLSPT Update"
+                                )}
+                            </h3>
+
+
+                            ${
+                                post.author
+                                    ? `
+                                        <div
+                                            class="post-author"
+                                        >
+                                            <span>
+                                                By
+                                            </span>
+
+                                            <strong>
+                                                ${escapeHTML(
+                                                    post.author
+                                                )}
+                                            </strong>
+
+                                            <span
+                                                class="author-badge"
+                                            >
+                                                JLSPT
+                                            </span>
+                                        </div>
+                                    `
+                                    : ""
+                            }
+
+
+                            ${
+                                post.excerpt
+                                    ? `
+                                        <p>
+                                            ${escapeHTML(
+                                                post.excerpt
+                                            )}
+                                        </p>
+                                    `
+                                    : post.content
+                                        ? `
+                                            <p>
+                                                ${escapeHTML(
+                                                    post.content
+                                                )}
+                                            </p>
+                                        `
+                                        : ""
+                            }
+
+
+                            ${
+                                post.campaign
+                                    ? `
+                                        <div class="post-reference">
+                                            <span>
+                                                CAMPAIGN
+                                            </span>
+
+                                            <strong>
+                                                ${escapeHTML(
+                                                    post.campaign
+                                                )}
+                                            </strong>
+                                        </div>
+                                    `
+                                    : ""
+                            }
+
+
+                            ${
+                                post.schedule
+                                    ? `
+                                        <div class="post-reference">
+                                            <span>
+                                                SCHEDULE
+                                            </span>
+
+                                            <strong>
+                                                ${escapeHTML(
+                                                    post.schedule
+                                                )}
+                                            </strong>
+                                        </div>
+                                    `
+                                    : ""
+                            }
+
+
+                            <div class="card-actions">
+
+                                ${createLink(
+                                    post.buttonLabel ||
+                                    "Read More",
+                                    post.link
+                                )}
+
+                            </div>
+
+                        </div>
+
+                    </article>
+                `;
+
+            }
+
+
+            function renderCornerPosts() {
+
+                if (!cornerContainer) {
+                    return;
+                }
+
+
+                const filtered =
+                    currentCategory === "all"
+                        ? corner
+                        : corner.filter(
+                            function (post) {
+
+                                return (
+                                    normalizeCategory(
+                                        post.category
+                                    ) ===
+                                    currentCategory
+                                );
+
+                            }
+                        );
+
+
+                if (!filtered.length) {
+
+                    cornerContainer.innerHTML = `
+                        <div class="empty-state">
+
+                            <strong>
+                                No posts in this category yet.
+                            </strong>
+
+                            <span>
+                                JLSPT updates will appear here.
+                            </span>
+
+                        </div>
+                    `;
+
+                } else {
+
+                    cornerContainer.innerHTML =
+                        filtered
+                            .map(
+                                createCornerPost
+                            )
+                            .join("");
+
+                }
+
+
+                if (cornerCount) {
+
+                    cornerCount.textContent =
+                        `${filtered.length} ${
+                            filtered.length === 1
+                                ? "post"
+                                : "posts"
+                        }`;
+
+                }
+
+            }
+
+
+            function createCommunityCategory(
+                category
+            ) {
+
+                const icon =
+                    category.icon ||
+                    "💬";
+
+
+                return `
+                    <article
+                        class="community-category-card"
+                    >
+
+                        <div
+                            class="community-category-icon"
+                            aria-hidden="true"
+                        >
+                            ${escapeHTML(
+                                icon
+                            )}
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                ${escapeHTML(
+                                    category.name ||
+                                    category.title ||
+                                    "Community"
+                                )}
+                            </h3>
+
+
+                            ${
+                                category.description
+                                    ? `
+                                        <p>
+                                            ${escapeHTML(
+                                                category.description
+                                            )}
+                                        </p>
+                                    `
+                                    : ""
+                            }
+
+
+                            ${
+                                category.count !==
+                                undefined
+                                    ? `
+                                        <span
+                                            class="section-count"
+                                        >
+                                            ${escapeHTML(
+                                                category.count
+                                            )} ${
+                                                Number(
+                                                    category.count
+                                                ) === 1
+                                                    ? "post"
+                                                    : "posts"
+                                            }
+                                        </span>
+                                    `
+                                    : ""
+                            }
+
+                        </div>
+
+                    </article>
+                `;
+
+            }
+
+
+            function renderCommunityCategories() {
+
+                if (
+                    !communityCategoriesContainer
+                ) {
+                    return;
+                }
+
+
+                if (
+                    !communityCategories.length
+                ) {
+
+                    communityCategoriesContainer.innerHTML = `
+                        <div class="empty-state">
+
+                            <strong>
+                                Community categories are coming soon.
+                            </strong>
+
+                            <span>
+                                Discussion spaces will appear here.
+                            </span>
+
+                        </div>
+                    `;
+
+                    return;
+                }
+
+
+                communityCategoriesContainer.innerHTML =
+                    communityCategories
+                        .map(
+                            createCommunityCategory
+                        )
+                        .join("");
+
+            }
+
+
+            function createCommunityPost(
+                post
+            ) {
+
+                const author =
+                    post.author ||
+                    "JLSPT Member";
+
+
+                const category =
+                    post.category ||
+                    "General";
+
+
+                return `
+                    <article
+                        class="community-post-card"
+                    >
+
+                        <div
+                            class="community-post-avatar"
+                            aria-hidden="true"
+                        >
+                            ${
+                                post.avatar ||
+                                "✦"
+                            }
+                        </div>
+
+
+                        <div
+                            class="community-post-content"
+                        >
+
+                            <div
+                                class="community-post-header"
+                            >
+
+                                <div>
+
+                                    <strong>
+                                        ${escapeHTML(
+                                            author
+                                        )}
+                                    </strong>
+
+                                    ${
+                                        post.isAdmin ||
+                                        post.isJLSPT
+                                            ? `
+                                                <span
+                                                    class="author-badge"
+                                                >
+                                                    JLSPT
+                                                </span>
+                                            `
+                                            : ""
+                                    }
+
+                                </div>
+
+
+                                ${
+                                    post.date
+                                        ? `
+                                            <time>
+                                                ${escapeHTML(
+                                                    formatDate(
+                                                        post.date
+                                                    )
+                                                )}
+                                            </time>
+                                        `
+                                        : ""
+                                }
+
+                            </div>
+
+
+                            <span class="tag">
+                                ${escapeHTML(
+                                    category
+                                )}
+                            </span>
+
+
+                            <h3>
+                                ${escapeHTML(
+                                    post.title ||
+                                    "Community Post"
+                                )}
+                            </h3>
+
+
+                            ${
+                                post.content
+                                    ? `
+                                        <p>
+                                            ${escapeHTML(
+                                                post.content
+                                            )}
+                                        </p>
+                                    `
+                                    : ""
+                            }
+
+
+                            <div
+                                class="community-post-meta"
+                            >
+
+                                ${
+                                    post.replies !==
+                                    undefined
+                                        ? `
+                                            <span>
+                                                💬 ${
+                                                    escapeHTML(
+                                                        post.replies
+                                                    )
+                                                } ${
+                                                    Number(
+                                                        post.replies
+                                                    ) === 1
+                                                        ? "reply"
+                                                        : "replies"
+                                                }
+                                            </span>
+                                        `
+                                        : ""
+                                }
+
+
+                                ${
+                                    post.reactions !==
+                                    undefined
+                                        ? `
+                                            <span>
+                                                ♥ ${
+                                                    escapeHTML(
+                                                        post.reactions
+                                                    )
+                                                }
+                                            </span>
+                                        `
+                                        : ""
+                                }
+
+                            </div>
+
+                        </div>
+
+                    </article>
+                `;
+
+            }
+
+
+            function renderCommunityPosts() {
+
+                if (
+                    !communityPostsContainer
+                ) {
+                    return;
+                }
+
+
+                if (!communityPosts.length) {
+
+                    communityPostsContainer.innerHTML = `
+                        <div class="empty-state">
+
+                            <strong>
+                                Community discussions are coming soon.
+                            </strong>
+
+                            <span>
+                                Member posts will appear here once
+                                community posting is enabled.
+                            </span>
+
+                        </div>
+                    `;
+
+                } else {
+
+                    communityPostsContainer.innerHTML =
+                        communityPosts
+                            .map(
+                                createCommunityPost
+                            )
+                            .join("");
+
+                }
+
+
+                if (communityCount) {
+
+                    communityCount.textContent =
+                        `${communityPosts.length} ${
+                            communityPosts.length === 1
+                                ? "post"
+                                : "posts"
+                        }`;
+
+                }
+
+            }
+
+
+            cornerFilters.forEach(
+                function (button) {
+
+                    button.addEventListener(
+                        "click",
+                        function () {
+
+                            currentCategory =
+                                button.dataset.category ||
+                                "all";
+
+
+                            cornerFilters.forEach(
+                                function (item) {
+
+                                    item.classList.toggle(
+                                        "active",
+                                        item === button
+                                    );
+
+                                }
+                            );
+
+
+                            renderCornerPosts();
+
+                        }
+                    );
+
+                }
             );
 
-            return;
 
-        }
+            renderCornerPosts();
 
+            renderCommunityCategories();
 
-        renderCornerPosts();
-        setupCornerFilters();
+            renderCommunityPosts();
 
-        renderCommunityCategories();
-        renderCommunityPosts();
-
-        setupCommunityButtons();
-
-    }
-
-
-    if (
-        document.readyState ===
-        "loading"
-    ) {
-
-        document.addEventListener(
-            "DOMContentLoaded",
-            initCorner
-        );
-
-    } else {
-
-        initCorner();
-
-    }
-
-})();
-</script>
+        })();
+    </script>
 
 </body>
 </html>

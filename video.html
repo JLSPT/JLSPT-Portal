@@ -10,14 +10,17 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Video | JLSPT</title>
-
     <meta
         name="description"
-        content="JLSPT video library featuring JL official videos, AHOF content, Muniverse appearances, fancams, and more."
+        content="JLSPT video hub for JL solo videos, AHOF releases featuring JL, and JL content."
     >
 
-    <link rel="stylesheet" href="style.css">
+    <title>Video | JLSPT</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
 </head>
 
@@ -25,657 +28,901 @@
 <body>
 
 
-<!-- =========================================
-     NAVIGATION
-========================================= -->
+    <!-- =========================================================
+         NAVIGATION
+         ========================================================= -->
 
-<nav class="navbar">
+    <header class="navbar">
 
-    <div class="nav-inner">
+        <div class="nav-inner">
 
-        <a href="index.html" class="brand">
+            <a
+                href="index.html"
+                class="brand"
+            >
 
-            <div class="brand-mark">
-                JL
-            </div>
+                <span class="brand-mark">
+                    JL
+                </span>
 
-            <div class="brand-text">
+                <span class="brand-text">
 
-                JLSPT
+                    <strong>
+                        JLSPT
+                    </strong>
 
-                <small>
-                    JL Streaming Project Team
-                </small>
+                    <small>
+                        JL Streaming Project Team
+                    </small>
 
-            </div>
+                </span>
 
-        </a>
-
-
-        <nav class="nav-links">
-
-            <a href="index.html">
-                Home
             </a>
 
-            <a href="music.html">
-                Music
-            </a>
 
-            <a href="video.html">
-                Video
-            </a>
-
-            <a href="campaigns.html">
-                Campaigns
-            </a>
-
-            <a href="schedule.html">
-                Schedule
-            </a>
-
-            <a href="guides.html">
-                Guides
-            </a>
-
-            <a href="updates.html">
-                Updates
-            </a>
-
-        </nav>
-
-    </div>
-
-</nav>
-
-
-
-<!-- =========================================
-     MAIN
-========================================= -->
-
-<main class="container">
-
-
-    <!-- HERO -->
-
-    <section
-        class="hero"
-        style="padding-bottom:40px;"
-    >
-
-        <span class="eyebrow">
-            JLSPT VIDEO
-        </span>
-
-
-        <h1>
-            Watch <span>JL.</span>
-        </h1>
-
-
-        <p>
-            Official music videos, JL content,
-            performances, appearances, and more.
-        </p>
-
-    </section>
-
-
-
-    <!-- =====================================
-         JL SOLO
-    ====================================== -->
-
-    <section class="section">
-
-        <div class="section-heading">
-
-            <h2>
-                JL Solo
-            </h2>
-
-            <p>
-                Official JL solo videos and current content.
-            </p>
-
-        </div>
-
-
-        <div
-            class="content-grid"
-            id="jl-video-grid"
-        >
-
-            <div class="content-card">
-
-                <h3>
-                    Loading...
-                </h3>
-
-                <p>
-                    Loading videos.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================
-         AHOF × JL
-    ====================================== -->
-
-    <section class="section">
-
-        <div class="section-heading">
-
-            <h2>
-                AHOF × JL
-            </h2>
-
-            <p>
-                Official AHOF music videos and videos featuring JL.
-            </p>
-
-        </div>
-
-
-        <div
-            class="content-grid"
-            id="ahof-video-grid"
-        >
-
-            <div class="content-card">
-
-                <h3>
-                    Loading...
-                </h3>
-
-                <p>
-                    Loading videos.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================
-         JL CONTENT
-    ====================================== -->
-
-    <section class="section">
-
-        <div class="section-heading">
-
-            <h2>
-                JL Content
-            </h2>
-
-            <p>
-                Appearances, variety content, fancams,
-                and other JL videos.
-            </p>
-
-        </div>
-
-
-        <div
-            class="content-grid"
-            id="content-video-grid"
-        >
-
-            <div class="content-card">
-
-                <h3>
-                    Loading...
-                </h3>
-
-                <p>
-                    Loading videos.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================
-         VIDEO SUPPORT
-    ====================================== -->
-
-    <section class="section">
-
-        <div class="focus-card">
-
-            <div>
-
-                <div class="focus-label">
-                    VIDEO SUPPORT
-                </div>
-
-
-                <div class="focus-title">
-                    Support official content.
-                </div>
-
-
-                <p class="focus-subtitle">
-                    Watch official uploads, engage naturally,
-                    and share JL content when you can.
-                </p>
-
-
-                <div class="link-list">
-
-                    <a href="campaigns.html">
-                        View Active Campaigns
-                        <span>→</span>
-                    </a>
-
-
-                    <a href="guides.html">
-                        View Streaming Guides
-                        <span>→</span>
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div class="focus-action">
+            <nav
+                class="nav-links"
+                aria-label="Main navigation"
+            >
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="music.html">
+                    Music
+                </a>
 
                 <a
-                    href="campaigns.html"
-                    class="primary-btn"
+                    href="video.html"
+                    class="active"
                 >
+                    Video
+                </a>
+
+                <a href="campaigns.html">
                     Campaigns
                 </a>
 
-            </div>
+                <a href="schedule.html">
+                    Schedule
+                </a>
+
+                <a href="guides.html">
+                    Guides
+                </a>
+
+                <a href="corner.html">
+                    Corner
+                </a>
+
+                <a href="my-jlspt.html">
+                    My JLSPT
+                </a>
+
+            </nav>
 
         </div>
 
-    </section>
-
-
-</main>
+    </header>
 
 
 
-<!-- =========================================
-     FOOTER
-========================================= -->
-
-<footer>
-
-    <strong>
-        JLSPT
-    </strong>
-
-    <p>
-        JL Streaming Project Team
-    </p>
-
-</footer>
+    <main>
 
 
+        <!-- =====================================================
+             PAGE HERO
+             ===================================================== -->
 
-<!-- =========================================
-     SCRIPTS
-========================================= -->
+        <section class="page-hero">
 
-<script src="data.js"></script>
+            <div class="container">
 
-<script src="menu.js"></script>
-
-
-<script>
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
+                <span class="eyebrow">
+                    JLSPT VIDEO
+                </span>
 
 
-        /* =====================================
-           ELEMENTS
-        ====================================== */
-
-        const soloGrid =
-            document.getElementById(
-                "jl-video-grid"
-            );
-
-
-        const ahofGrid =
-            document.getElementById(
-                "ahof-video-grid"
-            );
-
-
-        const contentGrid =
-            document.getElementById(
-                "content-video-grid"
-            );
-
-
-
-        /* =====================================
-           HELPERS
-        ====================================== */
-
-        function createLink(
-            video
-        ) {
-
-            if (!video.url) {
-
-                return `
-
-                    <div class="goal-number">
-                        Link coming soon
-                    </div>
-
-                `;
-
-            }
-
-
-            return `
-
-                <div class="link-list">
-
-                    <a
-                        href="${video.url}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Watch on ${video.platform}
-                        <span>↗</span>
-                    </a>
-
-                </div>
-
-            `;
-
-        }
-
-
-
-        function createVideoCard(
-            video
-        ) {
-
-            const card =
-                document.createElement(
-                    "article"
-                );
-
-
-            card.className =
-                "content-card";
-
-
-            const campaignLink =
-                video.campaignId
-                    ? `
-
-                        <a href="campaigns.html">
-                            View Campaign
-                            <span>→</span>
-                        </a>
-
-                    `
-                    : "";
-
-
-            card.innerHTML = `
-
-                <div class="focus-label">
-                    ${video.category}
-                </div>
-
-
-                <h3>
-                    ${video.title}
-                </h3>
+                <h1>
+                    Video
+                </h1>
 
 
                 <p>
-                    ${video.description}
+                    Official music videos, lyric videos,
+                    performance content, and selected JL content.
                 </p>
 
+            </div>
 
-                <div class="goal-number">
-                    ${video.platform}
-                </div>
-
-
-                ${createLink(video)}
-
-
-                ${
-                    video.campaignId
-                        ? `
-                            <div class="link-list">
-                                ${campaignLink}
-                            </div>
-                          `
-                        : ""
-                }
-
-            `;
-
-
-            return card;
-
-        }
+        </section>
 
 
 
-        function renderEmpty(
-            container,
-            message
-        ) {
+        <!-- =====================================================
+             VIDEO CONTENT
+             ===================================================== -->
 
-            container.innerHTML = `
+        <section class="section">
 
-                <div class="content-card">
+            <div class="container">
 
-                    <h3>
-                        No videos yet
-                    </h3>
+
+                <!-- =============================================
+                     JL SOLO
+                     ============================================= -->
+
+                <section
+                    class="video-section"
+                    id="jl-solo-video"
+                >
+
+                    <div class="section-heading">
+
+                        <span class="section-label">
+                            JL SOLO
+                        </span>
+
+                        <h2>
+                            JL
+                        </h2>
+
+                        <p>
+                            JL's solo video releases and
+                            official video content.
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="video-grid"
+                        id="jl-solo-video-grid"
+                    >
+                    </div>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     AHOF × JL
+                     ============================================= -->
+
+                <section
+                    class="video-section"
+                    id="ahof-jl-video"
+                >
+
+                    <div class="section-heading">
+
+                        <span class="section-label">
+                            AHOF × JL
+                        </span>
+
+                        <h2>
+                            AHOF
+                        </h2>
+
+                        <p>
+                            AHOF releases featuring JL,
+                            arranged by era.
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="video-grid"
+                        id="ahof-jl-video-grid"
+                    >
+                    </div>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     JL CONTENT
+                     ============================================= -->
+
+                <section
+                    class="video-section"
+                    id="jl-content-video"
+                >
+
+                    <div class="section-heading">
+
+                        <span class="section-label">
+                            JL CONTENT
+                        </span>
+
+                        <h2>
+                            JL Content
+                        </h2>
+
+                        <p>
+                            Fancams, appearances, interviews,
+                            variety content, and other official
+                            JL videos.
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="video-grid"
+                        id="jl-content-video-grid"
+                    >
+                    </div>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     OTHER RELEASES
+                     ============================================= -->
+
+                <section
+                    class="video-section"
+                    id="other-video"
+                >
+
+                    <div class="section-heading">
+
+                        <span class="section-label">
+                            OTHER RELEASES
+                        </span>
+
+                        <h2>
+                            Other Releases
+                        </h2>
+
+                        <p>
+                            Selected OST and collaboration
+                            video releases.
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="video-grid"
+                        id="other-video-grid"
+                    >
+                    </div>
+
+                </section>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-inner">
+
+                <div>
+
+                    <strong>
+                        JLSPT
+                    </strong>
 
                     <p>
-                        ${message}
+                        JL Streaming Project Team
                     </p>
 
                 </div>
 
-            `;
 
-        }
+                <div class="footer-links">
 
+                    <a href="index.html">
+                        Home
+                    </a>
 
+                    <a href="music.html">
+                        Music
+                    </a>
 
-        /* =====================================
-           CHECK DATA
-        ====================================== */
+                    <a href="campaigns.html">
+                        Campaigns
+                    </a>
 
-        if (
-            typeof JLSPT_DATA === "undefined" ||
-            !Array.isArray(
-                JLSPT_DATA.videos
-            )
-        ) {
+                    <a href="schedule.html">
+                        Schedule
+                    </a>
 
-            renderEmpty(
-                soloGrid,
-                "Video data is currently unavailable."
-            );
+                    <a href="guides.html">
+                        Guides
+                    </a>
 
-            renderEmpty(
-                ahofGrid,
-                "Video data is currently unavailable."
-            );
+                    <a href="corner.html">
+                        Corner
+                    </a>
 
-            renderEmpty(
-                contentGrid,
-                "Video data is currently unavailable."
-            );
+                </div>
 
-            return;
-
-        }
+            </div>
 
 
+            <div class="footer-bottom">
 
-        /* =====================================
-           FILTER
-        ====================================== */
+                <span>
+                    JLSPT • JL Streaming Project Team
+                </span>
 
-        const soloVideos =
-            JLSPT_DATA.videos.filter(
-                function (video) {
+                <span>
+                    Stream. Support. Stay connected.
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================================
+         DATA
+         ========================================================= -->
+
+    <script src="data.js"></script>
+
+    <script src="menu.js"></script>
+
+
+
+    <!-- =========================================================
+         VIDEO SCRIPT
+         ========================================================= -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                if (
+                    typeof JLSPT_DATA === "undefined"
+                ) {
+                    return;
+                }
+
+
+                const videos =
+                    JLSPT_DATA.videos || [];
+
+
+
+                /*
+                 * =================================================
+                 * SPLIT VIDEO COLLECTIONS
+                 * =================================================
+                 */
+
+                const solo =
+                    videos.filter(
+                        function (item) {
+
+                            return item.section ===
+                                "JL Solo";
+
+                        }
+                    );
+
+
+                const ahof =
+                    videos.filter(
+                        function (item) {
+
+                            return item.section ===
+                                "AHOF × JL";
+
+                        }
+                    );
+
+
+                const jlContent =
+                    videos.filter(
+                        function (item) {
+
+                            return item.section ===
+                                "JL Content";
+
+                        }
+                    );
+
+
+                const other =
+                    videos.filter(
+                        function (item) {
+
+                            return item.section ===
+                                "Other Releases";
+
+                        }
+                    );
+
+
+
+                /*
+                 * =================================================
+                 * RENDER SECTIONS
+                 * =================================================
+                 */
+
+                renderVideos(
+                    solo,
+                    "jl-solo-video-grid"
+                );
+
+
+                renderVideos(
+                    ahof,
+                    "ahof-jl-video-grid"
+                );
+
+
+                renderVideos(
+                    jlContent,
+                    "jl-content-video-grid"
+                );
+
+
+                renderVideos(
+                    other,
+                    "other-video-grid"
+                );
+
+
+
+                /*
+                 * =================================================
+                 * RENDER VIDEO COLLECTION
+                 * =================================================
+                 */
+
+                function renderVideos(
+                    items,
+                    containerId
+                ) {
+
+                    const container =
+                        document.getElementById(
+                            containerId
+                        );
+
+
+                    if (!container) {
+                        return;
+                    }
+
+
+                    if (!items.length) {
+
+                        container.innerHTML = `
+
+                            <div class="empty-state">
+
+                                <span class="empty-state-icon">
+                                    ▶
+                                </span>
+
+                                <h3>
+                                    No videos yet
+                                </h3>
+
+                                <p>
+                                    Video content will appear
+                                    here when it is added to JLSPT.
+                                </p>
+
+                            </div>
+
+                        `;
+
+                        return;
+                    }
+
+
+                    container.innerHTML =
+                        items
+                            .map(
+                                function (item) {
+
+                                    return createVideoCard(
+                                        item
+                                    );
+
+                                }
+                            )
+                            .join("");
+
+                }
+
+
+
+                /*
+                 * =================================================
+                 * CREATE VIDEO CARD
+                 * =================================================
+                 */
+
+                function createVideoCard(
+                    item
+                ) {
+
+                    const campaign =
+                        getCampaign(
+                            item.campaignId
+                        );
+
+
+                    const collectionItems =
+                        Array.isArray(
+                            item.items
+                        )
+                            ? item.items
+                            : [];
+
+
+                    const campaignMarkup =
+                        campaign
+                            ? `
+
+                                <div class="release-campaign">
+
+                                    <span class="campaign-dot"></span>
+
+                                    <span>
+                                        Current streaming focus
+                                    </span>
+
+                                    <a href="campaigns.html">
+                                        ${escapeHTML(
+                                            campaign.title
+                                        )}
+                                    </a>
+
+                                </div>
+
+                            `
+                            : "";
+
+
+                    return `
+
+                        <article
+                            class="video-card"
+                            data-video-id="${escapeHTML(
+                                item.id || ""
+                            )}"
+                        >
+
+                            <div class="video-card-top">
+
+                                <span class="release-type">
+                                    ${escapeHTML(
+                                        getTypeLabel(
+                                            item.type
+                                        )
+                                    )}
+                                </span>
+
+                                <span class="platform-label">
+                                    ${escapeHTML(
+                                        item.platform || "Various"
+                                    )}
+                                </span>
+
+                            </div>
+
+
+                            <div class="video-card-content">
+
+                                <h3>
+                                    ${escapeHTML(
+                                        item.title
+                                    )}
+                                </h3>
+
+
+                                <p class="video-artist">
+                                    ${escapeHTML(
+                                        item.artist || ""
+                                    )}
+                                </p>
+
+
+                                <p class="video-description">
+                                    ${escapeHTML(
+                                        item.description || ""
+                                    )}
+                                </p>
+
+
+                                ${
+                                    collectionItems.length
+                                        ? `
+                                            <div class="video-items">
+
+                                                ${collectionItems
+                                                    .map(
+                                                        function (
+                                                            videoItem
+                                                        ) {
+
+                                                            return createVideoItem(
+                                                                videoItem
+                                                            );
+
+                                                        }
+                                                    )
+                                                    .join("")}
+
+                                            </div>
+                                        `
+                                        : ""
+                                }
+
+
+                                ${campaignMarkup}
+
+                            </div>
+
+                        </article>
+
+                    `;
+
+                }
+
+
+
+                /*
+                 * =================================================
+                 * CREATE VIDEO ITEM
+                 * =================================================
+                 */
+
+                function createVideoItem(
+                    item
+                ) {
+
+                    const url =
+                        item.url || "";
+
+
+                    const itemLink =
+                        url
+                            ? `
+
+                                <a
+                                    href="${escapeAttribute(
+                                        url
+                                    )}"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="video-item-link"
+                                >
+                                    Watch
+                                    <span>→</span>
+                                </a>
+
+                            `
+                            : `
+
+                                <span class="video-item-link disabled">
+                                    Coming soon
+                                </span>
+
+                            `;
+
+
+                    return `
+
+                        <div class="video-item">
+
+                            <div class="video-item-info">
+
+                                <span class="video-item-icon">
+                                    ▶
+                                </span>
+
+
+                                <div>
+
+                                    <strong>
+                                        ${escapeHTML(
+                                            item.title || ""
+                                        )}
+                                    </strong>
+
+
+                                    ${
+                                        item.subtitle
+                                            ? `
+                                                <span>
+                                                    ${escapeHTML(
+                                                        item.subtitle
+                                                    )}
+                                                </span>
+                                            `
+                                            : `
+                                                <span>
+                                                    ${escapeHTML(
+                                                        getTypeLabel(
+                                                            item.type
+                                                        )
+                                                    )}
+                                                </span>
+                                            `
+                                    }
+
+                                </div>
+
+                            </div>
+
+
+                            ${itemLink}
+
+                        </div>
+
+                    `;
+
+                }
+
+
+
+                /*
+                 * =================================================
+                 * TYPE LABEL
+                 * =================================================
+                 */
+
+                function getTypeLabel(
+                    type
+                ) {
+
+                    const labels = {
+
+                        "release":
+                            "Release",
+
+                        "official-mv":
+                            "Official MV",
+
+                        "lyric-video":
+                            "Lyric Video",
+
+                        "music-video":
+                            "Music Video",
+
+                        "track-video":
+                            "Track Video",
+
+                        "ost":
+                            "OST",
+
+                        "variety":
+                            "Variety",
+
+                        "fancam":
+                            "Fancam",
+
+                        "collection":
+                            "Collection"
+
+                    };
+
 
                     return (
-                        video.category === "JL Solo"
+                        labels[type] ||
+                        type ||
+                        "Video"
                     );
 
                 }
-            );
 
 
-        const ahofVideos =
-            JLSPT_DATA.videos.filter(
-                function (video) {
 
-                    return (
-                        video.category === "AHOF × JL"
+                /*
+                 * =================================================
+                 * CAMPAIGN
+                 * =================================================
+                 */
+
+                function getCampaign(
+                    id
+                ) {
+
+                    if (!id) {
+                        return null;
+                    }
+
+
+                    const campaigns =
+                        JLSPT_DATA.campaigns || [];
+
+
+                    return campaigns.find(
+                        function (campaign) {
+
+                            return campaign.id === id;
+
+                        }
+                    ) || null;
+
+                }
+
+
+
+                /*
+                 * =================================================
+                 * SECURITY HELPERS
+                 * =================================================
+                 */
+
+                function escapeHTML(
+                    value
+                ) {
+
+                    return String(
+                        value ?? ""
+                    )
+                        .replace(
+                            /&/g,
+                            "&amp;"
+                        )
+                        .replace(
+                            /</g,
+                            "&lt;"
+                        )
+                        .replace(
+                            />/g,
+                            "&gt;"
+                        )
+                        .replace(
+                            /"/g,
+                            "&quot;"
+                        )
+                        .replace(
+                            /'/g,
+                            "&#039;"
+                        );
+
+                }
+
+
+                function escapeAttribute(
+                    value
+                ) {
+
+                    return escapeHTML(
+                        value
                     );
 
                 }
-            );
 
+            }
+        );
 
-        const jlContent =
-            JLSPT_DATA.videos.filter(
-                function (video) {
-
-                    return (
-                        video.category === "JL Content" ||
-                        video.category === "JL Collection"
-                    );
-
-                }
-            );
-
-
-
-        /* =====================================
-           RENDER JL SOLO
-        ====================================== */
-
-        soloGrid.innerHTML = "";
-
-
-        if (!soloVideos.length) {
-
-            renderEmpty(
-                soloGrid,
-                "No JL solo videos have been added yet."
-            );
-
-        } else {
-
-            soloVideos.forEach(
-                function (video) {
-
-                    soloGrid.appendChild(
-                        createVideoCard(video)
-                    );
-
-                }
-            );
-
-        }
-
-
-
-        /* =====================================
-           RENDER AHOF × JL
-        ====================================== */
-
-        ahofGrid.innerHTML = "";
-
-
-        if (!ahofVideos.length) {
-
-            renderEmpty(
-                ahofGrid,
-                "No AHOF × JL videos have been added yet."
-            );
-
-        } else {
-
-            ahofVideos.forEach(
-                function (video) {
-
-                    ahofGrid.appendChild(
-                        createVideoCard(video)
-                    );
-
-                }
-            );
-
-        }
-
-
-
-        /* =====================================
-           RENDER JL CONTENT
-        ====================================== */
-
-        contentGrid.innerHTML = "";
-
-
-        if (!jlContent.length) {
-
-            renderEmpty(
-                contentGrid,
-                "No JL content has been added yet."
-            );
-
-        } else {
-
-            jlContent.forEach(
-                function (video) {
-
-                    contentGrid.appendChild(
-                        createVideoCard(video)
-                    );
-
-                }
-            );
-
-        }
-
-    }
-
-);
-
-</script>
+    </script>
 
 
 </body>

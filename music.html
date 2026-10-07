@@ -10,14 +10,17 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Music | JLSPT</title>
-
     <meta
         name="description"
-        content="JLSPT music library for JL solo releases, AHOF releases featuring JL, and official music resources."
+        content="JLSPT music hub for JL solo releases, AHOF releases featuring JL, and other releases."
     >
 
-    <link rel="stylesheet" href="style.css">
+    <title>Music | JLSPT</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
 </head>
 
@@ -25,783 +28,922 @@
 <body>
 
 
-<!-- =========================================
-     NAVIGATION
-========================================= -->
+    <!-- =========================================================
+         NAVIGATION
+         ========================================================= -->
 
-<nav class="navbar">
+    <header class="navbar">
 
-    <div class="nav-inner">
+        <div class="nav-inner">
 
-        <a href="index.html" class="brand">
+            <a
+                href="index.html"
+                class="brand"
+            >
 
-            <div class="brand-mark">
-                JL
-            </div>
+                <span class="brand-mark">
+                    JL
+                </span>
 
-            <div class="brand-text">
+                <span class="brand-text">
 
-                JLSPT
+                    <strong>
+                        JLSPT
+                    </strong>
 
-                <small>
-                    JL Streaming Project Team
-                </small>
+                    <small>
+                        JL Streaming Project Team
+                    </small>
 
-            </div>
+                </span>
 
-        </a>
-
-
-        <nav class="nav-links">
-
-            <a href="index.html">
-                Home
             </a>
 
-            <a href="music.html">
-                Music
-            </a>
 
-            <a href="video.html">
-                Video
-            </a>
+            <nav
+                class="nav-links"
+                aria-label="Main navigation"
+            >
 
-            <a href="campaigns.html">
-                Campaigns
-            </a>
+                <a href="index.html">
+                    Home
+                </a>
 
-            <a href="schedule.html">
-                Schedule
-            </a>
+                <a
+                    href="music.html"
+                    class="active"
+                >
+                    Music
+                </a>
 
-            <a href="guides.html">
-                Guides
-            </a>
+                <a href="video.html">
+                    Video
+                </a>
 
-            <a href="updates.html">
-                Updates
-            </a>
+                <a href="campaigns.html">
+                    Campaigns
+                </a>
 
-        </nav>
+                <a href="schedule.html">
+                    Schedule
+                </a>
 
-    </div>
+                <a href="guides.html">
+                    Guides
+                </a>
 
-</nav>
+                <a href="corner.html">
+                    Corner
+                </a>
 
+                <a href="my-jlspt.html">
+                    My JLSPT
+                </a>
 
-
-<!-- =========================================
-     MAIN
-========================================= -->
-
-<main class="container">
-
-
-    <!-- HERO -->
-
-    <section
-        class="hero"
-        style="padding-bottom:40px;"
-    >
-
-        <span class="eyebrow">
-            JLSPT MUSIC
-        </span>
-
-
-        <h1>
-            Listen to <span>JL.</span>
-        </h1>
-
-
-        <p>
-            Explore JL's solo music and AHOF releases
-            featuring JL, organized in one place.
-        </p>
-
-    </section>
-
-
-
-    <!-- =====================================
-         JL SOLO
-    ====================================== -->
-
-    <section class="section">
-
-        <div class="section-heading">
-
-            <h2>
-                JL Solo
-            </h2>
-
-            <p>
-                JL's solo music and official resources.
-            </p>
+            </nav>
 
         </div>
 
+    </header>
 
-        <div
-            class="content-grid"
-            id="jl-solo-grid"
-        >
 
-            <div class="content-card">
 
-                <h3>
-                    Loading...
-                </h3>
+    <main>
 
-                <p>
-                    Loading music.
-                </p>
 
-            </div>
+        <!-- =====================================================
+             PAGE HERO
+             ===================================================== -->
 
-        </div>
+        <section class="page-hero">
 
-    </section>
+            <div class="container">
 
-
-
-    <!-- =====================================
-         AHOF × JL
-    ====================================== -->
-
-    <section class="section">
-
-        <div class="section-heading">
-
-            <h2>
-                AHOF × JL
-            </h2>
-
-            <p>
-                AHOF releases featuring JL,
-                arranged chronologically.
-            </p>
-
-        </div>
-
-
-        <div
-            class="content-grid"
-            id="ahof-grid"
-        >
-
-            <div class="content-card">
-
-                <h3>
-                    Loading...
-                </h3>
-
-                <p>
-                    Loading music.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================
-         OTHER JL MUSIC
-    ====================================== -->
-
-    <section class="section">
-
-        <div class="section-heading">
-
-            <h2>
-                Other JL Releases
-            </h2>
-
-            <p>
-                OSTs and special releases featuring JL.
-            </p>
-
-        </div>
-
-
-        <div
-            class="content-grid"
-            id="other-music-grid"
-        >
-
-            <div class="content-card">
-
-                <h3>
-                    Loading...
-                </h3>
-
-                <p>
-                    Loading music.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================
-         STREAMING HUB
-    ====================================== -->
-
-    <section class="section">
-
-        <div class="section-heading">
-
-            <h2>
-                Streaming Hub
-            </h2>
-
-            <p>
-                Find the resources you need before
-                starting your next streaming session.
-            </p>
-
-        </div>
-
-
-        <div class="content-grid">
-
-
-            <div class="content-card">
-
-                <div class="focus-label">
-                    GUIDES
-                </div>
-
-                <h3>
-                    Learn the basics
-                </h3>
-
-                <p>
-                    Check the JLSPT streaming guides
-                    for Spotify, YouTube, Stationhead,
-                    and general streaming basics.
-                </p>
-
-
-                <div class="link-list">
-
-                    <a href="guides.html">
-                        Open Guides
-                        <span>→</span>
-                    </a>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="content-card">
-
-                <div class="focus-label">
-                    CAMPAIGNS
-                </div>
-
-                <h3>
-                    Support current goals
-                </h3>
-
-                <p>
-                    See active campaigns, milestones,
-                    and missions currently organized
-                    by JLSPT.
-                </p>
-
-
-                <div class="link-list">
-
-                    <a href="campaigns.html">
-                        View Campaigns
-                        <span>→</span>
-                    </a>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="content-card">
-
-                <div class="focus-label">
-                    STATIONHEAD
-                </div>
-
-                <h3>
-                    Join JLSPT
-                </h3>
-
-                <p>
-                    Join the JLSPT Stationhead channel
-                    for listening activities and
-                    streaming sessions.
-                </p>
-
-
-                <div class="link-list">
-
-                    <a
-                        href="https://app.stationhead.com/jlspteam"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Open Stationhead
-                        <span>↗</span>
-                    </a>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================
-         NOTE
-    ====================================== -->
-
-    <section class="section">
-
-        <div class="focus-card">
-
-            <div>
-
-                <div class="focus-label">
+                <span class="eyebrow">
                     JLSPT MUSIC
-                </div>
+                </span>
 
 
-                <div class="focus-title">
-                    Official sources first.
-                </div>
-
-
-                <p class="focus-subtitle">
-                    Use official music platforms and
-                    official artist or group uploads
-                    whenever available.
-                </p>
-
-            </div>
-
-
-            <div class="focus-action">
-
-                <a
-                    href="guides.html"
-                    class="primary-btn"
-                >
-                    View Guides
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-</main>
-
-
-
-<!-- =========================================
-     FOOTER
-========================================= -->
-
-<footer>
-
-    <strong>
-        JLSPT
-    </strong>
-
-    <p>
-        JL Streaming Project Team
-    </p>
-
-</footer>
-
-
-
-<!-- =========================================
-     SCRIPTS
-========================================= -->
-
-<script src="data.js"></script>
-
-<script src="menu.js"></script>
-
-
-<script>
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-
-
-        /* =====================================
-           ELEMENTS
-        ====================================== */
-
-        const soloGrid =
-            document.getElementById(
-                "jl-solo-grid"
-            );
-
-
-        const ahofGrid =
-            document.getElementById(
-                "ahof-grid"
-            );
-
-
-        const otherGrid =
-            document.getElementById(
-                "other-music-grid"
-            );
-
-
-
-        /* =====================================
-           HELPERS
-        ====================================== */
-
-        function createLink(
-            label,
-            url,
-            external
-        ) {
-
-            if (!url) {
-                return "";
-            }
-
-
-            return `
-
-                <a
-                    href="${url}"
-                    ${external ? 'target="_blank" rel="noopener noreferrer"' : ""}
-                >
-                    ${label}
-                    <span>${external ? "↗" : "→"}</span>
-                </a>
-
-            `;
-
-        }
-
-
-
-        function createMusicCard(
-            item
-        ) {
-
-            const card =
-                document.createElement(
-                    "article"
-                );
-
-
-            card.className =
-                "content-card";
-
-
-            let links = "";
-
-
-            if (item.links) {
-
-                links += createLink(
-                    "Spotify",
-                    item.links.spotify,
-                    true
-                );
-
-
-                links += createLink(
-                    "Apple Music",
-                    item.links.appleMusic,
-                    true
-                );
-
-
-                links += createLink(
-                    "YouTube",
-                    item.links.youtube,
-                    true
-                );
-
-
-                links += createLink(
-                    "Lyric Video",
-                    item.links.lyricVideo,
-                    true
-                );
-
-            }
-
-
-            const campaignLink =
-                item.campaignId
-                    ? `
-                        <a href="campaigns.html">
-                            Campaign
-                            <span>→</span>
-                        </a>
-                    `
-                    : "";
-
-
-            card.innerHTML = `
-
-                <div class="focus-label">
-                    ${item.category}
-                </div>
-
-
-                <h3>
-                    ${item.title}
-                </h3>
+                <h1>
+                    Music
+                </h1>
 
 
                 <p>
-                    ${item.description}
+                    Explore JL's solo music, AHOF releases
+                    featuring JL, and selected other releases.
                 </p>
 
+            </div>
 
-                ${
-                    item.era
-                        ? `
-                            <div class="goal-number">
-                                ${item.era}
-                            </div>
-                          `
-                        : ""
-                }
-
-
-                <div class="link-list">
-
-                    ${links}
-
-                    ${campaignLink}
-
-                </div>
-
-            `;
-
-
-            return card;
-
-        }
+        </section>
 
 
 
-        function renderEmpty(
-            container,
-            message
-        ) {
+        <!-- =====================================================
+             MUSIC CONTENT
+             ===================================================== -->
 
-            container.innerHTML = `
+        <section class="section">
 
-                <div class="content-card">
+            <div class="container">
 
-                    <h3>
-                        No releases yet
-                    </h3>
+
+                <!-- =============================================
+                     JL SOLO
+                     ============================================= -->
+
+                <section
+                    class="music-section"
+                    id="jl-solo"
+                >
+
+                    <div class="section-heading">
+
+                        <span class="section-label">
+                            JL SOLO
+                        </span>
+
+                        <h2>
+                            JL
+                        </h2>
+
+                        <p>
+                            JL's individual music releases
+                            and current solo streaming focus.
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="music-grid"
+                        id="jl-solo-grid"
+                    >
+                    </div>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     AHOF × JL
+                     ============================================= -->
+
+                <section
+                    class="music-section"
+                    id="ahof-jl"
+                >
+
+                    <div class="section-heading">
+
+                        <span class="section-label">
+                            AHOF × JL
+                        </span>
+
+                        <h2>
+                            AHOF
+                        </h2>
+
+                        <p>
+                            AHOF releases featuring JL,
+                            arranged by era.
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="music-grid"
+                        id="ahof-jl-grid"
+                    >
+                    </div>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     OTHER RELEASES
+                     ============================================= -->
+
+                <section
+                    class="music-section"
+                    id="other-releases"
+                >
+
+                    <div class="section-heading">
+
+                        <span class="section-label">
+                            OTHER RELEASES
+                        </span>
+
+                        <h2>
+                            Other Releases
+                        </h2>
+
+                        <p>
+                            Selected OSTs and collaborations
+                            outside the main AHOF releases.
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="music-grid"
+                        id="other-releases-grid"
+                    >
+                    </div>
+
+                </section>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-inner">
+
+                <div>
+
+                    <strong>
+                        JLSPT
+                    </strong>
 
                     <p>
-                        ${message}
+                        JL Streaming Project Team
                     </p>
 
                 </div>
 
-            `;
 
-        }
+                <div class="footer-links">
 
+                    <a href="index.html">
+                        Home
+                    </a>
 
+                    <a href="video.html">
+                        Video
+                    </a>
 
-        /* =====================================
-           CHECK DATA
-        ====================================== */
+                    <a href="campaigns.html">
+                        Campaigns
+                    </a>
 
-        if (
-            typeof JLSPT_DATA === "undefined" ||
-            !Array.isArray(
-                JLSPT_DATA.music
-            )
-        ) {
+                    <a href="schedule.html">
+                        Schedule
+                    </a>
 
-            renderEmpty(
-                soloGrid,
-                "Music data is currently unavailable."
-            );
+                    <a href="guides.html">
+                        Guides
+                    </a>
 
-            renderEmpty(
-                ahofGrid,
-                "Music data is currently unavailable."
-            );
+                    <a href="corner.html">
+                        Corner
+                    </a>
 
-            renderEmpty(
-                otherGrid,
-                "Music data is currently unavailable."
-            );
+                </div>
 
-            return;
-
-        }
+            </div>
 
 
+            <div class="footer-bottom">
 
-        /* =====================================
-           FILTER MUSIC
-        ====================================== */
+                <span>
+                    JLSPT • JL Streaming Project Team
+                </span>
 
-        const soloMusic =
-            JLSPT_DATA.music.filter(
-                function (item) {
+                <span>
+                    Stream. Support. Stay connected.
+                </span>
 
-                    return item.type === "solo";
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================================
+         DATA
+         ========================================================= -->
+
+    <script src="data.js"></script>
+
+    <script src="menu.js"></script>
+
+
+
+    <!-- =========================================================
+         MUSIC SCRIPT
+         ========================================================= -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                if (
+                    typeof JLSPT_DATA === "undefined"
+                ) {
+                    return;
+                }
+
+
+                const music =
+                    JLSPT_DATA.music || [];
+
+
+
+                /*
+                 * =================================================
+                 * SPLIT MUSIC INTO SECTIONS
+                 * =================================================
+                 */
+
+                const solo =
+                    music.filter(
+                        function (item) {
+
+                            return item.section ===
+                                "JL Solo";
+
+                        }
+                    );
+
+
+                const ahof =
+                    music.filter(
+                        function (item) {
+
+                            return item.section ===
+                                "AHOF × JL";
+
+                        }
+                    );
+
+
+                const other =
+                    music.filter(
+                        function (item) {
+
+                            return item.section ===
+                                "Other Releases";
+
+                        }
+                    );
+
+
+
+                /*
+                 * =================================================
+                 * RENDER
+                 * =================================================
+                 */
+
+                renderMusic(
+                    solo,
+                    "jl-solo-grid"
+                );
+
+
+                renderMusic(
+                    ahof,
+                    "ahof-jl-grid"
+                );
+
+
+                renderMusic(
+                    other,
+                    "other-releases-grid"
+                );
+
+
+
+                /*
+                 * =================================================
+                 * MUSIC CARD
+                 * =================================================
+                 */
+
+                function renderMusic(
+                    items,
+                    containerId
+                ) {
+
+                    const container =
+                        document.getElementById(
+                            containerId
+                        );
+
+
+                    if (!container) {
+                        return;
+                    }
+
+
+                    if (!items.length) {
+
+                        container.innerHTML = `
+
+                            <div class="empty-state">
+
+                                <span class="empty-state-icon">
+                                    ♪
+                                </span>
+
+                                <h3>
+                                    No releases yet
+                                </h3>
+
+                                <p>
+                                    Music will appear here
+                                    when it is added to JLSPT.
+                                </p>
+
+                            </div>
+
+                        `;
+
+                        return;
+                    }
+
+
+                    container.innerHTML =
+                        items
+                            .map(
+                                function (item) {
+
+                                    return createMusicCard(
+                                        item
+                                    );
+
+                                }
+                            )
+                            .join("");
 
                 }
-            );
 
 
-        const ahofMusic =
-            JLSPT_DATA.music.filter(
-                function (item) {
 
-                    return (
-                        item.type === "group" &&
-                        item.category === "AHOF × JL"
+                /*
+                 * =================================================
+                 * CREATE MUSIC CARD
+                 * =================================================
+                 */
+
+                function createMusicCard(
+                    item
+                ) {
+
+                    const campaign =
+                        getCampaign(
+                            item.campaignId
+                        );
+
+
+                    const tracks =
+                        Array.isArray(
+                            item.tracks
+                        )
+                            ? item.tracks
+                            : [];
+
+
+                    const links =
+                        item.links || {};
+
+
+                    let trackMarkup = "";
+
+
+                    if (tracks.length) {
+
+                        trackMarkup = `
+
+                            <div class="release-tracks">
+
+                                <span class="track-label">
+                                    Featured track
+                                </span>
+
+                                ${tracks
+                                    .map(
+                                        function (track) {
+
+                                            return createTrack(
+                                                track
+                                            );
+
+                                        }
+                                    )
+                                    .join("")}
+
+                            </div>
+
+                        `;
+
+                    }
+
+
+                    const campaignMarkup =
+                        campaign
+                            ? `
+
+                                <div class="release-campaign">
+
+                                    <span class="campaign-dot"></span>
+
+                                    <span>
+                                        Current streaming focus
+                                    </span>
+
+                                    <a href="campaigns.html">
+                                        ${escapeHTML(
+                                            campaign.title
+                                        )}
+                                    </a>
+
+                                </div>
+
+                            `
+                            : "";
+
+
+                    return `
+
+                        <article
+                            class="music-card"
+                            data-music-id="${escapeHTML(
+                                item.id || ""
+                            )}"
+                        >
+
+                            <div class="music-card-top">
+
+                                <span class="release-type">
+                                    ${escapeHTML(
+                                        item.releaseType ||
+                                        "Release"
+                                    )}
+                                </span>
+
+                                ${
+                                    item.era
+                                        ? `
+                                            <span class="era-label">
+                                                ${escapeHTML(
+                                                    item.era
+                                                )}
+                                            </span>
+                                        `
+                                        : ""
+                                }
+
+                            </div>
+
+
+                            <div class="music-card-content">
+
+                                <h3>
+                                    ${escapeHTML(
+                                        item.title
+                                    )}
+                                </h3>
+
+
+                                <p class="music-artist">
+                                    ${escapeHTML(
+                                        item.artist || ""
+                                    )}
+                                </p>
+
+
+                                ${
+                                    item.releaseDate
+                                        ? `
+                                            <p class="release-date">
+                                                ${formatDate(
+                                                    item.releaseDate
+                                                )}
+                                            </p>
+                                        `
+                                        : ""
+                                }
+
+
+                                <p class="music-description">
+                                    ${escapeHTML(
+                                        item.description || ""
+                                    )}
+                                </p>
+
+
+                                ${trackMarkup}
+
+
+                                ${campaignMarkup}
+
+
+                                <div class="music-links">
+
+                                    ${
+                                        createLink(
+                                            links.spotify,
+                                            "Spotify"
+                                        )
+                                    }
+
+                                    ${
+                                        createLink(
+                                            links.appleMusic,
+                                            "Apple Music"
+                                        )
+                                    }
+
+                                    ${
+                                        createLink(
+                                            links.youtube,
+                                            "YouTube"
+                                        )
+                                    }
+
+                                    ${
+                                        createLink(
+                                            links.lyricVideo,
+                                            "Lyric Video"
+                                        )
+                                    }
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    `;
+
+                }
+
+
+
+                /*
+                 * =================================================
+                 * TRACK
+                 * =================================================
+                 */
+
+                function createTrack(
+                    track
+                ) {
+
+                    const links =
+                        track.links || {};
+
+
+                    return `
+
+                        <div class="track-item">
+
+                            <div>
+
+                                <strong>
+                                    ${escapeHTML(
+                                        track.title || ""
+                                    )}
+                                </strong>
+
+                                <span>
+                                    ${escapeHTML(
+                                        track.artist || ""
+                                    )}
+                                </span>
+
+                                ${
+                                    track.description
+                                        ? `
+                                            <small>
+                                                ${escapeHTML(
+                                                    track.description
+                                                )}
+                                            </small>
+                                        `
+                                        : ""
+                                }
+
+                            </div>
+
+
+                            <div class="track-links">
+
+                                ${
+                                    createLink(
+                                        links.spotify,
+                                        "Spotify"
+                                    )
+                                }
+
+                                ${
+                                    createLink(
+                                        links.appleMusic,
+                                        "Apple Music"
+                                    )
+                                }
+
+                                ${
+                                    createLink(
+                                        links.youtube,
+                                        "YouTube"
+                                    )
+                                }
+
+                            </div>
+
+                        </div>
+
+                    `;
+
+                }
+
+
+
+                /*
+                 * =================================================
+                 * LINK
+                 * =================================================
+                 */
+
+                function createLink(
+                    url,
+                    label
+                ) {
+
+                    if (!url) {
+                        return "";
+                    }
+
+
+                    return `
+
+                        <a
+                            href="${escapeAttribute(
+                                url
+                            )}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="platform-link"
+                        >
+                            ${escapeHTML(
+                                label
+                            )}
+                        </a>
+
+                    `;
+
+                }
+
+
+
+                /*
+                 * =================================================
+                 * CAMPAIGN
+                 * =================================================
+                 */
+
+                function getCampaign(
+                    id
+                ) {
+
+                    if (!id) {
+                        return null;
+                    }
+
+
+                    const campaigns =
+                        JLSPT_DATA.campaigns || [];
+
+
+                    return campaigns.find(
+                        function (campaign) {
+
+                            return campaign.id === id;
+
+                        }
+                    ) || null;
+
+                }
+
+
+
+                /*
+                 * =================================================
+                 * DATE
+                 * =================================================
+                 */
+
+                function formatDate(
+                    value
+                ) {
+
+                    if (!value) {
+                        return "";
+                    }
+
+
+                    const date =
+                        new Date(value);
+
+
+                    if (
+                        Number.isNaN(
+                            date.getTime()
+                        )
+                    ) {
+                        return value;
+                    }
+
+
+                    return date.toLocaleDateString(
+                        "en-US",
+                        {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric"
+                        }
                     );
 
                 }
-            );
 
 
-        const otherMusic =
-            JLSPT_DATA.music.filter(
-                function (item) {
 
-                    return item.type === "ost";
+                /*
+                 * =================================================
+                 * SECURITY HELPERS
+                 * =================================================
+                 */
+
+                function escapeHTML(
+                    value
+                ) {
+
+                    return String(
+                        value ?? ""
+                    )
+                        .replace(
+                            /&/g,
+                            "&amp;"
+                        )
+                        .replace(
+                            /</g,
+                            "&lt;"
+                        )
+                        .replace(
+                            />/g,
+                            "&gt;"
+                        )
+                        .replace(
+                            /"/g,
+                            "&quot;"
+                        )
+                        .replace(
+                            /'/g,
+                            "&#039;"
+                        );
 
                 }
-            );
 
 
+                function escapeAttribute(
+                    value
+                ) {
 
-        /* =====================================
-           RENDER JL SOLO
-        ====================================== */
-
-        soloGrid.innerHTML = "";
-
-
-        if (!soloMusic.length) {
-
-            renderEmpty(
-                soloGrid,
-                "No solo releases have been added yet."
-            );
-
-        } else {
-
-            soloMusic.forEach(
-                function (item) {
-
-                    soloGrid.appendChild(
-                        createMusicCard(item)
+                    return escapeHTML(
+                        value
                     );
 
                 }
-            );
 
-        }
+            }
+        );
 
-
-
-        /* =====================================
-           RENDER AHOF × JL
-        ====================================== */
-
-        ahofGrid.innerHTML = "";
-
-
-        if (!ahofMusic.length) {
-
-            renderEmpty(
-                ahofGrid,
-                "No AHOF × JL releases have been added yet."
-            );
-
-        } else {
-
-            ahofMusic.forEach(
-                function (item) {
-
-                    ahofGrid.appendChild(
-                        createMusicCard(item)
-                    );
-
-                }
-            );
-
-        }
-
-
-
-        /* =====================================
-           RENDER OTHER RELEASES
-        ====================================== */
-
-        otherGrid.innerHTML = "";
-
-
-        if (!otherMusic.length) {
-
-            renderEmpty(
-                otherGrid,
-                "No other JL releases have been added yet."
-            );
-
-        } else {
-
-            otherMusic.forEach(
-                function (item) {
-
-                    otherGrid.appendChild(
-                        createMusicCard(item)
-                    );
-
-                }
-            );
-
-        }
-
-    }
-
-);
-
-</script>
+    </script>
 
 
 </body>

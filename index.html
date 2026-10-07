@@ -517,4 +517,667 @@
                     </h2>
 
                     <p>
-                        What JLSPT
+                        What JLSPT is supporting right now.
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="current-focus"
+                    class="home-card-grid"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             JLSPT CORNER
+        ================================================== -->
+
+        <section class="home-section">
+
+            <div class="container">
+
+                <div class="home-section-header">
+
+                    <h2>
+                        JLSPT Corner
+                    </h2>
+
+                    <p>
+                        Official updates and announcements
+                        from JLSPT.
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="featured-corner"
+                    class="home-card-grid"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             STATIONHEAD
+        ================================================== -->
+
+        <section class="home-section">
+
+            <div class="container">
+
+                <article class="home-card station-card">
+
+                    <div class="station-copy">
+
+                        <span class="home-card-label">
+                            LISTEN TOGETHER
+                        </span>
+
+                        <h2>
+                            JLSPT Stationhead
+                        </h2>
+
+                        <p>
+                            Join the JLSPT Stationhead for
+                            listening activities and streaming
+                            sessions.
+                        </p>
+
+                        <div class="home-actions">
+
+                            <a
+                                class="home-btn home-btn-primary"
+                                href="https://app.stationhead.com/jlspteam"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Join Stationhead
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="station-icon"
+                        aria-hidden="true"
+                    >
+                        🎧
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             OVERVIEW
+        ================================================== -->
+
+        <section class="home-section">
+
+            <div class="container">
+
+                <div class="home-section-header">
+
+                    <h2>
+                        JLSPT
+                    </h2>
+
+                    <p>
+                        Stream. Support. Stay connected.
+                    </p>
+
+                </div>
+
+
+                <div class="overview-grid">
+
+
+                    <article class="home-card overview-card">
+
+                        <span class="home-card-label">
+                            MUSIC
+                        </span>
+
+                        <h3>
+                            Support JL & AHOF
+                        </h3>
+
+                        <p>
+                            Find JL solo releases, AHOF releases
+                            featuring JL, and other music.
+                        </p>
+
+                    </article>
+
+
+                    <article class="home-card overview-card">
+
+                        <span class="home-card-label">
+                            GUIDES
+                        </span>
+
+                        <h3>
+                            Stream with confidence
+                        </h3>
+
+                        <p>
+                            Learn the basics before joining
+                            streaming activities.
+                        </p>
+
+                    </article>
+
+
+                    <article class="home-card overview-card">
+
+                        <span class="home-card-label">
+                            COMMUNITY
+                        </span>
+
+                        <h3>
+                            Stay connected
+                        </h3>
+
+                        <p>
+                            Keep up with official updates and
+                            connect with fellow supporters.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-inner">
+
+                <span>
+                    JLSPT · JL Streaming Project Team
+                </span>
+
+                <span>
+                    Stream. Support. Stay connected.
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ==================================================
+         DATA + NAVIGATION
+    ================================================== -->
+
+    <script src="data.js"></script>
+    <script src="menu.js"></script>
+
+
+    <!-- ==================================================
+         HOME PAGE SCRIPT
+    ================================================== -->
+
+    <script>
+
+        (function () {
+
+            "use strict";
+
+
+            function getCampaignById(id) {
+
+                return JLSPT_DATA.campaigns.find(
+                    function (campaign) {
+                        return campaign.id === id;
+                    }
+                );
+
+            }
+
+
+            function getCornerPostById(id) {
+
+                return JLSPT_DATA.cornerPosts.find(
+                    function (post) {
+                        return post.id === id;
+                    }
+                );
+
+            }
+
+
+            function formatNumber(value) {
+
+                return new Intl.NumberFormat(
+                    "en-US"
+                ).format(value);
+
+            }
+
+
+            function getPercentage(current, goal) {
+
+                if (!goal || goal <= 0) {
+                    return 0;
+                }
+
+                return Math.min(
+                    100,
+                    Math.round(
+                        (current / goal) * 100
+                    )
+                );
+
+            }
+
+
+            function renderHero() {
+
+                const hero =
+                    JLSPT_DATA.home.hero;
+
+
+                const eyebrow =
+                    document.getElementById(
+                        "hero-eyebrow"
+                    );
+
+
+                const title =
+                    document.getElementById(
+                        "hero-title"
+                    );
+
+
+                const description =
+                    document.getElementById(
+                        "hero-description"
+                    );
+
+
+                if (eyebrow) {
+                    eyebrow.textContent =
+                        hero.eyebrow;
+                }
+
+
+                if (title) {
+                    title.textContent =
+                        hero.title;
+                }
+
+
+                if (description) {
+                    description.textContent =
+                        hero.description;
+                }
+
+            }
+
+
+            function renderCurrentFocus() {
+
+                const container =
+                    document.getElementById(
+                        "current-focus"
+                    );
+
+
+                if (!container) {
+                    return;
+                }
+
+
+                const campaign =
+                    getCampaignById(
+                        JLSPT_DATA.home
+                            .currentFocusCampaignId
+                    );
+
+
+                if (!campaign) {
+
+                    container.innerHTML = `
+
+                        <article class="home-card empty-home-card">
+
+                            <span class="home-card-label">
+                                CURRENT FOCUS
+                            </span>
+
+                            <h3>
+                                No active focus
+                            </h3>
+
+                            <p>
+                                There is currently no featured
+                                JLSPT campaign.
+                            </p>
+
+                        </article>
+
+                    `;
+
+                    return;
+
+                }
+
+
+                const percentage =
+                    getPercentage(
+                        campaign.current,
+                        campaign.goal
+                    );
+
+
+                container.innerHTML = `
+
+                    <article class="home-card campaign-card">
+
+                        <div class="campaign-top">
+
+                            <div class="campaign-tags">
+
+                                <span class="home-status">
+                                    ACTIVE
+                                </span>
+
+                                <span class="home-tag">
+                                    ${campaign.platform}
+                                </span>
+
+                                <span class="home-tag">
+                                    ${campaign.type}
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="campaign-artist">
+                            ${campaign.artist}
+                        </div>
+
+
+                        <h3>
+                            ${campaign.title}
+                        </h3>
+
+
+                        <p class="campaign-description">
+                            ${campaign.description}
+                        </p>
+
+
+                        <div class="home-progress">
+
+                            <div class="home-progress-meta">
+
+                                <span>
+                                    ${formatNumber(
+                                        campaign.current
+                                    )}
+                                    views
+                                </span>
+
+                                <strong>
+                                    ${percentage}%
+                                </strong>
+
+                            </div>
+
+
+                            <div class="home-progress-track">
+
+                                <div
+                                    class="home-progress-bar"
+                                    style="width: ${percentage}%"
+                                ></div>
+
+                            </div>
+
+
+                            <div class="home-goal">
+
+                                <span>
+                                    Current
+                                </span>
+
+                                <span>
+                                    Goal:
+                                    ${formatNumber(
+                                        campaign.goal
+                                    )}
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="home-actions">
+
+                            <a
+                                class="home-btn home-btn-primary"
+                                href="campaigns.html"
+                            >
+                                View Campaign
+                            </a>
+
+
+                            <a
+                                class="home-btn home-btn-secondary"
+                                href="${campaign.videoUrl}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Watch on YouTube
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                `;
+
+            }
+
+
+            function renderFeaturedCorner() {
+
+                const container =
+                    document.getElementById(
+                        "featured-corner"
+                    );
+
+
+                if (!container) {
+                    return;
+                }
+
+
+                const post =
+                    getCornerPostById(
+                        JLSPT_DATA.home
+                            .featuredCornerPostId
+                    );
+
+
+                if (!post) {
+
+                    container.innerHTML = `
+
+                        <article class="home-card empty-home-card">
+
+                            <span class="home-card-label">
+                                JLSPT CORNER
+                            </span>
+
+                            <h3>
+                                No featured update
+                            </h3>
+
+                            <p>
+                                Check JLSPT Corner for the
+                                latest official updates.
+                            </p>
+
+                        </article>
+
+                    `;
+
+                    return;
+
+                }
+
+
+                container.innerHTML = `
+
+                    <article class="home-card">
+
+                        <div class="corner-card-header">
+
+                            <div>
+
+                                <span class="home-card-label">
+                                    ${post.categoryLabel}
+                                </span>
+
+                                <h3>
+                                    ${post.title}
+                                </h3>
+
+                            </div>
+
+
+                            ${
+                                post.pinned
+                                    ? `
+                                        <span class="pinned-badge">
+                                            PINNED
+                                        </span>
+                                      `
+                                    : ""
+                            }
+
+                        </div>
+
+
+                        <div class="corner-meta">
+
+                            <span>
+                                ${post.author}
+                            </span>
+
+                            <span>
+                                ${post.date}
+                            </span>
+
+                        </div>
+
+
+                        <div class="corner-content">
+
+                            <p>
+                                ${post.content}
+                            </p>
+
+                        </div>
+
+
+                        <div class="corner-footer">
+
+                            <span>
+                                JLSPT Official
+                            </span>
+
+
+                            <a
+                                class="home-btn home-btn-secondary"
+                                href="corner.html"
+                            >
+                                View Corner
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                `;
+
+            }
+
+
+            function initHome() {
+
+                if (
+                    typeof JLSPT_DATA ===
+                    "undefined"
+                ) {
+                    return;
+                }
+
+
+                renderHero();
+
+                renderCurrentFocus();
+
+                renderFeaturedCorner();
+
+            }
+
+
+            if (
+                document.readyState ===
+                "loading"
+            ) {
+
+                document.addEventListener(
+                    "DOMContentLoaded",
+                    initHome
+                );
+
+            } else {
+
+                initHome();
+
+            }
+
+        })();
+
+    </script>
+
+
+</body>
+
+</html>

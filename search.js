@@ -1,171 +1,145 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     const searchInput = document.querySelector(".search-box input");
+    const searchBox = document.querySelector(".search-box");
 
-    if (!searchInput) {
+    if (!searchInput || !searchBox) {
         return;
     }
 
 
-    /* =========================
-       SEARCH DATA
-    ========================= */
-
     const searchData = [
-
         {
             title: "Music",
-            description: "JL and AHOF music resources, streaming links, and music projects.",
+            description: "JL and AHOF music resources.",
             keywords: "music jl ahof alon focus on you spotify songs streaming",
             url: "music.html"
         },
-
         {
             title: "Video",
-            description: "Official music videos, JL fancams, Hello on Muniverse, and video projects.",
-            keywords: "video youtube mv music video fancam hello muniverse alon",
+            description: "Music videos, fancams, and video projects.",
+            keywords: "video youtube mv music video fancam hello muniverse",
             url: "video.html"
         },
-
         {
             title: "Tracker",
-            description: "Follow current streaming progress, goals, and campaign targets.",
+            description: "Streaming progress and current goals.",
             keywords: "tracker progress goal views streaming alon 1m 1 million",
             url: "tracker.html"
         },
-
         {
             title: "Schedule",
-            description: "Check upcoming streaming activities, events, and organized projects.",
-            keywords: "schedule activities events listening streaming stationhead",
+            description: "Upcoming streaming activities and events.",
+            keywords: "schedule activities events streaming stationhead",
             url: "schedule.html"
         },
-
         {
             title: "Guides",
-            description: "Learn Spotify, YouTube, Stationhead, streaming basics, and troubleshooting.",
-            keywords: "guide spotify youtube stationhead tutorial help streaming basics faq",
+            description: "Spotify, YouTube, Stationhead, and streaming guides.",
+            keywords: "guides spotify youtube stationhead tutorial help faq",
             url: "guides.html"
         },
-
         {
             title: "Milestones",
-            description: "Celebrate JLSPT achievements and streaming milestones.",
-            keywords: "milestone achievement 100k 500k 750k 1m 1 million alon",
+            description: "JLSPT streaming achievements and goals.",
+            keywords: "milestones achievement 100k 500k 750k 1m alon",
             url: "milestones.html"
         },
-
         {
             title: "Updates",
-            description: "Latest JLSPT announcements, campaign updates, reminders, and collaborations.",
+            description: "JLSPT announcements and campaign updates.",
             keywords: "updates news announcement campaign collaboration reminder",
             url: "updates.html"
         },
-
         {
             title: "ALON",
-            description: "JL's solo music project and current streaming campaign.",
+            description: "JL's solo music and streaming campaign.",
             keywords: "alon jl solo song mv music youtube views streaming",
-            url: "tracker.html"
+            url: "music.html"
         },
-
         {
             title: "Focus on You",
-            description: "JL solo music resources and streaming information.",
+            description: "JL solo music resources.",
             keywords: "focus on you jl solo song music streaming",
             url: "music.html"
         },
-
         {
             title: "Stationhead",
-            description: "JLSPT Stationhead listening and streaming resources.",
-            keywords: "stationhead listening party stream jlsp jlspteam",
+            description: "JLSPT Stationhead listening resources.",
+            keywords: "stationhead listening stream jlsp jlspteam",
             url: "music.html"
         }
-
     ];
 
 
     /* =========================
-       CREATE RESULTS AREA
+       CREATE RESULTS
     ========================= */
 
-    const searchBox = document.querySelector(".search-box");
+    const results = document.createElement("div");
 
-    const resultsContainer = document.createElement("div");
+    results.className = "search-results";
 
-    resultsContainer.className = "search-results";
-
-    searchBox.appendChild(resultsContainer);
+    searchBox.appendChild(results);
 
 
     /* =========================
-       SEARCH FUNCTION
+       SEARCH
     ========================= */
 
-    searchInput.addEventListener("input", function () {
+    function performSearch() {
 
         const query = searchInput.value
             .toLowerCase()
             .trim();
 
+        results.innerHTML = "";
 
-        resultsContainer.innerHTML = "";
 
+        if (query === "") {
 
-        if (!query) {
-
-            resultsContainer.classList.remove("show");
+            results.classList.remove("show");
 
             return;
-
         }
 
 
-        const results = searchData.filter(function (item) {
+        const matches = searchData.filter(function (item) {
 
-            return (
-                item.title.toLowerCase().includes(query) ||
-                item.description.toLowerCase().includes(query) ||
-                item.keywords.toLowerCase().includes(query)
-            );
+            const searchableText = (
+                item.title + " " +
+                item.description + " " +
+                item.keywords
+            ).toLowerCase();
+
+            return searchableText.includes(query);
 
         });
 
 
-        /* =========================
-           NO RESULTS
-        ========================= */
+        if (matches.length === 0) {
 
-        if (results.length === 0) {
-
-            resultsContainer.innerHTML = `
+            results.innerHTML = `
                 <div class="search-no-results">
-                    No JLSPT results found.
+                    No JLSPT results found for "<strong>${query}</strong>".
                 </div>
             `;
 
-            resultsContainer.classList.add("show");
+            results.classList.add("show");
 
             return;
-
         }
 
 
-        /* =========================
-           DISPLAY RESULTS
-        ========================= */
+        matches.slice(0, 6).forEach(function (item) {
 
-        results.slice(0, 6).forEach(function (item) {
+            const link = document.createElement("a");
 
-            const resultLink = document.createElement("a");
+            link.href = item.url;
 
-            resultLink.href = item.url;
+            link.className = "search-result";
 
-            resultLink.className = "search-result";
-
-
-            resultLink.innerHTML = `
+            link.innerHTML = `
                 <div>
                     <strong>${item.title}</strong>
                     <span>${item.description}</span>
@@ -174,29 +148,63 @@ document.addEventListener("DOMContentLoaded", function () {
                 <b>→</b>
             `;
 
-
-            resultsContainer.appendChild(resultLink);
+            results.appendChild(link);
 
         });
 
 
-        resultsContainer.classList.add("show");
+        results.classList.add("show");
+    }
 
-    });
+
+    /* =========================
+       LIVE SEARCH
+    ========================= */
+
+    searchInput.addEventListener(
+        "input",
+        performSearch
+    );
+
+
+    /* =========================
+       ENTER KEY
+    ========================= */
+
+    searchInput.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (event.key === "Enter") {
+
+                const firstResult =
+                    results.querySelector(".search-result");
+
+                if (firstResult) {
+                    window.location.href = firstResult.href;
+                }
+
+            }
+
+        }
+    );
 
 
     /* =========================
        CLOSE RESULTS
     ========================= */
 
-    document.addEventListener("click", function (event) {
+    document.addEventListener(
+        "click",
+        function (event) {
 
-        if (!searchBox.contains(event.target)) {
+            if (!searchBox.contains(event.target)) {
 
-            resultsContainer.classList.remove("show");
+                results.classList.remove("show");
+
+            }
 
         }
-
-    });
+    );
 
 });

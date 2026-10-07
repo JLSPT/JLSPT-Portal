@@ -621,65 +621,92 @@
 <script src="menu.js"></script>
 <script src="search.js"></script>
 
+
 <script>
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const campaign = JLSPT_DATA.currentCampaign;
+    const campaign =
+        getCurrentCampaign();
 
-    const current = campaign.current;
-    const goal = campaign.goal;
-
-    const percentage = Math.min(
-        (current / goal) * 100,
-        100
-    );
-
-    const remaining = Math.max(
-        goal - current,
-        0
-    );
+    const stats =
+        getCampaignStats();
 
 
-    function formatNumber(number) {
-        return number.toLocaleString("en-US");
+    if (!campaign || !stats) {
+        return;
     }
 
 
-    document.getElementById("home-campaign-title").textContent =
-        campaign.title;
+    /*
+     * CURRENT CAMPAIGN
+     */
+
+    setText(
+        "home-campaign-title",
+        campaign.title
+    );
 
 
-    document.getElementById("home-campaign-release").textContent =
-        campaign.artist + " · " + campaign.release;
+    setText(
+        "home-campaign-release",
+        campaign.artist +
+        " · " +
+        campaign.release
+    );
 
 
-    document.getElementById("home-campaign-goal").textContent =
-        formatNumber(goal) + " Views";
+    setText(
+        "home-campaign-goal",
+        formatNumber(stats.goal) +
+        " Views"
+    );
 
 
-    document.getElementById("home-current").textContent =
-        formatNumber(current) + " views";
+    /*
+     * PROGRESS
+     */
+
+    setText(
+        "home-current",
+        formatNumber(stats.current) +
+        " views"
+    );
 
 
-    document.getElementById("home-goal").textContent =
-        formatNumber(goal);
+    setText(
+        "home-goal",
+        formatNumber(stats.goal)
+    );
 
 
-    document.getElementById("home-progress").style.width =
-        percentage.toFixed(1) + "%";
+    setProgressBar(
+        document.getElementById("home-progress"),
+        stats.percentage
+    );
 
 
-    document.getElementById("home-remaining").textContent =
-        formatNumber(remaining) + " views to go";
+    setText(
+        "home-remaining",
+        formatNumber(stats.remaining) +
+        " views to go"
+    );
 
 
-    document.getElementById("home-watch").href =
-        campaign.videoUrl;
+    /*
+     * WATCH BUTTONS
+     */
+
+    setLink(
+        "home-watch",
+        campaign.videoUrl
+    );
 
 
-    document.getElementById("final-watch").href =
-        campaign.videoUrl;
+    setLink(
+        "final-watch",
+        campaign.videoUrl
+    );
 
 });
 

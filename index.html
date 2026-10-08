@@ -6,31 +6,56 @@
     <meta name="theme-color" content="#941c20">
 
     <title>JLSPT | JL Streaming Project Team</title>
-    <meta name="description" content="Your home for music, official videos, streaming campaigns, guides, and community updates.">
+    <meta name="description" content="Explore music, official videos, streaming campaigns, guides, and community updates in one streaming portal.">
 
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* Circular logo without an outer border or glow */
-        .site-logo {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
+        /* HOME PAGE SPACING */
+        .hero {
+            padding-block: clamp(38px, 5vw, 64px);
         }
 
-        .site-logo-image {
-            display: block;
-            width: 48px;
-            height: 48px;
-            flex: 0 0 48px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: none;
-            box-shadow: none;
+        .hero-content {
+            max-width: 760px;
         }
 
-        /* Compact featured campaign */
+        .hero h1 {
+            margin-bottom: 12px;
+            line-height: 1.12;
+            text-wrap: balance;
+        }
+
+        .hero-description {
+            max-width: 600px;
+            margin-bottom: 0;
+        }
+
+        .hero-actions {
+            margin-top: 22px;
+        }
+
+        .section {
+            padding-block: 36px;
+        }
+
+        .section-tight {
+            padding-block: 22px;
+        }
+
+        .section + .section {
+            padding-top: 12px;
+        }
+
+        .section-heading {
+            margin-bottom: 20px;
+        }
+
+        .live-card {
+            padding: 20px 24px;
+        }
+
+        /* FEATURED CAMPAIGN */
         .home-featured-campaign {
             display: block;
             padding: clamp(20px, 3vw, 30px);
@@ -42,7 +67,7 @@
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 12px;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
 
         .home-campaign-body h3 {
@@ -62,8 +87,8 @@
             align-items: center;
             justify-content: space-between;
             gap: 16px;
-            margin-top: 22px;
-            padding-top: 16px;
+            margin-top: 20px;
+            padding-top: 15px;
             border-top: 1px solid rgba(255, 248, 240, 0.12);
             color: var(--gold, #f5b51b);
             font-weight: 700;
@@ -72,7 +97,7 @@
 
         .home-campaign-link span:last-child {
             font-size: 1.3rem;
-            transition: transform 0.2s ease;
+            transition: transform 180ms ease;
         }
 
         .home-campaign-link:hover span:last-child {
@@ -85,59 +110,145 @@
             border-radius: 4px;
         }
 
-        /* Footer social links */
-        .social-links {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+        /* DISCOVERY CARDS */
+        .next-card {
+            min-width: 0;
+            gap: 14px;
         }
 
-        .social-links a {
+        .next-card-icon {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            border: 1px solid rgba(255, 248, 240, 0.18);
-            border-radius: 50%;
-            color: var(--text, #fff8f0);
-            background: rgba(255, 248, 240, 0.04);
-            text-decoration: none;
-            font-size: 17px;
-            font-weight: 700;
-            transition: transform 0.2s ease, color 0.2s ease, background 0.2s ease;
+            flex: 0 0 42px;
+            width: 42px;
+            height: 42px;
+            border-radius: 13px;
+            background: rgba(245, 181, 27, 0.10);
+            color: var(--gold, #f5b51b);
+            font-size: 1.35rem;
         }
 
-        .social-links a:hover {
-            transform: translateY(-3px);
+        .next-card strong {
+            flex: 1;
+            min-width: 0;
+            line-height: 1.4;
+        }
+
+        .next-card-arrow {
+            color: var(--gold, #f5b51b);
+            font-size: 1.1rem;
+        }
+
+        /* RED CORNER */
+        .red-feature-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .red-feature-content {
+            max-width: 760px;
+        }
+
+        .official-badge {
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+        }
+
+        .card-actions {
+            margin-top: 20px;
+        }
+
+        .btn-light {
+            background: var(--text, #fff8f0);
             color: var(--red-deep, #641419);
-            background: var(--gold, #f5b51b);
+            border: 1px solid rgba(255, 248, 240, 0.5);
         }
 
-        .social-links a:focus-visible {
+        .btn-light:hover {
+            background: #ffffff;
+            color: var(--red, #941c20);
+        }
+
+        /* QUICK ACCESS */
+        .quick-card {
+            min-width: 0;
+        }
+
+        .quick-card > div {
+            min-width: 0;
+            flex: 1;
+        }
+
+        .quick-card strong,
+        .quick-card span {
+            overflow-wrap: anywhere;
+        }
+
+        /* ACCESSIBILITY */
+        .site-logo:focus-visible,
+        .social-links a:focus-visible,
+        .next-card:focus-visible,
+        .quick-card:focus-visible {
             outline: 2px solid var(--gold, #f5b51b);
             outline-offset: 4px;
         }
 
-        .footer-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 18px;
+        /* TABLET */
+        @media (max-width: 900px) {
+            .hero {
+                padding-block: 42px;
+            }
+
+            .section {
+                padding-block: 30px;
+            }
+
+            .section-tight {
+                padding-block: 18px;
+            }
+
+            .section + .section {
+                padding-top: 10px;
+            }
         }
 
-        .footer-message {
-            margin: 0;
-        }
+        /* MOBILE */
+        @media (max-width: 620px) {
+            .hero {
+                padding-block: 36px 40px;
+            }
 
-        @media (max-width: 600px) {
-            .site-logo-image {
-                width: 42px;
-                height: 42px;
-                flex-basis: 42px;
+            .hero h1 {
+                max-width: 560px;
+            }
+
+            .hero-actions {
+                margin-top: 18px;
+                gap: 10px;
+            }
+
+            .section {
+                padding-block: 26px;
+            }
+
+            .section-tight {
+                padding-block: 15px;
+            }
+
+            .section + .section {
+                padding-top: 8px;
+            }
+
+            .section-heading {
+                margin-bottom: 16px;
+                gap: 12px;
+            }
+
+            .live-card {
+                padding: 18px;
+                gap: 16px;
             }
 
             .home-featured-campaign {
@@ -146,39 +257,46 @@
 
             .home-campaign-topline {
                 align-items: flex-start;
-                margin-bottom: 16px;
+                margin-bottom: 15px;
             }
 
             .home-campaign-link {
-                margin-top: 18px;
+                margin-top: 17px;
             }
 
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
+            .next-grid,
+            .quick-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .next-card {
+                padding: 15px;
+            }
+
+            .quick-card {
+                padding: 15px;
+            }
+
+            .card-actions {
+                margin-top: 16px;
             }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .home-campaign-link span:last-child,
-            .social-links a {
+            .home-campaign-link span:last-child {
                 transition: none;
             }
         }
     </style>
 </head>
+
 <body>
 
     <header class="site-header">
         <div class="nav-inner">
             <a href="index.html" class="site-logo" aria-label="JLSPT Home">
-                <img
-                    src="assets/JLSPT_circular_logo.png"
-                    alt=""
-                    class="site-logo-image"
-                    width="48"
-                    height="48"
-                >
+                <span class="logo-mark" aria-hidden="true">JL</span>
                 <span class="logo-text">
                     <strong>JLSPT</strong>
                     <small>JL Streaming Project Team</small>
@@ -196,15 +314,18 @@
             <div class="container">
                 <div class="hero-content">
                     <p class="eyebrow">THE OFFICIAL STREAMING PORTAL</p>
+
                     <h1>Stream with purpose.</h1>
+
                     <p class="hero-description">
-                        Music, videos, streaming missions, and everything you need to support through streaming.
+                        Music, official videos, streaming missions, and helpful resources, all in one place.
                     </p>
 
                     <div class="hero-actions">
                         <a href="music-video.html" class="btn btn-primary">
                             Explore Music &amp; Video
                         </a>
+
                         <a href="guides.html" class="btn btn-secondary">
                             Streaming Guides
                         </a>
@@ -231,10 +352,6 @@
                         </div>
 
                         <p>Tune in and stream along with the community.</p>
-
-                        <p class="data-note">
-                            The station may pause during official collaboration streams on other stations.
-                        </p>
                     </div>
 
                     <a
@@ -368,37 +485,45 @@
                 <div class="quick-grid">
                     <a href="music-video.html" class="quick-card">
                         <span class="quick-card-icon" aria-hidden="true">♪</span>
+
                         <div>
                             <strong>Music &amp; Video</strong>
                             <span>Releases and official content</span>
                         </div>
+
                         <span class="quick-card-arrow" aria-hidden="true">→</span>
                     </a>
 
                     <a href="campaigns.html" class="quick-card">
                         <span class="quick-card-icon" aria-hidden="true">◉</span>
+
                         <div>
                             <strong>Campaigns</strong>
                             <span>Streaming missions and goals</span>
                         </div>
+
                         <span class="quick-card-arrow" aria-hidden="true">→</span>
                     </a>
 
                     <a href="guides.html" class="quick-card">
                         <span class="quick-card-icon" aria-hidden="true">?</span>
+
                         <div>
                             <strong>Guides</strong>
                             <span>Streaming tips and help</span>
                         </div>
+
                         <span class="quick-card-arrow" aria-hidden="true">→</span>
                     </a>
 
                     <a href="my-profile.html" class="quick-card">
                         <span class="quick-card-icon" aria-hidden="true">☆</span>
+
                         <div>
                             <strong>My Profile</strong>
                             <span>Your personal activity</span>
                         </div>
+
                         <span class="quick-card-arrow" aria-hidden="true">→</span>
                     </a>
                 </div>
@@ -411,16 +536,35 @@
     <footer class="site-footer">
         <div class="container">
             <div class="footer-content">
-                <p class="footer-message">For JL, with love from Starflares. ❤️</p>
+                <p class="footer-message">
+                    For JL, with love from Starflares. ❤️
+                </p>
 
-                <nav class="social-links" aria-label="Official social media links">
-                    <a href="https://x.com/JLSPTeam" target="_blank" rel="noopener noreferrer" aria-label="X">𝕏</a>
-                    <a href="https://facebook.com/JLSPTeam1" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
-                    <a href="https://instagram.com/JLSPTeam1" target="_blank" rel="noopener noreferrer" aria-label="Instagram">◎</a>
-                    <a href="https://tiktok.com/@JLSPTeam" target="_blank" rel="noopener noreferrer" aria-label="TikTok">♪</a>
-                    <a href="https://youtube.com/@JLSPTeam" target="_blank" rel="noopener noreferrer" aria-label="YouTube">▶</a>
-                    <a href="https://stationhead.com/JLSPTeam" target="_blank" rel="noopener noreferrer" aria-label="Stationhead">♫</a>
-                </nav>
+                <div class="social-links" aria-label="JLSPT social media">
+                    <a href="https://x.com/JLSPTeam"
+                       target="_blank" rel="noopener noreferrer"
+                       aria-label="X">𝕏</a>
+
+                    <a href="https://facebook.com/JLSPTeam1"
+                       target="_blank" rel="noopener noreferrer"
+                       aria-label="Facebook">f</a>
+
+                    <a href="https://instagram.com/JLSPTeam1"
+                       target="_blank" rel="noopener noreferrer"
+                       aria-label="Instagram">◎</a>
+
+                    <a href="https://tiktok.com/@JLSPTeam"
+                       target="_blank" rel="noopener noreferrer"
+                       aria-label="TikTok">♪</a>
+
+                    <a href="https://youtube.com/@JLSPTeam"
+                       target="_blank" rel="noopener noreferrer"
+                       aria-label="YouTube">▶</a>
+
+                    <a href="https://stationhead.com/JLSPTeam"
+                       target="_blank" rel="noopener noreferrer"
+                       aria-label="Stationhead">♫</a>
+                </div>
             </div>
         </div>
     </footer>

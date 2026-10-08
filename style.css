@@ -678,7 +678,7 @@ p {
 .live-card p {
     margin-bottom: 0;
     color: var(--muted);
-    font-size: 13px;
+    font-size: 17px;
 }
 
 .live-status {

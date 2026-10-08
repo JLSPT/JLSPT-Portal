@@ -1,650 +1,168 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#941c20">
     <title>My Profile | JLSPT</title>
-
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+    <meta name="description" content="Your personal JLSPT streaming dashboard and saved resources.">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- =========================
-         SITE NAVIGATION
-    ========================== -->
+<header class="site-header">
+    <div class="nav-inner">
+        <a href="index.html" class="site-logo" aria-label="JLSPT Home">
+            <span class="logo-mark" aria-hidden="true">JL</span>
+            <span class="logo-text">
+                <strong>JLSPT</strong>
+                <small>JL Streaming Project Team</small>
+            </span>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation"></nav>
+    </div>
+</header>
 
-    <header class="site-header">
-        <nav class="site-nav">
-            <div class="nav-inner">
+<main>
+    <section class="page-hero">
+        <div class="container">
+            <p class="eyebrow">YOUR SPACE</p>
+            <h1>My Profile</h1>
+            <p>Your streaming corner, all in one place.</p>
+        </div>
+    </section>
 
-                <a
-                    class="site-logo"
-                    href="index.html"
-                    aria-label="JLSPT Home"
-                >
-                    JLSPT
+    <section class="section">
+        <div class="container">
+            <article class="profile-header-card">
+                <div class="profile-avatar" aria-hidden="true">★</div>
+                <div class="profile-intro">
+                    <span class="category-badge">STARFLARE</span>
+                    <h2>Welcome, Starflare!</h2>
+                    <p>Your personal dashboard is getting ready.</p>
+                </div>
+                <span class="status-badge status-upcoming">GUEST PREVIEW</span>
+            </article>
+        </div>
+    </section>
+
+    <section class="section section-tight">
+        <div class="container">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR DASHBOARD</p>
+                    <h2>At a Glance</h2>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <article class="stat-card">
+                    <span class="stat-icon" aria-hidden="true">♫</span>
+                    <strong>—</strong>
+                    <span>Saved Releases</span>
+                </article>
+
+                <article class="stat-card">
+                    <span class="stat-icon" aria-hidden="true">▶</span>
+                    <strong>—</strong>
+                    <span>Campaigns Followed</span>
+                </article>
+
+                <article class="stat-card">
+                    <span class="stat-icon" aria-hidden="true">✦</span>
+                    <strong>—</strong>
+                    <span>Achievements</span>
+                </article>
+            </div>
+
+            <p class="muted-note" style="margin-top: 14px;">
+                Personal stats will appear after member accounts are connected.
+            </p>
+        </div>
+    </section>
+
+    <section class="section section-tight">
+        <div class="container">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR SHORTCUTS</p>
+                    <h2>Quick Access</h2>
+                </div>
+            </div>
+
+            <div class="quick-grid">
+                <a class="quick-card" href="music-video.html">
+                    <span class="quick-card-icon" aria-hidden="true">♫</span>
+                    <div>
+                        <h3>Music &amp; Video</h3>
+                        <p>Explore releases</p>
+                    </div>
                 </a>
 
-                <div class="nav-links"></div>
-
-            </div>
-        </nav>
-    </header>
-
-
-    <!-- =========================
-         MAIN CONTENT
-    ========================== -->
-
-    <main>
-
-        <!-- PAGE HERO -->
-
-        <section class="page-hero">
-            <div class="container">
-
-                <span class="eyebrow">
-                    STARFLARE AREA
-                </span>
-
-                <h1>
-                    My Profile
-                </h1>
-
-                <p>
-                    Your personal JLSPT streaming profile,
-                    participation history, and achievements.
-                </p>
-
-            </div>
-        </section>
-
-
-        <!-- PROFILE ACCESS -->
-
-        <section class="section">
-            <div class="container">
-
-                <div class="login-card">
-
-                    <div class="login-card-content">
-
-                        <span class="status-badge">
-                            MEMBER ACCESS
-                        </span>
-
-                        <h2>
-                            Welcome, Starflare!
-                        </h2>
-
-                        <p>
-                            Sign in to view your streaming
-                            participation, missions, badges,
-                            and activity history.
-                        </p>
-
-                    </div>
-
-                    <button
-                        class="btn btn-primary"
-                        type="button"
-                        disabled
-                    >
-                        Login Coming Soon
-                    </button>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- PROFILE OVERVIEW -->
-
-        <section class="section section-muted">
-            <div class="container">
-
-                <div class="section-heading">
-
+                <a class="quick-card" href="campaigns.html">
+                    <span class="quick-card-icon" aria-hidden="true">◎</span>
                     <div>
-                        <span class="eyebrow">
-                            YOUR PROFILE
-                        </span>
-
-                        <h2>
-                            Starflare Profile
-                        </h2>
+                        <h3>Campaigns</h3>
+                        <p>Follow streaming missions</p>
                     </div>
+                </a>
 
-                </div>
-
-
-                <div class="dashboard-grid">
-
-                    <!-- PROFILE -->
-
-                    <article class="dashboard-card">
-
-                        <div class="dashboard-card-icon">
-                            🌟
-                        </div>
-
-                        <span class="card-label">
-                            PROFILE
-                        </span>
-
-                        <h3>
-                            Starflare
-                        </h3>
-
-                        <p>
-                            Your JLSPT member profile will
-                            appear here after signing in.
-                        </p>
-
-                        <div class="card-meta">
-                            <span>
-                                Display Name
-                            </span>
-
-                            <strong>
-                                Not signed in
-                            </strong>
-                        </div>
-
-                        <div class="card-meta">
-                            <span>
-                                Joined
-                            </span>
-
-                            <strong>
-                                —
-                            </strong>
-                        </div>
-
-                    </article>
-
-
-                    <!-- PARTICIPATION -->
-
-                    <article class="dashboard-card">
-
-                        <div class="dashboard-card-icon">
-                            🎧
-                        </div>
-
-                        <span class="card-label">
-                            PARTICIPATION
-                        </span>
-
-                        <h3>
-                            Streaming Activity
-                        </h3>
-
-                        <p>
-                            Your participation in JLSPT
-                            streaming activities will be
-                            recorded here.
-                        </p>
-
-                        <div class="stat-grid">
-
-                            <div class="stat-item">
-                                <strong>0</strong>
-                                <span>Campaigns</span>
-                            </div>
-
-                            <div class="stat-item">
-                                <strong>0</strong>
-                                <span>Missions</span>
-                            </div>
-
-                            <div class="stat-item">
-                                <strong>0</strong>
-                                <span>Sessions</span>
-                            </div>
-
-                            <div class="stat-item">
-                                <strong>0</strong>
-                                <span>Milestones</span>
-                            </div>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- CAMPAIGNS & MISSIONS -->
-
-        <section class="section">
-            <div class="container">
-
-                <div class="section-heading">
-
+                <a class="quick-card" href="guides.html">
+                    <span class="quick-card-icon" aria-hidden="true">▤</span>
                     <div>
-                        <span class="eyebrow">
-                            STREAMING HISTORY
-                        </span>
-
-                        <h2>
-                            Campaigns & Missions
-                        </h2>
-
-                        <p>
-                            Keep track of the JLSPT campaigns
-                            and streaming missions you've
-                            participated in.
-                        </p>
+                        <h3>Guides</h3>
+                        <p>Find streaming tips</p>
                     </div>
-
-                </div>
-
-
-                <div class="card-grid">
-
-                    <article class="card">
-
-                        <span class="card-label">
-                            CAMPAIGNS
-                        </span>
-
-                        <h3>
-                            Your Campaigns
-                        </h3>
-
-                        <p>
-                            Completed and active streaming
-                            campaigns will appear here.
-                        </p>
-
-                        <div class="empty-state">
-                            <span class="empty-state-icon">
-                                🔥
-                            </span>
-
-                            <strong>
-                                No campaign activity yet
-                            </strong>
-
-                            <p>
-                                Your participation will
-                                appear here after signing in.
-                            </p>
-                        </div>
-
-                    </article>
-
-
-                    <article class="card">
-
-                        <span class="card-label">
-                            MISSIONS
-                        </span>
-
-                        <h3>
-                            Your Missions
-                        </h3>
-
-                        <p>
-                            Streaming missions completed
-                            through JLSPT campaigns.
-                        </p>
-
-                        <div class="empty-state">
-                            <span class="empty-state-icon">
-                                🎯
-                            </span>
-
-                            <strong>
-                                No missions completed yet
-                            </strong>
-
-                            <p>
-                                Completed missions will be
-                                recorded here.
-                            </p>
-                        </div>
-
-                    </article>
-
-                </div>
-
+                </a>
             </div>
-        </section>
-
-
-        <!-- BADGES -->
-
-        <section class="section section-muted">
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div>
-                        <span class="eyebrow">
-                            ACHIEVEMENTS
-                        </span>
-
-                        <h2>
-                            Badges
-                        </h2>
-
-                        <p>
-                            Earn recognition for meaningful
-                            participation in JLSPT streaming
-                            activities.
-                        </p>
-                    </div>
-
-                </div>
-
-
-                <div class="badge-grid">
-
-                    <article class="badge-card">
-
-                        <div class="badge-icon">
-                            🏁
-                        </div>
-
-                        <div>
-                            <span class="badge-status">
-                                LOCKED
-                            </span>
-
-                            <h3>
-                                First Stream
-                            </h3>
-
-                            <p>
-                                Complete your first recorded
-                                JLSPT streaming activity.
-                            </p>
-                        </div>
-
-                    </article>
-
-
-                    <article class="badge-card">
-
-                        <div class="badge-icon">
-                            🎧
-                        </div>
-
-                        <div>
-                            <span class="badge-status">
-                                LOCKED
-                            </span>
-
-                            <h3>
-                                Streaming Supporter
-                            </h3>
-
-                            <p>
-                                Participate consistently in
-                                JLSPT streaming activities.
-                            </p>
-                        </div>
-
-                    </article>
-
-
-                    <article class="badge-card">
-
-                        <div class="badge-icon">
-                            📺
-                        </div>
-
-                        <div>
-                            <span class="badge-status">
-                                LOCKED
-                            </span>
-
-                            <h3>
-                                Video Mission
-                            </h3>
-
-                            <p>
-                                Complete a qualifying JLSPT
-                                video streaming mission.
-                            </p>
-                        </div>
-
-                    </article>
-
-
-                    <article class="badge-card">
-
-                        <div class="badge-icon">
-                            🔥
-                        </div>
-
-                        <div>
-                            <span class="badge-status">
-                                LOCKED
-                            </span>
-
-                            <h3>
-                                Campaign Supporter
-                            </h3>
-
-                            <p>
-                                Support a JLSPT streaming
-                                campaign.
-                            </p>
-                        </div>
-
-                    </article>
-
-
-                    <article class="badge-card">
-
-                        <div class="badge-icon">
-                            🏆
-                        </div>
-
-                        <div>
-                            <span class="badge-status">
-                                LOCKED
-                            </span>
-
-                            <h3>
-                                Campaign Veteran
-                            </h3>
-
-                            <p>
-                                Participate across multiple
-                                JLSPT campaigns.
-                            </p>
-                        </div>
-
-                    </article>
-
-
-                    <article class="badge-card">
-
-                        <div class="badge-icon">
-                            ⭐
-                        </div>
-
-                        <div>
-                            <span class="badge-status">
-                                LOCKED
-                            </span>
-
-                            <h3>
-                                ALON 1M Supporter
-                            </h3>
-
-                            <p>
-                                Support the ALON 1M streaming
-                                milestone.
-                            </p>
-                        </div>
-
-                    </article>
-
-
-                    <article class="badge-card">
-
-                        <div class="badge-icon">
-                            💬
-                        </div>
-
-                        <div>
-                            <span class="badge-status">
-                                LOCKED
-                            </span>
-
-                            <h3>
-                                Community Helper
-                            </h3>
-
-                            <p>
-                                Make meaningful contributions
-                                to the JLSPT community.
-                            </p>
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- ACTIVITY HISTORY -->
-
-        <section class="section">
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div>
-                        <span class="eyebrow">
-                            ACTIVITY
-                        </span>
-
-                        <h2>
-                            Activity History
-                        </h2>
-
-                        <p>
-                            Your recorded JLSPT streaming
-                            activity will appear here.
-                        </p>
-                    </div>
-
-                </div>
-
-
-                <div class="empty-state large">
-
-                    <span class="empty-state-icon">
-                        📜
-                    </span>
-
-                    <h3>
-                        No activity yet
-                    </h3>
-
-                    <p>
-                        Once member accounts and participation
-                        tracking are connected, your streaming
-                        history will appear here.
-                    </p>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- PRIVACY / FUTURE FEATURES -->
-
-        <section class="section section-muted">
-            <div class="container">
-
-                <div class="card info-card">
-
-                    <span class="card-label">
-                        YOUR DATA
-                    </span>
-
-                    <h2>
-                        Your JLSPT Activity
-                    </h2>
-
-                    <p>
-                        Your profile is designed to keep track
-                        of your own JLSPT streaming participation.
-                        Future account features will allow you
-                        to manage your profile and preferences.
-                    </p>
-
-                    <p>
-                        Participation data will be handled
-                        through the JLSPT member system once
-                        account functionality is available.
-                    </p>
-
-                </div>
-
-            </div>
-        </section>
-
-    </main>
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer class="site-footer">
-        <div class="container">
-
-            <div class="footer-inner">
-
-                <div>
-                    <strong>
-                        JLSPT
-                    </strong>
-
-                    <p>
-                        JL Streaming Project Team
-                    </p>
-                </div>
-
-                <p>
-                    Built for Starflares supporting JL
-                    through streaming.
-                </p>
-
-            </div>
-
         </div>
-    </footer>
+    </section>
 
+    <section class="section section-tight">
+        <div class="container">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">SAVE FOR LATER</p>
+                    <h2>My Saved Content</h2>
+                </div>
+            </div>
 
-    <!-- =========================
-         NAVIGATION SCRIPT
-    ========================== -->
+            <div class="empty-state">
+                <div class="card-icon" aria-hidden="true">♡</div>
+                <h3>Your collection starts here</h3>
+                <p>Saving releases and guides will be available when profile features are connected.</p>
+                <a href="music-video.html" class="btn btn-primary">
+                    Explore Music &amp; Video
+                </a>
+            </div>
+        </div>
+    </section>
 
-    <script src="menu.js"></script>
+    <section class="section section-tight">
+        <div class="container">
+            <div class="content-card">
+                <div class="card-icon" aria-hidden="true">⚙</div>
+                <h3>Member Features</h3>
+                <p>Login, saved content, personal activity, and achievements are planned for a future update.</p>
+                <span class="status-badge status-upcoming">COMING SOON</span>
+            </div>
+        </div>
+    </section>
+</main>
 
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div>
+                <strong>JLSPT</strong>
+                <span>JL Streaming Project Team</span>
+            </div>
+            <p>Made for Starflares, united through streaming. ❤️</p>
+        </div>
+    </div>
+</footer>
+
+<script src="menu.js"></script>
 </body>
 </html>

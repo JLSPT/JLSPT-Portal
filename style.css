@@ -664,6 +664,12 @@ p {
     background: radial-gradient(circle at 100% 0%, rgba(117, 214, 160, 0.08), transparent 45%), var(--surface);
 }
 
+.live-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .live-card h2,
 .live-card h3 {
     margin-bottom: 8px;

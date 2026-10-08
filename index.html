@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* HEADER AND ORIGINAL LOGO */
+        /* OFFICIAL LOGO */
         .site-logo {
             display: inline-flex;
             align-items: center;
@@ -25,13 +25,13 @@
             height: 52px;
             flex: 0 0 52px;
             object-fit: contain;
-            border: none;
+            border: none !important;
             outline: none;
-            box-shadow: none;
-            border-radius: 0;
+            box-shadow: none !important;
+            background: transparent;
         }
 
-        /* COMPACT HOMEPAGE HERO */
+        /* COMPACT HOME HERO */
         .hero {
             padding-block: clamp(38px, 5vw, 64px);
         }
@@ -55,7 +55,7 @@
             margin-top: 22px;
         }
 
-        /* SECTION SPACING */
+        /* BALANCED SECTION SPACING */
         .section {
             padding-block: 36px;
         }
@@ -243,10 +243,6 @@
                 flex-basis: 44px;
             }
 
-            .site-logo {
-                gap: 10px;
-            }
-
             .hero {
                 padding-block: 36px 40px;
             }
@@ -324,10 +320,11 @@
     <!-- HEADER -->
     <header class="site-header">
         <div class="nav-inner">
+
             <a href="index.html" class="site-logo" aria-label="JLSPT Home">
                 <img
-                    src="JLSPT_circular_logo.png"
-                    alt=""
+                    src="JLSPT-logo.png"
+                    alt="JLSPT Logo"
                     class="site-logo-image"
                     width="52"
                     height="52"
@@ -340,6 +337,7 @@
             </a>
 
             <nav class="nav-links" aria-label="Main navigation"></nav>
+
         </div>
     </header>
 
@@ -349,6 +347,7 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
+
                     <p class="eyebrow">THE OFFICIAL STREAMING PORTAL</p>
 
                     <h1>Stream with purpose.</h1>
@@ -366,6 +365,7 @@
                             Streaming Guides
                         </a>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -373,6 +373,7 @@
         <!-- STATIONHEAD -->
         <section class="section">
             <div class="container">
+
                 <div class="section-heading">
                     <div>
                         <p class="eyebrow">LIVE NOW</p>
@@ -382,12 +383,14 @@
 
                 <div class="live-card">
                     <div class="live-card-content">
+
                         <div class="live-status">
                             <span class="live-dot" aria-hidden="true"></span>
                             <span>ON AIR <span aria-hidden="true">·</span> 24/7</span>
                         </div>
 
                         <p>Tune in and stream along with the community.</p>
+
                     </div>
 
                     <a
@@ -399,12 +402,14 @@
                         Open Station
                     </a>
                 </div>
+
             </div>
         </section>
 
         <!-- FEATURED CAMPAIGN -->
         <section class="section section-tight">
             <div class="container">
+
                 <div class="section-heading">
                     <div>
                         <p class="eyebrow">CURRENT MISSION</p>
@@ -417,6 +422,7 @@
                 </div>
 
                 <article class="campaign-card home-featured-campaign">
+
                     <div class="home-campaign-topline">
                         <span class="status-badge status-active">
                             <span class="status-dot" aria-hidden="true"></span>
@@ -427,6 +433,7 @@
                     </div>
 
                     <div class="home-campaign-body">
+
                         <h3>MISSION: STREAM ALON</h3>
 
                         <p>
@@ -437,14 +444,17 @@
                             <span>Explore Campaign Details</span>
                             <span aria-hidden="true">→</span>
                         </a>
+
                     </div>
                 </article>
+
             </div>
         </section>
 
-        <!-- WHAT'S NEXT -->
+        <!-- DISCOVER -->
         <section class="section section-tight">
             <div class="container">
+
                 <div class="section-heading">
                     <div>
                         <p class="eyebrow">DISCOVER</p>
@@ -453,6 +463,7 @@
                 </div>
 
                 <div class="next-grid">
+
                     <a href="music-video.html" class="next-card">
                         <span class="next-card-icon" aria-hidden="true">♪</span>
                         <strong>New Releases</strong>
@@ -470,6 +481,7 @@
                         <strong>Special Activities</strong>
                         <span class="next-card-arrow" aria-hidden="true">↗</span>
                     </a>
+
                 </div>
             </div>
         </section>
@@ -477,6 +489,7 @@
         <!-- RED CORNER -->
         <section class="section section-tight">
             <div class="container">
+
                 <div class="section-heading">
                     <div>
                         <p class="eyebrow">RED CORNER</p>
@@ -490,6 +503,7 @@
 
                 <article class="red-feature-card">
                     <div class="red-feature-content">
+
                         <span class="official-badge">OFFICIAL UPDATE</span>
 
                         <h3>News, Notices &amp; Announcements</h3>
@@ -503,14 +517,17 @@
                                 Explore RED CORNER
                             </a>
                         </div>
+
                     </div>
                 </article>
+
             </div>
         </section>
 
         <!-- QUICK ACCESS -->
         <section class="section section-tight">
             <div class="container">
+
                 <div class="section-heading">
                     <div>
                         <p class="eyebrow">QUICK ACCESS</p>
@@ -519,6 +536,7 @@
                 </div>
 
                 <div class="quick-grid">
+
                     <a href="music-video.html" class="quick-card">
                         <span class="quick-card-icon" aria-hidden="true">♪</span>
 
@@ -562,6 +580,7 @@
 
                         <span class="quick-card-arrow" aria-hidden="true">→</span>
                     </a>
+
                 </div>
             </div>
         </section>
@@ -571,12 +590,15 @@
     <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container">
+
             <div class="footer-content">
+
                 <p class="footer-message">
                     For JL, with love from Starflares. ❤️
                 </p>
 
                 <div class="social-links" aria-label="JLSPT social media">
+
                     <a
                         href="https://x.com/JLSPTeam"
                         target="_blank"
@@ -618,6 +640,7 @@
                         rel="noopener noreferrer"
                         aria-label="Stationhead"
                     >♫</a>
+
                 </div>
             </div>
         </div>

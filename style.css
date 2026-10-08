@@ -1,3 +1,4 @@
+
 /* =========================================
    JLSPT GLOBAL DESIGN SYSTEM
    Crimson Red • Gold • Warm White
@@ -42,21 +43,6 @@
 
     --container: 1180px;
     --transition: 180ms ease;
-
-    /* SHARED TYPOGRAPHY SCALE */
-    --font-page-title: clamp(2rem, 4vw, 2.5rem);
-    --font-hero-title: clamp(2.25rem, 5vw, 3.75rem);
-    --font-section-title: clamp(1.375rem, 2.5vw, 1.75rem);
-    --font-card-title: 1.125rem;
-    --font-body: 0.9375rem;
-    --font-description: 0.875rem;
-    --font-detail: 0.8125rem;
-    --font-label: 0.6875rem;
-    --font-button: 0.8125rem;
-    --font-nav: 0.6875rem;
-
-    --line-heading: 1.25;
-    --line-body: 1.7;
 }
 
 /* RESET */
@@ -78,8 +64,8 @@ body {
         var(--bg);
     color: var(--text);
     font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-    font-size: var(--font-body);
-    line-height: var(--line-body);
+    font-size: 15px;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -161,15 +147,15 @@ button {
 
 .muted-note {
     color: var(--muted);
-    font-size: var(--font-detail);
-    line-height: var(--line-body);
+    font-size: 12px;
+    line-height: 1.7;
 }
 
 .text-center {
     text-align: center;
 }
 
-/* GLOBAL TYPOGRAPHY */
+/* TYPOGRAPHY */
 
 h1,
 h2,
@@ -184,31 +170,25 @@ h2,
 h3,
 h4 {
     color: var(--text);
-    line-height: var(--line-heading);
-    letter-spacing: -0.025em;
+    line-height: 1.2;
+    letter-spacing: -0.035em;
 }
 
 h1 {
     margin-bottom: 18px;
-    font-size: var(--font-page-title);
+    font-size: clamp(2.25rem, 6vw, 4.5rem);
     font-weight: 850;
 }
 
 h2 {
     margin-bottom: 14px;
-    font-size: var(--font-section-title);
+    font-size: clamp(1.55rem, 3vw, 2.25rem);
     font-weight: 800;
 }
 
 h3 {
     margin-bottom: 10px;
-    font-size: var(--font-card-title);
-    font-weight: 750;
-}
-
-h4 {
-    margin-bottom: 8px;
-    font-size: var(--font-description);
+    font-size: 1.1rem;
     font-weight: 750;
 }
 
@@ -222,9 +202,9 @@ p {
     gap: 9px;
     margin-bottom: 12px;
     color: var(--gold);
-    font-size: var(--font-label);
+    font-size: 11px;
     font-weight: 850;
-    letter-spacing: 0.13em;
+    letter-spacing: 0.16em;
     line-height: 1.5;
     text-transform: uppercase;
 }
@@ -232,7 +212,6 @@ p {
 .eyebrow::before {
     width: 20px;
     height: 2px;
-    flex-shrink: 0;
     border-radius: 99px;
     background: currentColor;
     content: "";
@@ -254,7 +233,7 @@ p {
     max-width: 580px;
     margin: 10px 0 0;
     color: var(--muted);
-    font-size: var(--font-description);
+    font-size: 14px;
 }
 
 /* HEADER */
@@ -338,9 +317,9 @@ p {
     padding: 10px 11px;
     border-radius: 10px;
     color: var(--muted);
-    font-size: var(--font-nav);
+    font-size: 10px;
     font-weight: 800;
-    letter-spacing: 0.035em;
+    letter-spacing: 0.045em;
     transition: color var(--transition), background var(--transition);
 }
 
@@ -413,9 +392,9 @@ p {
     padding: 12px 19px;
     border: 1px solid transparent;
     border-radius: 12px;
-    font-size: var(--font-button);
+    font-size: 13px;
     font-weight: 800;
-    line-height: 1.4;
+    line-height: 1.3;
     text-align: center;
     cursor: pointer;
     transition: transform var(--transition), background var(--transition), border-color var(--transition), box-shadow var(--transition);
@@ -459,7 +438,7 @@ p {
 .btn-small {
     min-height: 36px;
     padding: 9px 13px;
-    font-size: var(--font-label);
+    font-size: 11px;
 }
 
 .text-link {
@@ -468,7 +447,7 @@ p {
     gap: 7px;
     margin-top: 18px;
     color: var(--gold);
-    font-size: var(--font-detail);
+    font-size: 12px;
     font-weight: 800;
 }
 
@@ -510,7 +489,6 @@ p {
 
 .hero h1 {
     max-width: 850px;
-    font-size: var(--font-hero-title);
 }
 
 .hero h1 span {
@@ -520,7 +498,7 @@ p {
 .hero p:not(.eyebrow) {
     max-width: 640px;
     color: var(--text-soft);
-    font-size: var(--font-body);
+    font-size: clamp(15px, 2vw, 18px);
 }
 
 .hero-actions {
@@ -560,14 +538,14 @@ p {
 
 .page-hero h1 {
     margin-bottom: 12px;
-    font-size: var(--font-page-title);
+    font-size: clamp(2.1rem, 5vw, 3.5rem);
 }
 
 .page-hero p:not(.eyebrow) {
     max-width: 650px;
     margin-bottom: 0;
     color: var(--muted);
-    font-size: var(--font-body);
+    font-size: 15px;
 }
 
 /* GENERIC CARDS */
@@ -626,25 +604,13 @@ p {
     box-shadow: var(--shadow);
 }
 
-.content-card h2,
-.feature-card h2,
-.platform-card h2,
-.guide-card h2,
-.content-card h3,
-.feature-card h3,
-.platform-card h3,
-.guide-card h3 {
-    font-size: var(--font-card-title);
-}
-
 .content-card p,
 .feature-card p,
 .platform-card p,
 .guide-card p {
     margin-bottom: 0;
     color: var(--muted);
-    font-size: var(--font-description);
-    line-height: var(--line-body);
+    font-size: 13px;
 }
 
 .content-card .text-link {
@@ -680,7 +646,7 @@ p {
     border-radius: 99px;
     background: rgba(245, 181, 27, 0.08);
     color: var(--gold);
-    font-size: var(--font-label);
+    font-size: 9px;
     font-weight: 850;
     letter-spacing: 0.08em;
 }
@@ -706,7 +672,7 @@ p {
 .live-card p {
     margin-bottom: 0;
     color: var(--muted);
-    font-size: var(--font-description);
+    font-size: 13px;
 }
 
 .live-status {
@@ -719,7 +685,7 @@ p {
     border-radius: 99px;
     background: rgba(117, 214, 160, 0.07);
     color: var(--success);
-    font-size: var(--font-label);
+    font-size: 10px;
     font-weight: 850;
     letter-spacing: 0.06em;
 }
@@ -749,7 +715,7 @@ p {
     border-radius: 99px;
     background: rgba(255, 248, 240, 0.04);
     color: var(--text-soft);
-    font-size: var(--font-label);
+    font-size: 9px;
     font-weight: 850;
     letter-spacing: 0.07em;
     line-height: 1.4;
@@ -772,7 +738,7 @@ p {
     color: var(--muted);
 }
 
-/* CAMPAIGN CARD */
+/* CAMPAIGN CARD SPACING */
 
 .campaign-card {
     overflow: hidden;
@@ -805,15 +771,15 @@ p {
 
 .campaign-intro h2 {
     margin-bottom: 14px;
-    font-size: var(--font-section-title);
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
 }
 
 .campaign-intro p {
     max-width: 700px;
     margin-bottom: 0;
     color: var(--text-soft);
-    font-size: var(--font-body);
-    line-height: var(--line-body);
+    font-size: 15px;
+    line-height: 1.8;
 }
 
 /* PROGRESS TRACKER */
@@ -843,17 +809,17 @@ p {
 .tracker-goal > span,
 .tracker-stat-label {
     color: var(--muted);
-    font-size: var(--font-label);
+    font-size: 10px;
     font-weight: 800;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
 }
 
 .tracker-percentage {
     color: var(--gold);
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-size: clamp(2rem, 5vw, 3.1rem);
     font-weight: 900;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.055em;
     line-height: 1.1;
 }
 
@@ -863,7 +829,7 @@ p {
 
 .tracker-goal strong {
     color: var(--text);
-    font-size: var(--font-description);
+    font-size: clamp(14px, 2vw, 18px);
 }
 
 .progress-track {
@@ -921,11 +887,16 @@ p {
     gap: 3px;
 }
 
+.tracker-stat-label {
+    font-size: 9px;
+    letter-spacing: 0.04em;
+}
+
 .tracker-stat strong {
     color: var(--text);
-    font-size: var(--font-card-title);
+    font-size: clamp(18px, 3vw, 25px);
     font-weight: 900;
-    line-height: 1.3;
+    line-height: 1.2;
     overflow-wrap: anywhere;
 }
 
@@ -940,8 +911,8 @@ p {
 .tracker-note {
     margin: 16px 0 0;
     color: var(--muted);
-    font-size: var(--font-detail);
-    line-height: var(--line-body);
+    font-size: 11px;
+    line-height: 1.6;
 }
 
 .campaign-divider {
@@ -963,14 +934,14 @@ p {
 
 .campaign-details-copy h3 {
     margin-bottom: 12px;
-    font-size: var(--font-card-title);
+    font-size: clamp(1.35rem, 3vw, 1.8rem);
 }
 
 .campaign-details-copy p:not(.eyebrow) {
     margin-bottom: 0;
     color: var(--muted);
-    font-size: var(--font-description);
-    line-height: var(--line-body);
+    font-size: 13px;
+    line-height: 1.8;
 }
 
 .campaign-actions {
@@ -989,7 +960,7 @@ p {
     white-space: normal;
 }
 
-/* HOME DASHBOARD CARDS */
+/* SMALL DASHBOARD CARDS */
 
 .next-grid {
     display: grid;
@@ -1008,24 +979,15 @@ p {
     background: var(--card);
 }
 
-.next-card h3,
-.next-card strong {
-    font-size: var(--font-card-title);
-    font-weight: 750;
-}
-
 .next-card h3 {
     margin-bottom: 7px;
-}
-
-.next-card p,
-.next-card > span:not(.card-icon) {
-    color: var(--muted);
-    font-size: var(--font-detail);
+    font-size: 14px;
 }
 
 .next-card p {
     margin-bottom: 0;
+    color: var(--muted);
+    font-size: 12px;
 }
 
 .next-card .card-icon {
@@ -1059,16 +1021,15 @@ p {
     background: var(--surface-light);
 }
 
-.quick-card strong {
-    display: block;
+.quick-card h3 {
     margin-bottom: 4px;
-    font-size: var(--font-description);
-    font-weight: 750;
+    font-size: 14px;
 }
 
-.quick-card span:not(.quick-card-icon):not(.quick-card-arrow) {
+.quick-card p {
+    margin-bottom: 0;
     color: var(--muted);
-    font-size: var(--font-detail);
+    font-size: 12px;
 }
 
 .quick-card-icon {
@@ -1097,25 +1058,16 @@ p {
 }
 
 .red-corner-banner h2,
-.red-feature-card h2,
-.red-feature-card h3 {
+.red-feature-card h2 {
     max-width: 720px;
-    font-size: var(--font-section-title);
+    font-size: clamp(1.6rem, 4vw, 2.5rem);
 }
 
 .red-corner-banner p,
 .red-feature-card p {
     max-width: 690px;
     color: #f2dfe0;
-    font-size: var(--font-description);
-    line-height: var(--line-body);
 }
-
-.red-feature-card .btn {
-    margin-top: 8px;
-}
-
-/* COMMUNITY */
 
 .community-topics {
     display: grid;
@@ -1132,13 +1084,12 @@ p {
 
 .community-topic h3 {
     margin-top: 14px;
-    font-size: var(--font-card-title);
 }
 
 .community-topic p {
     margin-bottom: 0;
     color: var(--muted);
-    font-size: var(--font-description);
+    font-size: 13px;
 }
 
 /* MUSIC AND VIDEO */
@@ -1170,14 +1121,12 @@ p {
 
 .release-card-content h3 {
     margin-block: 12px 8px;
-    font-size: var(--font-card-title);
 }
 
 .release-card-content p {
     margin-bottom: 0;
     color: var(--muted);
-    font-size: var(--font-description);
-    line-height: var(--line-body);
+    font-size: 12px;
 }
 
 .album-art-placeholder {
@@ -1253,7 +1202,7 @@ p {
     border-radius: 99px;
     background: var(--card);
     color: var(--muted);
-    font-size: var(--font-label);
+    font-size: 11px;
     font-weight: 800;
     cursor: pointer;
     transition: color var(--transition), border-color var(--transition), background var(--transition);
@@ -1280,13 +1229,12 @@ p {
 
 .section-cta h3 {
     margin-bottom: 6px;
-    font-size: var(--font-card-title);
 }
 
 .section-cta p {
     margin-bottom: 0;
     color: var(--muted);
-    font-size: var(--font-description);
+    font-size: 13px;
 }
 
 /* GUIDES AND FAQ */
@@ -1307,7 +1255,7 @@ p {
     border-radius: 12px;
     background: rgba(255, 248, 240, 0.025);
     color: var(--text-soft);
-    font-size: var(--font-description);
+    font-size: 13px;
     counter-increment: guide-step;
 }
 
@@ -1323,7 +1271,7 @@ p {
     background: rgba(245, 181, 27, 0.11);
     color: var(--gold);
     content: counter(guide-step);
-    font-size: var(--font-label);
+    font-size: 10px;
     font-weight: 900;
 }
 
@@ -1337,7 +1285,7 @@ p {
     border-radius: 10px;
     background: rgba(245, 181, 27, 0.08);
     color: var(--gold);
-    font-size: var(--font-detail);
+    font-size: 12px;
     font-weight: 900;
 }
 
@@ -1358,7 +1306,7 @@ details summary {
     position: relative;
     padding: 17px 44px 17px 18px;
     color: var(--text);
-    font-size: var(--font-description);
+    font-size: 13px;
     font-weight: 750;
     cursor: pointer;
     list-style: none;
@@ -1390,7 +1338,7 @@ details p {
     padding: 0 18px 18px;
     margin-bottom: 0;
     color: var(--muted);
-    font-size: var(--font-description);
+    font-size: 13px;
 }
 
 /* PROFILE */
@@ -1424,13 +1372,12 @@ details p {
 
 .profile-intro h2 {
     margin-block: 10px 7px;
-    font-size: var(--font-section-title);
 }
 
 .profile-intro p {
     margin-bottom: 0;
     color: var(--muted);
-    font-size: var(--font-description);
+    font-size: 13px;
 }
 
 .stats-grid {
@@ -1454,14 +1401,14 @@ details p {
 
 .stat-card strong {
     color: var(--text);
-    font-size: var(--font-card-title);
+    font-size: 28px;
     font-weight: 900;
-    line-height: 1.3;
+    line-height: 1.1;
 }
 
 .stat-card span:last-child {
     color: var(--muted);
-    font-size: var(--font-detail);
+    font-size: 12px;
 }
 
 /* EMPTY STATES */
@@ -1482,14 +1429,13 @@ details p {
 
 .empty-state h3 {
     margin-bottom: 9px;
-    font-size: var(--font-card-title);
 }
 
 .empty-state p {
     max-width: 440px;
     margin-bottom: 20px;
     color: var(--muted);
-    font-size: var(--font-description);
+    font-size: 13px;
 }
 
 /* SEARCH AND FORMS */
@@ -1546,20 +1492,21 @@ select:focus {
 }
 
 .footer-message {
-    margin-bottom: 0;
-    color: var(--text-soft);
-    font-size: var(--font-description);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .footer-message strong {
     color: var(--text);
-    font-size: var(--font-description);
+    font-size: 14px;
     font-weight: 800;
+    letter-spacing: -0.01em;
 }
 
 .footer-message span {
     color: var(--muted);
-    font-size: var(--font-detail);
+    font-size: 11px;
 }
 
 .social-links {
@@ -1580,7 +1527,6 @@ select:focus {
     border-radius: 12px;
     background: var(--surface);
     color: var(--text-soft);
-    font-size: var(--font-description);
     transition: transform var(--transition), color var(--transition), border-color var(--transition), background var(--transition);
 }
 
@@ -1606,65 +1552,6 @@ select:focus {
 
 .social-links svg .icon-fill {
     fill: currentColor;
-}
-
-/* HOME FEATURED CAMPAIGN */
-
-.home-featured-campaign {
-    display: block;
-    padding: clamp(20px, 3vw, 30px);
-}
-
-.home-campaign-topline {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 18px;
-}
-
-.home-campaign-body h3 {
-    margin: 0 0 10px;
-    font-size: var(--font-card-title);
-    line-height: var(--line-heading);
-    overflow-wrap: anywhere;
-}
-
-.home-campaign-body p {
-    max-width: 620px;
-    margin: 0;
-    font-size: var(--font-description);
-    line-height: var(--line-body);
-}
-
-.home-campaign-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    margin-top: 22px;
-    padding-top: 16px;
-    border-top: 1px solid var(--border);
-    color: var(--gold);
-    font-size: var(--font-description);
-    font-weight: 750;
-    text-decoration: none;
-}
-
-.home-campaign-link span:last-child {
-    font-size: 1.3rem;
-    transition: transform var(--transition);
-}
-
-.home-campaign-link:hover span:last-child {
-    transform: translateX(4px);
-}
-
-.home-campaign-link:focus-visible {
-    outline: 2px solid var(--gold);
-    outline-offset: 5px;
-    border-radius: 4px;
 }
 
 /* ANIMATION */
@@ -1705,6 +1592,7 @@ select:focus {
 
     .nav-links a {
         padding-inline: 8px;
+        font-size: 9px;
     }
 
     .logo-text small {
@@ -1768,7 +1656,8 @@ select:focus {
         min-height: 49px;
         justify-content: flex-start;
         padding: 13px 15px;
-        font-size: var(--font-detail);
+        border-radius: 11px;
+        font-size: 11px;
     }
 
     .nav-links a.active::after {
@@ -1898,11 +1787,11 @@ select:focus {
     }
 
     .tracker-percentage {
-        font-size: 2rem;
+        font-size: 2.25rem;
     }
 
     .tracker-goal strong {
-        font-size: var(--font-description);
+        font-size: 14px;
     }
 
     .tracker-stats {
@@ -1915,7 +1804,7 @@ select:focus {
     }
 
     .tracker-stat strong {
-        font-size: var(--font-card-title);
+        font-size: 21px;
     }
 
     .campaign-details {
@@ -1986,24 +1875,15 @@ select:focus {
         width: 100%;
     }
 
-    .home-featured-campaign {
-        padding: 20px;
-    }
-
-    .home-campaign-topline {
-        align-items: flex-start;
-        margin-bottom: 16px;
-    }
-
-    .home-campaign-link {
-        margin-top: 18px;
-    }
-
     .footer-content {
         align-items: center;
         flex-direction: column;
         gap: 20px;
         text-align: center;
+    }
+
+    .footer-message {
+        align-items: center;
     }
 
     .social-links {

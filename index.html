@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#941c20">
 
     <title>JLSPT | JL Streaming Project Team</title>
@@ -11,6 +11,41 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
+        /* PAGE WIDTH SAFETY */
+        html {
+            width: 100%;
+            max-width: 100%;
+            min-height: 100%;
+            overflow-x: clip;
+        }
+
+        body {
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: clip;
+        }
+
+        body,
+        header,
+        main,
+        footer,
+        section,
+        .container,
+        .nav-inner {
+            box-sizing: border-box;
+            min-width: 0;
+        }
+
+        main,
+        .site-header,
+        .site-footer {
+            width: 100%;
+            max-width: 100%;
+        }
+
         /* OFFICIAL LOGO */
         .site-logo {
             display: inline-flex;
@@ -338,6 +373,12 @@
 
             <nav class="nav-links" aria-label="Main navigation"></nav>
 
+            <button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
         </div>
     </header>
 
@@ -599,47 +640,17 @@
 
                 <div class="social-links" aria-label="JLSPT social media">
 
-                    <a
-                        href="https://x.com/JLSPTeam"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="X"
-                    >𝕏</a>
+                    <a href="https://x.com/JLSPTeam" target="_blank" rel="noopener noreferrer" aria-label="X">𝕏</a>
 
-                    <a
-                        href="https://facebook.com/JLSPTeam1"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Facebook"
-                    >f</a>
+                    <a href="https://facebook.com/JLSPTeam1" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
 
-                    <a
-                        href="https://instagram.com/JLSPTeam1"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Instagram"
-                    >◎</a>
+                    <a href="https://instagram.com/JLSPTeam1" target="_blank" rel="noopener noreferrer" aria-label="Instagram">◎</a>
 
-                    <a
-                        href="https://tiktok.com/@JLSPTeam"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="TikTok"
-                    >♪</a>
+                    <a href="https://tiktok.com/@JLSPTeam" target="_blank" rel="noopener noreferrer" aria-label="TikTok">♪</a>
 
-                    <a
-                        href="https://youtube.com/@JLSPTeam"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="YouTube"
-                    >▶</a>
+                    <a href="https://youtube.com/@JLSPTeam" target="_blank" rel="noopener noreferrer" aria-label="YouTube">▶</a>
 
-                    <a
-                        href="https://stationhead.com/JLSPTeam"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Stationhead"
-                    >♫</a>
+                    <a href="https://stationhead.com/JLSPTeam" target="_blank" rel="noopener noreferrer" aria-label="Stationhead">♫</a>
 
                 </div>
             </div>

@@ -2003,3 +2003,270 @@ main,
 footer {
   max-width: 100%;
 }
+
+/* ==========================================
+   MUSIC & VIDEO: WIDER DESKTOP LAYOUT
+   ========================================== */
+
+body:has(.music-feature) main {
+    width: 100%;
+    max-width: none;
+}
+
+body:has(.music-feature) main > section > .container {
+    width: calc(100% - 64px);
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+/* Make the page hero use the same wider layout */
+body:has(.music-feature) .page-hero .container {
+    width: calc(100% - 64px);
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ==========================================
+   DISCography: EQUAL, CENTERED COVER BOXES
+   ========================================== */
+
+body:has(.music-feature) .music-discography-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 24px;
+}
+
+body:has(.music-feature) .music-release-card {
+    min-width: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow: hidden;
+    padding: 0;
+    text-align: center;
+}
+
+/* Identical square cover area for all four categories */
+body:has(.music-feature) .music-release-card .album-art-placeholder {
+    position: relative;
+    width: calc(100% - 40px);
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    flex: 0 0 auto;
+    margin: 24px auto 0;
+    padding: 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 14px;
+}
+
+body:has(.music-feature) .music-release-card .album-art-placeholder span {
+    display: block;
+    width: 100%;
+    margin: 0;
+    font-size: clamp(1.3rem, 1.8vw, 2rem);
+    line-height: 1.2;
+    font-weight: 800;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+body:has(.music-feature) .music-release-card .album-art-placeholder small {
+    display: block;
+    max-width: 100%;
+    font-size: 0.72rem;
+    line-height: 1.4;
+    text-align: center;
+    letter-spacing: 0.08em;
+}
+
+/* Equal card body spacing */
+body:has(.music-feature) .music-release-body {
+    width: 100%;
+    flex: 1;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    text-align: center;
+}
+
+body:has(.music-feature) .music-release-body h3 {
+    width: 100%;
+    margin: 0 0 12px;
+    text-align: center;
+}
+
+body:has(.music-feature) .music-release-body p {
+    width: 100%;
+    text-align: center;
+}
+
+body:has(.music-feature) .music-release-body .card-meta {
+    justify-content: center;
+}
+
+body:has(.music-feature) .music-release-body .text-link {
+    margin-top: auto;
+    padding-top: 22px;
+    text-align: center;
+}
+
+/* ==========================================
+   FEATURED MUSIC VIDEO: LESS RED, MORE BALANCE
+   ========================================== */
+
+body:has(.music-feature) .red-feature-card.music-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.8fr);
+    align-items: center;
+    gap: 44px;
+    padding: clamp(28px, 4vw, 56px);
+    overflow: hidden;
+    color: #fffaf3;
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(245, 181, 27, 0.12),
+            transparent 36%
+        ),
+        linear-gradient(125deg, #211c1c 0%, #302526 58%, #1b1718 100%);
+    border: 1px solid rgba(245, 181, 27, 0.32);
+    border-radius: 22px;
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.22);
+}
+
+body:has(.music-feature) .music-feature .eyebrow,
+body:has(.music-feature) .music-feature .official-badge {
+    color: #f5c85e;
+}
+
+body:has(.music-feature) .music-feature h2 {
+    color: #fffaf3;
+    font-size: clamp(2.8rem, 5vw, 4.8rem);
+    line-height: 1.05;
+    margin: 18px 0;
+}
+
+body:has(.music-feature) .music-feature p {
+    color: #e0d6d2;
+}
+
+body:has(.music-feature) .music-feature .music-feature-note {
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+body:has(.music-feature) .music-feature-mark {
+    width: 100%;
+    min-height: 300px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 28px;
+    text-align: center;
+    color: #fffaf3;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(245, 181, 27, 0.13),
+            transparent 65%
+        ),
+        #191516;
+    border: 1px solid rgba(245, 181, 27, 0.45);
+    border-radius: 18px;
+}
+
+body:has(.music-feature) .music-feature-mark span {
+    color: #f5c85e;
+    font-size: clamp(3rem, 5vw, 5rem);
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+}
+
+body:has(.music-feature) .music-feature-mark small {
+    color: #d9ceca;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+}
+
+body:has(.music-feature) .music-feature .btn-light {
+    background: #f5c85e;
+    color: #241d18;
+    border-color: #f5c85e;
+}
+
+body:has(.music-feature) .music-feature .btn-light:hover {
+    background: #ffe09a;
+    border-color: #ffe09a;
+}
+
+body:has(.music-feature) .music-feature .btn-secondary {
+    background: transparent;
+    color: #fffaf3;
+    border-color: rgba(255, 250, 243, 0.45);
+}
+
+/* ==========================================
+   RESPONSIVE: TABLET AND MOBILE
+   ========================================== */
+
+@media (max-width: 1100px) {
+    body:has(.music-feature) .music-discography-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    body:has(.music-feature) .red-feature-card.music-feature {
+        gap: 28px;
+    }
+}
+
+@media (max-width: 700px) {
+    body:has(.music-feature) main > section > .container,
+    body:has(.music-feature) .page-hero .container {
+        width: calc(100% - 32px);
+    }
+
+    body:has(.music-feature) .red-feature-card.music-feature {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+        padding: 24px;
+    }
+
+    body:has(.music-feature) .music-feature-mark {
+        min-height: 210px;
+    }
+
+    body:has(.music-feature) .music-discography-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    body:has(.music-feature) .music-release-card .album-art-placeholder {
+        width: min(100% - 40px, 300px);
+        margin-top: 22px;
+    }
+
+    body:has(.music-feature) .music-release-body {
+        padding: 22px;
+    }
+}

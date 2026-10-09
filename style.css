@@ -1984,3 +1984,22 @@ select:focus {
         min-width: 0;
     }
 }
+
+/* FIX: Make the website fill the screen */
+html,
+body {
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+header,
+main,
+footer {
+  max-width: 100%;
+}

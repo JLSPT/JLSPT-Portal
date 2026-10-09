@@ -1,25 +1,31 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#171416">
-  <title>Music &amp; Video | JLSPT</title>  <link rel="stylesheet" href="style.css">  <style>
-    /* Music & Video page only */
+  <title>Music &amp; Video | JLSPT</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* MUSIC & VIDEO PAGE */
     .mv-page {
       width: 100%;
+      max-width: none;
       min-height: 100vh;
       overflow-x: clip;
       background:
-        radial-gradient(ellipse at 50% 0%, rgba(126, 25, 37, 0.13), transparent 48%),
+        radial-gradient(ellipse at 50% 0%, rgba(148, 28, 32, 0.16), transparent 52%),
         #171416;
     }
 
     .mv-container {
-      width: min(1500px, calc(100% - 48px));
+      width: calc(100% - 80px);
+      max-width: 1720px;
       margin-inline: auto;
     }
 
-    /* Header logo */
+    /* HEADER LOGO */
     .site-logo {
       display: inline-flex;
       align-items: center;
@@ -41,29 +47,37 @@
       justify-content: center;
     }
 
-    /* Hero */
+    /* HERO */
     .mv-hero {
       position: relative;
-      padding: 64px 0 48px;
+      width: 100%;
+      padding: 70px 0 54px;
       background:
-        radial-gradient(ellipse at 12% 10%, rgba(158, 34, 48, 0.3), transparent 42%),
-        linear-gradient(115deg, #21191b 0%, #171416 58%, #29201b 100%);
-      border-bottom: 1px solid rgba(213, 175, 93, 0.24);
+        radial-gradient(ellipse at 8% 15%, rgba(148, 28, 32, 0.32), transparent 42%),
+        linear-gradient(115deg, #261a1d 0%, #171416 58%, #29221b 100%);
+      border-bottom: 1px solid rgba(245, 181, 27, 0.25);
     }
 
     .mv-hero::after {
       content: "";
       display: block;
-      width: min(1500px, calc(100% - 48px));
+      width: calc(100% - 80px);
+      max-width: 1720px;
       height: 2px;
       margin: 40px auto 0;
-      background: linear-gradient(90deg, transparent, #b52c3b, #c6a15c, transparent);
-      opacity: 0.85;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        #941c20 25%,
+        #f5b51b 75%,
+        transparent
+      );
+      opacity: 0.9;
     }
 
     .mv-eyebrow {
       margin: 0 0 12px;
-      color: #d8b86d;
+      color: #f5c85d;
       font-size: 0.76rem;
       font-weight: 800;
       letter-spacing: 0.2em;
@@ -71,7 +85,7 @@
     }
 
     .mv-hero h1 {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0;
       color: #fffaf2;
       font-size: clamp(2.4rem, 5.5vw, 4.8rem);
@@ -80,11 +94,11 @@
     }
 
     .mv-hero h1 span {
-      color: #d6ad61;
+      color: #f5b51b;
     }
 
     .mv-hero-description {
-      max-width: 720px;
+      max-width: 760px;
       margin: 20px 0 0;
       color: #d0c7c4;
       font-size: clamp(1rem, 1.5vw, 1.1rem);
@@ -95,7 +109,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 26px;
+      margin-top: 28px;
     }
 
     .mv-button {
@@ -104,34 +118,36 @@
       align-items: center;
       justify-content: center;
       padding: 12px 20px;
-      border: 1px solid rgba(218, 180, 97, 0.6);
+      border: 1px solid rgba(245, 181, 27, 0.55);
       border-radius: 999px;
       color: #fffaf2;
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.045);
       font-size: 0.92rem;
       font-weight: 750;
       text-decoration: none;
+      text-align: center;
       transition: transform 0.2s ease, background 0.2s ease;
     }
 
     .mv-button:hover {
       transform: translateY(-2px);
-      background: rgba(183, 42, 57, 0.35);
+      background: rgba(148, 28, 32, 0.48);
     }
 
     .mv-button-primary {
       color: #fffaf2;
-      border-color: #a92a39;
-      background: linear-gradient(120deg, #a92738, #761d2a);
+      border-color: #b52b35;
+      background: linear-gradient(120deg, #a92732, #741b25);
     }
 
-    /* Section headings */
+    /* SECTION HEADINGS */
     .mv-section {
-      padding: 52px 0;
+      width: 100%;
+      padding: 56px 0;
     }
 
     .mv-section + .mv-section {
-      padding-top: 16px;
+      padding-top: 20px;
     }
 
     .mv-section-heading {
@@ -140,7 +156,7 @@
       align-items: end;
       justify-content: space-between;
       gap: 14px 24px;
-      margin-bottom: 24px;
+      margin-bottom: 26px;
     }
 
     .mv-section-heading h2 {
@@ -150,7 +166,7 @@
       line-height: 1.2;
     }
 
-    .mv-section-heading p {
+    .mv-section-heading > p {
       max-width: 650px;
       margin: 8px 0 0;
       color: #bdb3b0;
@@ -162,21 +178,22 @@
       height: 3px;
       margin-top: 15px;
       border-radius: 10px;
-      background: linear-gradient(90deg, #a92738, #d8b86d);
+      background: linear-gradient(90deg, #941c20, #f5b51b);
     }
 
-    /* Featured video */
+    /* FEATURED VIDEO */
     .mv-featured {
       position: relative;
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+      grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
       gap: 0;
       overflow: hidden;
-      border: 1px solid rgba(216, 184, 109, 0.35);
+      border: 1px solid rgba(245, 181, 27, 0.38);
       border-radius: 24px;
       background:
-        radial-gradient(ellipse at 85% 5%, rgba(190, 52, 63, 0.32), transparent 40%),
-        linear-gradient(125deg, #5e1c25 0%, #342024 45%, #201a1c 100%);
+        radial-gradient(ellipse at 0% 100%, rgba(148, 28, 32, 0.42), transparent 48%),
+        radial-gradient(ellipse at 100% 0%, rgba(245, 181, 27, 0.10), transparent 38%),
+        linear-gradient(125deg, #302125 0%, #211a1c 55%, #27211c 100%);
       box-shadow: 0 20px 55px rgba(0, 0, 0, 0.25);
     }
 
@@ -185,7 +202,7 @@
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
-      padding: clamp(25px, 5vw, 60px);
+      padding: clamp(28px, 5vw, 68px);
     }
 
     .mv-label {
@@ -193,10 +210,10 @@
       align-items: center;
       gap: 8px;
       padding: 7px 11px;
-      border: 1px solid rgba(216, 184, 109, 0.45);
+      border: 1px solid rgba(245, 181, 27, 0.48);
       border-radius: 999px;
-      color: #e3c779;
-      background: rgba(15, 12, 13, 0.28);
+      color: #f5c85d;
+      background: rgba(15, 12, 13, 0.32);
       font-size: 0.72rem;
       font-weight: 800;
       letter-spacing: 0.1em;
@@ -211,10 +228,10 @@
     }
 
     .mv-featured h3 span {
-      color: #e0bc6a;
+      color: #f5b51b;
     }
 
-    .mv-featured-copy p {
+    .mv-featured-copy > p {
       max-width: 550px;
       margin: 0;
       color: #e0d4d0;
@@ -228,36 +245,37 @@
     .mv-featured-art {
       position: relative;
       display: flex;
-      min-height: 340px;
+      min-width: 0;
+      min-height: 380px;
       align-items: center;
       justify-content: center;
-      padding: 28px;
+      padding: 32px;
       background:
-        radial-gradient(circle at center, rgba(218, 180, 97, 0.18), transparent 52%),
-        linear-gradient(145deg, rgba(173, 39, 55, 0.25), rgba(10, 9, 10, 0.3));
+        radial-gradient(circle at center, rgba(245, 181, 27, 0.14), transparent 52%),
+        linear-gradient(145deg, rgba(148, 28, 32, 0.25), rgba(10, 9, 10, 0.18));
     }
 
     .mv-art-frame {
       position: relative;
       display: flex;
-      width: min(100%, 350px);
+      width: min(100%, 370px);
       aspect-ratio: 1 / 1;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      border: 1px solid rgba(228, 195, 119, 0.65);
+      border: 1px solid rgba(245, 181, 27, 0.62);
       border-radius: 18px;
       background:
-        radial-gradient(circle at 50% 40%, rgba(208, 66, 75, 0.45), transparent 45%),
-        linear-gradient(145deg, #511923, #20191b 72%);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.28);
+        radial-gradient(circle at 50% 35%, rgba(148, 28, 32, 0.62), transparent 48%),
+        linear-gradient(145deg, #432126, #20191b 72%);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.32);
     }
 
     .mv-art-frame::before,
     .mv-art-frame::after {
       content: "";
       position: absolute;
-      border: 1px solid rgba(225, 192, 111, 0.3);
+      border: 1px solid rgba(245, 181, 27, 0.34);
       border-radius: 50%;
     }
 
@@ -286,33 +304,37 @@
     .mv-art-text small {
       display: block;
       margin-top: 9px;
-      color: #e1bd6b;
+      color: #f5c85d;
       font-size: 0.72rem;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.16em;
     }
 
-    /* Quick links */
+    /* QUICK LINKS */
     .mv-quick-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+      gap: 20px;
     }
 
     .mv-quick-card {
       display: flex;
-      min-height: 160px;
+      min-width: 0;
+      min-height: 170px;
       flex-direction: column;
       align-items: flex-start;
-      padding: 24px;
+      padding: 26px;
       border: 1px solid rgba(255, 255, 255, 0.09);
       border-radius: 18px;
-      background: linear-gradient(145deg, #282123, #1d191b);
+      background:
+        linear-gradient(145deg, rgba(148, 28, 32, 0.12), transparent 60%),
+        linear-gradient(145deg, #282123, #1d191b);
+      text-decoration: none;
       transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
     .mv-quick-card:hover {
       transform: translateY(-3px);
-      border-color: rgba(216, 184, 109, 0.5);
+      border-color: rgba(245, 181, 27, 0.52);
     }
 
     .mv-quick-icon {
@@ -320,9 +342,10 @@
       width: 42px;
       height: 42px;
       place-items: center;
+      border: 1px solid rgba(245, 181, 27, 0.25);
       border-radius: 13px;
       color: #ffecc1;
-      background: linear-gradient(135deg, #9e2736, #5c1c27);
+      background: linear-gradient(135deg, #941c20, #542027);
       font-size: 1.2rem;
     }
 
@@ -339,7 +362,7 @@
       line-height: 1.65;
     }
 
-    /* Discography */
+    /* DISCOGRAPHY FILTERS */
     .mv-filter-row {
       display: flex;
       flex-wrap: wrap;
@@ -363,15 +386,16 @@
     .mv-filter-btn:hover,
     .mv-filter-btn.active {
       color: #fff8ed;
-      border-color: #b93646;
-      background: linear-gradient(120deg, #a52b3b, #64202a);
+      border-color: #f5b51b;
+      background: linear-gradient(120deg, #941c20, #542027);
     }
 
+    /* SAME SIZE, CENTERED COVER ART */
     .mv-discography-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       align-items: stretch;
-      gap: 22px;
+      gap: 24px;
     }
 
     .mv-release-card {
@@ -381,49 +405,55 @@
       overflow: hidden;
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 19px;
-      background: linear-gradient(160deg, #282123, #1b1719);
+      background:
+        linear-gradient(155deg, rgba(148, 28, 32, 0.10), transparent 52%),
+        linear-gradient(160deg, #282123, #1b1719);
       transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .mv-release-card[hidden] {
+      display: none !important;
     }
 
     .mv-release-card:hover {
       transform: translateY(-4px);
-      border-color: rgba(216, 184, 109, 0.52);
+      border-color: rgba(245, 181, 27, 0.52);
     }
 
     .mv-cover {
       position: relative;
       display: flex;
       width: calc(100% - 36px);
-      max-width: 300px;
+      max-width: 320px;
       aspect-ratio: 1 / 1;
       flex: 0 0 auto;
       align-items: center;
       justify-content: center;
       overflow: hidden;
       margin: 18px auto 0;
-      border: 1px solid rgba(216, 184, 109, 0.35);
+      border: 1px solid rgba(245, 181, 27, 0.34);
       border-radius: 13px;
       background:
-        radial-gradient(circle at 70% 20%, rgba(230, 186, 101, 0.22), transparent 34%),
+        radial-gradient(circle at 70% 20%, rgba(245, 181, 27, 0.20), transparent 34%),
         linear-gradient(145deg, #76212d, #292023 75%);
     }
 
-    .mv-cover::before {
-      content: "";
-      position: absolute;
-      width: 68%;
-      aspect-ratio: 1;
-      border: 1px solid rgba(255, 229, 177, 0.28);
-      border-radius: 50%;
-    }
-
+    .mv-cover::before,
     .mv-cover::after {
       content: "";
       position: absolute;
-      width: 48%;
       aspect-ratio: 1;
-      border: 1px solid rgba(255, 229, 177, 0.18);
+      border: 1px solid rgba(255, 229, 177, 0.24);
       border-radius: 50%;
+    }
+
+    .mv-cover::before {
+      width: 68%;
+    }
+
+    .mv-cover::after {
+      width: 48%;
+      border-color: rgba(255, 229, 177, 0.18);
     }
 
     .mv-cover-word {
@@ -431,7 +461,7 @@
       z-index: 1;
       padding: 12px;
       color: #fff6e8;
-      font-size: clamp(1.35rem, 2.3vw, 2rem);
+      font-size: clamp(1.2rem, 2.1vw, 2rem);
       font-weight: 900;
       letter-spacing: 0.06em;
       text-align: center;
@@ -441,9 +471,9 @@
     .mv-cover-word small {
       display: block;
       margin-top: 8px;
-      color: #e6c577;
+      color: #f5c85d;
       font-size: 0.58rem;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.12em;
     }
 
     .mv-cover-alon {
@@ -454,19 +484,19 @@
 
     .mv-cover-ahof {
       background:
-        radial-gradient(circle at 30% 25%, rgba(225, 190, 115, 0.32), transparent 38%),
-        linear-gradient(145deg, #6e4b2d, #28201e 78%);
+        radial-gradient(circle at 30% 25%, rgba(245, 181, 27, 0.26), transparent 38%),
+        linear-gradient(145deg, #62492f, #28201e 78%);
     }
 
     .mv-cover-ul {
       background:
-        radial-gradient(circle at 70% 20%, rgba(138, 164, 198, 0.3), transparent 38%),
+        radial-gradient(circle at 70% 20%, rgba(138, 164, 198, 0.30), transparent 38%),
         linear-gradient(145deg, #343c52, #201b24 78%);
     }
 
     .mv-cover-pluus {
       background:
-        radial-gradient(circle at 30% 25%, rgba(199, 118, 150, 0.3), transparent 38%),
+        radial-gradient(circle at 30% 25%, rgba(199, 118, 150, 0.30), transparent 38%),
         linear-gradient(145deg, #5b2c45, #241b21 78%);
     }
 
@@ -481,7 +511,7 @@
 
     .mv-release-type {
       margin: 0 0 8px;
-      color: #d8b86d;
+      color: #f5c85d;
       font-size: 0.72rem;
       font-weight: 800;
       letter-spacing: 0.13em;
@@ -495,7 +525,7 @@
       line-height: 1.35;
     }
 
-    .mv-release-body p {
+    .mv-release-body > p:not(.mv-release-type) {
       margin: 10px 0 0;
       color: #bdb3b0;
       font-size: 0.91rem;
@@ -507,7 +537,7 @@
       justify-content: center;
       margin-top: auto;
       padding-top: 18px;
-      color: #e2bf70;
+      color: #f5c85d;
       font-size: 0.9rem;
       font-weight: 800;
       text-decoration: none;
@@ -518,18 +548,18 @@
       text-decoration: underline;
     }
 
-    /* Streaming reminder */
+    /* STREAMING REMINDER */
     .mv-reminder {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 22px;
-      padding: clamp(24px, 4vw, 38px);
-      border: 1px solid rgba(216, 184, 109, 0.35);
+      padding: clamp(24px, 4vw, 42px);
+      border: 1px solid rgba(245, 181, 27, 0.34);
       border-radius: 22px;
       background:
-        radial-gradient(ellipse at 100% 0%, rgba(169, 39, 56, 0.3), transparent 46%),
-        linear-gradient(120deg, #342024, #211a1d);
+        radial-gradient(ellipse at 100% 0%, rgba(148, 28, 32, 0.34), transparent 46%),
+        linear-gradient(120deg, #342024, #211a1d 70%, #28221c);
     }
 
     .mv-reminder h2 {
@@ -538,7 +568,7 @@
       font-size: clamp(1.5rem, 3vw, 2.2rem);
     }
 
-    .mv-reminder p {
+    .mv-reminder p:not(.mv-eyebrow) {
       max-width: 700px;
       margin: 10px 0 0;
       color: #cfc3bf;
@@ -549,38 +579,43 @@
       flex-shrink: 0;
     }
 
-    /* Responsive */
+    /* RESPONSIVE */
     @media (min-width: 1600px) {
       .mv-container {
-        width: min(1560px, calc(100% - 64px));
+        width: calc(100% - 112px);
       }
     }
 
     @media (max-width: 1100px) {
+      .mv-container {
+        width: calc(100% - 48px);
+      }
+
       .mv-discography-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
       }
 
       .mv-cover {
-        width: calc(100% - 40px);
+        width: min(calc(100% - 36px), 320px);
       }
 
       .mv-featured {
-        grid-template-columns: minmax(0, 1fr) minmax(240px, 0.75fr);
+        grid-template-columns: minmax(0, 1fr) minmax(240px, 0.8fr);
       }
     }
 
     @media (max-width: 760px) {
       .mv-container {
-        width: calc(100% - 32px);
+        width: calc(100% - 36px);
       }
 
       .mv-hero {
-        padding: 48px 0 34px;
+        padding: 48px 0 36px;
       }
 
       .mv-hero::after {
-        width: calc(100% - 32px);
+        width: calc(100% - 36px);
         margin-top: 30px;
       }
 
@@ -594,16 +629,21 @@
       }
 
       .mv-art-frame {
-        width: min(100%, 280px);
+        width: min(100%, 300px);
       }
 
       .mv-quick-grid {
         grid-template-columns: 1fr;
+        gap: 14px;
       }
 
       .mv-reminder {
         align-items: flex-start;
         flex-direction: column;
+      }
+
+      .mv-reminder .mv-button {
+        white-space: normal;
       }
     }
 
@@ -622,28 +662,35 @@
         width: calc(100% - 28px);
       }
 
+      .mv-hero::after {
+        width: calc(100% - 28px);
+      }
+
       .mv-discography-grid {
         grid-template-columns: 1fr;
-        gap: 17px;
+        gap: 18px;
       }
 
       .mv-cover {
-        width: min(78%, 290px);
+        width: min(78%, 300px);
       }
 
       .mv-section {
-        padding: 38px 0;
+        padding: 40px 0;
       }
 
       .mv-featured-copy {
-        padding: 25px 21px 30px;
+        padding: 26px 22px 30px;
       }
 
       .mv-filter-btn {
         padding: 9px 13px;
       }
     }
-  </style></head><body>
+  </style>
+</head>
+
+<body>
   <header class="site-header">
     <div class="nav-inner">
       <a href="index.html" class="site-logo" aria-label="JLSPT Home">
@@ -657,27 +704,30 @@
           <strong>JLSPT</strong>
           <small>JL Streaming Project Team</small>
         </span>
-      </a>  <button
-    class="mobile-menu-toggle"
-    type="button"
-    aria-label="Open navigation menu"
-    aria-expanded="false"
-    aria-controls="main-navigation"
-  >
-    ☰
-  </button>
+      </a>
 
-  <nav class="nav-links" id="main-navigation" aria-label="Main navigation">
-    <a href="index.html">Home</a>
-    <a href="music-video.html" aria-current="page">Music &amp; Video</a>
-    <a href="campaigns.html">Campaigns</a>
-    <a href="guides.html">Guides</a>
-    <a href="corner.html">JL Corner</a>
-    <a href="my-profile.html">My Profile</a>
-  </nav>
-</div>
+      <button
+        class="mobile-menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        ☰
+      </button>
 
-  </header>  <main class="mv-page">
+      <nav class="nav-links" id="main-navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="music-video.html" aria-current="page">Music &amp; Video</a>
+        <a href="campaigns.html">Campaigns</a>
+        <a href="guides.html">Guides</a>
+        <a href="corner.html">JL Corner</a>
+        <a href="my-profile.html">My Profile</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="mv-page">
     <section class="mv-hero">
       <div class="mv-container">
         <p class="mv-eyebrow">Listen • Watch • Support</p>
@@ -685,363 +735,362 @@
         <p class="mv-hero-description">
           One place for Starflares to find JL and AHOF music, official videos,
           and streaming activities. Every stream is a little more love for JL.
-        </p>    <div class="mv-hero-actions">
-      <a class="mv-button mv-button-primary" href="#featured-video">
-        Watch Featured Video
-      </a>
-      <a class="mv-button" href="#discography">
-        Explore Discography
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="mv-section" id="featured-video">
-  <div class="mv-container">
-    <div class="mv-section-heading">
-      <div>
-        <p class="mv-eyebrow">Featured</p>
-        <h2>Let's stream together</h2>
-        <div class="mv-gold-line"></div>
-      </div>
-      <p>
-        Support JL's music video by watching, engaging naturally, and
-        sharing it with fellow Starflares.
-      </p>
-    </div>
-
-    <article class="mv-featured">
-      <div class="mv-featured-copy">
-        <span class="mv-label">★ Streaming Mission</span>
-        <h3>ALON <span>by JL</span></h3>
-        <p>
-          Let's help JL's official music video reach the next milestone.
-          Watch the full video, leave a genuine comment, like the video,
-          and share it when you can.
         </p>
-        <a
-          class="mv-button mv-button-primary"
-          href="https://www.youtube.com/watch?v=Dt8noBM9VTg"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Watch on YouTube ↗
-        </a>
-      </div>
 
-      <div class="mv-featured-art" aria-label="ALON streaming mission artwork">
-        <div class="mv-art-frame">
-          <div class="mv-art-text">
-            ALON
-            <small>JL • OFFICIAL MUSIC VIDEO</small>
-          </div>
+        <div class="mv-hero-actions">
+          <a class="mv-button mv-button-primary" href="#featured-video">
+            Watch Featured Video
+          </a>
+          <a class="mv-button" href="#discography">
+            Explore Discography
+          </a>
         </div>
       </div>
-    </article>
-  </div>
-</section>
+    </section>
 
-<section class="mv-section">
-  <div class="mv-container">
-    <div class="mv-section-heading">
-      <div>
-        <p class="mv-eyebrow">Quick Access</p>
-        <h2>Choose where to listen</h2>
-        <div class="mv-gold-line"></div>
+    <section class="mv-section" id="featured-video">
+      <div class="mv-container">
+        <div class="mv-section-heading">
+          <div>
+            <p class="mv-eyebrow">Featured</p>
+            <h2>Let's stream together</h2>
+            <div class="mv-gold-line"></div>
+          </div>
+          <p>
+            Support JL's music video by watching, engaging naturally, and
+            sharing it with fellow Starflares.
+          </p>
+        </div>
+
+        <article class="mv-featured">
+          <div class="mv-featured-copy">
+            <span class="mv-label">★ Streaming Mission</span>
+            <h3>ALON <span>by JL</span></h3>
+            <p>
+              Let's help JL's official music video reach the next milestone.
+              Watch the full video, leave a genuine comment, like the video,
+              and share it when you can.
+            </p>
+            <a
+              class="mv-button mv-button-primary"
+              href="https://www.youtube.com/watch?v=Dt8noBM9VTg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Watch on YouTube ↗
+            </a>
+          </div>
+
+          <div class="mv-featured-art" aria-label="ALON streaming mission artwork">
+            <div class="mv-art-frame">
+              <div class="mv-art-text">
+                ALON
+                <small>JL • OFFICIAL MUSIC VIDEO</small>
+              </div>
+            </div>
+          </div>
+        </article>
       </div>
-      <p>
-        Find the streaming spaces and music platforms you can use to
-        support JL and AHOF.
-      </p>
-    </div>
+    </section>
 
-    <div class="mv-quick-grid">
-      <a
-        class="mv-quick-card"
-        href="https://app.stationhead.com/jlspteam"
-        target="_blank"
-        rel="noopener noreferrer"
-        style="text-decoration:none"
-      >
-        <span class="mv-quick-icon" aria-hidden="true">♫</span>
-        <h3>JLSPT Stationhead</h3>
-        <p>Join the JLSPT listening station and stream together.</p>
-      </a>
+    <section class="mv-section">
+      <div class="mv-container">
+        <div class="mv-section-heading">
+          <div>
+            <p class="mv-eyebrow">Quick Access</p>
+            <h2>Choose where to listen</h2>
+            <div class="mv-gold-line"></div>
+          </div>
+          <p>
+            Find the streaming spaces and music platforms you can use to
+            support JL and AHOF.
+          </p>
+        </div>
 
-      <a
-        class="mv-quick-card"
-        href="https://www.youtube.com/@JLSPTeam"
-        target="_blank"
-        rel="noopener noreferrer"
-        style="text-decoration:none"
-      >
-        <span class="mv-quick-icon" aria-hidden="true">▶</span>
-        <h3>YouTube</h3>
-        <p>Watch official videos and visit the JLSPT channel.</p>
-      </a>
+        <div class="mv-quick-grid">
+          <a
+            class="mv-quick-card"
+            href="https://app.stationhead.com/jlspteam"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="mv-quick-icon" aria-hidden="true">♫</span>
+            <h3>JLSPT Stationhead</h3>
+            <p>Join the JLSPT listening station and stream together.</p>
+          </a>
 
-      <a
-        class="mv-quick-card"
-        href="#discography"
-        style="text-decoration:none"
-      >
-        <span class="mv-quick-icon" aria-hidden="true">♪</span>
-        <h3>Discography</h3>
-        <p>Browse the music collection and choose what to play next.</p>
-      </a>
-    </div>
-  </div>
-</section>
+          <a
+            class="mv-quick-card"
+            href="https://www.youtube.com/@JLSPTeam"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="mv-quick-icon" aria-hidden="true">▶</span>
+            <h3>YouTube</h3>
+            <p>Watch official videos and visit the JLSPT channel.</p>
+          </a>
 
-<section class="mv-section" id="discography">
-  <div class="mv-container">
-    <div class="mv-section-heading">
-      <div>
-        <p class="mv-eyebrow">Music Library</p>
-        <h2>Discography</h2>
-        <div class="mv-gold-line"></div>
+          <a class="mv-quick-card" href="#discography">
+            <span class="mv-quick-icon" aria-hidden="true">♪</span>
+            <h3>Discography</h3>
+            <p>Browse the music collection and choose what to play next.</p>
+          </a>
+        </div>
       </div>
-      <p>
-        Browse the listed releases. The square artwork panels are
-        placeholders, ready to be replaced with official cover images.
-      </p>
-    </div>
+    </section>
 
-    <div class="mv-filter-row" role="group" aria-label="Filter music releases">
-      <button class="mv-filter-btn active" type="button" data-filter="all" aria-pressed="true">
-        All Releases
-      </button>
-      <button class="mv-filter-btn" type="button" data-filter="jl" aria-pressed="false">
-        JL Solo
-      </button>
-      <button class="mv-filter-btn" type="button" data-filter="ahof" aria-pressed="false">
-        AHOF
-      </button>
-      <button class="mv-filter-btn" type="button" data-filter="other" aria-pressed="false">
-        Other Artists
-      </button>
-    </div>
-
-    <div class="mv-discography-grid">
-      <article class="mv-release-card" data-release="jl">
-        <div class="mv-cover mv-cover-alon">
-          <div class="mv-cover-word">
-            ALON
-            <small>JL • SOLO</small>
+    <section class="mv-section" id="discography">
+      <div class="mv-container">
+        <div class="mv-section-heading">
+          <div>
+            <p class="mv-eyebrow">Music Library</p>
+            <h2>Discography</h2>
+            <div class="mv-gold-line"></div>
           </div>
+          <p>
+            Browse the listed releases. The square artwork panels are
+            placeholders, ready to be replaced with official cover images.
+          </p>
         </div>
-        <div class="mv-release-body">
-          <p class="mv-release-type">JL Solo</p>
-          <h3>ALON</h3>
-          <p>JL's solo music and official music video.</p>
-          <a
-            class="mv-release-link"
-            href="https://www.youtube.com/watch?v=Dt8noBM9VTg"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Watch Official MV ↗
-          </a>
-        </div>
-      </article>
 
-      <article class="mv-release-card" data-release="ahof">
-        <div class="mv-cover mv-cover-ahof">
-          <div class="mv-cover-word">
+        <div class="mv-filter-row" role="group" aria-label="Filter music releases">
+          <button class="mv-filter-btn active" type="button" data-filter="all" aria-pressed="true">
+            All Releases
+          </button>
+          <button class="mv-filter-btn" type="button" data-filter="jl" aria-pressed="false">
+            JL Solo
+          </button>
+          <button class="mv-filter-btn" type="button" data-filter="ahof" aria-pressed="false">
             AHOF
-            <small>THE GROUP</small>
-          </div>
+          </button>
+          <button class="mv-filter-btn" type="button" data-filter="other" aria-pressed="false">
+            Other Artists
+          </button>
         </div>
-        <div class="mv-release-body">
-          <p class="mv-release-type">AHOF</p>
-          <h3>Rendezvous</h3>
-          <p>Listen to AHOF's music and support the group.</p>
-          <a
-            class="mv-release-link"
-            href="https://www.youtube.com/results?search_query=AHOF+Rendezvous+Official"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Find Official Release ↗
-          </a>
-        </div>
-      </article>
 
-      <article class="mv-release-card" data-release="ahof">
-        <div class="mv-cover mv-cover-ul">
-          <div class="mv-cover-word">
-            AHOF
-            <small>THE LITTLE STAR</small>
-          </div>
-        </div>
-        <div class="mv-release-body">
-          <p class="mv-release-type">AHOF</p>
-          <h3>The Little Star</h3>
-          <p>Add this track to your listening rotation.</p>
-          <a
-            class="mv-release-link"
-            href="https://www.youtube.com/results?search_query=AHOF+The+Little+Star+Official"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Find Official Release ↗
-          </a>
-        </div>
-      </article>
+        <div class="mv-discography-grid">
+          <article class="mv-release-card" data-release="jl">
+            <div class="mv-cover mv-cover-alon">
+              <div class="mv-cover-word">
+                ALON
+                <small>JL • SOLO</small>
+              </div>
+            </div>
+            <div class="mv-release-body">
+              <p class="mv-release-type">JL Solo</p>
+              <h3>ALON</h3>
+              <p>JL's solo music and official music video.</p>
+              <a
+                class="mv-release-link"
+                href="https://www.youtube.com/watch?v=Dt8noBM9VTg"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Watch Official MV ↗
+              </a>
+            </div>
+          </article>
 
-      <article class="mv-release-card" data-release="ahof">
-        <div class="mv-cover mv-cover-ahof">
-          <div class="mv-cover-word">
-            AHOF
-            <small>THE UNIVERSE</small>
-          </div>
-        </div>
-        <div class="mv-release-body">
-          <p class="mv-release-type">AHOF</p>
-          <h3>The Universe</h3>
-          <p>Keep supporting AHOF's music across platforms.</p>
-          <a
-            class="mv-release-link"
-            href="https://www.youtube.com/results?search_query=AHOF+The+Universe+Official"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Find Official Release ↗
-          </a>
-        </div>
-      </article>
+          <article class="mv-release-card" data-release="ahof">
+            <div class="mv-cover mv-cover-ahof">
+              <div class="mv-cover-word">
+                AHOF
+                <small>RENDEZVOUS</small>
+              </div>
+            </div>
+            <div class="mv-release-body">
+              <p class="mv-release-type">AHOF</p>
+              <h3>Rendezvous</h3>
+              <p>Listen to AHOF's music and support the group.</p>
+              <a
+                class="mv-release-link"
+                href="https://www.youtube.com/results?search_query=AHOF+Rendezvous+Official"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Find Official Release ↗
+              </a>
+            </div>
+          </article>
 
-      <article class="mv-release-card" data-release="ahof">
-        <div class="mv-cover mv-cover-ul">
-          <div class="mv-cover-word">
-            AHOF
-            <small>INCOMPLETED</small>
-          </div>
-        </div>
-        <div class="mv-release-body">
-          <p class="mv-release-type">AHOF</p>
-          <h3>Incompleted</h3>
-          <p>Discover the track and add it to your playlist.</p>
-          <a
-            class="mv-release-link"
-            href="https://www.youtube.com/results?search_query=AHOF+Incompleted+Official"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Find Official Release ↗
-          </a>
-        </div>
-      </article>
+          <article class="mv-release-card" data-release="ahof">
+            <div class="mv-cover mv-cover-ul">
+              <div class="mv-cover-word">
+                AHOF
+                <small>THE LITTLE STAR</small>
+              </div>
+            </div>
+            <div class="mv-release-body">
+              <p class="mv-release-type">AHOF</p>
+              <h3>The Little Star</h3>
+              <p>Add this track to your listening rotation.</p>
+              <a
+                class="mv-release-link"
+                href="https://www.youtube.com/results?search_query=AHOF+The+Little+Star+Official"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Find Official Release ↗
+              </a>
+            </div>
+          </article>
 
-      <article class="mv-release-card" data-release="ahof">
-        <div class="mv-cover mv-cover-alon">
-          <div class="mv-cover-word">
-            AHOF
-            <small>COSMIC UNDERDOG</small>
-          </div>
-        </div>
-        <div class="mv-release-body">
-          <p class="mv-release-type">AHOF</p>
-          <h3>Cosmic Underdog</h3>
-          <p>Continue supporting AHOF with consistent listening.</p>
-          <a
-            class="mv-release-link"
-            href="https://www.youtube.com/results?search_query=AHOF+Cosmic+Underdog+Official"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Find Official Release ↗
-          </a>
-        </div>
-      </article>
+          <article class="mv-release-card" data-release="ahof">
+            <div class="mv-cover mv-cover-ahof">
+              <div class="mv-cover-word">
+                AHOF
+                <small>THE UNIVERSE</small>
+              </div>
+            </div>
+            <div class="mv-release-body">
+              <p class="mv-release-type">AHOF</p>
+              <h3>The Universe</h3>
+              <p>Keep supporting AHOF's music across platforms.</p>
+              <a
+                class="mv-release-link"
+                href="https://www.youtube.com/results?search_query=AHOF+The+Universe+Official"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Find Official Release ↗
+              </a>
+            </div>
+          </article>
 
-      <article class="mv-release-card" data-release="ahof">
-        <div class="mv-cover mv-cover-pluus">
-          <div class="mv-cover-word">
-            AHOF
-            <small>DEBUT</small>
-          </div>
-        </div>
-        <div class="mv-release-body">
-          <p class="mv-release-type">AHOF</p>
-          <h3>AHOF</h3>
-          <p>Support the group's music and official content.</p>
-          <a
-            class="mv-release-link"
-            href="https://www.youtube.com/results?search_query=AHOF+AHOF+Official+MV"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Find Official Release ↗
-          </a>
-        </div>
-      </article>
+          <article class="mv-release-card" data-release="ahof">
+            <div class="mv-cover mv-cover-ul">
+              <div class="mv-cover-word">
+                AHOF
+                <small>INCOMPLETED</small>
+              </div>
+            </div>
+            <div class="mv-release-body">
+              <p class="mv-release-type">AHOF</p>
+              <h3>Incompleted</h3>
+              <p>Discover the track and add it to your playlist.</p>
+              <a
+                class="mv-release-link"
+                href="https://www.youtube.com/results?search_query=AHOF+Incompleted+Official"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Find Official Release ↗
+              </a>
+            </div>
+          </article>
 
-      <article class="mv-release-card" data-release="other">
-        <div class="mv-cover mv-cover-pluus">
-          <div class="mv-cover-word">
-            PLAYLIST
-            <small>STREAM TOGETHER</small>
-          </div>
-        </div>
-        <div class="mv-release-body">
-          <p class="mv-release-type">Other Artists</p>
-          <h3>Community Playlist</h3>
-          <p>A space for related music and community listening.</p>
-          <a
-            class="mv-release-link"
-            href="https://www.youtube.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Open YouTube ↗
-          </a>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
+          <article class="mv-release-card" data-release="ahof">
+            <div class="mv-cover mv-cover-alon">
+              <div class="mv-cover-word">
+                AHOF
+                <small>COSMIC UNDERDOG</small>
+              </div>
+            </div>
+            <div class="mv-release-body">
+              <p class="mv-release-type">AHOF</p>
+              <h3>Cosmic Underdog</h3>
+              <p>Continue supporting AHOF with consistent listening.</p>
+              <a
+                class="mv-release-link"
+                href="https://www.youtube.com/results?search_query=AHOF+Cosmic+Underdog+Official"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Find Official Release ↗
+              </a>
+            </div>
+          </article>
 
-<section class="mv-section">
-  <div class="mv-container">
-    <div class="mv-reminder">
-      <div>
-        <p class="mv-eyebrow">A Little Reminder</p>
-        <h2>Every stream comes from love.</h2>
-        <p>
-          Follow the platform's streaming guidelines, watch the content
-          naturally, and keep supporting JL and AHOF together. Thank you,
-          Starflares, for every effort you give.
-        </p>
+          <article class="mv-release-card" data-release="ahof">
+            <div class="mv-cover mv-cover-pluus">
+              <div class="mv-cover-word">
+                AHOF
+                <small>DEBUT</small>
+              </div>
+            </div>
+            <div class="mv-release-body">
+              <p class="mv-release-type">AHOF</p>
+              <h3>AHOF</h3>
+              <p>Support the group's music and official content.</p>
+              <a
+                class="mv-release-link"
+                href="https://www.youtube.com/results?search_query=AHOF+AHOF+Official+MV"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Find Official Release ↗
+              </a>
+            </div>
+          </article>
+
+          <article class="mv-release-card" data-release="other">
+            <div class="mv-cover mv-cover-pluus">
+              <div class="mv-cover-word">
+                PLAYLIST
+                <small>STREAM TOGETHER</small>
+              </div>
+            </div>
+            <div class="mv-release-body">
+              <p class="mv-release-type">Other Artists</p>
+              <h3>Community Playlist</h3>
+              <p>A space for related music and community listening.</p>
+              <a
+                class="mv-release-link"
+                href="https://www.youtube.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open YouTube ↗
+              </a>
+            </div>
+          </article>
+        </div>
       </div>
-      <a
-        class="mv-button mv-button-primary"
-        href="https://app.stationhead.com/jlspteam"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Join JLSPT Stationhead ↗
-      </a>
-    </div>
-  </div>
-</section>
+    </section>
 
-  </main>  <footer class="site-footer">
+    <section class="mv-section">
+      <div class="mv-container">
+        <div class="mv-reminder">
+          <div>
+            <p class="mv-eyebrow">A Little Reminder</p>
+            <h2>Every stream comes from love.</h2>
+            <p>
+              Follow the platform's streaming guidelines, watch the content
+              naturally, and keep supporting JL and AHOF together. Thank you,
+              Starflares, for every effort you give.
+            </p>
+          </div>
+          <a
+            class="mv-button mv-button-primary"
+            href="https://app.stationhead.com/jlspteam"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Join JLSPT Stationhead ↗
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
     <div class="container">
       <div class="footer-content">
-        <p class="footer-message">For JL, with love from Starflares. ❤️</p>    <div class="social-links" aria-label="JLSPT social media">
-      <a href="https://x.com/JLSPTeam" target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
-      <a href="https://facebook.com/JLSPTeam1" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
-      <a href="https://instagram.com/JLSPTeam1" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
-      <a href="https://tiktok.com/@JLSPTeam" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TikTok</a>
-      <a href="https://youtube.com/@JLSPTeam" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YouTube</a>
-      <a href="https://stationhead.com/JLSPTeam" target="_blank" rel="noopener noreferrer" aria-label="Stationhead">Stationhead</a>
+        <p class="footer-message">For JL, with love from Starflares. ❤️</p>
+        <div class="social-links" aria-label="JLSPT social media">
+          <a href="https://x.com/JLSPTeam" target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
+          <a href="https://facebook.com/JLSPTeam1" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+          <a href="https://instagram.com/JLSPTeam1" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+          <a href="https://tiktok.com/@JLSPTeam" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TikTok</a>
+          <a href="https://youtube.com/@JLSPTeam" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YouTube</a>
+          <a href="https://stationhead.com/JLSPTeam" target="_blank" rel="noopener noreferrer" aria-label="Stationhead">Stationhead</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+  </footer>
 
-  </footer>  <script>
-    // Mobile navigation toggle
+  <script>
+    // Mobile navigation
     (() => {
       const menuButton = document.querySelector(".mobile-menu-toggle");
       const nav = document.querySelector(".nav-links");
@@ -1091,5 +1140,6 @@
         });
       });
     })();
-  </script></body>
+  </script>
+</body>
 </html>

@@ -1,1007 +1,1095 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#941c20">
-    <title>Music &amp; Video | JLSPT</title>
-    <meta name="description" content="Explore JL's music journey, releases, performances, and official streaming resources.">
-    <link rel="stylesheet" href="style.css">
-
-    <style>
-        /* MUSIC & VIDEO PAGE ONLY */
-        .mv-page {
-            width: 100%;
-            max-width: none;
-            overflow: hidden;
-        }
-
-        .mv-page *,
-        .mv-page *::before,
-        .mv-page *::after {
-            box-sizing: border-box;
-        }
-
-        .mv-container {
-            width: min(1500px, calc(100% - 64px));
-            margin-inline: auto;
-        }
-
-        /* HERO WITH LOGO */
-        .mv-hero {
-            position: relative;
-            width: 100%;
-            padding: clamp(44px, 6vw, 88px) 0;
-            background:
-                radial-gradient(ellipse at 85% 30%, rgba(245,181,27,.10), transparent 35%),
-                linear-gradient(135deg, #211517, #16090b 70%);
-            border-bottom: 1px solid rgba(245,181,27,.2);
-        }
-
-        .mv-hero-inner {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) minmax(160px, 300px);
-            align-items: center;
-            gap: clamp(28px, 6vw, 90px);
-        }
-
-        .mv-hero-copy {
-            min-width: 0;
-        }
-
-        .mv-hero .mv-eyebrow {
-            margin: 0 0 12px;
-            color: #f5c85e;
-            font-size: .82rem;
-            font-weight: 800;
-            letter-spacing: .16em;
-            text-transform: uppercase;
-        }
-
-        .mv-hero h1 {
-            margin: 0 0 18px;
-            color: #fffaf3;
-            font-size: clamp(2.7rem, 5vw, 5rem);
-            line-height: 1.08;
-        }
-
-        .mv-hero-copy > p:last-child {
-            max-width: 700px;
-            margin: 0;
-            color: #d8cacc;
-            font-size: clamp(1rem, 1.3vw, 1.2rem);
-            line-height: 1.8;
-        }
-
-        .mv-hero-logo-wrap {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 0;
-        }
-
-        .mv-hero-logo {
-            display: block;
-            width: 100%;
-            max-width: 270px;
-            height: auto;
-            object-fit: contain;
-            filter: drop-shadow(0 10px 26px rgba(0,0,0,.28));
-        }
-
-        .mv-hero-logo-fallback {
-            display: none;
-            width: min(100%, 240px);
-            aspect-ratio: 1;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(245,181,27,.5);
-            border-radius: 24px;
-            background: #281518;
-            color: #f5c85e;
-            font-size: clamp(3rem, 7vw, 5rem);
-            font-weight: 900;
-            letter-spacing: .06em;
-        }
-
-        /* SHARED SECTION SPACING */
-        .mv-section {
-            padding: clamp(38px, 5vw, 68px) 0;
-        }
-
-        .mv-section-heading {
-            margin-bottom: 26px;
-        }
-
-        .mv-section-heading .mv-eyebrow {
-            margin: 0 0 8px;
-            color: #f5c85e;
-            font-size: .8rem;
-            font-weight: 800;
-            letter-spacing: .14em;
-            text-transform: uppercase;
-        }
-
-        .mv-section-heading h2 {
-            margin: 0 0 10px;
-            font-size: clamp(1.8rem, 3vw, 2.6rem);
-            line-height: 1.2;
-        }
-
-        .mv-section-heading p:last-child {
-            max-width: 760px;
-            margin: 0;
-            color: #c9b9bb;
-            line-height: 1.75;
-        }
-
-        /* FEATURED VIDEO: CHARCOAL + GOLD */
-        .mv-feature {
-            display: grid;
-            grid-template-columns: minmax(0, 1.35fr) minmax(250px, .8fr);
-            align-items: center;
-            gap: clamp(24px, 5vw, 64px);
-            padding: clamp(26px, 4vw, 54px);
-            color: #fffaf3;
-            background:
-                radial-gradient(circle at 85% 15%, rgba(245,181,27,.12), transparent 36%),
-                linear-gradient(125deg, #211c1c, #302526 58%, #191516);
-            border: 1px solid rgba(245,181,27,.35);
-            border-radius: 22px;
-            box-shadow: 0 16px 44px rgba(0,0,0,.2);
-        }
-
-        .mv-feature-copy {
-            min-width: 0;
-        }
-
-        .mv-feature-badge {
-            display: inline-block;
-            padding: 6px 12px;
-            border: 1px solid rgba(245,181,27,.65);
-            border-radius: 999px;
-            color: #f5c85e;
-            font-size: .75rem;
-            font-weight: 800;
-            letter-spacing: .08em;
-            text-transform: uppercase;
-        }
-
-        .mv-feature h2 {
-            margin: 18px 0 14px;
-            color: #fffaf3;
-            font-size: clamp(2.8rem, 5vw, 4.8rem);
-            line-height: 1;
-        }
-
-        .mv-feature-copy > p {
-            max-width: 680px;
-            color: #e0d6d2;
-            line-height: 1.8;
-        }
-
-        .mv-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 24px;
-        }
-
-        .mv-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 46px;
-            padding: 12px 18px;
-            border: 1px solid transparent;
-            border-radius: 8px;
-            font-size: .95rem;
-            font-weight: 800;
-            text-align: center;
-            text-decoration: none;
-            transition: transform .2s ease, background .2s ease;
-        }
-
-        .mv-button:hover {
-            transform: translateY(-2px);
-        }
-
-        .mv-button-primary {
-            background: #f5c85e;
-            color: #241d18;
-        }
-
-        .mv-button-primary:hover {
-            background: #ffe09a;
-        }
-
-        .mv-button-secondary {
-            border-color: rgba(255,250,243,.4);
-            background: transparent;
-            color: #fffaf3;
-        }
-
-        .mv-feature-note {
-            margin: 18px 0 0;
-            color: #c9b9bb;
-            font-size: .86rem;
-            line-height: 1.65;
-        }
-
-        .mv-feature-art {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            gap: 14px;
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            min-height: 260px;
-            padding: 24px;
-            border: 1px solid rgba(245,181,27,.45);
-            border-radius: 18px;
-            background:
-                radial-gradient(circle at center, rgba(245,181,27,.15), transparent 65%),
-                #191516;
-            text-align: center;
-        }
-
-        .mv-feature-art strong {
-            color: #f5c85e;
-            font-size: clamp(3rem, 5vw, 5rem);
-            font-weight: 900;
-            letter-spacing: .08em;
-            line-height: 1;
-        }
-
-        .mv-feature-art span {
-            color: #d9ceca;
-            font-size: .78rem;
-            letter-spacing: .12em;
-        }
-
-        /* CATEGORY FILTERS */
-        .mv-filter-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 28px;
-        }
-
-        .mv-filter {
-            min-height: 42px;
-            padding: 10px 17px;
-            border: 1px solid rgba(245,181,27,.3);
-            border-radius: 999px;
-            background: #281518;
-            color: #e7dadd;
-            font: inherit;
-            font-size: .92rem;
-            cursor: pointer;
-            transition: background .2s ease, color .2s ease;
-        }
-
-        .mv-filter:hover,
-        .mv-filter.active {
-            border-color: #f5c85e;
-            background: #f5c85e;
-            color: #241d18;
-        }
-
-        /* FOUR EQUAL CARDS */
-        .mv-discography-grid {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            align-items: stretch;
-            gap: 24px;
-        }
-
-        .mv-release-card {
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            min-width: 0;
-            overflow: hidden;
-            border: 1px solid rgba(245,181,27,.16);
-            border-radius: 16px;
-            background: #281518;
-            text-align: center;
-        }
-
-        /* Every cover has the exact same square dimensions */
-        .mv-cover {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            gap: 12px;
-            width: calc(100% - 40px);
-            max-width: 300px;
-            aspect-ratio: 1 / 1;
-            flex: 0 0 auto;
-            margin: 22px auto 0;
-            padding: 18px;
-            overflow: hidden;
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        .mv-cover strong {
-            display: block;
-            width: 100%;
-            color: #fffaf3;
-            font-size: clamp(1.35rem, 1.8vw, 2rem);
-            font-weight: 900;
-            line-height: 1.2;
-            overflow-wrap: anywhere;
-        }
-
-        .mv-cover small {
-            color: rgba(255,250,243,.8);
-            font-size: .7rem;
-            letter-spacing: .1em;
-            line-height: 1.5;
-        }
-
-        .mv-cover-pluus {
-            background: linear-gradient(145deg, #315c50, #182b28 70%);
-        }
-
-        .mv-cover-universe {
-            background: linear-gradient(145deg, #303e68, #171a31 70%);
-        }
-
-        .mv-cover-alon {
-            background: linear-gradient(145deg, #a77b45, #3b2924 72%);
-        }
-
-        .mv-cover-ahof {
-            background: linear-gradient(145deg, #8e3c48, #351a27 72%);
-        }
-
-        .mv-release-body {
-            display: flex;
-            flex: 1;
-            flex-direction: column;
-            align-items: center;
-            padding: 24px 22px 26px;
-            text-align: center;
-        }
-
-        .mv-release-body h3 {
-            width: 100%;
-            margin: 0 0 10px;
-            color: #fffaf3;
-            font-size: 1.2rem;
-            line-height: 1.4;
-        }
-
-        .mv-release-body p {
-            width: 100%;
-            margin: 0;
-            color: #c9b9bb;
-            font-size: .95rem;
-            line-height: 1.7;
-        }
-
-        .mv-release-meta {
-            margin-bottom: 10px;
-            color: #f5c85e;
-            font-size: .82rem;
-            font-weight: 800;
-        }
-
-        .mv-release-link {
-            display: inline-block;
-            margin-top: auto;
-            padding-top: 22px;
-            color: #f5c85e;
-            font-weight: 800;
-            text-decoration: none;
-        }
-
-        .mv-release-link:hover {
-            text-decoration: underline;
-        }
-
-        .mv-archive-note {
-            margin: 24px 0 0;
-            color: #c9b9bb;
-            font-size: .9rem;
-            line-height: 1.7;
-        }
-
-        /* RELEASE CALENDAR */
-        .mv-calendar-card {
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-            padding: 26px;
-            border: 1px solid rgba(245,181,27,.22);
-            border-radius: 16px;
-            background: #281518;
-        }
-
-        .mv-calendar-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex: 0 0 48px;
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            background: rgba(245,181,27,.12);
-            color: #f5c85e;
-            font-size: 1.5rem;
-        }
-
-        .mv-status {
-            display: inline-block;
-            margin-bottom: 8px;
-            color: #f5c85e;
-            font-size: .75rem;
-            font-weight: 800;
-            letter-spacing: .1em;
-        }
-
-        .mv-calendar-card h3 {
-            margin: 0 0 8px;
-            color: #fffaf3;
-        }
-
-        .mv-calendar-card p {
-            margin: 0;
-            color: #c9b9bb;
-            line-height: 1.7;
-        }
-
-        /* OFFICIAL LINKS */
-        .mv-platform-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 20px;
-        }
-
-        .mv-platform-card {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            min-width: 0;
-            padding: 22px;
-            border: 1px solid rgba(245,181,27,.2);
-            border-radius: 14px;
-            background: #281518;
-            color: inherit;
-            text-decoration: none;
-            transition: transform .2s ease, border-color .2s ease;
-        }
-
-        .mv-platform-card:hover {
-            transform: translateY(-3px);
-            border-color: rgba(245,181,27,.65);
-        }
-
-        .mv-platform-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex: 0 0 44px;
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            background: rgba(245,181,27,.12);
-            color: #f5c85e;
-            font-size: 1.3rem;
-        }
-
-        .mv-platform-copy {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .mv-platform-copy h3 {
-            margin: 0 0 5px;
-            color: #fffaf3;
-            font-size: 1.05rem;
-        }
-
-        .mv-platform-copy p {
-            margin: 0;
-            color: #c9b9bb;
-            font-size: .88rem;
-            line-height: 1.6;
-        }
-
-        .mv-platform-arrow {
-            color: #f5c85e;
-            font-size: 1.1rem;
-        }
-
-        /* CAMPAIGN CTA */
-        .mv-cta {
-            padding: clamp(28px, 4vw, 48px);
-            border: 1px solid rgba(245,181,27,.28);
-            border-radius: 20px;
-            background: linear-gradient(120deg, #281518, #211c1c);
-            text-align: center;
-        }
-
-        .mv-cta .mv-eyebrow {
-            margin: 0 0 10px;
-            color: #f5c85e;
-            font-size: .8rem;
-            font-weight: 800;
-            letter-spacing: .14em;
-        }
-
-        .mv-cta h2 {
-            margin: 0 0 12px;
-            color: #fffaf3;
-            font-size: clamp(1.7rem, 3vw, 2.5rem);
-        }
-
-        .mv-cta p:not(.mv-eyebrow) {
-            max-width: 650px;
-            margin: 0 auto 22px;
-            color: #c9b9bb;
-            line-height: 1.75;
-        }
-
-        /* FOOTER: SAME STRUCTURE AS HOME */
-        .mv-footer .footer-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 24px;
-        }
-
-        .mv-footer .footer-message {
-            margin: 0;
-            color: inherit;
-            line-height: 1.6;
-        }
-
-        .mv-footer .social-links {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .mv-footer .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border: 1px solid rgba(245,181,27,.35);
-            border-radius: 50%;
-            color: #f5c85e;
-            text-decoration: none;
-            transition: background .2s ease, transform .2s ease;
-        }
-
-        .mv-footer .social-links a:hover {
-            background: rgba(245,181,27,.12);
-            transform: translateY(-2px);
-        }
-
-        /* DESKTOP TYPOGRAPHY */
-        @media (min-width: 901px) {
-            .mv-page {
-                font-size: 17px;
-            }
-
-            .mv-section-heading p:last-child {
-                font-size: 1.05rem;
-            }
-
-            .mv-release-body p {
-                font-size: 1rem;
-            }
-        }
-
-        /* TABLET */
-        @media (max-width: 1100px) {
-            .mv-discography-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .mv-platform-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .mv-hero-inner {
-                grid-template-columns: minmax(0, 1fr) 210px;
-            }
-        }
-
-        /* MOBILE */
-        @media (max-width: 700px) {
-            .mv-container {
-                width: calc(100% - 32px);
-            }
-
-            .mv-hero {
-                padding: 38px 0;
-            }
-
-            .mv-hero-inner {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-
-            .mv-hero-copy {
-                text-align: center;
-            }
-
-            .mv-hero-copy > p:last-child {
-                margin-inline: auto;
-            }
-
-            .mv-hero-logo {
-                max-width: 160px;
-            }
-
-            .mv-feature {
-                grid-template-columns: 1fr;
-                gap: 24px;
-                padding: 24px;
-            }
-
-            .mv-feature-art {
-                min-height: 0;
-                width: min(100%, 300px);
-                margin-inline: auto;
-            }
-
-            .mv-discography-grid,
-            .mv-platform-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .mv-cover {
-                width: min(calc(100% - 40px), 300px);
-            }
-
-            .mv-release-body {
-                padding: 22px;
-            }
-
-            .mv-calendar-card {
-                flex-direction: column;
-            }
-
-            .mv-footer .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .mv-page *,
-            .mv-page *::before,
-            .mv-page *::after {
-                scroll-behavior: auto !important;
-                transition: none !important;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-<header class="site-header">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171416">
+  <title>Music &amp; Video | JLSPT</title>  <link rel="stylesheet" href="style.css">  <style>
+    /* Music & Video page only */
+    .mv-page {
+      width: 100%;
+      min-height: 100vh;
+      overflow-x: clip;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(126, 25, 37, 0.13), transparent 48%),
+        #171416;
+    }
+
+    .mv-container {
+      width: min(1500px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    /* Header logo */
+    .site-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .site-logo-image {
+      display: block;
+      width: 48px;
+      height: 48px;
+      flex: 0 0 48px;
+      object-fit: contain;
+    }
+
+    .site-logo .logo-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Hero */
+    .mv-hero {
+      position: relative;
+      padding: 64px 0 48px;
+      background:
+        radial-gradient(ellipse at 12% 10%, rgba(158, 34, 48, 0.3), transparent 42%),
+        linear-gradient(115deg, #21191b 0%, #171416 58%, #29201b 100%);
+      border-bottom: 1px solid rgba(213, 175, 93, 0.24);
+    }
+
+    .mv-hero::after {
+      content: "";
+      display: block;
+      width: min(1500px, calc(100% - 48px));
+      height: 2px;
+      margin: 40px auto 0;
+      background: linear-gradient(90deg, transparent, #b52c3b, #c6a15c, transparent);
+      opacity: 0.85;
+    }
+
+    .mv-eyebrow {
+      margin: 0 0 12px;
+      color: #d8b86d;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .mv-hero h1 {
+      max-width: 900px;
+      margin: 0;
+      color: #fffaf2;
+      font-size: clamp(2.4rem, 5.5vw, 4.8rem);
+      line-height: 1.04;
+      letter-spacing: -0.045em;
+    }
+
+    .mv-hero h1 span {
+      color: #d6ad61;
+    }
+
+    .mv-hero-description {
+      max-width: 720px;
+      margin: 20px 0 0;
+      color: #d0c7c4;
+      font-size: clamp(1rem, 1.5vw, 1.1rem);
+      line-height: 1.8;
+    }
+
+    .mv-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .mv-button {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      border: 1px solid rgba(218, 180, 97, 0.6);
+      border-radius: 999px;
+      color: #fffaf2;
+      background: rgba(255, 255, 255, 0.04);
+      font-size: 0.92rem;
+      font-weight: 750;
+      text-decoration: none;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .mv-button:hover {
+      transform: translateY(-2px);
+      background: rgba(183, 42, 57, 0.35);
+    }
+
+    .mv-button-primary {
+      color: #fffaf2;
+      border-color: #a92a39;
+      background: linear-gradient(120deg, #a92738, #761d2a);
+    }
+
+    /* Section headings */
+    .mv-section {
+      padding: 52px 0;
+    }
+
+    .mv-section + .mv-section {
+      padding-top: 16px;
+    }
+
+    .mv-section-heading {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: end;
+      justify-content: space-between;
+      gap: 14px 24px;
+      margin-bottom: 24px;
+    }
+
+    .mv-section-heading h2 {
+      margin: 0;
+      color: #fff8ef;
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      line-height: 1.2;
+    }
+
+    .mv-section-heading p {
+      max-width: 650px;
+      margin: 8px 0 0;
+      color: #bdb3b0;
+      line-height: 1.7;
+    }
+
+    .mv-gold-line {
+      width: 76px;
+      height: 3px;
+      margin-top: 15px;
+      border-radius: 10px;
+      background: linear-gradient(90deg, #a92738, #d8b86d);
+    }
+
+    /* Featured video */
+    .mv-featured {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+      gap: 0;
+      overflow: hidden;
+      border: 1px solid rgba(216, 184, 109, 0.35);
+      border-radius: 24px;
+      background:
+        radial-gradient(ellipse at 85% 5%, rgba(190, 52, 63, 0.32), transparent 40%),
+        linear-gradient(125deg, #5e1c25 0%, #342024 45%, #201a1c 100%);
+      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.25);
+    }
+
+    .mv-featured-copy {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: clamp(25px, 5vw, 60px);
+    }
+
+    .mv-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 11px;
+      border: 1px solid rgba(216, 184, 109, 0.45);
+      border-radius: 999px;
+      color: #e3c779;
+      background: rgba(15, 12, 13, 0.28);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .mv-featured h3 {
+      margin: 20px 0 12px;
+      color: #fff9f0;
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      line-height: 1.06;
+    }
+
+    .mv-featured h3 span {
+      color: #e0bc6a;
+    }
+
+    .mv-featured-copy p {
+      max-width: 550px;
+      margin: 0;
+      color: #e0d4d0;
+      line-height: 1.8;
+    }
+
+    .mv-featured-copy .mv-button {
+      margin-top: 24px;
+    }
+
+    .mv-featured-art {
+      position: relative;
+      display: flex;
+      min-height: 340px;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      background:
+        radial-gradient(circle at center, rgba(218, 180, 97, 0.18), transparent 52%),
+        linear-gradient(145deg, rgba(173, 39, 55, 0.25), rgba(10, 9, 10, 0.3));
+    }
+
+    .mv-art-frame {
+      position: relative;
+      display: flex;
+      width: min(100%, 350px);
+      aspect-ratio: 1 / 1;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 1px solid rgba(228, 195, 119, 0.65);
+      border-radius: 18px;
+      background:
+        radial-gradient(circle at 50% 40%, rgba(208, 66, 75, 0.45), transparent 45%),
+        linear-gradient(145deg, #511923, #20191b 72%);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.28);
+    }
+
+    .mv-art-frame::before,
+    .mv-art-frame::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(225, 192, 111, 0.3);
+      border-radius: 50%;
+    }
+
+    .mv-art-frame::before {
+      width: 76%;
+      aspect-ratio: 1;
+    }
+
+    .mv-art-frame::after {
+      width: 58%;
+      aspect-ratio: 1;
+    }
+
+    .mv-art-text {
+      position: relative;
+      z-index: 1;
+      padding: 15px;
+      color: #fff7e9;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-align: center;
+      text-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+    }
+
+    .mv-art-text small {
+      display: block;
+      margin-top: 9px;
+      color: #e1bd6b;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+    }
+
+    /* Quick links */
+    .mv-quick-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .mv-quick-card {
+      display: flex;
+      min-height: 160px;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 18px;
+      background: linear-gradient(145deg, #282123, #1d191b);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .mv-quick-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(216, 184, 109, 0.5);
+    }
+
+    .mv-quick-icon {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border-radius: 13px;
+      color: #ffecc1;
+      background: linear-gradient(135deg, #9e2736, #5c1c27);
+      font-size: 1.2rem;
+    }
+
+    .mv-quick-card h3 {
+      margin: 16px 0 7px;
+      color: #fff7ef;
+      font-size: 1.08rem;
+    }
+
+    .mv-quick-card p {
+      margin: 0;
+      color: #bdb3b0;
+      font-size: 0.94rem;
+      line-height: 1.65;
+    }
+
+    /* Discography */
+    .mv-filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 24px 0;
+    }
+
+    .mv-filter-btn {
+      padding: 10px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+      color: #ded4d0;
+      background: #211c1e;
+      font: inherit;
+      font-size: 0.88rem;
+      font-weight: 750;
+      cursor: pointer;
+      transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .mv-filter-btn:hover,
+    .mv-filter-btn.active {
+      color: #fff8ed;
+      border-color: #b93646;
+      background: linear-gradient(120deg, #a52b3b, #64202a);
+    }
+
+    .mv-discography-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      align-items: stretch;
+      gap: 22px;
+    }
+
+    .mv-release-card {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 19px;
+      background: linear-gradient(160deg, #282123, #1b1719);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .mv-release-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(216, 184, 109, 0.52);
+    }
+
+    .mv-cover {
+      position: relative;
+      display: flex;
+      width: calc(100% - 36px);
+      max-width: 300px;
+      aspect-ratio: 1 / 1;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin: 18px auto 0;
+      border: 1px solid rgba(216, 184, 109, 0.35);
+      border-radius: 13px;
+      background:
+        radial-gradient(circle at 70% 20%, rgba(230, 186, 101, 0.22), transparent 34%),
+        linear-gradient(145deg, #76212d, #292023 75%);
+    }
+
+    .mv-cover::before {
+      content: "";
+      position: absolute;
+      width: 68%;
+      aspect-ratio: 1;
+      border: 1px solid rgba(255, 229, 177, 0.28);
+      border-radius: 50%;
+    }
+
+    .mv-cover::after {
+      content: "";
+      position: absolute;
+      width: 48%;
+      aspect-ratio: 1;
+      border: 1px solid rgba(255, 229, 177, 0.18);
+      border-radius: 50%;
+    }
+
+    .mv-cover-word {
+      position: relative;
+      z-index: 1;
+      padding: 12px;
+      color: #fff6e8;
+      font-size: clamp(1.35rem, 2.3vw, 2rem);
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-align: center;
+      overflow-wrap: anywhere;
+    }
+
+    .mv-cover-word small {
+      display: block;
+      margin-top: 8px;
+      color: #e6c577;
+      font-size: 0.58rem;
+      letter-spacing: 0.15em;
+    }
+
+    .mv-cover-alon {
+      background:
+        radial-gradient(circle at 50% 35%, rgba(213, 58, 69, 0.42), transparent 45%),
+        linear-gradient(145deg, #701c2a, #1c171a 78%);
+    }
+
+    .mv-cover-ahof {
+      background:
+        radial-gradient(circle at 30% 25%, rgba(225, 190, 115, 0.32), transparent 38%),
+        linear-gradient(145deg, #6e4b2d, #28201e 78%);
+    }
+
+    .mv-cover-ul {
+      background:
+        radial-gradient(circle at 70% 20%, rgba(138, 164, 198, 0.3), transparent 38%),
+        linear-gradient(145deg, #343c52, #201b24 78%);
+    }
+
+    .mv-cover-pluus {
+      background:
+        radial-gradient(circle at 30% 25%, rgba(199, 118, 150, 0.3), transparent 38%),
+        linear-gradient(145deg, #5b2c45, #241b21 78%);
+    }
+
+    .mv-release-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 20px 23px;
+      text-align: center;
+    }
+
+    .mv-release-type {
+      margin: 0 0 8px;
+      color: #d8b86d;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .mv-release-body h3 {
+      margin: 0;
+      color: #fff8ef;
+      font-size: 1.2rem;
+      line-height: 1.35;
+    }
+
+    .mv-release-body p {
+      margin: 10px 0 0;
+      color: #bdb3b0;
+      font-size: 0.91rem;
+      line-height: 1.65;
+    }
+
+    .mv-release-link {
+      display: inline-flex;
+      justify-content: center;
+      margin-top: auto;
+      padding-top: 18px;
+      color: #e2bf70;
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .mv-release-link:hover {
+      color: #fff0c7;
+      text-decoration: underline;
+    }
+
+    /* Streaming reminder */
+    .mv-reminder {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      padding: clamp(24px, 4vw, 38px);
+      border: 1px solid rgba(216, 184, 109, 0.35);
+      border-radius: 22px;
+      background:
+        radial-gradient(ellipse at 100% 0%, rgba(169, 39, 56, 0.3), transparent 46%),
+        linear-gradient(120deg, #342024, #211a1d);
+    }
+
+    .mv-reminder h2 {
+      margin: 0;
+      color: #fff8ef;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+    }
+
+    .mv-reminder p {
+      max-width: 700px;
+      margin: 10px 0 0;
+      color: #cfc3bf;
+      line-height: 1.75;
+    }
+
+    .mv-reminder .mv-button {
+      flex-shrink: 0;
+    }
+
+    /* Responsive */
+    @media (min-width: 1600px) {
+      .mv-container {
+        width: min(1560px, calc(100% - 64px));
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .mv-discography-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .mv-cover {
+        width: calc(100% - 40px);
+      }
+
+      .mv-featured {
+        grid-template-columns: minmax(0, 1fr) minmax(240px, 0.75fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .mv-container {
+        width: calc(100% - 32px);
+      }
+
+      .mv-hero {
+        padding: 48px 0 34px;
+      }
+
+      .mv-hero::after {
+        width: calc(100% - 32px);
+        margin-top: 30px;
+      }
+
+      .mv-featured {
+        grid-template-columns: 1fr;
+      }
+
+      .mv-featured-art {
+        min-height: auto;
+        padding: 24px;
+      }
+
+      .mv-art-frame {
+        width: min(100%, 280px);
+      }
+
+      .mv-quick-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mv-reminder {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .site-logo {
+        gap: 8px;
+      }
+
+      .site-logo-image {
+        width: 40px;
+        height: 40px;
+        flex-basis: 40px;
+      }
+
+      .mv-container {
+        width: calc(100% - 28px);
+      }
+
+      .mv-discography-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+      }
+
+      .mv-cover {
+        width: min(78%, 290px);
+      }
+
+      .mv-section {
+        padding: 38px 0;
+      }
+
+      .mv-featured-copy {
+        padding: 25px 21px 30px;
+      }
+
+      .mv-filter-btn {
+        padding: 9px 13px;
+      }
+    }
+  </style></head><body>
+  <header class="site-header">
     <div class="nav-inner">
-        <a href="index.html" class="site-logo" aria-label="JLSPT Home">
-            <span class="logo-mark" aria-hidden="true">JL</span>
-            <span class="logo-text">
-                <strong>JLSPT</strong>
-                <small>JL Streaming Project Team</small>
-            </span>
-        </a>
-        <nav class="nav-links" aria-label="Main navigation"></nav>
-    </div>
-</header>
+      <a href="index.html" class="site-logo" aria-label="JLSPT Home">
+        <img
+          src="assets/JLSPT-logo.png"
+          alt=""
+          class="site-logo-image"
+          aria-hidden="true"
+        >
+        <span class="logo-text">
+          <strong>JLSPT</strong>
+          <small>JL Streaming Project Team</small>
+        </span>
+      </a>  <button
+    class="mobile-menu-toggle"
+    type="button"
+    aria-label="Open navigation menu"
+    aria-expanded="false"
+    aria-controls="main-navigation"
+  >
+    ☰
+  </button>
 
-<main class="mv-page">
+  <nav class="nav-links" id="main-navigation" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="music-video.html" aria-current="page">Music &amp; Video</a>
+    <a href="campaigns.html">Campaigns</a>
+    <a href="guides.html">Guides</a>
+    <a href="corner.html">JL Corner</a>
+    <a href="my-profile.html">My Profile</a>
+  </nav>
+</div>
 
-    <!-- HERO WITH JLSPT LOGO -->
+  </header>  <main class="mv-page">
     <section class="mv-hero">
-        <div class="mv-container">
-            <div class="mv-hero-inner">
-                <div class="mv-hero-copy">
-                    <p class="mv-eyebrow">THE MUSIC ARCHIVE</p>
-                    <h1>Music &amp; Video</h1>
-                    <p>Explore JL's music, official releases, performances, and streaming resources.</p>
-                </div>
-
-                <div class="mv-hero-logo-wrap">
-                    <img
-                        src="assets/JLSPT-logo.png"
-                        alt="JL Streaming Project Team logo"
-                        class="mv-hero-logo"
-                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-
-                    <div class="mv-hero-logo-fallback" aria-hidden="true">JL</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FEATURED MUSIC VIDEO -->
-    <section class="mv-section">
-        <div class="mv-container">
-            <article class="mv-feature">
-                <div class="mv-feature-copy">
-                    <span class="mv-feature-badge">Featured Music Video</span>
-                    <h2>ALON</h2>
-                    <p>Keep supporting JL's official music video. Watch the full video and engage naturally as we work toward our streaming goal.</p>
-
-                    <div class="mv-actions">
-                        <a
-                            href="https://www.youtube.com/watch?v=Dt8noBM9VTg"
-                            class="mv-button mv-button-primary"
-                            target="_blank"
-                            rel="noopener noreferrer">
-                            ▶ Watch Official MV
-                        </a>
-
-                        <a href="campaigns.html" class="mv-button mv-button-secondary">
-                            View Campaign
-                        </a>
-                    </div>
-
-                    <p class="mv-feature-note">
-                        Follow the streaming campaign guidelines for viewing and searching instructions.
-                    </p>
-                </div>
-
-                <div class="mv-feature-art" aria-label="ALON by JL">
-                    <strong>ALON</strong>
-                    <span>JL · OFFICIAL MV</span>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <!-- DISCOGRAPHY -->
-    <section class="mv-section" id="discography">
-        <div class="mv-container">
-            <div class="mv-section-heading">
-                <p class="mv-eyebrow">EXPLORE BY CATEGORY</p>
-                <h2>Discography &amp; Performances</h2>
-                <p>Browse releases and performance resources connected to JL's music journey.</p>
-            </div>
-
-            <div class="mv-filter-row" role="group" aria-label="Filter music and performances">
-                <button class="mv-filter active" type="button" data-category="all" aria-pressed="true">All</button>
-                <button class="mv-filter" type="button" data-category="pluus" aria-pressed="false">PLUUS</button>
-                <button class="mv-filter" type="button" data-category="universe-league" aria-pressed="false">Universe League</button>
-                <button class="mv-filter" type="button" data-category="alon" aria-pressed="false">ALON</button>
-                <button class="mv-filter" type="button" data-category="ahof" aria-pressed="false">AHOF</button>
-            </div>
-
-            <div class="mv-discography-grid">
-
-                <article class="mv-release-card" data-release="pluus">
-                    <div class="mv-cover mv-cover-pluus">
-                        <strong>PLUUS</strong>
-                        <small>MUSIC &amp; VIDEOS</small>
-                    </div>
-                    <div class="mv-release-body">
-                        <h3>PLUUS</h3>
-                        <p>Explore official group music videos and releases.</p>
-                        <a
-                            class="mv-release-link"
-                            href="https://www.youtube.com/results?search_query=PLUUS+official+music+videos"
-                            target="_blank"
-                            rel="noopener noreferrer">
-                            Find Official Videos →
-                        </a>
-                    </div>
-                </article>
-
-                <article class="mv-release-card" data-release="universe-league">
-                    <div class="mv-cover mv-cover-universe">
-                        <strong>UNIVERSE<br>LEAGUE</strong>
-                        <small>PERFORMANCES</small>
-                    </div>
-                    <div class="mv-release-body">
-                        <h3>UNIVERSE LEAGUE</h3>
-                        <p>Find performances and music content featuring JL.</p>
-                        <a
-                            class="mv-release-link"
-                            href="https://www.youtube.com/results?search_query=Universe+League+JL+official+performance"
-                            target="_blank"
-                            rel="noopener noreferrer">
-                            Find Performances →
-                        </a>
-                    </div>
-                </article>
-
-                <article class="mv-release-card" data-release="alon">
-                    <div class="mv-cover mv-cover-alon">
-                        <strong>ALON</strong>
-                        <small>JL · OFFICIAL MV</small>
-                    </div>
-                    <div class="mv-release-body">
-                        <div class="mv-release-meta">2025</div>
-                        <h3>ALON</h3>
-                        <p>JL's solo single and official music video.</p>
-                        <a
-                            class="mv-release-link"
-                            href="https://www.youtube.com/watch?v=Dt8noBM9VTg"
-                            target="_blank"
-                            rel="noopener noreferrer">
-                            Watch Official MV →
-                        </a>
-                    </div>
-                </article>
-
-                <article class="mv-release-card" data-release="ahof">
-                    <div class="mv-cover mv-cover-ahof">
-                        <strong>AHOF</strong>
-                        <small>OFFICIAL RELEASES</small>
-                    </div>
-                    <div class="mv-release-body">
-                        <h3>AHOF</h3>
-                        <p>Explore official group songs, albums, and music videos.</p>
-                        <a
-                            class="mv-release-link"
-                            href="https://www.youtube.com/@AHOF_official"
-                            target="_blank"
-                            rel="noopener noreferrer">
-                            Official YouTube →
-                        </a>
-                    </div>
-                </article>
-
-            </div>
-
-            <p class="mv-archive-note">
-                This archive will be updated with verified release details, official artwork, and direct links.
-            </p>
-        </div>
-    </section>
-
-    <!-- RELEASE CALENDAR -->
-    <section class="mv-section" id="release-calendar">
-        <div class="mv-container">
-            <div class="mv-section-heading">
-                <p class="mv-eyebrow">UPCOMING UPDATES</p>
-                <h2>Release Calendar</h2>
-                <p>Keep track of music milestones and special streaming activities.</p>
-            </div>
-
-            <article class="mv-calendar-card">
-                <div class="mv-calendar-icon" aria-hidden="true">✦</div>
-                <div>
-                    <span class="mv-status">COMING SOON</span>
-                    <h3>Releases &amp; Anniversaries</h3>
-                    <p>Verified release dates, music video anniversaries, and special streaming activities will be added here.</p>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <!-- OFFICIAL STREAMING LINKS -->
-    <section class="mv-section" id="streaming-links">
-        <div class="mv-container">
-            <div class="mv-section-heading">
-                <p class="mv-eyebrow">KEEP LISTENING</p>
-                <h2>Official Streaming Links</h2>
-                <p>Quick access to community listening and official artist resources.</p>
-            </div>
-
-            <div class="mv-platform-grid">
-                <a
-                    class="mv-platform-card"
-                    href="https://app.stationhead.com/jlspteam"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    <span class="mv-platform-icon" aria-hidden="true">🎧</span>
-                    <span class="mv-platform-copy">
-                        <h3>JLSPT Stationhead</h3>
-                        <p>Listen with the community</p>
-                    </span>
-                    <span class="mv-platform-arrow" aria-hidden="true">↗</span>
-                </a>
-
-                <a
-                    class="mv-platform-card"
-                    href="https://www.youtube.com/@AHOF_official"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    <span class="mv-platform-icon" aria-hidden="true">▶</span>
-                    <span class="mv-platform-copy">
-                        <h3>AHOF YouTube</h3>
-                        <p>Official videos and content</p>
-                    </span>
-                    <span class="mv-platform-arrow" aria-hidden="true">↗</span>
-                </a>
-
-                <a
-                    class="mv-platform-card"
-                    href="https://linktr.ee/official_AHOF"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    <span class="mv-platform-icon" aria-hidden="true">♫</span>
-                    <span class="mv-platform-copy">
-                        <h3>AHOF Official Links</h3>
-                        <p>Find official music platforms</p>
-                    </span>
-                    <span class="mv-platform-arrow" aria-hidden="true">↗</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- CAMPAIGN CTA -->
-    <section class="mv-section">
-        <div class="mv-container">
-            <div class="mv-cta">
-                <p class="mv-eyebrow">EVERY STREAM COUNTS</p>
-                <h2>Keep supporting JL's music journey.</h2>
-                <p>Visit our campaigns page for current streaming goals and project updates.</p>
-                <a href="campaigns.html" class="mv-button mv-button-primary">
-                    Explore Campaigns →
-                </a>
-            </div>
-        </div>
-    </section>
-
-</main>
-
-<!-- FOOTER: SAME CONTENT AS HOME -->
-<footer class="site-footer mv-footer">
-    <div class="container">
-        <div class="footer-content">
-            <p class="footer-message">
-                For JL, with love from Starflares. ❤️
-            </p>
-
-            <div class="social-links" aria-label="JLSPT social media">
-                <a href="https://x.com/JLSPTeam" target="_blank" rel="noopener noreferrer" aria-label="X">𝕏</a>
-                <a href="https://facebook.com/JLSPTeam1" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
-                <a href="https://instagram.com/JLSPTeam1" target="_blank" rel="noopener noreferrer" aria-label="Instagram">◎</a>
-                <a href="https://tiktok.com/@JLSPTeam" target="_blank" rel="noopener noreferrer" aria-label="TikTok">♪</a>
-                <a href="https://youtube.com/@JLSPTeam" target="_blank" rel="noopener noreferrer" aria-label="YouTube">▶</a>
-                <a href="https://stationhead.com/JLSPTeam" target="_blank" rel="noopener noreferrer" aria-label="Stationhead">♫</a>
-            </div>
-        </div>
+      <div class="mv-container">
+        <p class="mv-eyebrow">Listen • Watch • Support</p>
+        <h1>Music <span>&amp; Video</span></h1>
+        <p class="mv-hero-description">
+          One place for Starflares to find JL and AHOF music, official videos,
+          and streaming activities. Every stream is a little more love for JL.
+        </p>    <div class="mv-hero-actions">
+      <a class="mv-button mv-button-primary" href="#featured-video">
+        Watch Featured Video
+      </a>
+      <a class="mv-button" href="#discography">
+        Explore Discography
+      </a>
     </div>
-</footer>
+  </div>
+</section>
 
-<script src="menu.js"></script>
+<section class="mv-section" id="featured-video">
+  <div class="mv-container">
+    <div class="mv-section-heading">
+      <div>
+        <p class="mv-eyebrow">Featured</p>
+        <h2>Let's stream together</h2>
+        <div class="mv-gold-line"></div>
+      </div>
+      <p>
+        Support JL's music video by watching, engaging naturally, and
+        sharing it with fellow Starflares.
+      </p>
+    </div>
 
-<script>
-(function () {
-    const filters = document.querySelectorAll("[data-category]");
-    const releases = document.querySelectorAll("[data-release]");
+    <article class="mv-featured">
+      <div class="mv-featured-copy">
+        <span class="mv-label">★ Streaming Mission</span>
+        <h3>ALON <span>by JL</span></h3>
+        <p>
+          Let's help JL's official music video reach the next milestone.
+          Watch the full video, leave a genuine comment, like the video,
+          and share it when you can.
+        </p>
+        <a
+          class="mv-button mv-button-primary"
+          href="https://www.youtube.com/watch?v=Dt8noBM9VTg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Watch on YouTube ↗
+        </a>
+      </div>
 
-    filters.forEach(function (filter) {
-        filter.addEventListener("click", function () {
-            const selectedCategory = filter.dataset.category;
+      <div class="mv-featured-art" aria-label="ALON streaming mission artwork">
+        <div class="mv-art-frame">
+          <div class="mv-art-text">
+            ALON
+            <small>JL • OFFICIAL MUSIC VIDEO</small>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
 
-            filters.forEach(function (button) {
-                const isActive = button === filter;
-                button.classList.toggle("active", isActive);
-                button.setAttribute("aria-pressed", String(isActive));
-            });
+<section class="mv-section">
+  <div class="mv-container">
+    <div class="mv-section-heading">
+      <div>
+        <p class="mv-eyebrow">Quick Access</p>
+        <h2>Choose where to listen</h2>
+        <div class="mv-gold-line"></div>
+      </div>
+      <p>
+        Find the streaming spaces and music platforms you can use to
+        support JL and AHOF.
+      </p>
+    </div>
 
-            releases.forEach(function (release) {
-                const shouldShow =
-                    selectedCategory === "all" ||
-                    release.dataset.release === selectedCategory;
+    <div class="mv-quick-grid">
+      <a
+        class="mv-quick-card"
+        href="https://app.stationhead.com/jlspteam"
+        target="_blank"
+        rel="noopener noreferrer"
+        style="text-decoration:none"
+      >
+        <span class="mv-quick-icon" aria-hidden="true">♫</span>
+        <h3>JLSPT Stationhead</h3>
+        <p>Join the JLSPT listening station and stream together.</p>
+      </a>
 
-                release.hidden = !shouldShow;
-            });
+      <a
+        class="mv-quick-card"
+        href="https://www.youtube.com/@JLSPTeam"
+        target="_blank"
+        rel="noopener noreferrer"
+        style="text-decoration:none"
+      >
+        <span class="mv-quick-icon" aria-hidden="true">▶</span>
+        <h3>YouTube</h3>
+        <p>Watch official videos and visit the JLSPT channel.</p>
+      </a>
+
+      <a
+        class="mv-quick-card"
+        href="#discography"
+        style="text-decoration:none"
+      >
+        <span class="mv-quick-icon" aria-hidden="true">♪</span>
+        <h3>Discography</h3>
+        <p>Browse the music collection and choose what to play next.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="mv-section" id="discography">
+  <div class="mv-container">
+    <div class="mv-section-heading">
+      <div>
+        <p class="mv-eyebrow">Music Library</p>
+        <h2>Discography</h2>
+        <div class="mv-gold-line"></div>
+      </div>
+      <p>
+        Browse the listed releases. The square artwork panels are
+        placeholders, ready to be replaced with official cover images.
+      </p>
+    </div>
+
+    <div class="mv-filter-row" role="group" aria-label="Filter music releases">
+      <button class="mv-filter-btn active" type="button" data-filter="all" aria-pressed="true">
+        All Releases
+      </button>
+      <button class="mv-filter-btn" type="button" data-filter="jl" aria-pressed="false">
+        JL Solo
+      </button>
+      <button class="mv-filter-btn" type="button" data-filter="ahof" aria-pressed="false">
+        AHOF
+      </button>
+      <button class="mv-filter-btn" type="button" data-filter="other" aria-pressed="false">
+        Other Artists
+      </button>
+    </div>
+
+    <div class="mv-discography-grid">
+      <article class="mv-release-card" data-release="jl">
+        <div class="mv-cover mv-cover-alon">
+          <div class="mv-cover-word">
+            ALON
+            <small>JL • SOLO</small>
+          </div>
+        </div>
+        <div class="mv-release-body">
+          <p class="mv-release-type">JL Solo</p>
+          <h3>ALON</h3>
+          <p>JL's solo music and official music video.</p>
+          <a
+            class="mv-release-link"
+            href="https://www.youtube.com/watch?v=Dt8noBM9VTg"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Watch Official MV ↗
+          </a>
+        </div>
+      </article>
+
+      <article class="mv-release-card" data-release="ahof">
+        <div class="mv-cover mv-cover-ahof">
+          <div class="mv-cover-word">
+            AHOF
+            <small>THE GROUP</small>
+          </div>
+        </div>
+        <div class="mv-release-body">
+          <p class="mv-release-type">AHOF</p>
+          <h3>Rendezvous</h3>
+          <p>Listen to AHOF's music and support the group.</p>
+          <a
+            class="mv-release-link"
+            href="https://www.youtube.com/results?search_query=AHOF+Rendezvous+Official"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Find Official Release ↗
+          </a>
+        </div>
+      </article>
+
+      <article class="mv-release-card" data-release="ahof">
+        <div class="mv-cover mv-cover-ul">
+          <div class="mv-cover-word">
+            AHOF
+            <small>THE LITTLE STAR</small>
+          </div>
+        </div>
+        <div class="mv-release-body">
+          <p class="mv-release-type">AHOF</p>
+          <h3>The Little Star</h3>
+          <p>Add this track to your listening rotation.</p>
+          <a
+            class="mv-release-link"
+            href="https://www.youtube.com/results?search_query=AHOF+The+Little+Star+Official"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Find Official Release ↗
+          </a>
+        </div>
+      </article>
+
+      <article class="mv-release-card" data-release="ahof">
+        <div class="mv-cover mv-cover-ahof">
+          <div class="mv-cover-word">
+            AHOF
+            <small>THE UNIVERSE</small>
+          </div>
+        </div>
+        <div class="mv-release-body">
+          <p class="mv-release-type">AHOF</p>
+          <h3>The Universe</h3>
+          <p>Keep supporting AHOF's music across platforms.</p>
+          <a
+            class="mv-release-link"
+            href="https://www.youtube.com/results?search_query=AHOF+The+Universe+Official"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Find Official Release ↗
+          </a>
+        </div>
+      </article>
+
+      <article class="mv-release-card" data-release="ahof">
+        <div class="mv-cover mv-cover-ul">
+          <div class="mv-cover-word">
+            AHOF
+            <small>INCOMPLETED</small>
+          </div>
+        </div>
+        <div class="mv-release-body">
+          <p class="mv-release-type">AHOF</p>
+          <h3>Incompleted</h3>
+          <p>Discover the track and add it to your playlist.</p>
+          <a
+            class="mv-release-link"
+            href="https://www.youtube.com/results?search_query=AHOF+Incompleted+Official"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Find Official Release ↗
+          </a>
+        </div>
+      </article>
+
+      <article class="mv-release-card" data-release="ahof">
+        <div class="mv-cover mv-cover-alon">
+          <div class="mv-cover-word">
+            AHOF
+            <small>COSMIC UNDERDOG</small>
+          </div>
+        </div>
+        <div class="mv-release-body">
+          <p class="mv-release-type">AHOF</p>
+          <h3>Cosmic Underdog</h3>
+          <p>Continue supporting AHOF with consistent listening.</p>
+          <a
+            class="mv-release-link"
+            href="https://www.youtube.com/results?search_query=AHOF+Cosmic+Underdog+Official"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Find Official Release ↗
+          </a>
+        </div>
+      </article>
+
+      <article class="mv-release-card" data-release="ahof">
+        <div class="mv-cover mv-cover-pluus">
+          <div class="mv-cover-word">
+            AHOF
+            <small>DEBUT</small>
+          </div>
+        </div>
+        <div class="mv-release-body">
+          <p class="mv-release-type">AHOF</p>
+          <h3>AHOF</h3>
+          <p>Support the group's music and official content.</p>
+          <a
+            class="mv-release-link"
+            href="https://www.youtube.com/results?search_query=AHOF+AHOF+Official+MV"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Find Official Release ↗
+          </a>
+        </div>
+      </article>
+
+      <article class="mv-release-card" data-release="other">
+        <div class="mv-cover mv-cover-pluus">
+          <div class="mv-cover-word">
+            PLAYLIST
+            <small>STREAM TOGETHER</small>
+          </div>
+        </div>
+        <div class="mv-release-body">
+          <p class="mv-release-type">Other Artists</p>
+          <h3>Community Playlist</h3>
+          <p>A space for related music and community listening.</p>
+          <a
+            class="mv-release-link"
+            href="https://www.youtube.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open YouTube ↗
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="mv-section">
+  <div class="mv-container">
+    <div class="mv-reminder">
+      <div>
+        <p class="mv-eyebrow">A Little Reminder</p>
+        <h2>Every stream comes from love.</h2>
+        <p>
+          Follow the platform's streaming guidelines, watch the content
+          naturally, and keep supporting JL and AHOF together. Thank you,
+          Starflares, for every effort you give.
+        </p>
+      </div>
+      <a
+        class="mv-button mv-button-primary"
+        href="https://app.stationhead.com/jlspteam"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Join JLSPT Stationhead ↗
+      </a>
+    </div>
+  </div>
+</section>
+
+  </main>  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <p class="footer-message">For JL, with love from Starflares. ❤️</p>    <div class="social-links" aria-label="JLSPT social media">
+      <a href="https://x.com/JLSPTeam" target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
+      <a href="https://facebook.com/JLSPTeam1" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+      <a href="https://instagram.com/JLSPTeam1" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+      <a href="https://tiktok.com/@JLSPTeam" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TikTok</a>
+      <a href="https://youtube.com/@JLSPTeam" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YouTube</a>
+      <a href="https://stationhead.com/JLSPTeam" target="_blank" rel="noopener noreferrer" aria-label="Stationhead">Stationhead</a>
+    </div>
+  </div>
+</div>
+
+  </footer>  <script>
+    // Mobile navigation toggle
+    (() => {
+      const menuButton = document.querySelector(".mobile-menu-toggle");
+      const nav = document.querySelector(".nav-links");
+
+      if (menuButton && nav) {
+        menuButton.addEventListener("click", () => {
+          const isOpen = nav.classList.toggle("mobile-open");
+          menuButton.setAttribute("aria-expanded", String(isOpen));
+          menuButton.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu"
+          );
         });
-    });
-})();
-</script>
 
-</body>
+        nav.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            nav.classList.remove("mobile-open");
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.setAttribute("aria-label", "Open navigation menu");
+          });
+        });
+      }
+    })();
+
+    // Discography filters
+    (() => {
+      const filterButtons = document.querySelectorAll("[data-filter]");
+      const releaseCards = document.querySelectorAll("[data-release]");
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const selectedFilter = button.dataset.filter;
+
+          filterButtons.forEach((item) => {
+            const isActive = item === button;
+            item.classList.toggle("active", isActive);
+            item.setAttribute("aria-pressed", String(isActive));
+          });
+
+          releaseCards.forEach((card) => {
+            const matches =
+              selectedFilter === "all" ||
+              card.dataset.release === selectedFilter;
+
+            card.hidden = !matches;
+          });
+        });
+      });
+    })();
+  </script></body>
 </html>

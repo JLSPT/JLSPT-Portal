@@ -2270,3 +2270,127 @@ body:has(.music-feature) .music-feature .btn-secondary {
         padding: 22px;
     }
 }
+
+/* =========================================
+   JLSPT RESPONSIVE WIDTH FIX
+   Wider tablet desktop view + full-width pages
+   Add this at the VERY END of style.css
+========================================= */
+
+/* Let every page use the available screen width */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+}
+
+body {
+    overflow-x: clip;
+}
+
+/* Wider shared layout */
+.container {
+    width: calc(100% - 64px);
+    max-width: 1600px;
+    margin-inline: auto;
+}
+
+/* Wider header and footer content */
+.nav-inner {
+    width: calc(100% - 64px);
+    max-width: 1600px;
+}
+
+.footer-content {
+    width: calc(100% - 64px);
+    max-width: 1600px;
+    margin-inline: auto;
+}
+
+/* Ensure main page sections can expand */
+main,
+.page-content {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+}
+
+/* Keep hero backgrounds full width */
+.hero,
+.page-hero,
+.site-header,
+.site-footer {
+    width: 100%;
+    max-width: none;
+}
+
+/* Tablet in desktop view: use more screen space */
+@media (min-width: 701px) {
+    .container {
+        width: calc(100% - 48px);
+        max-width: 1800px;
+    }
+
+    .nav-inner,
+    .footer-content {
+        width: calc(100% - 48px);
+        max-width: 1800px;
+    }
+
+    /* Prevent unnecessary narrow content in common page sections */
+    main > section > .container,
+    main > .section > .container,
+    main > .page-content > .container {
+        width: calc(100% - 48px);
+        max-width: 1800px;
+    }
+}
+
+/* Music Video: wider content and four discography categories */
+@media (min-width: 1101px) {
+    body:has(.music-feature) main > section > .container,
+    body:has(.music-feature) .page-hero .container {
+        width: calc(100% - 64px);
+        max-width: 1800px;
+    }
+
+    body:has(.music-feature) .music-discography-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 24px;
+    }
+}
+
+/* Tablet-sized screens: two balanced columns for discography */
+@media (min-width: 701px) and (max-width: 1100px) {
+    body:has(.music-feature) main > section > .container,
+    body:has(.music-feature) .page-hero .container {
+        width: calc(100% - 40px);
+        max-width: none;
+    }
+
+    body:has(.music-feature) .music-discography-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    body:has(.music-feature) .red-feature-card.music-feature {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    body:has(.music-feature) .music-feature-mark {
+        min-height: 220px;
+    }
+}
+
+/* Small screens: retain mobile spacing */
+@media (max-width: 700px) {
+    .container,
+    .nav-inner,
+    .footer-content,
+    main > section > .container,
+    main > .section > .container,
+    main > .page-content > .container {
+        width: calc(100% - 28px);
+    }
+}
